@@ -3,15 +3,110 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#063d26">
   <title>Página no encontrada | Compra con Criterio</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://supersergi.github.io/compra-con-criterio/css/style-v4.css?v=20260925-2">
+  <style>
+    body{
+      padding-top:76px;
+      background:#f5faf7;
+    }
+    .not-found{
+      min-height:calc(100vh - 76px);
+      display:grid;
+      place-items:center;
+      padding:60px 20px;
+    }
+    .not-found-card{
+      width:min(720px,100%);
+      padding:44px;
+      border:1px solid #dfe8e2;
+      border-radius:24px;
+      background:#fff;
+      box-shadow:0 18px 45px rgba(22,60,39,.10);
+      text-align:center;
+    }
+    .not-found-code{
+      display:block;
+      margin-bottom:8px;
+      color:#0f7a49;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .not-found-card h1{
+      margin:0 0 14px;
+      color:#063d26;
+      font-size:clamp(34px,6vw,54px);
+      line-height:1.05;
+    }
+    .not-found-card p{
+      margin:0 auto 24px;
+      max-width:560px;
+      color:#5f6d65;
+    }
+    @media(max-width:760px){
+      body{padding-top:64px}
+      .not-found{min-height:calc(100vh - 64px)}
+      .not-found-card{padding:34px 24px}
+    }
+  </style>
 </head>
 <body>
-  <main class="container">
+
+<header class="topbar shell">
+  <a class="brand" href="https://supersergi.github.io/compra-con-criterio/">Compra con Criterio</a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+    <span class="menu-icon" aria-hidden="true">☰</span>
+    <span>Menú</span>
+  </button>
+
+  <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+    <a href="https://supersergi.github.io/compra-con-criterio/">Inicio</a>
+
+    <div class="nav-group">
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/">
+        Herramientas <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/gatos-hidraulicos/">Gatos hidráulicos</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/taladros-a-bateria/">Taladros a batería</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">
+        Impresión 3D <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">Impresoras 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/">Filamentos 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/accesorios-3d/">Accesorios 3D</a>
+      </div>
+    </div>
+
+    <a href="https://supersergi.github.io/compra-con-criterio/hogar/">Hogar</a>
+    <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/">Información</a>
+  </nav>
+</header>
+
+<main class="not-found">
+  <section class="not-found-card">
+    <span class="not-found-code">Error 404</span>
     <h1>Página no encontrada</h1>
-    <p>La página que buscas no existe o ha cambiado de dirección.</p>
-    <p><a href="./">Volver al inicio</a></p>
-  </main>
+    <p>
+      La dirección que has abierto no existe o ha cambiado.
+      Puedes volver al inicio y continuar navegando desde allí.
+    </p>
+    <a class="btn btn-primary" href="https://supersergi.github.io/compra-con-criterio/">
+      Volver al inicio
+    </a>
+  </section>
+</main>
+
+<script src="https://supersergi.github.io/compra-con-criterio/js/main-v4.js?v=20260925-2"></script>
 </body>
 </html>
