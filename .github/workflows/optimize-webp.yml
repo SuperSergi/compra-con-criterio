@@ -1,0 +1,67 @@
+name: Optimizar WebP existentes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/optimize-webp.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Pillow
+        run: python -m pip install --quiet pillow
+
+      - name: Optimizar WebP pesados
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          limit = 300_000
+          max_side = 1600
+
+          for path in Path("images").rglob("*.webp"):
+              old = path.read_bytes()
+              if len(old) < limit:
+                  continue
+
+              with Image.open(path) as im:
+                  im.load()
+                  im.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
+                  kwargs = {"format": "WEBP", "quality": 82, "method": 6}
+                  if "A" in im.getbands():
+                      kwargs["lossless"] = False
+                  im.save(path, **kwargs)
+
+              new = path.read_bytes()
+              if len(new) >= len(old):
+                  path.write_bytes(old)
+              else:
+                  print(f"{path}: {len(old)} -> {len(new)} bytes")
+          PY
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images
+          if git diff --cached --quiet; then
+            echo "No hay imágenes que optimizar"
+          else
+            git commit -m "Optimizar imágenes WebP pesadas"
+            git push
+          fi
