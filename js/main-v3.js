@@ -111,25 +111,17 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
 
-    revealElements
-      .forEach(el => {
-
-        observer.observe(el);
-
-      });
+    revealElements.forEach(el => {
+      observer.observe(el);
+    });
 
   }
 
   else {
 
-    revealElements
-      .forEach(el => {
-
-        el.classList.add(
-          "in-view"
-        );
-
-      });
+    revealElements.forEach(el => {
+      el.classList.add("in-view");
+    });
 
   }
 
