@@ -3,34 +3,720 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impresoras 3D | Compra con Criterio</title>
-  <meta name="description" content="Guías y comparativas de impresoras 3D.">
+
+  <title>Impresoras 3D: cómo elegir la adecuada | Compra con Criterio</title>
+  <meta name="description" content="Guía para elegir una impresora 3D según facilidad de uso, volumen de impresión, materiales compatibles, automatización y ecosistema.">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#063d26">
+
   <link rel="canonical" href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://supersergi.github.io/compra-con-criterio/css/style-v4.css?v=20260925-1">
+
+  <style>
+    :root{
+      --cc-green:#063d26;
+      --cc-green-2:#0b5b39;
+      --cc-green-soft:#eef7f2;
+      --cc-text:#1f2924;
+      --cc-muted:#647069;
+      --cc-line:#dfe7e2;
+      --cc-bg:#f6f8f7;
+      --cc-white:#fff;
+      --cc-yellow:#ffd814;
+      --cc-shadow:0 14px 35px rgba(18,55,39,.08);
+    }
+
+    *{box-sizing:border-box}
+
+    body.printers-page{
+      margin:0;
+      padding-top:76px;
+      background:var(--cc-bg);
+      color:var(--cc-text);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .printers-page img{
+      display:block;
+      max-width:100%;
+    }
+
+    .printers-shell{
+      width:min(1160px,calc(100% - 36px));
+      margin:0 auto;
+    }
+
+    .printers-hero{
+      position:relative;
+      min-height:510px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(6,61,38,.89),rgba(6,61,38,.48)),
+        url("https://supersergi.github.io/compra-con-criterio/images/impresora-3d-abierta.webp") center 48%/cover no-repeat;
+      color:#fff;
+    }
+
+    .printers-hero-content{
+      position:relative;
+      z-index:2;
+      max-width:830px;
+      padding:76px 0;
+    }
+
+    .breadcrumbs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 22px;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+    }
+
+    .breadcrumbs a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .hero-kicker{
+      display:inline-flex;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .printers-hero h1{
+      margin:18px 0;
+      max-width:790px;
+      color:#fff;
+      font-size:clamp(40px,6vw,66px);
+      line-height:1.03;
+      letter-spacing:-.035em;
+    }
+
+    .printers-hero p{
+      max-width:790px;
+      margin:0;
+      color:rgba(255,255,255,.9);
+      font-size:clamp(18px,2vw,21px);
+      line-height:1.62;
+    }
+
+    .intro-wrap{
+      position:relative;
+      z-index:3;
+      margin-top:-42px;
+    }
+
+    .intro-card{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:34px;
+      padding:30px 32px;
+      border:1px solid var(--cc-line);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:var(--cc-shadow);
+    }
+
+    .section-kicker{
+      display:block;
+      margin-bottom:7px;
+      color:var(--cc-green-2);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .intro-card h2,
+    .section-heading h2,
+    .comparison-copy h2{
+      margin:0;
+      color:var(--cc-green);
+      letter-spacing:-.025em;
+    }
+
+    .intro-card h2{
+      font-size:clamp(27px,4vw,38px);
+      line-height:1.14;
+    }
+
+    .intro-card p{
+      margin:0;
+      color:#4d5a53;
+      font-size:16px;
+      line-height:1.72;
+    }
+
+    .section{
+      padding:68px 0 0;
+    }
+
+    .section-heading{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:28px;
+      margin-bottom:24px;
+    }
+
+    .section-heading h2{
+      font-size:clamp(28px,4vw,40px);
+    }
+
+    .section-heading p{
+      max-width:570px;
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.65;
+    }
+
+    .factor-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .factor-card{
+      padding:25px;
+      border:1px solid var(--cc-line);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .factor-number{
+      display:grid;
+      place-items:center;
+      width:42px;
+      height:42px;
+      margin-bottom:14px;
+      border-radius:13px;
+      background:var(--cc-green-soft);
+      color:var(--cc-green);
+      font-weight:900;
+    }
+
+    .factor-card h3{
+      margin:0 0 8px;
+      color:#26382e;
+      font-size:21px;
+    }
+
+    .factor-card p{
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.65;
+    }
+
+    .profile-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .profile-card{
+      position:relative;
+      overflow:hidden;
+      min-height:235px;
+      padding:25px;
+      border:1px solid var(--cc-line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .profile-label{
+      display:inline-flex;
+      margin-bottom:15px;
+      padding:6px 9px;
+      border-radius:999px;
+      background:var(--cc-green-soft);
+      color:var(--cc-green);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+
+    .profile-card h3{
+      margin:0 0 10px;
+      color:#26382e;
+      font-size:23px;
+    }
+
+    .profile-card p{
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.65;
+    }
+
+    .warning{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:15px;
+      align-items:start;
+      margin-top:24px;
+      padding:20px 22px;
+      border:1px solid #efdfaa;
+      border-radius:16px;
+      background:#fff9e7;
+      color:#594a17;
+    }
+
+    .warning-mark{
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#ffedaa;
+      font-weight:900;
+    }
+
+    .warning p{
+      margin:0;
+      line-height:1.65;
+    }
+
+    .comparison{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:0;
+      margin-top:68px;
+      overflow:hidden;
+      border:1px solid var(--cc-line);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:var(--cc-shadow);
+    }
+
+    .comparison-image{
+      min-height:390px;
+      background:
+        url("https://supersergi.github.io/compra-con-criterio/images/comparativa-impresoras-3d.webp") center/cover no-repeat;
+    }
+
+    .comparison-copy{
+      padding:36px;
+      align-self:center;
+    }
+
+    .comparison-copy h2{
+      margin-bottom:14px;
+      font-size:clamp(28px,4vw,40px);
+      line-height:1.13;
+    }
+
+    .comparison-copy p{
+      margin:0 0 16px;
+      color:var(--cc-muted);
+      line-height:1.68;
+    }
+
+    .model-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:19px 0 22px;
+    }
+
+    .model-list span{
+      padding:7px 10px;
+      border-radius:999px;
+      background:var(--cc-green-soft);
+      color:var(--cc-green);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .comparison-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:13px 20px;
+      border-radius:11px;
+      background:var(--cc-green);
+      color:#fff!important;
+      font-weight:900;
+      text-decoration:none;
+      transition:transform .18s ease,box-shadow .18s ease;
+    }
+
+    .comparison-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 18px rgba(6,61,38,.18);
+    }
+
+    .back-card{
+      margin:30px 0 76px;
+      padding:20px 22px;
+      border:1px solid #d9e7df;
+      border-radius:16px;
+      background:#f2f8f4;
+      color:#355243;
+      line-height:1.62;
+      font-size:14px;
+    }
+
+    .back-card a{
+      color:var(--cc-green);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    @media(max-width:900px){
+      .intro-card,
+      .comparison{
+        grid-template-columns:1fr;
+      }
+
+      .profile-grid{
+        grid-template-columns:1fr;
+      }
+
+      .comparison-image{
+        min-height:300px;
+      }
+    }
+
+    @media(max-width:760px){
+      body.printers-page{
+        padding-top:64px;
+      }
+
+      .printers-shell{
+        width:min(100% - 24px,1160px);
+      }
+
+      .printers-hero{
+        min-height:440px;
+      }
+
+      .printers-hero-content{
+        padding:58px 0;
+      }
+
+      .intro-wrap{
+        margin-top:-26px;
+      }
+
+      .intro-card{
+        padding:24px 22px;
+        gap:16px;
+      }
+
+      .section{
+        padding-top:52px;
+      }
+
+      .section-heading{
+        flex-direction:column;
+        align-items:start;
+      }
+
+      .factor-grid{
+        grid-template-columns:1fr;
+      }
+
+      .comparison-copy{
+        padding:26px 22px;
+      }
+
+      .comparison-btn{
+        width:100%;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="../../">Compra con Criterio</a>
-      
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="../../">Inicio</a>
-        <a href="../../herramientas/">Herramientas</a>
-        <a href="../../impresion-3d/">Impresión 3D</a>
-        <a href="../../hogar/">Hogar</a>
-      </nav>
+
+<body class="printers-page">
+
+<header class="topbar shell">
+  <a class="brand" href="https://supersergi.github.io/compra-con-criterio/">
+    Compra con Criterio
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+    <span class="menu-icon" aria-hidden="true">☰</span>
+    <span>Menú</span>
+  </button>
+
+  <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+    <a href="https://supersergi.github.io/compra-con-criterio/">Inicio</a>
+
+    <div class="nav-group">
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/">
+        Herramientas <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/gatos-hidraulicos/">Gatos hidráulicos</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/taladros-a-bateria/">Taladros a batería</a>
+      </div>
     </div>
-  </header>
-  <main class="container">
-    <h1>Impresoras 3D</h1>
-    <p class="placeholder">Página preparada para migrar el contenido definitivo desde Google Sites.</p>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <a href="../../aviso-legal/">Aviso legal y afiliación</a>
+
+    <div class="nav-group">
+      <a class="active" href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">
+        Impresión 3D <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">Impresoras 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/">Filamentos 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/accesorios-3d/">Accesorios 3D</a>
+      </div>
     </div>
-  </footer>
-  <script src="../../js/main.js"></script>
+
+    <a href="https://supersergi.github.io/compra-con-criterio/hogar/">Hogar</a>
+    <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/">Información</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="printers-hero">
+    <div class="printers-shell printers-hero-content">
+      <div class="breadcrumbs">
+        <a href="https://supersergi.github.io/compra-con-criterio/">Inicio</a>
+        <span>›</span>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Impresión 3D</a>
+        <span>›</span>
+        <span>Impresoras 3D</span>
+      </div>
+
+      <span class="hero-kicker">Impresión 3D · Máquinas</span>
+
+      <h1>Cómo elegir una impresora 3D según el uso que vas a darle</h1>
+
+      <p>
+        Antes de fijarte únicamente en velocidad o volumen, conviene pensar en fiabilidad,
+        facilidad de uso, materiales compatibles y cuánto quieres intervenir tú en el proceso.
+      </p>
+    </div>
+  </section>
+
+  <div class="printers-shell intro-wrap">
+    <section class="intro-card">
+      <div>
+        <span class="section-kicker">No existe una máquina ideal para todo</span>
+        <h2>La mejor impresora es la que encaja con lo que realmente quieres imprimir</h2>
+      </div>
+
+      <p>
+        Una máquina sencilla y fiable puede ser una opción más adecuada para empezar,
+        mientras que un usuario que imprime con frecuencia puede valorar más la automatización,
+        la velocidad consistente o un ecosistema amplio. Si quieres trabajar con materiales
+        más exigentes, aspectos como la cámara cerrada y las temperaturas disponibles pasan
+        a tener más importancia.
+      </p>
+    </section>
+  </div>
+
+  <section class="section">
+    <div class="printers-shell">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Antes de comprar</span>
+          <h2>Cuatro puntos que merece la pena comprobar</h2>
+        </div>
+
+        <p>
+          Son factores que afectan al uso diario de la máquina y que suelen importar
+          más a largo plazo que una única cifra destacada en la ficha técnica.
+        </p>
+      </div>
+
+      <div class="factor-grid">
+
+        <article class="factor-card">
+          <span class="factor-number">1</span>
+          <h3>Fiabilidad y facilidad de uso</h3>
+          <p>
+            Autonivelado, calibración automática, detección de errores y un software claro
+            pueden reducir bastante el tiempo dedicado a preparar y ajustar la impresora.
+          </p>
+        </article>
+
+        <article class="factor-card">
+          <span class="factor-number">2</span>
+          <h3>Volumen de impresión</h3>
+          <p>
+            Elige un tamaño acorde a las piezas que realmente vas a fabricar. Un volumen
+            mayor también suele significar una máquina más grande y más cara.
+          </p>
+        </article>
+
+        <article class="factor-card">
+          <span class="factor-number">3</span>
+          <h3>Materiales compatibles</h3>
+          <p>
+            PLA y PETG son relativamente sencillos. Para ASA, ABS, nylon u otros materiales
+            más exigentes puede resultar importante una máquina cerrada y capaz de trabajar
+            a temperaturas superiores.
+          </p>
+        </article>
+
+        <article class="factor-card">
+          <span class="factor-number">4</span>
+          <h3>Ecosistema y repuestos</h3>
+          <p>
+            Software, perfiles, boquillas, placas, repuestos, accesorios y soporte también
+            forman parte del coste y de la experiencia a largo plazo.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="printers-shell">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Según tu perfil</span>
+          <h2>Qué tipo de impresora puede encajarte mejor</h2>
+        </div>
+
+        <p>
+          La prioridad cambia mucho dependiendo de si estás empezando, imprimes cada semana
+          o quieres utilizar materiales más exigentes.
+        </p>
+      </div>
+
+      <div class="profile-grid">
+
+        <article class="profile-card">
+          <span class="profile-label">Para empezar</span>
+          <h3>Que imprimir sea más importante que ajustar</h3>
+          <p>
+            Priorizaríamos una máquina fácil de configurar, fiable, con buen software
+            y con el menor número posible de calibraciones manuales.
+          </p>
+        </article>
+
+        <article class="profile-card">
+          <span class="profile-label">Uso frecuente</span>
+          <h3>Consistencia y automatización</h3>
+          <p>
+            Aquí tiene más sentido valorar velocidad real, automatización, repetibilidad,
+            facilidad de mantenimiento, repuestos y un ecosistema de accesorios amplio.
+          </p>
+        </article>
+
+        <article class="profile-card">
+          <span class="profile-label">Materiales técnicos</span>
+          <h3>La construcción importa más</h3>
+          <p>
+            Cámara cerrada, hotend capaz de alcanzar temperaturas más altas y componentes
+            adecuados pueden ser más relevantes que la velocidad máxima anunciada.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="warning">
+        <span class="warning-mark">!</span>
+        <p>
+          <strong>Error habitual:</strong> comprar únicamente por velocidad máxima.
+          También importan la calidad real, la fiabilidad y el tiempo que tendrás que
+          dedicar a preparar, ajustar y mantener la máquina.
+        </p>
+      </div>
+
+      <section class="comparison">
+        <div
+          class="comparison-image"
+          role="img"
+          aria-label="Comparativa de seis impresoras 3D"
+        ></div>
+
+        <div class="comparison-copy">
+          <span class="section-kicker">Comparativa principal</span>
+          <h2>Seis impresoras para perfiles diferentes</h2>
+
+          <p>
+            En nuestra comparativa reunimos seis modelos FDM con enfoques distintos,
+            teniendo en cuenta volumen de impresión, velocidad, cámara cerrada,
+            materiales compatibles, multicolor y facilidad de uso.
+          </p>
+
+          <div class="model-list" aria-label="Modelos incluidos en la comparativa">
+            <span>Creality K2 Combo</span>
+            <span>Anycubic Kobra S1 Combo</span>
+            <span>ELEGOO Centauri Carbon</span>
+            <span>Creality K1C</span>
+            <span>Anycubic Kobra X</span>
+            <span>Flashforge AD5X</span>
+          </div>
+
+          <a
+            class="comparison-btn"
+            href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/mejores-impresoras-3d/"
+          >
+            Ver la comparativa de impresoras 3D →
+          </a>
+        </div>
+      </section>
+
+      <div class="back-card">
+        ¿Quieres ver también materiales y accesorios?
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Volver a la sección de Impresión 3D →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <section>
+      <h2>Compra con Criterio</h2>
+      <p>
+        Guías, comparativas y análisis para elegir productos según
+        sus características, diferencias y tipo de uso.
+      </p>
+    </section>
+
+    <section>
+      <h2>Categorías</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Impresión 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/">Herramientas</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/hogar/">Hogar</a>
+    </section>
+
+    <section>
+      <h2>Guías</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">Impresoras 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/">Filamentos 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/taladros-a-bateria/">Taladros a batería</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/gatos-hidraulicos/">Gatos hidráulicos</a>
+    </section>
+
+    <section>
+      <h2>Información</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/">Aviso legal y afiliación</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/#privacidad">Privacidad y cookies</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/#contacto">Contacto</a>
+    </section>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>
+      En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas
+      que cumplen los requisitos aplicables.
+    </p>
+    <p>© 2026 Compra con Criterio.</p>
+  </div>
+</footer>
+
+<script src="https://supersergi.github.io/compra-con-criterio/js/main-v4.js?v=20260925-1"></script>
 </body>
 </html>
