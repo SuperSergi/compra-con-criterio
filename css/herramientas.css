@@ -1,0 +1,1229 @@
+/* =========================================================
+   COMPRA CON CRITERIO
+   PÁGINA HERRAMIENTAS
+   Complemento de style-v4.css
+   ========================================================= */
+
+
+/* =========================================================
+   AJUSTE POR MENÚ FIJO
+   ========================================================= */
+
+
+.tools-page{
+  padding-top:76px;
+}
+
+
+
+/* =========================================================
+   HERO HERRAMIENTAS
+   ========================================================= */
+
+
+.tools-hero{
+
+  position:relative;
+
+  min-height:520px;
+
+  color:#fff;
+
+  background:
+    url("../images/categoria-herramientas.webp")
+    center 54% / cover
+    no-repeat;
+
+  overflow:hidden;
+
+}
+
+
+.tools-hero-shade{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(4,35,21,.90) 0%,
+      rgba(4,35,21,.72) 42%,
+      rgba(4,35,21,.34) 75%,
+      rgba(4,35,21,.18) 100%
+    ),
+
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.22),
+      rgba(0,0,0,.05)
+    );
+
+}
+
+
+.tools-hero-content{
+
+  position:relative;
+
+  z-index:2;
+
+  min-height:520px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  max-width:760px;
+
+  padding:
+    60px 0 95px;
+
+}
+
+
+.tools-kicker{
+
+  display:inline-block;
+
+  padding:
+    10px 13px;
+
+  color:#d9f3e5;
+
+  background:
+    rgba(255,255,255,.11);
+
+  border:
+    1px solid
+    rgba(255,255,255,.19);
+
+  border-radius:999px;
+
+  font-size:13px;
+
+  line-height:1;
+
+  font-weight:800;
+
+  letter-spacing:.10em;
+
+  text-transform:uppercase;
+
+  backdrop-filter:
+    blur(7px);
+
+}
+
+
+.tools-hero h1{
+
+  margin:
+    20px 0 16px;
+
+  color:#fff;
+
+  font-size:
+    clamp(
+      50px,
+      6vw,
+      76px
+    );
+
+  line-height:1;
+
+  letter-spacing:-.045em;
+
+}
+
+
+.tools-hero-content>p{
+
+  max-width:690px;
+
+  margin:0;
+
+  color:
+    rgba(255,255,255,.91);
+
+  font-size:21px;
+
+  line-height:1.55;
+
+}
+
+
+.tools-hero-actions{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:32px;
+
+}
+
+
+.tools-btn-primary{
+
+  background:#fff;
+
+  color:
+    var(--green-900);
+
+  box-shadow:
+    0 12px 24px
+    rgba(0,0,0,.15);
+
+}
+
+
+.tools-btn-ghost{
+
+  color:#fff;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.38);
+
+  backdrop-filter:
+    blur(7px);
+
+}
+
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+
+.tools-intro{
+
+  position:relative;
+
+  z-index:3;
+
+  margin-top:-52px;
+
+  padding:
+    0 0 48px;
+
+}
+
+
+.tools-intro-card{
+
+  display:grid;
+
+  grid-template-columns:
+    .9fr 1.1fr;
+
+  gap:62px;
+
+  padding:
+    46px 50px;
+
+  background:#fff;
+
+  border:
+    1px solid
+    rgba(13,86,50,.08);
+
+  border-radius:
+    var(--radius-xl);
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.tools-intro-card h2{
+
+  margin:
+    10px 0 0;
+
+  color:
+    var(--green-950);
+
+  font-size:
+    clamp(
+      30px,
+      3vw,
+      42px
+    );
+
+  line-height:1.16;
+
+  letter-spacing:-.025em;
+
+}
+
+
+.tools-intro-text p{
+
+  margin:
+    0 0 16px;
+
+  color:
+    var(--muted);
+
+}
+
+
+.tools-intro-text p:last-child{
+
+  margin-bottom:0;
+
+}
+
+
+
+/* =========================================================
+   SECCIÓN CATEGORÍAS
+   ========================================================= */
+
+
+.tools-section-soft{
+
+  background:
+    var(--green-050);
+
+}
+
+
+.tools-main-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0,1fr)
+    );
+
+  gap:28px;
+
+}
+
+
+.tools-main-card{
+
+  display:flex;
+
+  flex-direction:column;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    var(--radius-xl);
+
+  box-shadow:
+    var(--shadow-soft);
+
+  transition:
+
+    transform .22s ease,
+    box-shadow .22s ease;
+
+}
+
+
+.tools-main-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.tools-main-image{
+
+  display:block;
+
+  aspect-ratio:
+    16 / 9;
+
+  overflow:hidden;
+
+  background:#edf2ef;
+
+}
+
+
+.tools-main-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  transition:
+    transform .38s ease;
+
+}
+
+
+.tools-main-card:hover img{
+
+  transform:
+    scale(1.04);
+
+}
+
+
+.tools-main-body{
+
+  display:flex;
+
+  flex-direction:column;
+
+  flex:1;
+
+  padding:
+    30px 30px 32px;
+
+}
+
+
+.tools-main-body h3{
+
+  margin:
+    15px 0 11px;
+
+  color:
+    var(--green-950);
+
+  font-size:30px;
+
+  line-height:1.15;
+
+  letter-spacing:-.03em;
+
+}
+
+
+.tools-main-body p{
+
+  margin:0;
+
+  color:
+    var(--muted);
+
+}
+
+
+.tools-buttons{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:auto;
+
+  padding-top:27px;
+
+}
+
+
+.tools-card-button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:46px;
+
+  padding:
+    0 18px;
+
+  border-radius:11px;
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  font-size:15px;
+
+  transition:
+
+    transform .18s ease,
+    box-shadow .18s ease;
+
+}
+
+
+.tools-card-button:hover{
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+.tools-card-primary{
+
+  color:#fff;
+
+  background:
+    var(--green-800);
+
+  box-shadow:
+    0 9px 18px
+    rgba(10,101,60,.16);
+
+}
+
+
+.tools-card-secondary{
+
+  color:
+    var(--green-900);
+
+  background:#fff;
+
+  border:
+    1px solid
+    var(--line);
+
+}
+
+
+
+/* =========================================================
+   COMPARATIVAS
+   ========================================================= */
+
+
+.tools-comparisons{
+
+  background:#fff;
+
+}
+
+
+.tools-comparison-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0,1fr)
+    );
+
+  gap:24px;
+
+}
+
+
+.tools-comparison-card{
+
+  display:grid;
+
+  grid-template-columns:
+    45% 55%;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    0 8px 22px
+    rgba(22,60,39,.04);
+
+  transition:
+
+    transform .22s ease,
+    box-shadow .22s ease;
+
+}
+
+
+.tools-comparison-card:hover{
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    var(--shadow-soft);
+
+}
+
+
+.tools-comparison-image{
+
+  display:block;
+
+  min-height:280px;
+
+  overflow:hidden;
+
+  background:#edf2ef;
+
+}
+
+
+.tools-comparison-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center;
+
+  transition:
+    transform .35s ease;
+
+}
+
+
+.tools-comparison-card:hover img{
+
+  transform:
+    scale(1.04);
+
+}
+
+
+.tools-comparison-body{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  padding:
+    27px;
+
+}
+
+
+.tools-comparison-body h3{
+
+  margin:
+    14px 0 10px;
+
+  color:
+    var(--green-950);
+
+  font-size:23px;
+
+  line-height:1.2;
+
+  letter-spacing:-.025em;
+
+}
+
+
+.tools-comparison-body h3 a{
+
+  text-decoration:none;
+
+}
+
+
+.tools-comparison-body p{
+
+  margin:0;
+
+  color:
+    var(--muted);
+
+}
+
+
+
+/* =========================================================
+   MÉTODO
+   ========================================================= */
+
+
+.tools-method{
+
+  padding:
+    90px 0;
+
+  color:#fff;
+
+  background:
+
+    radial-gradient(
+      circle at 80% 12%,
+      rgba(35,142,91,.22),
+      transparent 26%
+    ),
+
+    linear-gradient(
+      135deg,
+      #073d27,
+      #0a5635
+    );
+
+}
+
+
+.tools-method-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    .85fr 1.15fr;
+
+  gap:90px;
+
+  align-items:start;
+
+}
+
+
+.tools-kicker-light{
+
+  color:#d6f2e2;
+
+}
+
+
+.tools-method-intro h2{
+
+  margin:
+    13px 0 16px;
+
+  color:#fff;
+
+  font-size:
+    clamp(
+      34px,
+      3.5vw,
+      48px
+    );
+
+  line-height:1.12;
+
+  letter-spacing:-.035em;
+
+}
+
+
+.tools-method-intro p{
+
+  max-width:520px;
+
+  margin:0;
+
+  color:
+    rgba(255,255,255,.75);
+
+  font-size:18px;
+
+}
+
+
+.tools-method-list{
+
+  display:grid;
+
+  gap:14px;
+
+}
+
+
+.tools-method-item{
+
+  display:grid;
+
+  grid-template-columns:
+    56px 1fr;
+
+  gap:18px;
+
+  padding:24px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
+.tools-method-number{
+
+  display:grid;
+
+  place-items:center;
+
+  width:46px;
+
+  height:46px;
+
+  border-radius:14px;
+
+  color:#d4f0e1;
+
+  background:
+    rgba(255,255,255,.10);
+
+  font-size:13px;
+
+  font-weight:850;
+
+}
+
+
+.tools-method-item h3{
+
+  margin:
+    0 0 6px;
+
+  font-size:20px;
+
+}
+
+
+.tools-method-item p{
+
+  margin:0;
+
+  color:
+    rgba(255,255,255,.72);
+
+}
+
+
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+
+.tools-closing{
+
+  padding:
+    70px 0;
+
+  background:
+    var(--green-050);
+
+}
+
+
+.tools-closing-card{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:
+    space-between;
+
+  gap:40px;
+
+  padding:
+    44px 48px;
+
+  color:#fff;
+
+  border-radius:
+    var(--radius-xl);
+
+  background:
+
+    radial-gradient(
+      circle at 92% 18%,
+      rgba(255,255,255,.13),
+      transparent 24%
+    ),
+
+    linear-gradient(
+      135deg,
+      var(--green-900),
+      var(--green-700)
+    );
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.tools-closing-card h2{
+
+  margin:
+    10px 0 0;
+
+  max-width:670px;
+
+  color:#fff;
+
+  font-size:
+    clamp(
+      30px,
+      3vw,
+      42px
+    );
+
+  line-height:1.16;
+
+  letter-spacing:-.025em;
+
+}
+
+
+.tools-closing-card p{
+
+  margin:
+    12px 0 0;
+
+  color:
+    rgba(255,255,255,.82);
+
+}
+
+
+.tools-closing-buttons{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+
+.tools-btn-light{
+
+  background:#fff;
+
+  color:
+    var(--green-900);
+
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+
+@media (max-width:1100px){
+
+
+  .tools-comparison-card{
+
+    grid-template-columns:
+      200px 1fr;
+
+  }
+
+
+  .tools-comparison-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .tools-comparison-image{
+
+    min-height:220px;
+
+  }
+
+
+  .tools-method-grid{
+
+    grid-template-columns:1fr;
+
+    gap:42px;
+
+  }
+
+
+}
+
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+
+@media (max-width:760px){
+
+
+  .tools-page{
+
+    padding-top:64px;
+
+  }
+
+
+  .tools-hero{
+
+    min-height:430px;
+
+  }
+
+
+  .tools-hero-content{
+
+    min-height:430px;
+
+    padding:
+      55px 0 85px;
+
+  }
+
+
+  .tools-hero h1{
+
+    font-size:
+      clamp(
+        46px,
+        15vw,
+        62px
+      );
+
+  }
+
+
+  .tools-hero-content>p{
+
+    font-size:18px;
+
+  }
+
+
+  .tools-hero-actions{
+
+    width:100%;
+
+  }
+
+
+  .tools-hero-actions .btn{
+
+    flex:
+      1 1 180px;
+
+  }
+
+
+
+  /* INTRO */
+
+
+  .tools-intro{
+
+    margin-top:-38px;
+
+  }
+
+
+  .tools-intro-card{
+
+    grid-template-columns:1fr;
+
+    gap:24px;
+
+    padding:
+      30px 25px;
+
+  }
+
+
+
+  /* CATEGORÍAS */
+
+
+  .tools-main-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .tools-main-body{
+
+    padding:
+      25px;
+
+  }
+
+
+  .tools-main-body h3{
+
+    font-size:26px;
+
+  }
+
+
+  .tools-buttons{
+
+    flex-direction:column;
+
+  }
+
+
+  .tools-card-button{
+
+    width:100%;
+
+  }
+
+
+
+  /* COMPARATIVAS */
+
+
+  .tools-comparison-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .tools-comparison-card{
+
+    display:block;
+
+  }
+
+
+  .tools-comparison-image{
+
+    min-height:0;
+
+    aspect-ratio:
+      16 / 9;
+
+  }
+
+
+  .tools-comparison-body{
+
+    padding:
+      24px;
+
+  }
+
+
+
+  /* MÉTODO */
+
+
+  .tools-method{
+
+    padding:
+      65px 0;
+
+  }
+
+
+  .tools-method-grid{
+
+    grid-template-columns:1fr;
+
+    gap:34px;
+
+  }
+
+
+  .tools-method-item{
+
+    grid-template-columns:
+      48px 1fr;
+
+    padding:
+      21px;
+
+  }
+
+
+
+  /* CTA */
+
+
+  .tools-closing{
+
+    padding:
+      54px 0;
+
+  }
+
+
+  .tools-closing-card{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    padding:
+      34px 28px;
+
+  }
+
+
+  .tools-closing-buttons{
+
+    width:100%;
+
+  }
+
+
+  .tools-closing-buttons .btn{
+
+    width:100%;
+
+  }
+
+
+}
