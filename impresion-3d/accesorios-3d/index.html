@@ -3,34 +3,811 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accesorios 3D | Compra con Criterio</title>
-  <meta name="description" content="Accesorios útiles para impresión 3D.">
+
+  <title>Accesorios 3D: secadores, placas, boquillas y herramientas | Compra con Criterio</title>
+  <meta name="description" content="Guía de accesorios para impresión 3D: secadores de filamento, placas, boquillas, herramientas, adhesivos y almacenamiento. Qué merece la pena según el problema que quieras resolver.">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#063d26">
+
   <link rel="canonical" href="https://supersergi.github.io/compra-con-criterio/impresion-3d/accesorios-3d/">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://supersergi.github.io/compra-con-criterio/css/style-v4.css?v=20260925-1">
+
+  <style>
+    :root{
+      --cc-green:#063d26;
+      --cc-green-2:#0b5b39;
+      --cc-green-soft:#eef7f2;
+      --cc-text:#1f2924;
+      --cc-muted:#647069;
+      --cc-line:#dfe7e2;
+      --cc-bg:#f6f8f7;
+      --cc-white:#fff;
+      --cc-shadow:0 14px 35px rgba(18,55,39,.08);
+    }
+
+    *{box-sizing:border-box}
+
+    body.accessories-page{
+      margin:0;
+      padding-top:76px;
+      background:var(--cc-bg);
+      color:var(--cc-text);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .accessories-page img{
+      display:block;
+      max-width:100%;
+    }
+
+    .accessories-shell{
+      width:min(1160px,calc(100% - 36px));
+      margin:0 auto;
+    }
+
+    .accessories-hero{
+      position:relative;
+      min-height:500px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(6,61,38,.89),rgba(6,61,38,.49)),
+        url("https://supersergi.github.io/compra-con-criterio/images/herramientas-accesorios-impresion-3d.webp") center 50%/cover no-repeat;
+      color:#fff;
+    }
+
+    .accessories-hero-content{
+      position:relative;
+      z-index:2;
+      max-width:830px;
+      padding:76px 0;
+    }
+
+    .breadcrumbs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 22px;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+    }
+
+    .breadcrumbs a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .hero-kicker{
+      display:inline-flex;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .accessories-hero h1{
+      margin:18px 0;
+      max-width:820px;
+      color:#fff;
+      font-size:clamp(40px,6vw,66px);
+      line-height:1.03;
+      letter-spacing:-.035em;
+    }
+
+    .accessories-hero p{
+      max-width:790px;
+      margin:0;
+      color:rgba(255,255,255,.9);
+      font-size:clamp(18px,2vw,21px);
+      line-height:1.62;
+    }
+
+    .intro-wrap{
+      position:relative;
+      z-index:3;
+      margin-top:-42px;
+    }
+
+    .intro-card{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:34px;
+      padding:30px 32px;
+      border:1px solid var(--cc-line);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:var(--cc-shadow);
+    }
+
+    .section-kicker{
+      display:block;
+      margin-bottom:7px;
+      color:var(--cc-green-2);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .intro-card h2,
+    .section-heading h2{
+      margin:0;
+      color:var(--cc-green);
+      letter-spacing:-.025em;
+    }
+
+    .intro-card h2{
+      font-size:clamp(27px,4vw,38px);
+      line-height:1.14;
+    }
+
+    .intro-card p{
+      margin:0;
+      color:#4d5a53;
+      font-size:16px;
+      line-height:1.72;
+    }
+
+    .section{
+      padding:68px 0 0;
+    }
+
+    .section-heading{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:28px;
+      margin-bottom:24px;
+    }
+
+    .section-heading h2{
+      font-size:clamp(28px,4vw,40px);
+    }
+
+    .section-heading p{
+      max-width:590px;
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.65;
+    }
+
+    .accessory-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .accessory-card{
+      padding:25px;
+      border:1px solid var(--cc-line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .accessory-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:start;
+      gap:14px;
+      margin-bottom:10px;
+    }
+
+    .accessory-card h3{
+      margin:0;
+      color:#26382e;
+      font-size:23px;
+    }
+
+    .accessory-type{
+      padding:6px 9px;
+      border-radius:999px;
+      background:var(--cc-green-soft);
+      color:var(--cc-green);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      white-space:nowrap;
+    }
+
+    .accessory-card p{
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.67;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:17px;
+    }
+
+    .tag{
+      padding:6px 9px;
+      border-radius:999px;
+      background:#f4f7f5;
+      color:#476056;
+      border:1px solid #e1e9e4;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .criteria-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .criteria-card{
+      padding:25px;
+      border:1px solid var(--cc-line);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .criteria-number{
+      display:grid;
+      place-items:center;
+      width:42px;
+      height:42px;
+      margin-bottom:14px;
+      border-radius:13px;
+      background:var(--cc-green-soft);
+      color:var(--cc-green);
+      font-weight:900;
+    }
+
+    .criteria-card h3{
+      margin:0 0 8px;
+      color:#26382e;
+      font-size:21px;
+    }
+
+    .criteria-card p{
+      margin:0;
+      color:var(--cc-muted);
+      line-height:1.65;
+    }
+
+    .priority-box{
+      margin-top:26px;
+      padding:24px;
+      border:1px solid #d9e7df;
+      border-radius:18px;
+      background:#f2f8f4;
+    }
+
+    .priority-box h3{
+      margin:0 0 12px;
+      color:var(--cc-green);
+      font-size:23px;
+    }
+
+    .priority-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .priority-item{
+      padding:16px;
+      border:1px solid #dce8e0;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .priority-item strong{
+      display:block;
+      margin-bottom:5px;
+      color:#294537;
+    }
+
+    .priority-item p{
+      margin:0;
+      color:var(--cc-muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .warning{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:15px;
+      align-items:start;
+      margin-top:24px;
+      padding:20px 22px;
+      border:1px solid #efdfaa;
+      border-radius:16px;
+      background:#fff9e7;
+      color:#594a17;
+    }
+
+    .warning-mark{
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:#ffedaa;
+      font-weight:900;
+    }
+
+    .warning p{
+      margin:0;
+      line-height:1.65;
+    }
+
+    .more-box{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+      margin-top:68px;
+      padding:30px 32px;
+      border-radius:22px;
+      background:var(--cc-green);
+      color:#fff;
+      box-shadow:var(--cc-shadow);
+    }
+
+    .more-box .section-kicker{
+      color:#bfe3cf;
+    }
+
+    .more-box h2{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:clamp(27px,4vw,37px);
+      letter-spacing:-.025em;
+    }
+
+    .more-box p{
+      margin:0;
+      max-width:760px;
+      color:rgba(255,255,255,.82);
+      line-height:1.65;
+    }
+
+    .more-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:13px 20px;
+      border-radius:12px;
+      background:#fff;
+      color:var(--cc-green)!important;
+      font-weight:900;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .back-card{
+      margin:30px 0 76px;
+      padding:20px 22px;
+      border:1px solid #d9e7df;
+      border-radius:16px;
+      background:#f2f8f4;
+      color:#355243;
+      line-height:1.62;
+      font-size:14px;
+    }
+
+    .back-card a{
+      color:var(--cc-green);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    @media(max-width:900px){
+      .intro-card,
+      .more-box{
+        grid-template-columns:1fr;
+      }
+
+      .criteria-grid,
+      .priority-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:760px){
+      body.accessories-page{
+        padding-top:64px;
+      }
+
+      .accessories-shell{
+        width:min(100% - 24px,1160px);
+      }
+
+      .accessories-hero{
+        min-height:440px;
+      }
+
+      .accessories-hero-content{
+        padding:58px 0;
+      }
+
+      .intro-wrap{
+        margin-top:-26px;
+      }
+
+      .intro-card{
+        padding:24px 22px;
+        gap:16px;
+      }
+
+      .section{
+        padding-top:52px;
+      }
+
+      .section-heading{
+        flex-direction:column;
+        align-items:start;
+      }
+
+      .accessory-grid{
+        grid-template-columns:1fr;
+      }
+
+      .more-box{
+        padding:26px 22px;
+      }
+
+      .more-btn{
+        width:100%;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="../../">Compra con Criterio</a>
-      
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="../../">Inicio</a>
-        <a href="../../herramientas/">Herramientas</a>
-        <a href="../../impresion-3d/">Impresión 3D</a>
-        <a href="../../hogar/">Hogar</a>
-      </nav>
+
+<body class="accessories-page">
+
+<header class="topbar shell">
+  <a class="brand" href="https://supersergi.github.io/compra-con-criterio/">
+    Compra con Criterio
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+    <span class="menu-icon" aria-hidden="true">☰</span>
+    <span>Menú</span>
+  </button>
+
+  <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+    <a href="https://supersergi.github.io/compra-con-criterio/">Inicio</a>
+
+    <div class="nav-group">
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/">
+        Herramientas <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/gatos-hidraulicos/">Gatos hidráulicos</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/herramientas/taladros-a-bateria/">Taladros a batería</a>
+      </div>
     </div>
-  </header>
-  <main class="container">
-    <h1>Accesorios 3D</h1>
-    <p class="placeholder">Página preparada para migrar el contenido definitivo desde Google Sites.</p>
-  </main>
-  <footer class="site-footer">
-    <div class="container">
-      <a href="../../aviso-legal/">Aviso legal y afiliación</a>
+
+    <div class="nav-group">
+      <a class="active" href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">
+        Impresión 3D <span aria-hidden="true">⌄</span>
+      </a>
+      <div class="dropdown">
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">Impresoras 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/">Filamentos 3D</a>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/accesorios-3d/">Accesorios 3D</a>
+      </div>
     </div>
-  </footer>
-  <script src="../../js/main.js"></script>
+
+    <a href="https://supersergi.github.io/compra-con-criterio/hogar/">Hogar</a>
+    <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/">Información</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="accessories-hero">
+    <div class="accessories-shell accessories-hero-content">
+      <div class="breadcrumbs">
+        <a href="https://supersergi.github.io/compra-con-criterio/">Inicio</a>
+        <span>›</span>
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Impresión 3D</a>
+        <span>›</span>
+        <span>Accesorios 3D</span>
+      </div>
+
+      <span class="hero-kicker">Impresión 3D · Accesorios</span>
+
+      <h1>Accesorios que realmente pueden mejorar tu impresión 3D</h1>
+
+      <p>
+        No necesitas comprarlo todo desde el primer día. Un buen accesorio tiene sentido
+        cuando resuelve un problema concreto: humedad, adherencia, desgaste, mantenimiento
+        o comodidad de trabajo.
+      </p>
+    </div>
+  </section>
+
+  <div class="accessories-shell intro-wrap">
+    <section class="intro-card">
+      <div>
+        <span class="section-kicker">Comprar menos, pero con sentido</span>
+        <h2>Primero detecta el problema; después busca el accesorio</h2>
+      </div>
+
+      <p>
+        Placas, secadores, boquillas, adhesivos y herramientas pueden aportar mejoras reales,
+        pero no todos son necesarios para todas las impresoras ni todos los materiales.
+        La idea de esta sección es separar los accesorios útiles de las compras que apenas
+        cambian el resultado.
+      </p>
+    </section>
+  </div>
+
+  <section class="section">
+    <div class="accessories-shell">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Lo que más suele aportar</span>
+          <h2>Seis tipos de accesorios que merece la pena conocer</h2>
+        </div>
+
+        <p>
+          Su utilidad depende de la impresora, del material y del problema que quieras resolver.
+          No todos tienen que estar en tu mesa desde el principio.
+        </p>
+      </div>
+
+      <div class="accessory-grid">
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Secadores de filamento</h3>
+            <span class="accessory-type">Humedad</span>
+          </div>
+          <p>
+            Mantener el material seco puede mejorar la extrusión y reducir problemas
+            como hilos, burbujas, mala superficie o pérdida de propiedades mecánicas.
+          </p>
+          <div class="tag-row">
+            <span class="tag">PETG</span>
+            <span class="tag">TPU</span>
+            <span class="tag">Materiales técnicos</span>
+          </div>
+        </article>
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Placas de impresión</h3>
+            <span class="accessory-type">Adherencia</span>
+          </div>
+          <p>
+            PEI texturizado, liso y otras superficies pueden cambiar la adherencia,
+            el acabado de la primera capa y la facilidad para retirar las piezas.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Primera capa</span>
+            <span class="tag">Acabado</span>
+            <span class="tag">Extracción</span>
+          </div>
+        </article>
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Boquillas</h3>
+            <span class="accessory-type">Velocidad y detalle</span>
+          </div>
+          <p>
+            El diámetro y el material de la boquilla influyen en velocidad, detalle
+            y compatibilidad con filamentos abrasivos o cargados con fibras.
+          </p>
+          <div class="tag-row">
+            <span class="tag">0,4 mm</span>
+            <span class="tag">0,6 mm</span>
+            <span class="tag">Abrasivos</span>
+          </div>
+        </article>
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Herramientas y mantenimiento</h3>
+            <span class="accessory-type">Uso diario</span>
+          </div>
+          <p>
+            Alicates de corte, herramientas de desbarbado, agujas de limpieza,
+            calibradores y útiles básicos facilitan el mantenimiento y el acabado.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Mantenimiento</span>
+            <span class="tag">Acabado</span>
+            <span class="tag">Medición</span>
+          </div>
+        </article>
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Adhesivos para la cama</h3>
+            <span class="accessory-type">Casos concretos</span>
+          </div>
+          <p>
+            En determinados materiales o superficies pueden mejorar la adherencia
+            o actuar como capa de separación entre la pieza y la placa.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Adherencia</span>
+            <span class="tag">Protección</span>
+          </div>
+        </article>
+
+        <article class="accessory-card">
+          <div class="accessory-top">
+            <h3>Almacenamiento de filamento</h3>
+            <span class="accessory-type">Conservación</span>
+          </div>
+          <p>
+            Bolsas, cajas secas y desecantes ayudan a mantener las bobinas en mejores
+            condiciones entre impresiones y reducen la absorción de humedad.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Desecante</span>
+            <span class="tag">Humedad</span>
+            <span class="tag">Almacenamiento</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="accessories-shell">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Nuestro criterio</span>
+          <h2>Cómo decidiremos qué accesorios recomendar</h2>
+        </div>
+
+        <p>
+          Un accesorio debería aportar una mejora clara, ser compatible con tu equipo
+          y justificar su coste frente al problema que pretende resolver.
+        </p>
+      </div>
+
+      <div class="criteria-grid">
+
+        <article class="criteria-card">
+          <span class="criteria-number">1</span>
+          <h3>Problema que resuelve</h3>
+          <p>
+            Humedad, adherencia, desgaste, mantenimiento o productividad.
+            Cuanto más concreto sea el problema, más fácil es valorar si el accesorio aporta algo.
+          </p>
+        </article>
+
+        <article class="criteria-card">
+          <span class="criteria-number">2</span>
+          <h3>Compatibilidad</h3>
+          <p>
+            Revisaremos dimensiones, temperaturas, tipo de impresora y materiales
+            antes de considerar que un accesorio es adecuado.
+          </p>
+        </article>
+
+        <article class="criteria-card">
+          <span class="criteria-number">3</span>
+          <h3>Utilidad frente a coste</h3>
+          <p>
+            Priorizaremos mejoras que aporten una ventaja clara y evitaremos recomendar
+            accesorios que apenas cambien el resultado.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="priority-box">
+        <h3>¿Por dónde empezar?</h3>
+        <div class="priority-grid">
+          <div class="priority-item">
+            <strong>Si tienes problemas de humedad</strong>
+            <p>Empieza por almacenamiento y secado del filamento.</p>
+          </div>
+          <div class="priority-item">
+            <strong>Si falla la primera capa</strong>
+            <p>Revisa antes nivelación, limpieza y superficie de impresión.</p>
+          </div>
+          <div class="priority-item">
+            <strong>Si buscas más velocidad</strong>
+            <p>Una boquilla mayor puede ser útil, pero cambia detalle y parámetros.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning">
+        <span class="warning-mark">!</span>
+        <p>
+          <strong>Error habitual:</strong> comprar muchos accesorios antes de saber
+          qué problema tienes realmente. Una impresora bien configurada puede necesitar
+          menos extras de los que parece.
+        </p>
+      </div>
+
+      <section class="more-box">
+        <div>
+          <span class="section-kicker">Relacionado</span>
+          <h2>El material suele indicar qué accesorio necesitas</h2>
+          <p>
+            Secado, almacenamiento, tipo de placa o boquilla pueden cambiar según utilices
+            PLA, PETG, ASA, TPU u otros materiales.
+          </p>
+        </div>
+
+        <a
+          class="more-btn"
+          href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/"
+        >
+          Ver guía de filamentos →
+        </a>
+      </section>
+
+      <div class="back-card">
+        También puedes volver a
+        <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Impresión 3D</a>
+        para acceder a impresoras, filamentos y accesorios.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <section>
+      <h2>Compra con Criterio</h2>
+      <p>
+        Guías, comparativas y análisis para elegir productos según
+        sus características, diferencias y tipo de uso.
+      </p>
+    </section>
+
+    <section>
+      <h2>Categorías</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/">Impresión 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/">Herramientas</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/hogar/">Hogar</a>
+    </section>
+
+    <section>
+      <h2>Guías</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/impresoras-3d/">Impresoras 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/impresion-3d/filamentos-3d/">Filamentos 3D</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/taladros-a-bateria/">Taladros a batería</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/herramientas/gatos-hidraulicos/">Gatos hidráulicos</a>
+    </section>
+
+    <section>
+      <h2>Información</h2>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/">Aviso legal y afiliación</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/#privacidad">Privacidad y cookies</a>
+      <a href="https://supersergi.github.io/compra-con-criterio/aviso-legal/#contacto">Contacto</a>
+    </section>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>
+      En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas
+      que cumplen los requisitos aplicables.
+    </p>
+    <p>© 2026 Compra con Criterio.</p>
+  </div>
+</footer>
+
+<script src="https://supersergi.github.io/compra-con-criterio/js/main-v4.js?v=20260925-1"></script>
 </body>
 </html>
