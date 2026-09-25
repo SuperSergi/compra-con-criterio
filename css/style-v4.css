@@ -1841,3 +1841,143 @@ button{
 
 
 }
+
+
+/* =========================================================
+   V4.1 · SUBMENÚS DE SEGUNDO NIVEL
+   Guía + comparativa desde la navegación principal
+   ========================================================= */
+
+.dropdown-subgroup{
+  position:relative;
+}
+
+.dropdown-subgroup > .dropdown-parent{
+  padding-right:42px;
+}
+
+.submenu-toggle{
+  position:absolute;
+  top:50%;
+  right:7px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  transform:translateY(-50%);
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  color:var(--green-900);
+  font-size:19px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.submenu-toggle:hover,
+.submenu-toggle:focus-visible{
+  background:var(--green-100);
+  outline:none;
+}
+
+.submenu-toggle span{
+  display:block;
+  transition:transform .18s ease;
+}
+
+.dropdown-subgroup.open > .submenu-toggle span{
+  transform:rotate(90deg);
+}
+
+.dropdown-submenu{
+  display:none;
+  position:absolute;
+  top:-10px;
+  left:calc(100% + 8px);
+  min-width:215px;
+  padding:10px;
+  border:1px solid rgba(6,61,38,.08);
+  border-radius:14px;
+  background:rgba(255,255,255,.99);
+  box-shadow:var(--shadow);
+}
+
+.dropdown-submenu a{
+  white-space:nowrap;
+}
+
+.dropdown-subgroup.open > .dropdown-submenu{
+  display:block;
+}
+
+@media (min-width:761px){
+
+  .dropdown-subgroup:hover > .dropdown-submenu,
+  .dropdown-subgroup:focus-within > .dropdown-submenu{
+    display:block;
+  }
+
+  /* Impresión 3D está más cerca del borde derecho:
+     su segundo nivel se abre hacia la izquierda. */
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-submenu{
+    left:auto;
+    right:calc(100% + 8px);
+  }
+
+}
+
+@media (max-width:760px){
+
+  .dropdown-subgroup{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 38px;
+    align-items:center;
+  }
+
+  .dropdown-subgroup > .dropdown-parent{
+    padding:7px 0;
+  }
+
+  .submenu-toggle{
+    position:static;
+    width:34px;
+    height:34px;
+    transform:none;
+    justify-self:end;
+    color:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.07);
+  }
+
+  .submenu-toggle:hover,
+  .submenu-toggle:focus-visible{
+    color:#fff;
+    background:rgba(255,255,255,.14);
+  }
+
+  .dropdown-submenu{
+    grid-column:1 / -1;
+    position:static;
+    min-width:0;
+    margin:1px 0 5px 8px;
+    padding:2px 0 2px 14px;
+    border:0;
+    border-left:1px solid rgba(255,255,255,.22);
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .dropdown-submenu a{
+    color:rgba(255,255,255,.72);
+    padding:7px 0;
+    font-size:13px;
+    font-weight:500;
+    white-space:normal;
+  }
+
+  .dropdown-submenu a:hover{
+    color:#fff;
+    background:transparent;
+  }
+
+}
