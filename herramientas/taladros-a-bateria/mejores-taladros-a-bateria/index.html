@@ -397,6 +397,178 @@
       filter:brightness(1.02);
     }
 
+    /* ======================================================
+       COMPARATIVA VISUAL RADAR
+       ====================================================== */
+
+    .radar-intro{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:center;
+      margin-bottom:18px;
+      padding:17px 19px;
+      border:1px solid var(--cc-line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .radar-intro p{
+      margin:0;
+      color:var(--cc-muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .radar-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      flex:0 0 auto;
+      font-size:12px;
+      color:#66716b;
+    }
+
+    .radar-legend span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+
+    .legend-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      display:inline-block;
+    }
+
+    .legend-dot.low{background:#bd5146}
+    .legend-dot.mid{background:#d19a18}
+    .legend-dot.high{background:#16794b}
+
+    .radar-list{
+      display:grid;
+      gap:16px;
+    }
+
+    .radar-row{
+      display:grid;
+      grid-template-columns:minmax(205px,260px) minmax(330px,1fr) minmax(180px,210px);
+      gap:22px;
+      align-items:center;
+      padding:20px 22px;
+      border:1px solid var(--cc-line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .radar-product h3{
+      margin:0 0 7px;
+      color:var(--cc-green);
+      font-size:19px;
+      line-height:1.25;
+      letter-spacing:-.015em;
+    }
+
+    .radar-product p{
+      margin:0;
+      color:#66716b;
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .radar-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:11px;
+    }
+
+    .radar-tag{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:999px;
+      background:#f0f6f2;
+      color:#315541;
+      border:1px solid #dfeae3;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .radar-chart{
+      min-width:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .radar-chart svg{
+      width:100%;
+      max-width:390px;
+      height:auto;
+      overflow:visible;
+      display:block;
+    }
+
+    .radar-grid-line{
+      fill:none;
+      stroke:#dbe5df;
+      stroke-width:1;
+    }
+
+    .radar-axis{
+      stroke:#d7e0da;
+      stroke-width:1;
+    }
+
+    .radar-area{
+      fill:rgba(22,121,75,.16);
+      stroke:#16794b;
+      stroke-width:2.2;
+      stroke-linejoin:round;
+    }
+
+    .radar-label{
+      fill:#536059;
+      font-size:11px;
+      font-weight:700;
+      text-anchor:middle;
+      dominant-baseline:middle;
+    }
+
+    .radar-scale{
+      fill:#8b948f;
+      font-size:9px;
+      text-anchor:middle;
+    }
+
+    .radar-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:9px;
+    }
+
+    .radar-actions .amazon-btn{
+      width:100%;
+      padding-left:14px;
+      padding-right:14px;
+      text-align:center;
+    }
+
+    .radar-actions .price-note{
+      text-align:center;
+    }
+
+    .radar-source-note{
+      margin:14px 0 0;
+      color:#7c8580;
+      font-size:11px;
+      line-height:1.5;
+    }
+
     .method-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -732,7 +904,194 @@
         grid-template-columns:1fr;
       }
 
-      .method-grid{
+      .radar-row{
+        grid-template-columns:minmax(190px,240px) minmax(300px,1fr);
+      }
+
+      .radar-actions{
+        grid-column:1 / -1;
+        display:grid;
+        grid-template-columns:minmax(220px,320px) 1fr;
+        align-items:center;
+      }
+
+      .radar-actions .price-note{
+        text-align:left;
+      }
+
+      /* ======================================================
+       COMPARATIVA VISUAL RADAR
+       ====================================================== */
+
+    .radar-intro{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:center;
+      margin-bottom:18px;
+      padding:17px 19px;
+      border:1px solid var(--cc-line);
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .radar-intro p{
+      margin:0;
+      color:var(--cc-muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .radar-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      flex:0 0 auto;
+      font-size:12px;
+      color:#66716b;
+    }
+
+    .radar-legend span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      white-space:nowrap;
+    }
+
+    .legend-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      display:inline-block;
+    }
+
+    .legend-dot.low{background:#bd5146}
+    .legend-dot.mid{background:#d19a18}
+    .legend-dot.high{background:#16794b}
+
+    .radar-list{
+      display:grid;
+      gap:16px;
+    }
+
+    .radar-row{
+      display:grid;
+      grid-template-columns:minmax(205px,260px) minmax(330px,1fr) minmax(180px,210px);
+      gap:22px;
+      align-items:center;
+      padding:20px 22px;
+      border:1px solid var(--cc-line);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(18,55,39,.055);
+    }
+
+    .radar-product h3{
+      margin:0 0 7px;
+      color:var(--cc-green);
+      font-size:19px;
+      line-height:1.25;
+      letter-spacing:-.015em;
+    }
+
+    .radar-product p{
+      margin:0;
+      color:#66716b;
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .radar-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:11px;
+    }
+
+    .radar-tag{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:999px;
+      background:#f0f6f2;
+      color:#315541;
+      border:1px solid #dfeae3;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .radar-chart{
+      min-width:0;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .radar-chart svg{
+      width:100%;
+      max-width:390px;
+      height:auto;
+      overflow:visible;
+      display:block;
+    }
+
+    .radar-grid-line{
+      fill:none;
+      stroke:#dbe5df;
+      stroke-width:1;
+    }
+
+    .radar-axis{
+      stroke:#d7e0da;
+      stroke-width:1;
+    }
+
+    .radar-area{
+      fill:rgba(22,121,75,.16);
+      stroke:#16794b;
+      stroke-width:2.2;
+      stroke-linejoin:round;
+    }
+
+    .radar-label{
+      fill:#536059;
+      font-size:11px;
+      font-weight:700;
+      text-anchor:middle;
+      dominant-baseline:middle;
+    }
+
+    .radar-scale{
+      fill:#8b948f;
+      font-size:9px;
+      text-anchor:middle;
+    }
+
+    .radar-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      gap:9px;
+    }
+
+    .radar-actions .amazon-btn{
+      width:100%;
+      padding-left:14px;
+      padding-right:14px;
+      text-align:center;
+    }
+
+    .radar-actions .price-note{
+      text-align:center;
+    }
+
+    .radar-source-note{
+      margin:14px 0 0;
+      color:#7c8580;
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    .method-grid{
         grid-template-columns:repeat(2,1fr);
       }
 
@@ -752,6 +1111,38 @@
     @media (max-width:700px){
       .article-topbar{
         width:calc(100% - 24px) !important;
+      }
+
+      .radar-intro{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .radar-row{
+        grid-template-columns:1fr;
+        gap:10px;
+        padding:18px 16px;
+      }
+
+      .radar-product{
+        text-align:center;
+      }
+
+      .radar-tags{
+        justify-content:center;
+      }
+
+      .radar-chart svg{
+        max-width:340px;
+      }
+
+      .radar-actions{
+        grid-column:auto;
+        display:flex;
+      }
+
+      .radar-actions .price-note{
+        text-align:center;
       }
 
       .article-hero{
@@ -962,149 +1353,187 @@
     <section class="section-block" aria-labelledby="tabla-comparativa">
       <div class="section-title">
         <div>
-          <h2 id="tabla-comparativa">Comparativa rápida</h2>
+          <h2 id="tabla-comparativa">Comparativa rápida visual</h2>
         </div>
         <p>
-          Datos de la herramienta y del kit seleccionado. La tabla prioriza prestaciones
-          y compatibilidad, sin utilizar el precio ni las valoraciones como criterio técnico.
+          Cada radar utiliza la misma escala de 1 a 5. Las puntuaciones son una forma visual
+          de comparar estos seis modelos entre sí a partir de sus especificaciones técnicas.
         </p>
       </div>
 
-      <div class="table-wrap">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Modelo</th>
-              <th>Tensión</th>
-              <th>Par máx.</th>
-              <th>Motor</th>
-              <th>Percusión</th>
-              <th>Velocidad 1 / 2</th>
-              <th>Impactos máx.</th>
-              <th>Portabrocas</th>
-              <th>Baterías</th>
-              <th>Plataforma</th>
-              <th>Ver</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="product-name">Einhell TE-CD 18/40 Li-i +64</td>
-              <td>18 V</td>
-              <td><strong>40 Nm</strong></td>
-              <td>Escobillas</td>
-              <td class="yes">Sí</td>
-              <td>0-400 / 0-1.500 rpm</td>
-              <td>24.000 ipm</td>
-              <td>13 mm metálico</td>
-              <td>2 baterías</td>
-              <td>Power X-Change</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B0987W5VK6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-            <tr>
-              <td class="product-name">Bosch EasyImpact 18V-40</td>
-              <td>18 V</td>
-              <td><strong>40 Nm</strong></td>
-              <td>Escobillas</td>
-              <td class="yes">Sí</td>
-              <td>0-430 / 0-1.630 rpm</td>
-              <td>24.450 ipm</td>
-              <td>13 mm</td>
-              <td>2 baterías</td>
-              <td>18V Power For All</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B09PLKVRT6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-            <tr>
-              <td class="product-name">WORX Nitro WX352</td>
-              <td>20 V MAX</td>
-              <td><strong>60 Nm</strong></td>
-              <td class="yes">Brushless</td>
-              <td class="yes">Sí</td>
-              <td>0-450 / 0-2.000 rpm</td>
-              <td>32.000 ipm</td>
-              <td>13 mm metálico</td>
-              <td>2 baterías</td>
-              <td>PowerShare</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B08HSGQ7P6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-            <tr>
-              <td class="product-name">Stanley FATMAX V20 SFMCD721D2K-QW</td>
-              <td>18 V</td>
-              <td><strong>80 Nm</strong></td>
-              <td class="yes">Brushless</td>
-              <td class="yes">Sí</td>
-              <td>0-600 / 0-2.100 rpm</td>
-              <td>35.700 ipm</td>
-              <td>13 mm metálico</td>
-              <td>2 baterías</td>
-              <td>FATMAX V20</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B085FY9G6X?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-            <tr>
-              <td class="product-name">Metabo BS 18 Set</td>
-              <td>18 V</td>
-              <td><strong>48 Nm</strong></td>
-              <td>Escobillas</td>
-              <td class="no">No</td>
-              <td>0-450 / 0-1.600 rpm</td>
-              <td>Sin percusión</td>
-              <td>1-10 mm</td>
-              <td>2 baterías</td>
-              <td>CAS 18V</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B0D9KKS9Q6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-            <tr>
-              <td class="product-name">DeWalt DCD709D2T-QW</td>
-              <td>18 V</td>
-              <td><strong>65 Nm</strong></td>
-              <td class="yes">Brushless</td>
-              <td class="yes">Sí</td>
-              <td>0-450 / 0-1.650 rpm</td>
-              <td>28.050 ipm</td>
-              <td>13 mm metálico</td>
-              <td>2 baterías</td>
-              <td>XR 18V</td>
-              <td><a class="mini-amazon" href="https://www.amazon.es/dp/B07TFT7T5H?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="radar-intro">
+        <p>
+          <strong>Cómo leer el gráfico:</strong> cuanto más se acerca el polígono al borde,
+          mayor es la capacidad relativa en ese apartado. No son valoraciones de usuarios
+          ni notas del fabricante.
+        </p>
+        <div class="radar-legend" aria-label="Leyenda de puntuaciones">
+          <span><i class="legend-dot low"></i> 1-2 limitada</span>
+          <span><i class="legend-dot mid"></i> 2,5-3,5 media</span>
+          <span><i class="legend-dot high"></i> 4-5 alta</span>
+        </div>
       </div>
+
+      <div class="radar-list">
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>Einhell TE-CD 18/40 Li-i +64</h3>
+            <p>40 Nm · 1.500 rpm · 24.000 ipm · motor con escobillas</p>
+            <div class="radar-tags">
+              <span class="radar-tag">Percusión</span>
+              <span class="radar-tag">2 baterías</span>
+              <span class="radar-tag">64 accesorios</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="2.5,3.0,3.3,3.0,5.0,5.0" aria-label="Radar técnico Einhell"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B0987W5VK6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 109 €.</span>
+          </div>
+        </article>
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>Bosch EasyImpact 18V-40</h3>
+            <p>40 Nm · 1.630 rpm · 24.450 ipm · motor con escobillas</p>
+            <div class="radar-tags">
+              <span class="radar-tag">Percusión</span>
+              <span class="radar-tag">2 baterías</span>
+              <span class="radar-tag">Power For All</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="2.5,3.3,3.4,3.0,4.5,4.0" aria-label="Radar técnico Bosch"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B09PLKVRT6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 100 €.</span>
+          </div>
+        </article>
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>WORX Nitro WX352</h3>
+            <p>60 Nm · 2.000 rpm · 32.000 ipm · motor brushless</p>
+            <div class="radar-tags">
+              <span class="radar-tag">Brushless</span>
+              <span class="radar-tag">Percusión</span>
+              <span class="radar-tag">2 baterías</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="4.0,4.7,4.5,5.0,5.0,4.0" aria-label="Radar técnico WORX"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B08HSGQ7P6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 143 €.</span>
+          </div>
+        </article>
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>Stanley FATMAX V20 SFMCD721D2K-QW</h3>
+            <p>80 Nm · 2.100 rpm · 35.700 ipm · motor brushless</p>
+            <div class="radar-tags">
+              <span class="radar-tag">Brushless</span>
+              <span class="radar-tag">80 Nm</span>
+              <span class="radar-tag">2 baterías</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="5.0,5.0,5.0,5.0,5.0,4.0" aria-label="Radar técnico Stanley"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B085FY9G6X?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 151 €.</span>
+          </div>
+        </article>
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>Metabo BS 18 Set</h3>
+            <p>48 Nm · 1.600 rpm · sin percusión · motor con escobillas</p>
+            <div class="radar-tags">
+              <span class="radar-tag">2 baterías</span>
+              <span class="radar-tag">74 accesorios</span>
+              <span class="radar-tag">CAS 18V</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="3.0,3.2,1.0,3.0,3.0,5.0" aria-label="Radar técnico Metabo"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B0D9KKS9Q6?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 143 €.</span>
+          </div>
+        </article>
+
+        <article class="radar-row">
+          <div class="radar-product">
+            <h3>DeWalt DCD709D2T-QW</h3>
+            <p>65 Nm · 1.650 rpm · 28.050 ipm · motor brushless</p>
+            <div class="radar-tags">
+              <span class="radar-tag">Brushless</span>
+              <span class="radar-tag">Compacto 175 mm</span>
+              <span class="radar-tag">TSTAK</span>
+            </div>
+          </div>
+          <div class="radar-chart" data-scores="4.3,3.4,4.0,5.0,5.0,4.5" aria-label="Radar técnico DeWalt"></div>
+          <div class="radar-actions">
+            <a class="amazon-btn" href="https://www.amazon.es/dp/B07TFT7T5H?tag=gatoxcoche-21" target="_blank" rel="nofollow sponsored noopener">🛒 Ver precio en Amazon</a>
+            <span class="price-note">Precio observado durante la creación del análisis: 195 €.</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="radar-source-note">
+        Escala interna de Compra con Criterio: Atornillado se basa principalmente en el par máximo;
+        Perforación en la velocidad máxima; Mampostería en la función percutora y la frecuencia de impactos;
+        Motor distingue brushless de escobillas; Portabrocas valora capacidad y construcción; Kit valora
+        baterías, maletín y accesorios incluidos. La escala sirve para comparar únicamente estos seis modelos.
+      </p>
     </section>
 
     <section class="section-block" aria-labelledby="criterios">
       <div class="section-title">
         <div>
-          <h2 id="criterios">Qué criterios hemos tenido en cuenta</h2>
+          <h2 id="criterios">Cómo calculamos el radar</h2>
         </div>
         <p>
-          El par máximo sirve para comparar capacidad, pero por sí solo no determina
-          qué taladro encaja mejor para cada usuario.
+          La escala busca hacer comparables especificaciones distintas. No sustituye a los datos originales,
+          que siguen apareciendo en cada análisis individual.
         </p>
       </div>
 
       <div class="method-grid">
         <article class="method-card">
           <div class="number">1</div>
-          <h3>Potencia y par</h3>
-          <p>Valoramos el par máximo y si el modelo ofrece margen suficiente para trabajos más exigentes.</p>
+          <h3>Atornillado</h3>
+          <p>Parte principalmente del par máximo declarado en Nm. Más par ofrece más margen con tornillos grandes y trabajos exigentes.</p>
         </article>
 
         <article class="method-card">
           <div class="number">2</div>
-          <h3>Motor y percusión</h3>
-          <p>Un motor brushless y la función percutora amplían el tipo de trabajos que puede asumir la máquina.</p>
+          <h3>Perforación</h3>
+          <p>Compara sobre todo la velocidad máxima en segunda marcha, útil para distinguir la capacidad de perforación rápida.</p>
         </article>
 
         <article class="method-card">
           <div class="number">3</div>
-          <h3>Kit incluido</h3>
-          <p>Dos baterías, cargador, maletín y accesorios pueden cambiar mucho el valor real del conjunto.</p>
+          <h3>Mampostería</h3>
+          <p>Combina la presencia de percusión y la frecuencia máxima de impactos. Un modelo sin percusión queda claramente penalizado.</p>
         </article>
 
         <article class="method-card">
           <div class="number">4</div>
-          <h3>Plataforma y formato</h3>
-          <p>Valoramos compatibilidad de baterías, tamaño del portabrocas, velocidad, peso y contenido del kit.</p>
+          <h3>Motor</h3>
+          <p>Los motores brushless reciben más puntuación por eficiencia, menor mantenimiento y mejor aprovechamiento de la batería.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="number">5</div>
+          <h3>Portabrocas</h3>
+          <p>Se valora el diámetro máximo y la construcción. Los portabrocas metálicos de 13 mm ofrecen la configuración más completa.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="number">6</div>
+          <h3>Kit</h3>
+          <p>Considera número de baterías, cargador, maletín y accesorios incluidos en la referencia comparada.</p>
         </article>
       </div>
     </section>
@@ -1665,6 +2094,102 @@
     <p>© 2026 Compra con Criterio.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  const labels = ["Atornillado", "Perforación", "Mampostería", "Motor", "Portabrocas", "Kit"];
+  const maxScore = 5;
+  const cx = 175;
+  const cy = 145;
+  const radius = 92;
+  const labelRadius = 124;
+  const ns = "http://www.w3.org/2000/svg";
+
+  function point(index, value, r = radius) {
+    const angle = (-Math.PI / 2) + (index * Math.PI * 2 / labels.length);
+    const rr = r * (value / maxScore);
+    return [cx + Math.cos(angle) * rr, cy + Math.sin(angle) * rr];
+  }
+
+  function polygonPoints(value) {
+    return labels.map((_, i) => point(i, value).join(",")).join(" ");
+  }
+
+  function scoreColor(value) {
+    if (value <= 2) return "#bd5146";
+    if (value < 4) return "#d19a18";
+    return "#16794b";
+  }
+
+  document.querySelectorAll(".radar-chart").forEach((holder) => {
+    const scores = (holder.dataset.scores || "").split(",").map(Number);
+    if (scores.length !== labels.length || scores.some(Number.isNaN)) return;
+
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 350 290");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", holder.getAttribute("aria-label") || "Gráfico radar técnico");
+
+    for (let level = 1; level <= maxScore; level++) {
+      const grid = document.createElementNS(ns, "polygon");
+      grid.setAttribute("points", polygonPoints(level));
+      grid.setAttribute("class", "radar-grid-line");
+      svg.appendChild(grid);
+    }
+
+    labels.forEach((label, i) => {
+      const end = point(i, maxScore);
+      const axis = document.createElementNS(ns, "line");
+      axis.setAttribute("x1", cx);
+      axis.setAttribute("y1", cy);
+      axis.setAttribute("x2", end[0]);
+      axis.setAttribute("y2", end[1]);
+      axis.setAttribute("class", "radar-axis");
+      svg.appendChild(axis);
+
+      const angle = (-Math.PI / 2) + (i * Math.PI * 2 / labels.length);
+      const lx = cx + Math.cos(angle) * labelRadius;
+      const ly = cy + Math.sin(angle) * labelRadius;
+      const t = document.createElementNS(ns, "text");
+      t.setAttribute("x", lx);
+      t.setAttribute("y", ly);
+      t.setAttribute("class", "radar-label");
+      t.textContent = label;
+      svg.appendChild(t);
+    });
+
+    const area = document.createElementNS(ns, "polygon");
+    area.setAttribute("points", scores.map((v, i) => point(i, v).join(",")).join(" "));
+    area.setAttribute("class", "radar-area");
+    svg.appendChild(area);
+
+    scores.forEach((score, i) => {
+      const [x, y] = point(i, score);
+      const dot = document.createElementNS(ns, "circle");
+      dot.setAttribute("cx", x);
+      dot.setAttribute("cy", y);
+      dot.setAttribute("r", "5");
+      dot.setAttribute("fill", scoreColor(score));
+      dot.setAttribute("stroke", "#fff");
+      dot.setAttribute("stroke-width", "2");
+
+      const title = document.createElementNS(ns, "title");
+      title.textContent = labels[i] + ": " + score.toFixed(1).replace(".0", "") + "/5";
+      dot.appendChild(title);
+      svg.appendChild(dot);
+    });
+
+    const centerText = document.createElementNS(ns, "text");
+    centerText.setAttribute("x", cx);
+    centerText.setAttribute("y", cy + 4);
+    centerText.setAttribute("class", "radar-scale");
+    centerText.textContent = "1–5";
+    svg.appendChild(centerText);
+
+    holder.appendChild(svg);
+  });
+})();
+</script>
 
 <script
   src="https://supersergi.github.io/compra-con-criterio/js/main-v4.js?v=20260925-1"
