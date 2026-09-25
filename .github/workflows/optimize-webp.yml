@@ -6,12 +6,14 @@ on:
       - main
     paths:
       - ".github/workflows/optimize-webp.yml"
+      - "images/**/*.webp"
 
 permissions:
   contents: write
 
 jobs:
   optimize:
+    if: ${{ !contains(github.event.head_commit.message, 'Optimizar imágenes WebP pesadas') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
