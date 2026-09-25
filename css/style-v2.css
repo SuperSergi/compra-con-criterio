@@ -1,27 +1,39 @@
-
 :root{
   --green:#0b6b3f;
+
   --green-950:#063d26;
   --green-900:#075131;
   --green-800:#0a653c;
   --green-700:#0f7a49;
+
   --green-100:#e9f5ee;
   --green-050:#f5faf7;
+
   --sand:#f7f3ec;
+
   --ink:#17231d;
   --muted:#5f6d65;
   --line:#dfe8e2;
+
   --white:#ffffff;
+
   --shadow:0 18px 45px rgba(22,60,39,.10);
   --shadow-soft:0 10px 28px rgba(22,60,39,.08);
+
   --radius-xl:26px;
   --radius-lg:20px;
   --radius-md:14px;
+
   --shell:1240px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -65,7 +77,7 @@ a{
   position:relative;
   min-height:610px;
   color:var(--white);
-  background:url("../images/hero-inicio.webp") center 58%/cover no-repeat;
+  background:url("../images/hero-inicio.webp") center 58% / cover no-repeat;
   overflow:hidden;
 }
 
@@ -111,7 +123,7 @@ a{
 }
 
 
-/* MENÚ */
+/* NAVEGACIÓN */
 
 .main-nav{
   display:flex;
@@ -182,7 +194,7 @@ a{
 }
 
 
-/* HERO TEXTO */
+/* HERO CONTENT */
 
 .hero-content{
   min-height:534px;
@@ -325,7 +337,7 @@ a{
 }
 
 
-/* CABECERAS DE SECCIÓN */
+/* CABECERAS */
 
 .section-heading{
   display:grid;
@@ -416,7 +428,7 @@ a{
 }
 
 
-/* TÍTULOS DE TARJETAS */
+/* TARJETAS */
 
 .category-card h3,
 .guide-card h3,
@@ -459,7 +471,7 @@ a{
 }
 
 
-/* DESTACADAS */
+/* GUÍAS */
 
 .featured-grid{
   display:grid;
@@ -576,7 +588,7 @@ a{
 /* FOOTER */
 
 .site-footer{
-  background:var(--green);
+  background:var(--green-950);
   color:#fff;
   padding:54px 0 34px;
 }
@@ -620,8 +632,7 @@ a{
 
 @media (max-width:1100px){
 
-  .shell,
-  .content-narrow{
+  .shell{
     width:min(100% - 48px,1100px);
   }
 
@@ -631,10 +642,6 @@ a{
 
   .featured-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-
-  .criteria-grid{
-    gap:35px;
   }
 
   .footer-grid{
