@@ -32,29 +32,52 @@ jobs:
           from PIL import Image
 
           images = {
-              "images/impresoras/creality-k2-combo.webp":
-                  "https://cdn03.plentymarkets.com/ioseuwg7moqp/item/images/32968/full/Creality-K2-Combo-32968_3.png",
-              "images/impresoras/anycubic-kobra-s1-combo.webp":
-                  "https://store.anycubic.com/cdn/shop/files/S1C_cover.jpg?v=1734944134&width=3000",
-              "images/impresoras/elegoo-centauri-carbon.webp":
-                  "https://b2b.innpro.pl/hpeciai/107d72a34c07ab96a6b6607f093246af/50700_3.jpg",
-              "images/impresoras/creality-k1c.webp":
-                  "https://www.pbtech.co.nz/imgprod/P/T/PTRCRL0011.jpg?h=2955253005",
-              "images/impresoras/anycubic-kobra-x.webp":
-                  "https://www.3idea.in/assets/images/products/6117-Product-Image1.png",
-              "images/impresoras/flashforge-ad5x.webp":
-                  "https://m.media-amazon.com/images/I/610YUfR1J%2BL._AC_US1000_.jpg",
+              "images/impresoras/creality-k2-combo.webp": [
+                  "https://cdn03.plentymarkets.com/ioseuwg7moqp/item/images/32968/full/Creality-K2-Combo-32968_3.png"
+              ],
+              "images/impresoras/anycubic-kobra-s1-combo.webp": [
+                  "https://store.anycubic.com/cdn/shop/files/S1C_cover.jpg?v=1734944134&width=3000"
+              ],
+              "images/impresoras/elegoo-centauri-carbon.webp": [
+                  "https://b2b.innpro.pl/hpeciai/107d72a34c07ab96a6b6607f093246af/50700_3.jpg"
+              ],
+              "images/impresoras/creality-k1c.webp": [
+                  "https://smarpix.com/cdn/shop/files/k1c-1.jpg?v=1718234436",
+                  "https://baseec-img-mng.akamaized.net/images/item/origin/27ebf10de88ea4bbd607f07e81bbf69c.jpg?im=Resize%2Cwidth%3D640%2Ctype%3Dnormal&imformat=generic&q=90",
+                  "https://immagini.trovaprezzi.it/prodotti/creality_k1c.jpg"
+              ],
+              "images/impresoras/anycubic-kobra-x.webp": [
+                  "https://www.3idea.in/assets/images/products/6117-Product-Image1.png"
+              ],
+              "images/impresoras/flashforge-ad5x.webp": [
+                  "https://m.media-amazon.com/images/I/610YUfR1J%2BL._AC_US1000_.jpg"
+              ],
           }
 
           headers = {
-              "User-Agent": "Mozilla/5.0 (compatible; CompraConCriterio/1.0)"
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+              "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
           }
 
-          for dest, url in images.items():
-              r = requests.get(url, headers=headers, timeout=45)
-              r.raise_for_status()
-              im = Image.open(BytesIO(r.content))
-              im.load()
+          for dest, urls in images.items():
+              last_error = None
+              im = None
+
+              for url in urls:
+                  try:
+                      r = requests.get(url, headers=headers, timeout=45)
+                      r.raise_for_status()
+                      candidate = Image.open(BytesIO(r.content))
+                      candidate.load()
+                      im = candidate
+                      print(f"OK {dest} <- {url}")
+                      break
+                  except Exception as exc:
+                      last_error = exc
+                      print(f"FALLO {dest} <- {url}: {exc}")
+
+              if im is None:
+                  raise RuntimeError(f"No se pudo descargar una imagen válida para {dest}: {last_error}")
 
               if im.mode not in ("RGB", "RGBA"):
                   im = im.convert("RGBA" if "A" in im.getbands() else "RGB")
@@ -65,7 +88,6 @@ jobs:
               im.save(dest, "WEBP", quality=86, method=6)
               print(dest, im.size, Path(dest).stat().st_size)
 
-              # Verificación real: reabrir el WebP generado.
               with Image.open(dest) as check:
                   check.verify()
           PY
