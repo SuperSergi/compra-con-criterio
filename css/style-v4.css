@@ -1981,3 +1981,47 @@ button{
   }
 
 }
+
+
+/* =========================================================
+   SEO / CONFIANZA EDITORIAL · V4.1
+   ========================================================= */
+
+.article-byline{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+  margin:14px 0 0;
+  color:inherit;
+  opacity:.82;
+  font-size:14px;
+  line-height:1.45;
+}
+
+.article-byline a{
+  color:inherit;
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.editorial-note{
+  margin:28px 0;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  border-left:4px solid var(--green-700);
+  border-radius:0 14px 14px 0;
+  background:var(--green-050);
+  color:var(--muted);
+}
+
+.editorial-note strong{
+  color:var(--green-950);
+}
+
+@media(max-width:760px){
+  .article-byline{
+    font-size:13px;
+  }
+}
