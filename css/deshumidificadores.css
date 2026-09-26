@@ -386,6 +386,87 @@
   grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
+.dehum-visual-split{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:40px;
+  align-items:center;
+  margin:0 0 36px;
+}
+
+.dehum-visual-reverse{
+  grid-template-columns:.92fr 1.08fr;
+}
+
+.dehum-visual-reverse .dehum-visual-media{
+  order:2;
+}
+
+.dehum-visual-media{
+  margin:0;
+  overflow:hidden;
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-soft);
+  background:#eaf0ec;
+}
+
+.dehum-visual-media img{
+  display:block;
+  width:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+}
+
+.dehum-visual-copy{
+  padding:12px 6px;
+}
+
+.dehum-visual-copy h2,
+.dehum-visual-copy h3{
+  margin:12px 0 12px;
+  color:var(--green-950);
+  letter-spacing:-.025em;
+}
+
+.dehum-visual-copy h2{
+  font-size:clamp(30px,3vw,42px);
+  line-height:1.16;
+}
+
+.dehum-visual-copy h3{
+  font-size:clamp(25px,2.4vw,34px);
+  line-height:1.18;
+}
+
+.dehum-visual-copy p{
+  margin:0;
+  color:var(--muted);
+}
+
+.dehum-use-grid-visual{
+  margin-top:34px;
+}
+
+.dehum-use-card-visual{
+  padding:0;
+  overflow:hidden;
+}
+
+.dehum-use-card-visual>img{
+  display:block;
+  width:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+}
+
+.dehum-use-card-body{
+  padding:24px 26px 27px;
+}
+
+.dehum-use-card-body h3{
+  margin-top:16px;
+}
+
 .dehum-checklist{
   background:var(--green-050);
 }
@@ -546,14 +627,44 @@
   background:#fff;
 }
 
-.dehum-faq-item h3{
-  margin:0 0 8px;
+.dehum-faq-item summary{
+  position:relative;
+  padding-right:34px;
   color:var(--green-950);
   font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+  list-style:none;
+}
+
+.dehum-faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.dehum-faq-item summary::after{
+  content:"+";
+  position:absolute;
+  right:0;
+  top:-2px;
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--green-900);
+  background:var(--green-100);
+  font-size:19px;
+  font-weight:900;
+}
+
+.dehum-faq-item[open] summary::after{
+  content:"–";
 }
 
 .dehum-faq-item p{
-  margin:0;
+  margin:14px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--line);
   color:var(--muted);
 }
 
@@ -639,9 +750,15 @@
   .dehum-types-grid,
   .dehum-capacity-grid,
   .dehum-use-layout,
-  .dehum-summary-grid{
+  .dehum-summary-grid,
+  .dehum-visual-split,
+  .dehum-visual-reverse{
     grid-template-columns:1fr;
-    gap:42px;
+    gap:32px;
+  }
+
+  .dehum-visual-reverse .dehum-visual-media{
+    order:0;
   }
 
   .dehum-types-intro{
@@ -705,6 +822,18 @@
   .dehum-error-grid,
   .dehum-check-list{
     grid-template-columns:1fr;
+  }
+
+  .dehum-visual-split{
+    margin-bottom:28px;
+  }
+
+  .dehum-visual-copy{
+    padding:0;
+  }
+
+  .dehum-use-grid-visual{
+    margin-top:24px;
   }
 
   .dehum-type-meta{
