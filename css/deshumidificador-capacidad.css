@@ -429,7 +429,7 @@
   max-width:920px;
 }
 
-.cap-sources a{
+.cap-sources .source-reference{
   display:block;
   padding:18px 20px;
   color:var(--green-900);
@@ -440,7 +440,7 @@
   font-weight:800;
 }
 
-.cap-sources a span{
+.cap-sources .source-reference span{
   display:block;
   margin-top:4px;
   color:var(--muted);
