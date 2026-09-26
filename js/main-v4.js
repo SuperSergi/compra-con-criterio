@@ -351,3 +351,100 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 });
+
+
+/* =========================================================
+   MEDICIÓN V1 · CLICS DE AFILIACIÓN
+   No envía datos por sí sola.
+   Prepara eventos para GA4/dataLayer cuando exista una capa
+   de analítica habilitada con el consentimiento correspondiente.
+   ========================================================= */
+
+document.addEventListener("click", event => {
+
+  const link =
+    event.target.closest(
+      'a[href*="amazon.es"], a[href*="amzn.to"]'
+    );
+
+  if (!link) return;
+
+  let url;
+
+  try {
+    url = new URL(
+      link.href,
+      window.location.href
+    );
+  } catch {
+    return;
+  }
+
+  const asinMatch =
+    url.pathname.match(
+      /\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i
+    );
+
+  const container =
+    link.closest(
+      "article, .product-card, .robot-card, .comparison-card, .guide-card"
+    );
+
+  const heading =
+    container?.querySelector(
+      "h1, h2, h3"
+    );
+
+  const product =
+    link.dataset.product ||
+    heading?.textContent
+      ?.replace(/\s+/g, " ")
+      .trim() ||
+    link.textContent
+      .replace(/\s+/g, " ")
+      .trim();
+
+  const payload = {
+    event: "amazon_click",
+    page_path:
+      window.location.pathname,
+    page_title:
+      document.title,
+    product_name:
+      product || "Producto Amazon",
+    asin:
+      asinMatch?.[1] || "",
+    affiliate_tag:
+      url.searchParams.get("tag") || "",
+    link_url:
+      url.href
+  };
+
+  window.dataLayer =
+    window.dataLayer || [];
+
+  window.dataLayer.push(payload);
+
+  if (
+    typeof window.gtag ===
+    "function"
+  ) {
+    window.gtag(
+      "event",
+      "amazon_click",
+      {
+        page_path:
+          payload.page_path,
+        product_name:
+          payload.product_name,
+        asin:
+          payload.asin,
+        affiliate_tag:
+          payload.affiliate_tag,
+        link_url:
+          payload.link_url
+      }
+    );
+  }
+
+});
