@@ -86,7 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     hogarDropdown.innerHTML =
       '<a href="' +
       base +
-      'hogar/aspiradoras/">Aspiradoras</a>';
+      'hogar/aspiradoras/">Aspiradoras</a>' +
+      '<a href="' +
+      base +
+      'hogar/deshumidificadores/">Deshumidificadores</a>';
 
     nav.replaceChild(
       hogarGroup,
