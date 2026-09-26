@@ -11,31 +11,84 @@ document.addEventListener("DOMContentLoaded", () => {
   const submenuData = [
     {
       label: "Gatos hidráulicos",
-      guide: base + "herramientas/gatos-hidraulicos/",
-      comparison:
-        base +
-        "herramientas/gatos-hidraulicos/mejores-gatos-hidraulicos-para-coche/"
+      items: [
+        {
+          label: "Cómo elegir un gato hidráulico",
+          href: base + "herramientas/gatos-hidraulicos/"
+        },
+        {
+          label: "Gatos hidráulicos para coche comparados",
+          href:
+            base +
+            "herramientas/gatos-hidraulicos/mejores-gatos-hidraulicos-para-coche/"
+        }
+      ]
     },
     {
       label: "Taladros a batería",
-      guide: base + "herramientas/taladros-a-bateria/",
-      comparison:
-        base +
-        "herramientas/taladros-a-bateria/mejores-taladros-a-bateria/"
+      items: [
+        {
+          label: "Cómo elegir un taladro a batería",
+          href: base + "herramientas/taladros-a-bateria/"
+        },
+        {
+          label: "Taladros a batería comparados",
+          href:
+            base +
+            "herramientas/taladros-a-bateria/mejores-taladros-a-bateria/"
+        }
+      ]
     },
     {
       label: "Impresoras 3D",
-      guide: base + "impresion-3d/impresoras-3d/",
-      comparison:
-        base +
-        "impresion-3d/impresoras-3d/mejores-impresoras-3d/"
+      items: [
+        {
+          label: "Cómo elegir una impresora 3D",
+          href: base + "impresion-3d/impresoras-3d/"
+        },
+        {
+          label: "Impresoras 3D comparadas",
+          href:
+            base +
+            "impresion-3d/impresoras-3d/mejores-impresoras-3d/"
+        }
+      ]
     },
     {
       label: "Aspiradoras",
-      guide: base + "hogar/aspiradoras/",
-      comparison:
-        base +
-        "hogar/aspiradoras/mejores-robots-aspiradores/"
+      items: [
+        {
+          label: "Cómo elegir una aspiradora",
+          href: base + "hogar/aspiradoras/"
+        },
+        {
+          label: "Robots aspiradores comparados",
+          href:
+            base +
+            "hogar/aspiradoras/mejores-robots-aspiradores/"
+        }
+      ]
+    },
+    {
+      label: "Deshumidificadores",
+      items: [
+        {
+          label: "Cómo elegir un deshumidificador",
+          href: base + "hogar/deshumidificadores/"
+        },
+        {
+          label: "Litros/día según m²",
+          href:
+            base +
+            "hogar/deshumidificadores/cuantos-litros-deshumidificador-metros-cuadrados/"
+        },
+        {
+          label: "6 deshumidificadores para casa comparados",
+          href:
+            base +
+            "hogar/deshumidificadores/mejores-deshumidificadores/"
+        }
+      ]
     }
   ];
 
@@ -163,12 +216,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "dropdown-submenu";
 
     submenu.innerHTML =
-      '<a href="' +
-      item.guide +
-      '">Guía de compra</a>' +
-      '<a href="' +
-      item.comparison +
-      '">Comparativa</a>';
+      item.items
+        .map(link =>
+          '<a href="' +
+          link.href +
+          '">' +
+          link.label +
+          '</a>'
+        )
+        .join("");
 
     wrapper.appendChild(toggle);
     wrapper.appendChild(submenu);
