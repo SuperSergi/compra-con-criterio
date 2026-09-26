@@ -165,6 +165,10 @@ body.home-page{
   color:var(--muted);
 }
 
+.home-category-card + .home-category-card{
+  margin-top:28px;
+}
+
 .home-category-card{
   display:grid;
   grid-template-columns:1.05fr .95fr;
