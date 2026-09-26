@@ -420,11 +420,6 @@ document.addEventListener("click", event => {
       url.href
   };
 
-  window.dataLayer =
-    window.dataLayer || [];
-
-  window.dataLayer.push(payload);
-
   if (
     typeof window.gtag ===
     "function"
@@ -445,6 +440,11 @@ document.addEventListener("click", event => {
           payload.link_url
       }
     );
+  } else {
+    window.dataLayer =
+      window.dataLayer || [];
+
+    window.dataLayer.push(payload);
   }
 
 });
