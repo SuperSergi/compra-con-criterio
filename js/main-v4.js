@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
       comparison:
         base +
         "impresion-3d/impresoras-3d/mejores-impresoras-3d/"
+    },
+    {
+      label: "Aspiradoras",
+      guide: base + "hogar/aspiradoras/",
+      comparison:
+        base +
+        "hogar/aspiradoras/mejores-robots-aspiradores/"
     }
   ];
 
@@ -37,6 +44,59 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/\s+/g, " ")
       .trim()
       .toLowerCase();
+
+  const directHogarLink =
+    Array.from(nav.children)
+      .find(element =>
+        element.tagName === "A" &&
+        normalize(element.textContent) === "hogar"
+      );
+
+  if (directHogarLink) {
+
+    const hogarGroup =
+      document.createElement("div");
+
+    hogarGroup.className =
+      "nav-group";
+
+    const hogarMain =
+      document.createElement("a");
+
+    hogarMain.href =
+      base + "hogar/";
+
+    if (
+      directHogarLink.classList.contains(
+        "active"
+      )
+    ) {
+      hogarMain.classList.add("active");
+    }
+
+    hogarMain.innerHTML =
+      'Hogar <span aria-hidden="true">⌄</span>';
+
+    const hogarDropdown =
+      document.createElement("div");
+
+    hogarDropdown.className =
+      "dropdown";
+
+    hogarDropdown.innerHTML =
+      '<a href="' +
+      base +
+      'hogar/aspiradoras/">Aspiradoras</a>';
+
+    nav.replaceChild(
+      hogarGroup,
+      directHogarLink
+    );
+
+    hogarGroup.appendChild(hogarMain);
+    hogarGroup.appendChild(hogarDropdown);
+
+  }
 
   const dropdownLinks =
     nav.querySelectorAll(".dropdown > a");
