@@ -354,10 +354,418 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   MEDICIÓN V1 · CLICS DE AFILIACIÓN
-   No envía datos por sí sola.
-   Prepara eventos para GA4/dataLayer cuando exista una capa
-   de analítica habilitada con el consentimiento correspondiente.
+   ANALÍTICA V2 · GA4 CON CONSENTIMIENTO
+   Google Analytics NO se carga hasta que el usuario acepta.
+   ========================================================= */
+
+(() => {
+
+  const MEASUREMENT_ID =
+    "G-WQ9KB0DDP7";
+
+  const STORAGE_KEY =
+    "ccc_analytics_consent";
+
+  const BASE =
+    "https://supersergi.github.io/compra-con-criterio/";
+
+  const getConsent = () => {
+    try {
+      return localStorage.getItem(
+        STORAGE_KEY
+      );
+    } catch {
+      return null;
+    }
+  };
+
+  const setConsent = value => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEY,
+        value
+      );
+    } catch {}
+  };
+
+  const deleteAnalyticsCookies = () => {
+    document.cookie
+      .split(";")
+      .map(cookie =>
+        cookie.split("=")[0].trim()
+      )
+      .filter(name =>
+        name === "_ga" ||
+        name.startsWith("_ga_")
+      )
+      .forEach(name => {
+        document.cookie =
+          name +
+          "=; Max-Age=0; path=/; SameSite=Lax";
+      });
+  };
+
+  const loadAnalytics = () => {
+
+    if (
+      window.__cccAnalyticsLoaded
+    ) {
+      return;
+    }
+
+    window.__cccAnalyticsLoaded = true;
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(
+          arguments
+        );
+      };
+
+    window.gtag(
+      "consent",
+      "default",
+      {
+        analytics_storage:
+          "granted",
+        ad_storage:
+          "denied",
+        ad_user_data:
+          "denied",
+        ad_personalization:
+          "denied"
+      }
+    );
+
+    window.gtag(
+      "js",
+      new Date()
+    );
+
+    window.gtag(
+      "config",
+      MEASUREMENT_ID
+    );
+
+    const script =
+      document.createElement(
+        "script"
+      );
+
+    script.async = true;
+    script.src =
+      "https://www.googletagmanager.com/gtag/js?id=" +
+      encodeURIComponent(
+        MEASUREMENT_ID
+      );
+
+    document.head.appendChild(
+      script
+    );
+
+  };
+
+  const revokeAnalytics = () => {
+
+    if (
+      typeof window.gtag ===
+      "function"
+    ) {
+      window.gtag(
+        "consent",
+        "update",
+        {
+          analytics_storage:
+            "denied",
+          ad_storage:
+            "denied",
+          ad_user_data:
+            "denied",
+          ad_personalization:
+            "denied"
+        }
+      );
+    }
+
+    deleteAnalyticsCookies();
+
+  };
+
+  const addConsentStyles = () => {
+
+    if (
+      document.getElementById(
+        "ccc-consent-styles"
+      )
+    ) {
+      return;
+    }
+
+    const style =
+      document.createElement(
+        "style"
+      );
+
+    style.id =
+      "ccc-consent-styles";
+
+    style.textContent = `
+      .ccc-cookie-banner{
+        position:fixed;
+        left:16px;
+        right:16px;
+        bottom:16px;
+        z-index:9999;
+        max-width:900px;
+        margin:auto;
+        padding:20px;
+        border:1px solid #d7e3dc;
+        border-radius:18px;
+        background:#fff;
+        box-shadow:0 18px 55px rgba(0,0,0,.20);
+        color:#314239;
+      }
+      .ccc-cookie-banner[hidden]{display:none!important}
+      .ccc-cookie-title{
+        margin:0 0 7px;
+        color:#063d26;
+        font-size:19px;
+        font-weight:900;
+      }
+      .ccc-cookie-text{
+        margin:0;
+        font-size:14px;
+        line-height:1.58;
+      }
+      .ccc-cookie-text a{
+        color:#0b6742;
+        font-weight:800;
+      }
+      .ccc-cookie-actions{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-top:15px;
+      }
+      .ccc-cookie-btn{
+        flex:1 1 210px;
+        min-height:44px;
+        padding:10px 16px;
+        border:1px solid #0b6742;
+        border-radius:11px;
+        background:#0b6742;
+        color:#fff;
+        font:inherit;
+        font-weight:850;
+        cursor:pointer;
+      }
+      .ccc-cookie-btn:hover{
+        filter:brightness(.94);
+      }
+      .ccc-cookie-prefs{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        margin-top:10px;
+        padding:7px 10px;
+        border:1px solid currentColor;
+        border-radius:9px;
+        background:transparent;
+        color:inherit;
+        font:inherit;
+        font-size:12px;
+        font-weight:750;
+        cursor:pointer;
+      }
+      @media(max-width:600px){
+        .ccc-cookie-banner{
+          left:10px;
+          right:10px;
+          bottom:10px;
+          padding:17px;
+        }
+        .ccc-cookie-actions{
+          display:grid;
+          grid-template-columns:1fr;
+        }
+      }
+    `;
+
+    document.head.appendChild(
+      style
+    );
+
+  };
+
+  let banner;
+
+  const showBanner = () => {
+
+    if (!banner) return;
+
+    banner.hidden = false;
+
+  };
+
+  const hideBanner = () => {
+
+    if (!banner) return;
+
+    banner.hidden = true;
+
+  };
+
+  const createConsentUi = () => {
+
+    addConsentStyles();
+
+    banner =
+      document.createElement(
+        "section"
+      );
+
+    banner.className =
+      "ccc-cookie-banner";
+
+    banner.setAttribute(
+      "role",
+      "region"
+    );
+
+    banner.setAttribute(
+      "aria-label",
+      "Preferencias de cookies"
+    );
+
+    banner.innerHTML = `
+      <p class="ccc-cookie-title">
+        Analítica y privacidad
+      </p>
+      <p class="ccc-cookie-text">
+        Usamos Google Analytics únicamente si aceptas las cookies de analítica.
+        Nos ayuda a saber qué páginas funcionan y qué enlaces de Amazon reciben clics.
+        Puedes aceptar o rechazar con la misma facilidad y cambiar tu decisión después.
+        <a href="${BASE}aviso-legal/#cookies">Más información</a>.
+      </p>
+      <div class="ccc-cookie-actions">
+        <button class="ccc-cookie-btn" type="button" data-consent="denied">
+          Rechazar analíticas
+        </button>
+        <button class="ccc-cookie-btn" type="button" data-consent="granted">
+          Aceptar analíticas
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(
+      banner
+    );
+
+    banner
+      .querySelectorAll(
+        "[data-consent]"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const choice =
+              button.dataset
+                .consent;
+
+            setConsent(choice);
+
+            if (
+              choice ===
+              "granted"
+            ) {
+              loadAnalytics();
+            } else {
+              revokeAnalytics();
+            }
+
+            hideBanner();
+
+          }
+        );
+
+      });
+
+    const footer =
+      document.querySelector(
+        ".footer-bottom"
+      ) ||
+      document.querySelector(
+        ".site-footer"
+      ) ||
+      document.body;
+
+    const prefs =
+      document.createElement(
+        "button"
+      );
+
+    prefs.type = "button";
+    prefs.className =
+      "ccc-cookie-prefs";
+    prefs.textContent =
+      "Preferencias de cookies";
+
+    prefs.addEventListener(
+      "click",
+      showBanner
+    );
+
+    footer.appendChild(prefs);
+
+    window.cccOpenCookiePreferences =
+      showBanner;
+
+    if (!getConsent()) {
+      showBanner();
+    } else {
+      hideBanner();
+    }
+
+  };
+
+  if (
+    getConsent() ===
+    "granted"
+  ) {
+    loadAnalytics();
+  }
+
+  if (
+    document.readyState ===
+    "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      createConsentUi
+    );
+  } else {
+    createConsentUi();
+  }
+
+  window.cccAnalyticsGranted =
+    () =>
+      getConsent() ===
+      "granted";
+
+})();
+
+
+/* =========================================================
+   MEDICIÓN V2 · CLICS DE AFILIACIÓN
+   El evento amazon_click solo se envía si el usuario
+   ha aceptado analíticas.
    ========================================================= */
 
 document.addEventListener("click", event => {
@@ -368,6 +776,16 @@ document.addEventListener("click", event => {
     );
 
   if (!link) return;
+
+  if (
+    typeof window
+      .cccAnalyticsGranted !==
+      "function" ||
+    !window
+      .cccAnalyticsGranted()
+  ) {
+    return;
+  }
 
   let url;
 
@@ -404,47 +822,33 @@ document.addEventListener("click", event => {
       .replace(/\s+/g, " ")
       .trim();
 
-  const payload = {
-    event: "amazon_click",
-    page_path:
-      window.location.pathname,
-    page_title:
-      document.title,
-    product_name:
-      product || "Producto Amazon",
-    asin:
-      asinMatch?.[1] || "",
-    affiliate_tag:
-      url.searchParams.get("tag") || "",
-    link_url:
-      url.href
-  };
-
   if (
-    typeof window.gtag ===
+    typeof window.gtag !==
     "function"
   ) {
-    window.gtag(
-      "event",
-      "amazon_click",
-      {
-        page_path:
-          payload.page_path,
-        product_name:
-          payload.product_name,
-        asin:
-          payload.asin,
-        affiliate_tag:
-          payload.affiliate_tag,
-        link_url:
-          payload.link_url
-      }
-    );
-  } else {
-    window.dataLayer =
-      window.dataLayer || [];
-
-    window.dataLayer.push(payload);
+    return;
   }
+
+  window.gtag(
+    "event",
+    "amazon_click",
+    {
+      page_path:
+        window.location.pathname,
+      page_title:
+        document.title,
+      product_name:
+        product ||
+        "Producto Amazon",
+      asin:
+        asinMatch?.[1] || "",
+      affiliate_tag:
+        url.searchParams.get(
+          "tag"
+        ) || "",
+      link_url:
+        url.href
+    }
+  );
 
 });
