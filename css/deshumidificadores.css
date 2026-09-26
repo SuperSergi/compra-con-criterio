@@ -403,7 +403,9 @@
 }
 
 .dehum-visual-media{
-  margin:0;
+  margin:0 auto;
+  max-width:520px;
+  width:100%;
   overflow:hidden;
   border-radius:var(--radius-xl);
   box-shadow:var(--shadow-soft);
@@ -413,7 +415,7 @@
 .dehum-visual-media img{
   display:block;
   width:100%;
-  aspect-ratio:4 / 3;
+  height:340px;
   object-fit:cover;
   object-position:center;
 }
@@ -456,7 +458,7 @@
 .dehum-use-card-visual>img{
   display:block;
   width:100%;
-  aspect-ratio:4 / 3;
+  height:240px;
   object-fit:cover;
   object-position:center;
 }
@@ -838,9 +840,12 @@
     margin-top:24px;
   }
 
+  .dehum-visual-media{
+    max-width:none;
+  }
+
   .dehum-visual-media img,
   .dehum-use-card-visual>img{
-    aspect-ratio:auto;
     height:auto;
     object-fit:contain;
     object-position:center;
