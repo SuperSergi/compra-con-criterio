@@ -1,0 +1,125 @@
+name: Preparar imágenes robots aspiradores
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/fetch-robot-images.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependencias
+        run: python -m pip install --quiet pillow requests beautifulsoup4
+      - name: Descargar imágenes oficiales y normalizar
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from io import BytesIO
+          import requests, re
+          from bs4 import BeautifulSoup
+          from PIL import Image, ImageOps, ImageDraw
+
+          items = {
+            "dreame-l10s-ultra-gen2": {
+              "page":"https://es.dreametech.com/products/robot-aspirador-l10s-ultra-gen-2",
+              "fallback":"https://nghenhinvietnam.vn/uploads/global/quanghuy/2024/9/18/dreame/nghenhin_dreame-l10s-ultra-gen-2-1.jpg"
+            },
+            "roborock-qv35a-set": {
+              "page":"https://es.roborock.com/products/roborock-qv-35a-set",
+              "fallback":"https://pl.roborock.com/cdn/shop/files/PEW_Set_1200x1200.png?v=1756972123"
+            },
+            "irobot-roomba-115-combo": {
+              "page":"https://www.irobot.es/es_ES/roomba-115-combo-autoempty/Y454040.html",
+              "fallback":"https://files.irobot.it/detailProdImages/20492/main_image_115_dock_black_6a047a8f0a916.webp"
+            },
+            "xiaomi-s40c": {
+              "page":"https://www.mi.com/es/product/xiaomi-robot-vacuum-s40c/",
+              "fallback":"https://down-sg.img.susercontent.com/file/sg-11134207-8262n-mjh7x0rngu80e0"
+            },
+            "lefant-m3l": {
+              "page":"https://www.lefant.com/es/collections/320mm-standard-series-laser-with-all-in-one-station/products/lefant-m3-series-robot-vacuum-m3max-m3l",
+              "fallback":"https://cdn.shopify.com/s/files/1/0964/7495/6056/files/Frame_48100778.png?v=1775791373"
+            },
+            "eufy-x10-pro-omni": {
+              "page":"https://www.eufy.com/eu-es/products/t2351g11",
+              "fallback":"https://www.ankerjapan.com/cdn/shop/files/T2351-main.jpg?v=1737685525&width=1200"
+            }
+          }
+
+          headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36","Accept":"text/html,image/avif,image/webp,image/apng,image/*,*/*;q=0.8"}
+          outdir=Path("images/robots")
+          outdir.mkdir(parents=True,exist_ok=True)
+
+          def find_og(url):
+              try:
+                  r=requests.get(url,headers=headers,timeout=35)
+                  r.raise_for_status()
+                  soup=BeautifulSoup(r.text,"html.parser")
+                  tag=soup.find("meta",attrs={"property":"og:image"}) or soup.find("meta",attrs={"name":"twitter:image"})
+                  if tag and tag.get("content"):
+                      return tag["content"]
+              except Exception as e:
+                  print("OG_FAIL",url,e)
+              return None
+
+          def get_image(url):
+              r=requests.get(url,headers=headers,timeout=45)
+              r.raise_for_status()
+              return Image.open(BytesIO(r.content)).convert("RGBA")
+
+          made=[]
+          for slug,data in items.items():
+              candidates=[find_og(data["page"]),data["fallback"]]
+              im=None
+              for u in candidates:
+                  if not u: continue
+                  try:
+                      im=get_image(u)
+                      print("IMG_OK",slug,u,im.size)
+                      break
+                  except Exception as e:
+                      print("IMG_FAIL",slug,u,e)
+              if im is None:
+                  raise RuntimeError("No image for "+slug)
+
+              # Componer sobre blanco para evitar transparencias/cachés raras
+              bg=Image.new("RGBA",im.size,"white")
+              bg.alpha_composite(im)
+              rgb=bg.convert("RGB")
+              rgb.thumbnail((1000,1000),Image.Resampling.LANCZOS)
+              canvas=Image.new("RGB",(1100,1100),"white")
+              canvas.paste(rgb,((1100-rgb.width)//2,(1100-rgb.height)//2))
+              dest=outdir/f"{slug}.webp"
+              canvas.save(dest,"WEBP",quality=86,method=6)
+              with Image.open(dest) as chk: chk.verify()
+              made.append(dest)
+
+          # Hero collage sencillo 3x2
+          cell=520
+          gap=20
+          hero=Image.new("RGB",(cell*3+gap*4,cell*2+gap*3),(245,248,246))
+          for i,p in enumerate(made):
+              with Image.open(p).convert("RGB") as im:
+                  im.thumbnail((cell-50,cell-50),Image.Resampling.LANCZOS)
+                  x=gap+(i%3)*(cell+gap)+(cell-im.width)//2
+                  y=gap+(i//3)*(cell+gap)+(cell-im.height)//2
+                  hero.paste(im,(x,y))
+          hero.save("images/comparativa-robots-aspiradores.webp","WEBP",quality=84,method=6)
+          PY
+      - name: Guardar imágenes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/robots images/comparativa-robots-aspiradores.webp
+          git commit -m "Añadir imágenes para comparativa de robots aspiradores"
+          git push
