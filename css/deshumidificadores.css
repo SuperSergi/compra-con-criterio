@@ -682,7 +682,7 @@
   max-width:920px;
 }
 
-.dehum-source-list a{
+.dehum-source-list .source-reference{
   display:block;
   padding:18px 20px;
   color:var(--green-900);
@@ -693,7 +693,7 @@
   font-weight:750;
 }
 
-.dehum-source-list a span{
+.dehum-source-list .source-reference span{
   display:block;
   margin-top:4px;
   color:var(--muted);
