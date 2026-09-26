@@ -413,8 +413,9 @@
 .dehum-visual-media img{
   display:block;
   width:100%;
-  aspect-ratio:16 / 9;
+  aspect-ratio:4 / 3;
   object-fit:cover;
+  object-position:center;
 }
 
 .dehum-visual-copy{
@@ -455,8 +456,9 @@
 .dehum-use-card-visual>img{
   display:block;
   width:100%;
-  aspect-ratio:16 / 9;
+  aspect-ratio:4 / 3;
   object-fit:cover;
+  object-position:center;
 }
 
 .dehum-use-card-body{
@@ -834,6 +836,19 @@
 
   .dehum-use-grid-visual{
     margin-top:24px;
+  }
+
+  .dehum-visual-media img,
+  .dehum-use-card-visual>img{
+    aspect-ratio:auto;
+    height:auto;
+    object-fit:contain;
+    object-position:center;
+  }
+
+  .dehum-visual-media,
+  .dehum-use-card-visual{
+    background:#fff;
   }
 
   .dehum-type-meta{
