@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://supersergi.github.io/compra-con-criterio/sitemap.xml
+Sitemap: https://compraconsentido.es/sitemap.xml
