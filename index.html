@@ -51,12 +51,25 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://compraconsentido.es/#website",
+      "url": "https://compraconsentido.es/",
+      "name": "Compra con Sentido",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://compraconsentido.es/#organization"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://compraconsentido.es/#page",
       "url": "https://compraconsentido.es/",
       "name": "Compra con Sentido: comparativas y guías de compra",
       "description": "Comparativas y guías de herramientas, impresión 3D y hogar para entender qué diferencias importan de verdad antes de comprar.",
-      "inLanguage": "es"
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://compraconsentido.es/#website"
+      }
     },
     {
       "@type": "Organization",
