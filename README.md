@@ -1,6 +1,6 @@
-# Compra con Criterio
+# Compra con Sentido
 
-Sitio estático publicado con GitHub Pages.
+Sitio estático publicado con Cloudflare Pages. GitHub es la fuente definitiva del código.
 
 ## Estructura
 
@@ -44,3 +44,11 @@ Sitio estático publicado con GitHub Pages.
 ## Afiliación
 
 Las comparativas pueden contener enlaces de afiliado. Cada página que los utilice debe incluir el aviso de afiliación correspondiente.
+
+
+## Producción
+
+- Dominio principal: `https://compraconsentido.es`
+- Hosting: Cloudflare Pages
+- DNS/CDN/HTTPS: Cloudflare
+- Rama de producción prevista: `main`

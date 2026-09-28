@@ -1,4 +1,4 @@
-# Medición de Compra con Criterio
+# Medición de Compra con Sentido
 
 ## Estado actual
 
