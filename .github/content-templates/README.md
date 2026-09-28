@@ -1,6 +1,6 @@
 # Plantilla de análisis individual
 
-Esta plantilla es la base para futuras páginas de producto de Compra con Criterio.
+Esta plantilla es la base para futuras páginas de producto de Compra con Sentido.
 
 ## Convención de URL
 
