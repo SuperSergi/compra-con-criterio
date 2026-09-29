@@ -34,3 +34,20 @@
   }
   .table-wrap th:first-child{z-index:3}
 }
+
+/* Stronger mobile table swipe cue */
+@media(max-width:760px){
+  .table-scroll-hint{
+    display:block;
+    margin:10px 0 12px;
+    padding:11px 14px;
+    background:#eaf6ef;
+    border:1px solid #b9ddc8;
+    border-radius:10px;
+    color:#064d30;
+    font-size:14px;
+    font-weight:800;
+    text-align:center;
+    line-height:1.3;
+  }
+}
