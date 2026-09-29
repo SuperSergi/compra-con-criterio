@@ -2182,3 +2182,31 @@ button{
     grid-template-columns:1fr;
   }
 }
+
+
+/* =========================================================
+   SITE BREADCRUMBS 2026
+   ========================================================= */
+.site-breadcrumbs{
+  padding:92px 0 12px;
+  background:#fff;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.4;
+}
+.site-breadcrumbs .shell{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.site-breadcrumbs a{
+  color:var(--green-800);
+  font-weight:700;
+  text-decoration:none;
+}
+.site-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.site-breadcrumbs [aria-current="page"]{color:var(--muted)}
+@media(max-width:760px){
+  .site-breadcrumbs{padding:78px 0 10px;font-size:13px}
+}
