@@ -600,13 +600,19 @@ No añadir una cifra de autonomía genérica cuando no exista una metodología c
 
 Nunca afirmar que se ha probado físicamente un producto si no es cierto.
 
-La metodología debe expresarse de forma positiva:
+La metodología debe expresarse de forma positiva y transmitir criterio experto.
 
-- especificaciones oficiales
+No limitar el análisis a fichas técnicas. Para valorar un producto se deben cruzar:
+
+- especificaciones oficiales y manuales
 - documentación técnica
-- fuentes especializadas
-- análisis disponibles
-- opiniones relevantes cuando aporten contexto
+- experiencias reales de propietarios y profesionales
+- análisis especializados del modelo exacto
+- incidencias, limitaciones y patrones que se repitan entre fuentes fiables
+
+Si hay pocas experiencias reales de un modelo concreto, ampliar la búsqueda antes de sacar conclusiones. Si aun así un dato o comportamiento no queda suficientemente respaldado, no convertirlo en argumento de compra ni presentarlo como hecho.
+
+Nunca dar a entender que Compra con Sentido ha probado físicamente un producto si no es cierto.
 
 Evitar repetir defensivamente “no lo hemos probado” en cada ficha.
 
@@ -738,6 +744,10 @@ Para representación exacta, valorar imágenes oficiales compatibles con las con
 Las tablas deben contener información que realmente ayude a elegir.
 
 Evitar columnas que no diferencian productos.
+
+Cuando un dato relevante no esté confirmado o no exista una fuente suficientemente fiable, mostrar `–` en la tabla en lugar de rellenar el hueco con explicaciones largas o inferencias.
+
+Priorizar tablas compactas: si una característica puede deducirse claramente de otra columna o es común a todos los modelos, no crear una columna separada.
 
 En móvil:
 
@@ -1081,7 +1091,7 @@ La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8
 
 Estado:
 
-**CONTENIDO Y ESTRUCTURA SEO CERRADOS. BORRADOR DE DISEÑO PREPARADO EN LA RAMA `amoladoras-a-bateria-draft`. NO PUBLICADO. Los seis ASIN y variantes están revalidados. Tracking ID `ccc-amoladoras-21` activado y 12 enlaces Amazon preparados con `rel="nofollow sponsored"`. Antes de producción quedan las imágenes definitivas y la revisión visual final.**
+**CONTENIDO Y ESTRUCTURA SEO CERRADOS. BORRADOR DE DISEÑO EN REVISIÓN EN LA RAMA `amoladoras-a-bateria-draft`. NO PUBLICADO. Los seis ASIN y variantes están revalidados. Tracking ID `ccc-amoladoras-21` activado y 12 enlaces Amazon preparados con `rel="nofollow sponsored"`. Tras revisión visual se han corregido breadcrumbs, compactado la tabla y reforzado el bloque editorial para cruzar documentación técnica con experiencias reales. Pendiente nueva revisión visual antes de producción.**
 
 ---
 
