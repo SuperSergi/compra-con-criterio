@@ -608,9 +608,55 @@ No limitar el análisis a fichas técnicas. Para valorar un producto se deben cr
 - documentación técnica
 - experiencias reales de propietarios y profesionales
 - análisis especializados del modelo exacto
+- pruebas publicadas cuando existan
 - incidencias, limitaciones y patrones que se repitan entre fuentes fiables
+- comentarios recurrentes sobre ergonomía, ruido, vibraciones, autonomía, facilidad de uso, mantenimiento, durabilidad y problemas reales
 
-Si hay pocas experiencias reales de un modelo concreto, ampliar la búsqueda antes de sacar conclusiones. Si aun así un dato o comportamiento no queda suficientemente respaldado, no convertirlo en argumento de compra ni presentarlo como hecho.
+La investigación de cada producto debe tener dos capas:
+
+1. **Datos objetivos**
+   - fabricante
+   - manual
+   - ficha técnica
+   - variante exacta
+   - accesorios
+   - compatibilidades
+   - contenido del paquete
+   - funciones de seguridad
+   - dimensiones, peso, potencia, velocidad, par, autonomía u otras magnitudes solo cuando sean comparables
+
+2. **Uso real**
+   - opiniones verificables de propietarios
+   - experiencias de profesionales
+   - pruebas independientes
+   - análisis especializados
+   - foros técnicos y comunidades cuando aporten casos concretos
+   - reseñas de retailers fiables
+   - vídeos o pruebas prácticas cuando permitan comprobar comportamiento real
+
+Para la capa de uso real:
+
+- buscar siempre el modelo exacto, no extrapolar automáticamente desde otra variante de la misma familia
+- buscar tanto experiencias positivas como negativas
+- identificar patrones repetidos, no basarse en una sola opinión
+- dar más peso a experiencias detalladas que describan contexto de uso, tiempo de uso y tipo de trabajo
+- diferenciar una incidencia aislada de un problema recurrente
+- evitar convertir percepciones subjetivas en datos técnicos
+- contrastar cualquier afirmación importante con más de una fuente cuando sea posible
+- si hay pocas experiencias reales de un modelo, ampliar la búsqueda antes de sacar conclusiones
+- si aun así no hay base suficiente, no inventar una conclusión ni usar esa característica como argumento de compra
+
+Esta capa de experiencia real debe servir para enriquecer **toda la ficha**, no solo los bloques finales. Puede utilizarse para:
+
+- explicar cómo se siente el producto en uso
+- detectar ventajas que no se aprecian solo en la ficha técnica
+- identificar limitaciones prácticas
+- matizar una especificación oficial
+- decidir para qué perfil de usuario tiene más sentido
+- construir el bloque “La elegiría si…”
+- construir “Lo que destaca”
+- construir “A tener en cuenta”
+- explicar cuándo merece la pena pagar más o elegir otra alternativa
 
 Nunca dar a entender que Compra con Sentido ha probado físicamente un producto si no es cierto.
 
@@ -1160,10 +1206,12 @@ Todos utilizan cuadradillo de 1/2".
 - no dedicar columna al cuadradillo porque es idéntico en los seis
 - no usar autonomía genérica no comparable
 - priorizar diferencias reales en “La elegiría si…”
+- antes de redactar estos bloques, investigar experiencias reales, pruebas, reseñas especializadas y casos de uso del modelo exacto
 - “La elegiría si…” debe funcionar como llamada a compra: explicar qué situación concreta puede justificar elegir ese modelo frente a los demás, no resumir de nuevo la ficha
 - “Lo que destaca” debe recoger la ventaja práctica más relevante, preferentemente apoyada también en experiencias reales cuando existan
 - “A tener en cuenta” debe señalar una contrapartida real de compra o uso, no repetir una especificación ya explicada
 - estos tres bloques no deben repetirse entre sí ni duplicar el texto principal de la ficha
+- las conclusiones de uso real deben repartirse también por el texto principal de cada producto cuando aporten contexto útil; no concentrarlas todas al final
 - plataforma de batería como criterio secundario
 - tono editorial natural
 - byline de Compra con Sentido
