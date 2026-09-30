@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 20:00
+**Última actualización:** 30 de septiembre de 2026 · 20:05
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -670,7 +670,7 @@ Pendiente inmediato:
 
 - configurar las credenciales como secretos en el entorno servidor
 - realizar una primera llamada de prueba a Creators API para Amazon.es
-- utilizar un Partner Tag específico de Compra con Sentido para separar medición de tráfico y conversiones
+- Partner Tag específico creado para la integración API: `ccs-api-21`
 
 ## Precios
 
@@ -1538,7 +1538,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 20:00.
+- Última actualización de esta versión: 30/09/2026 20:05.
 
 ---
 
