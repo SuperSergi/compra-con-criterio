@@ -324,15 +324,6 @@
       color:#1f3328;
     }
 
-    .rating{
-      font-weight:700;
-    }
-
-    .stars{
-      color:#9a7300;
-      letter-spacing:.02em;
-    }
-
     .yes{
       color:#0d7544;
       font-weight:800;
@@ -445,16 +436,6 @@
       font-size:26px;
       font-weight:900;
       color:#24372d;
-    }
-
-    .product-rating{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-bottom:20px;
-      color:#4b5851;
-      font-size:14px;
     }
 
     .spec-grid{
@@ -722,17 +703,6 @@
       white-space:nowrap;
     }
 
-    .legend-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      display:inline-block;
-    }
-
-    .legend-dot.low{background:#bd5146}
-    .legend-dot.mid{background:#d19a18}
-    .legend-dot.high{background:#16794b}
-
     .radar-list{
       display:grid;
       gap:16px;
@@ -783,53 +753,6 @@
       font-weight:700;
     }
 
-    .radar-chart{
-      min-width:0;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .radar-chart svg{
-      width:100%;
-      max-width:390px;
-      height:auto;
-      overflow:visible;
-      display:block;
-    }
-
-    .radar-grid-line{
-      fill:none;
-      stroke:#dbe5df;
-      stroke-width:1;
-    }
-
-    .radar-axis{
-      stroke:#d7e0da;
-      stroke-width:1;
-    }
-
-    .radar-area{
-      fill:rgba(22,121,75,.16);
-      stroke:#16794b;
-      stroke-width:2.2;
-      stroke-linejoin:round;
-    }
-
-    .radar-label{
-      fill:#536059;
-      font-size:11px;
-      font-weight:700;
-      text-anchor:middle;
-      dominant-baseline:middle;
-    }
-
-    .radar-scale{
-      fill:#8b948f;
-      font-size:9px;
-      text-anchor:middle;
-    }
-
     .radar-actions{
       display:flex;
       flex-direction:column;
@@ -873,25 +796,6 @@
     }
 
     @media (max-width:700px){
-      .analysis-radar-key{
-        align-items:flex-start;
-        flex-direction:column;
-        gap:8px;
-      }
-
-      .product-tech-layout{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      .product-radar-panel{
-        border-top:1px solid #e5ece8;
-        padding-top:14px;
-      }
-
-      .radar-chart svg{
-        max-width:300px;
-      }
 
       .article-topbar{
         width:calc(100% - 24px) !important;
@@ -914,10 +818,6 @@
 
       .radar-tags{
         justify-content:center;
-      }
-
-      .radar-chart svg{
-        max-width:340px;
       }
 
       .radar-actions{
@@ -1070,9 +970,6 @@
     }
 
     @media (max-width:700px){
-      .product-tech-layout .spec-grid{
-        grid-template-columns:1fr;
-      }
     }
 
 
