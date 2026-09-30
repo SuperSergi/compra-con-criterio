@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 21:52
+**Última actualización:** 30 de septiembre de 2026 · 21:55
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -873,6 +873,10 @@ Modelos y variantes:
 - Milwaukee M18 BLSAG125X-0 — referencia `4933492643` — ASIN `B0CHK5DX4C`
 - Metabo WVB 18 LT BL 11-125 Quick — referencia `613057840`, con metaBOX y sin batería/cargador — ASIN `B0B7RB9PYZ`
 
+Tracking ID de amoladoras:
+
+`ccc-amoladoras-21`
+
 Criterio de selección:
 
 - una referencia clara por marca
@@ -1077,7 +1081,7 @@ La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8
 
 Estado:
 
-**CONTENIDO Y ESTRUCTURA SEO CERRADOS. BORRADOR DE DISEÑO PREPARADO EN LA RAMA `amoladoras-a-bateria-draft`. NO PUBLICADO. Los seis ASIN y variantes han quedado revalidados; antes de producción quedan cerrar las imágenes definitivas, el tracking de afiliación, la revisión visual final y los enlaces Amazon.**
+**CONTENIDO Y ESTRUCTURA SEO CERRADOS. BORRADOR DE DISEÑO PREPARADO EN LA RAMA `amoladoras-a-bateria-draft`. NO PUBLICADO. Los seis ASIN y variantes están revalidados. Tracking ID `ccc-amoladoras-21` activado y 12 enlaces Amazon preparados con `rel="nofollow sponsored"`. Antes de producción quedan las imágenes definitivas y la revisión visual final.**
 
 ---
 
@@ -1613,7 +1617,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 21:52.
+- Última actualización de esta versión: 30/09/2026 21:55.
 
 ---
 
