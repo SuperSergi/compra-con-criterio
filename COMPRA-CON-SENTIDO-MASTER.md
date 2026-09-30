@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 21:55
+**Última actualización:** 30 de septiembre de 2026 · 22:37
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -872,7 +872,7 @@ Motivos:
 Oportunidades investigadas:
 
 - llaves de impacto a batería: creada y publicada
-- amoladoras a batería 125 mm: **prioridad cerrada como siguiente página; selección de 6 modelos cerrada y documentación técnica en preparación**
+- amoladoras a batería 125 mm: **creada, revisada y publicada el 30/09/2026**
 - sierras circulares a batería: segunda prioridad
 - plataformas de herramientas/baterías 18 V: tercera prioridad; plantearla como hub comercial/estratégico cuando el cluster tenga más familias de herramientas
 - hidrolimpiadoras para coche: cuarta prioridad; pendiente resolver antes su encaje arquitectónico
@@ -892,7 +892,7 @@ La siguiente página nueva a preparar será:
 
 Estado:
 
-**DECISIÓN CERRADA. Selección de 6 modelos y matriz técnica cerradas. Estructura SEO/editorial preparada. No publicada todavía.**
+**DECISIÓN CERRADA Y PUBLICADA. Selección de 6 modelos, matriz técnica, estructura SEO/editorial, diseño, enlaces afiliados y revisión visual completados.**
 
 Keyword principal provisional:
 
@@ -1071,7 +1071,7 @@ Si la nueva página se incorpora al menú, revisar navegación de escritorio y m
 
 Estado al cierre de esta fase:
 
-**Investigación de producto, matriz técnica, arquitectura SEO y estructura editorial preparadas. Siguiente paso: redacción y revisión de la comparativa. No se ha creado ni publicado la URL.**
+**Investigación de producto, matriz técnica, arquitectura SEO y estructura editorial completadas. La URL fue redactada, revisada y publicada el 30/09/2026.**
 
 ## Revisión SEO y contenido cerrados · 30/09/2026 20:29
 
@@ -1095,7 +1095,7 @@ SEO definitivo:
 - URL: `/herramientas/amoladoras-a-bateria/`
 - Title: `Mejores amoladoras a batería de 125 mm: 6 modelos 18 V`
 - H1: `Mejores amoladoras a batería de 125 mm: 6 modelos de 18 V comparados`
-- Meta description: `Comparamos 6 amoladoras a batería de 125 mm y 18 V de Bosch, Makita, DeWalt, Einhell, Milwaukee y Metabo según velocidad, seguridad y cambio de disco.`
+- Meta description: `Comparamos 6 amoladoras a batería de 125 mm y 18 V de Bosch, Makita, DeWalt, Einhell, Milwaukee y Metabo: velocidad, seguridad y cambio de disco.`
 - Canonical: `https://compraconsentido.es/herramientas/amoladoras-a-bateria/`
 - Breadcrumb: `Inicio › Herramientas › Amoladoras a batería`
 - Schema previsto: `Article`, `BreadcrumbList` y `FAQPage` solo si coincide exactamente con las FAQ visibles
@@ -1137,7 +1137,24 @@ La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8
 
 Estado:
 
-**CONTENIDO Y ESTRUCTURA SEO CERRADOS. BORRADOR DE DISEÑO EN REVISIÓN EN LA RAMA `amoladoras-a-bateria-draft`. NO PUBLICADO. Los seis ASIN y variantes están revalidados. Tracking ID `ccc-amoladoras-21` activado y 12 enlaces Amazon preparados con `rel="nofollow sponsored"`. Tras revisión visual se han corregido breadcrumbs, compactado la tabla y reforzado el bloque editorial para cruzar documentación técnica con experiencias reales. Pendiente nueva revisión visual antes de producción.**
+**CERRADA, publicada y revisada el 30/09/2026.**
+
+Publicación final:
+- URL: `/herramientas/amoladoras-a-bateria/`
+- commit de producción: `2e05bc2a3bf51beb54445c2523a01214f525e687`
+- despliegue Cloudflare Pages: correcto
+- build y deploy de GitHub Actions: correctos
+- 6 ASIN y variantes revalidados
+- Tracking ID: `ccc-amoladoras-21`
+- 12 enlaces Amazon con `rel="nofollow sponsored"`
+- tabla compactada y responsive con `–` cuando un dato no está suficientemente confirmado
+- breadcrumbs corregidos
+- navegación global actualizada
+- `/herramientas/` actualizado con amoladoras y llaves de impacto
+- 5 FAQ visibles y `FAQPage` coincidente
+- metodología editorial reforzada con documentación oficial, experiencias reales y pruebas/análisis especializados
+- bloque “La elegiría si…” orientado a decisión de compra, sin repetir “Lo que destaca” ni “A tener en cuenta”
+- sitemap actualizado
 
 ---
 
@@ -1451,7 +1468,7 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 
 ## SEO / Search Console
 
-- [ ] Esperar a que `Indexación > Páginas` termine de procesar los datos. El sitemap actual contiene 20 URLs; Search Console mostraba 19 descubiertas en su última lectura confirmada del 29/09.
+- [ ] Esperar a que `Indexación > Páginas` termine de procesar los datos. El sitemap actual contiene 22 URLs tras publicar amoladoras; Search Console debe volver a procesar el sitemap y la nueva URL.
 - [ ] Revisar páginas indexadas y excluidas.
 - [ ] Analizar consultas e impresiones cuando haya datos suficientes.
 - [ ] Detectar oportunidades en posiciones 8-20.
@@ -1464,7 +1481,7 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [x] Priorizar amoladoras a batería 125 mm como siguiente página.
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/amoladoras-a-bateria/`.
 - [x] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
-- [ ] Redactar y revisar la comparativa de `/herramientas/amoladoras-a-bateria/` antes de cualquier publicación.
+- [x] Redactar, revisar y publicar `/herramientas/amoladoras-a-bateria/`.
 - [ ] Investigar sierras circulares a batería.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
@@ -1473,7 +1490,7 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 
 ## Sitio y transparencia
 
-- [ ] Crear o completar `/metodologia/`.
+- [x] Crear y conectar `/metodologia/`.
 - [ ] Revisar estructura legal de privacidad/cookies/afiliación.
 - [ ] Mantener `/sobre-nosotros/` y firma editorial coherentes.
 - [ ] Revisar página 404 y demás elementos técnicos globales cuando corresponda.
