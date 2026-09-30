@@ -14,7 +14,7 @@
 }
 .grinder-hero .topbar{border-bottom:1px solid rgba(255,255,255,.18)}
 .grinder-hero .brand,.grinder-hero .main-nav>a,.grinder-hero .nav-group>a,.grinder-hero .menu-toggle{color:#fff}
-.grinder-hero-copy{padding:72px 0 76px;max-width:880px;margin-left:max(18px,calc((100% - 1160px)/2))}
+.grinder-hero-copy{padding:132px 0 76px;max-width:880px;margin-left:max(18px,calc((100% - 1160px)/2))}
 .grinder-kicker,.grinder-eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .grinder-kicker{padding:8px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.1)}
 .grinder-eyebrow{color:#147148}
@@ -36,11 +36,11 @@
 .grinder-quick aside span{color:rgba(255,255,255,.76);font-size:14px;margin-top:3px}
 .grinder-page h2{color:var(--g);letter-spacing:-.025em}
 .grinder-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow)}
-.grinder-table{width:100%;min-width:1180px;border-collapse:collapse}
-.grinder-table th,.grinder-table td{padding:13px 14px;border-bottom:1px solid #edf1ee;text-align:left;vertical-align:top;white-space:nowrap}
+.grinder-table{width:100%;min-width:900px;border-collapse:collapse}
+.grinder-table th,.grinder-table td{padding:12px 12px;border-bottom:1px solid #edf1ee;text-align:left;vertical-align:top;white-space:normal}
 .grinder-table th{background:#f0f6f2;color:var(--g);font-size:11px;text-transform:uppercase}
 .grinder-table td{font-size:14px}
-.grinder-table td:first-child,.grinder-table th:first-child{white-space:normal;min-width:190px}
+.grinder-table td:first-child,.grinder-table th:first-child{min-width:165px}.grinder-table td:last-child,.grinder-table th:last-child{min-width:165px}
 .grinder-table .small{font-size:12px;color:var(--muted)}
 .grinder-products{display:grid;gap:24px}
 .grinder-product{padding:28px}
@@ -103,7 +103,7 @@
 }
 @media(max-width:760px){
   .grinder-hero{background:linear-gradient(90deg,rgba(6,61,38,.95),rgba(6,61,38,.73)),url("/images/categoria-herramientas.webp") 58% 50%/cover no-repeat}
-  .grinder-hero-copy{padding:58px 0 54px;margin:auto}
+  .grinder-hero-copy{padding:112px 0 54px;margin:auto}
   .grinder-product,.grinder-method,.grinder-faq,.grinder-quick>div,.grinder-guide,.grinder-use,.grinder-related{padding:22px}
   .grinder-pros{grid-template-columns:1fr}
   .amazon-btn{width:100%}
