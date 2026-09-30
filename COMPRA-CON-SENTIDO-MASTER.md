@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 20:05
+**Última actualización:** 30 de septiembre de 2026 · 20:15
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -671,6 +671,10 @@ Pendiente inmediato:
 - configurar las credenciales como secretos en el entorno servidor
 - realizar una primera llamada de prueba a Creators API para Amazon.es
 - Partner Tag específico creado para la integración API: `ccs-api-21`
+- creado Cloudflare Worker `compra-con-sentido-api` en producción
+- configurados en Cloudflare los secretos `AMAZON_CREATORS_CLIENT_ID` y `AMAZON_CREATORS_CLIENT_SECRET`
+- configurada la variable `AMAZON_PARTNER_TAG=ccs-api-21`
+- el Worker todavía conserva el código inicial de prueba; pendiente sustituirlo por la integración real con Creators API
 
 ## Precios
 
@@ -1538,7 +1542,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 20:05.
+- Última actualización de esta versión: 30/09/2026 20:15.
 
 ---
 
