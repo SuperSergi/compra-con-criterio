@@ -1160,6 +1160,10 @@ Todos utilizan cuadradillo de 1/2".
 - no dedicar columna al cuadradillo porque es idéntico en los seis
 - no usar autonomía genérica no comparable
 - priorizar diferencias reales en “La elegiría si…”
+- “La elegiría si…” debe funcionar como llamada a compra: explicar qué situación concreta puede justificar elegir ese modelo frente a los demás, no resumir de nuevo la ficha
+- “Lo que destaca” debe recoger la ventaja práctica más relevante, preferentemente apoyada también en experiencias reales cuando existan
+- “A tener en cuenta” debe señalar una contrapartida real de compra o uso, no repetir una especificación ya explicada
+- estos tres bloques no deben repetirse entre sí ni duplicar el texto principal de la ficha
 - plataforma de batería como criterio secundario
 - tono editorial natural
 - byline de Compra con Sentido
