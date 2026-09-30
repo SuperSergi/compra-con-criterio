@@ -2210,3 +2210,8 @@ button{
 @media(max-width:760px){
   .site-breadcrumbs{padding:78px 0 10px;font-size:13px}
 }
+
+
+/* Aviso de desplazamiento horizontal para tablas comparativas en móvil */
+.table-scroll-hint{display:none;margin:8px 0 10px;font-size:13px;font-weight:750;color:#0a653c}
+@media(max-width:760px){.table-scroll-hint{display:block}}
