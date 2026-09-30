@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 19:14  
+**Última actualización:** 30 de septiembre de 2026 · 19:36  
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -780,7 +780,7 @@ Motivos:
 Oportunidades investigadas:
 
 - llaves de impacto a batería: creada y publicada
-- amoladoras a batería 125 mm: **prioridad cerrada como siguiente página; investigación de producto en curso**
+- amoladoras a batería 125 mm: **prioridad cerrada como siguiente página; selección de 6 modelos cerrada y documentación técnica en preparación**
 - sierras circulares a batería: segunda prioridad
 - plataformas de herramientas/baterías 18 V: tercera prioridad; plantearla como hub comercial/estratégico cuando el cluster tenga más familias de herramientas
 - hidrolimpiadoras para coche: cuarta prioridad; pendiente resolver antes su encaje arquitectónico
@@ -800,7 +800,7 @@ La siguiente página nueva a preparar será:
 
 Estado:
 
-**DECISIÓN CERRADA. Investigación de producto en curso. No publicada todavía.**
+**DECISIÓN CERRADA. Selección de 6 modelos cerrada. Documentación técnica y estructura editorial en preparación. No publicada todavía.**
 
 Keyword principal provisional:
 
@@ -823,6 +823,59 @@ Orden de prioridad acordado tras analizar intención, SERP, competencia, potenci
 Motivo principal:
 
 Amoladoras combina una intención comercial clara, encaje directo en el cluster prioritario de Herramientas, bajo riesgo de canibalización y buen potencial de afiliación. Además permite reforzar el enlazado con taladros y llaves de impacto y preparar después una página estratégica sobre plataformas de batería de 18 V.
+
+## Selección de producto cerrada · 30/09/2026 19:36
+
+Se cierra la selección inicial de seis modelos principales para la comparativa. Todos son 18 V, admiten disco de 125 mm y se han contrastado con documentación de fabricante y presencia actual en Amazon España o Amazon Marketplace ES.
+
+Modelos y variantes:
+
+- Bosch Professional GWS 18V-11 S — variante cuerpo solo `06019N4000` — ASIN `B0DQV82L7J`
+- Makita DGA511Z — cuerpo solo — ASIN `B079QF54JP`
+- DeWalt DCG405N-XJ — cuerpo solo — ASIN `B074V6QSNH`
+- Einhell Professional TP-AG 18/125-13 Q P BL - Solo — artículo `4431197` — ASIN `B0H3NVNRTX`
+- Milwaukee M18 BLSAG125X-0 — referencia `4933492643` — ASIN `B0CHK5DX4C`
+- Metabo WVB 18 LT BL 11-125 Quick — referencia `613057840`, con metaBOX y sin batería/cargador — ASIN `B0B7RB9PYZ`
+
+Criterio de selección:
+
+- una referencia clara por marca
+- motor brushless
+- 18 V y 125 mm
+- disponibilidad comercial comprobada
+- variante identificable para afiliación
+- diferencias técnicas suficientemente claras para evitar seis fichas prácticamente iguales
+- equilibrio entre opciones de bricolaje exigente y gamas profesionales
+
+Razón editorial prevista para cada modelo:
+
+- Bosch GWS 18V-11 S: polivalencia, seis velocidades, 1.100 W equivalentes declarados y buen equilibrio general
+- Makita DGA511Z: regulación 3.000-8.500 rpm y tecnologías ADT/AFT; opción especialmente interesante para quien valore control de velocidad dentro de LXT
+- DeWalt DCG405N-XJ: freno electrónico, embrague electrónico y formato profesional muy consolidado; interruptor deslizante
+- Einhell TP-AG 18/125-13 Q P BL: 1.300 W equivalentes declarados, interruptor de paletas, antivibración y cambio de disco sin herramientas; candidata fuerte por relación entre equipamiento y coste
+- Milwaukee M18 BLSAG125X-0: 11.000 rpm, diseño compacto y FIXTEC; orientada especialmente a corte rápido, con la limitación de que esta versión no incorpora freno RAPIDSTOP
+- Metabo WVB 18 LT BL 11-125 Quick: regulación 2.800-10.000 rpm, freno de aproximadamente 1 s, M-Quick y embrague S-automatic; opción de alto control y seguridad
+
+### Regla para la tabla técnica de amoladoras
+
+No comparar peso mientras no se pueda normalizar con la misma base en los seis modelos. Algunos fabricantes publican peso sin batería y otros con una batería concreta.
+
+Priorizar columnas realmente comparables y que ayuden a elegir:
+
+- velocidad / rango de rpm
+- velocidad regulable
+- tipo de interruptor
+- freno
+- sistema anti-kickback o embrague de seguridad
+- cambio de disco sin herramientas
+- profundidad de corte solo si existe dato oficial comparable
+- contenido del paquete
+
+No dedicar columnas a 18 V o 125 mm si los seis modelos comparten esas características.
+
+Las equivalencias en vatios publicadas por Bosch, Einhell, Milwaukee o Metabo se pueden explicar en las fichas, pero no deben presentarse como una medición de laboratorio directamente comparable entre marcas.
+
+Antes de publicar, volver a comprobar que los seis ASIN siguen activos en Amazon.es y que cada enlace corresponde exactamente a la variante indicada.
 
 ---
 
@@ -1141,7 +1194,8 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 
 - [ ] Continuar keyword research del cluster Herramientas.
 - [x] Priorizar amoladoras a batería 125 mm como siguiente página.
-- [ ] Cerrar selección de modelos, variantes y ASIN para `/herramientas/amoladoras-a-bateria/`.
+- [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/amoladoras-a-bateria/`.
+- [ ] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
 - [ ] Investigar sierras circulares a batería.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
@@ -1356,7 +1410,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 19:14.
+- Última actualización de esta versión: 30/09/2026 19:36.
 
 ---
 
