@@ -886,7 +886,7 @@ Criterio de selección:
 Razón editorial prevista para cada modelo:
 
 - Bosch GWS 18V-11 S: polivalencia, seis velocidades, 1.100 W equivalentes declarados y buen equilibrio general
-- Makita DGA511Z: regulación 3.000-8.500 rpm y tecnologías ADT/AFT; opción especialmente interesante para quien valore control de velocidad dentro de LXT
+- Makita DGA511Z: regulación 3.000-8.500 rpm y tecnología ADT; la ficha oficial actual de Makita España confirma anti-restart, protección de sobrecarga y ADT, pero no lista AFT para esta variante, por lo que AFT no debe atribuirse en la página
 - DeWalt DCG405N-XJ: freno electrónico, embrague electrónico y formato profesional muy consolidado; interruptor deslizante
 - Einhell TP-AG 18/125-13 Q P BL: 1.300 W equivalentes declarados, interruptor de paletas, antivibración y cambio de disco sin herramientas; candidata fuerte por relación entre equipamiento y coste
 - Milwaukee M18 BLSAG125X-0: 11.000 rpm, diseño compacto y FIXTEC; orientada especialmente a corte rápido, con la limitación de que esta versión no incorpora freno RAPIDSTOP
@@ -935,7 +935,7 @@ Datos normalizados:
 | Modelo | Velocidad sin carga | Regulable | Interruptor | Freno | Protección ante bloqueo / kickback | Cambio de disco | Suministro |
 |---|---:|---|---|---|---|---|---|
 | Bosch GWS 18V-11 S | 3.000–9.000 rpm | Sí, 6 niveles | Deslizante con bloqueo | Intelligent Brake | KickBack Control + Drop Control | Tuerca rápida | Cuerpo y accesorios; sin batería/cargador |
-| Makita DGA511Z | 3.000–8.500 rpm | Sí | Deslizante | No se indica freno eléctrico específico en esta variante | AFT ante bloqueo + ADT para adaptar funcionamiento a la carga | Tuerca convencional con llave | Cuerpo y accesorios; sin batería/cargador/Makpac |
+| Makita DGA511Z | 3.000–8.500 rpm | Sí | Deslizante | No se indica freno eléctrico específico en la ficha española actual | ADT + protección contra sobrecarga + anti-restart; no atribuir AFT en esta variante para mercado español | Tuerca convencional con llave | Cuerpo y accesorios; sin batería/cargador/Makpac |
 | DeWalt DCG405N-XJ | 9.000 rpm | No | Deslizante | Freno electrónico | Embrague electrónico / protección frente al retroceso | Quick Change Flange | Cuerpo y accesorios; sin batería/cargador |
 | Einhell TP-AG 18/125-13 Q P BL | 10.000 rpm | No | Paleta / hombre muerto | No se indica freno rápido específico | Arranque suave, protección contra rearranque y sobrecarga; sin anti-kickback específico declarado | Tuerca rápida sin herramientas | Cuerpo y accesorios; sin batería/cargador |
 | Milwaukee M18 BLSAG125X-0 | 11.000 rpm | No | Deslizante con bloqueo | Sin RAPIDSTOP en esta variante | Embrague de seguridad frente al retroceso | FIXTEC | Sin batería/cargador/maletín |
@@ -953,7 +953,7 @@ Reglas de comparación:
 ### Posicionamiento editorial de cada modelo
 
 - **Bosch GWS 18V-11 S:** perfil equilibrado para quien quiera velocidad regulable y un paquete de seguridad completo.
-- **Makita DGA511Z:** especialmente interesante para quien valore regulación de velocidad y gestión automática de carga mediante ADT/AFT.
+- **Makita DGA511Z:** especialmente interesante para quien valore regulación de velocidad y gestión automática de carga mediante ADT.
 - **DeWalt DCG405N-XJ:** opción de velocidad fija con freno y embrague electrónicos, orientada a un uso profesional sencillo y directo.
 - **Einhell TP-AG 18/125-13 Q P BL:** candidata para bricolaje exigente por equipamiento, interruptor de hombre muerto y cambio de disco sin herramientas, sin basar la recomendación en un precio fijo.
 - **Milwaukee M18 BLSAG125X-0:** orientada a corte rápido y formato compacto; 11.000 rpm, FIXTEC y embrague de seguridad, con la contrapartida de no tener regulación de velocidad ni RAPIDSTOP en esta variante.
@@ -1012,6 +1012,72 @@ Si la nueva página se incorpora al menú, revisar navegación de escritorio y m
 Estado al cierre de esta fase:
 
 **Investigación de producto, matriz técnica, arquitectura SEO y estructura editorial preparadas. Siguiente paso: redacción y revisión de la comparativa. No se ha creado ni publicado la URL.**
+
+## Revisión SEO y contenido cerrados · 30/09/2026 20:29
+
+Se vuelve a contrastar la SERP española antes de redactar. La intención principal sigue siendo comercial / investigación previa a compra. La SERP continúa mostrando comparativas editoriales específicas de amoladoras a batería de 18 V y 125 mm junto a grandes retailers, por lo que se mantiene como keyword principal:
+
+`mejores amoladoras a batería`
+
+Keywords secundarias naturales dentro de la misma URL:
+
+- `amoladora a batería 125 mm`
+- `mejor amoladora a batería`
+- `mejor amoladora a batería calidad precio`
+- `amoladora 18v 125 mm`
+- `radial a batería 125 mm`
+- `amoladora angular a batería`
+
+No se detecta canibalización con las URLs actuales. La categoría `/herramientas/` cubre intención de navegación; las páginas de taladros y llaves de impacto cubren familias de producto diferentes. La futura página de plataformas 18 V deberá mantenerse centrada en elegir ecosistema de batería, no en comparar amoladoras.
+
+SEO definitivo:
+
+- URL: `/herramientas/amoladoras-a-bateria/`
+- Title: `Mejores amoladoras a batería de 125 mm: 6 modelos 18 V`
+- H1: `Mejores amoladoras a batería de 125 mm: 6 modelos de 18 V comparados`
+- Meta description: `Comparamos 6 amoladoras a batería de 125 mm y 18 V de Bosch, Makita, DeWalt, Einhell, Milwaukee y Metabo según velocidad, seguridad y cambio de disco.`
+- Canonical: `https://compraconsentido.es/herramientas/amoladoras-a-bateria/`
+- Breadcrumb: `Inicio › Herramientas › Amoladoras a batería`
+- Schema previsto: `Article`, `BreadcrumbList` y `FAQPage` solo si coincide exactamente con las FAQ visibles
+- no añadir `Product`, `Review` ni ratings artificiales
+
+H2/H3 definitivos:
+
+1. H2 `Qué amoladora a batería de 125 mm elegir según lo que necesitas`
+2. H2 `Comparativa de amoladoras a batería de 125 mm`
+3. H2 individual para cada uno de los 6 modelos
+4. H2 `Cómo elegir una amoladora a batería de 125 mm`
+   - H3 `Velocidad fija o regulable`
+   - H3 `Freno, anti-kickback y protección ante bloqueos`
+   - H3 `Interruptor deslizante o de paleta`
+   - H3 `Cambio de disco y protector`
+   - H3 `Cuerpo solo, batería y cargador`
+5. H2 `Qué modelo encaja mejor según el uso`
+6. H2 `Preguntas frecuentes sobre amoladoras a batería`
+
+FAQ definitivas:
+
+1. `¿Qué ventajas tiene una amoladora a batería de 125 mm?`
+2. `¿Compensa una amoladora con velocidad regulable?`
+3. `¿Qué diferencia hay entre freno electrónico y protección anti-kickback?`
+4. `¿Es mejor un interruptor deslizante o de paleta?`
+5. `¿Compensa comprar una amoladora sin batería ni cargador?`
+
+Enlazado interno al publicar:
+
+- añadir la nueva comparativa desde `/herramientas/` con anchor descriptivo
+- enlazar desde la nueva página hacia `/herramientas/`
+- añadir enlaces contextuales bidireccionales con taladros a batería y llaves de impacto cuando aporten valor
+- reservar el enlace a la futura guía de plataformas 18 V hasta que exista
+- no forzar enlaces a gatos hidráulicos
+
+Corrección técnica importante detectada durante la verificación final:
+
+La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8.500 rpm, motor brushless, ADT, velocidad constante, protección contra sobrecarga y anti-restart. No lista AFT en esta variante. Por prudencia editorial, la comparativa no debe atribuirle AFT aunque aparezca en documentación de otros mercados o catálogos antiguos.
+
+Estado:
+
+**CONTENIDO Y ESTRUCTURA SEO CERRADOS PARA PASAR A DISEÑO. NO PUBLICADO. Antes de producción queda revalidar ASIN/variante exacta, imágenes y enlaces afiliados.**
 
 ---
 
