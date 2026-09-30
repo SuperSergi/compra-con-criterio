@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 19:36  
+**Última actualización:** 30 de septiembre de 2026 · 19:45  
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -800,7 +800,7 @@ La siguiente página nueva a preparar será:
 
 Estado:
 
-**DECISIÓN CERRADA. Selección de 6 modelos cerrada. Documentación técnica y estructura editorial en preparación. No publicada todavía.**
+**DECISIÓN CERRADA. Selección de 6 modelos y matriz técnica cerradas. Estructura SEO/editorial preparada. No publicada todavía.**
 
 Keyword principal provisional:
 
@@ -876,6 +876,106 @@ No dedicar columnas a 18 V o 125 mm si los seis modelos comparten esas caracter�
 Las equivalencias en vatios publicadas por Bosch, Einhell, Milwaukee o Metabo se pueden explicar en las fichas, pero no deben presentarse como una medición de laboratorio directamente comparable entre marcas.
 
 Antes de publicar, volver a comprobar que los seis ASIN siguen activos en Amazon.es y que cada enlace corresponde exactamente a la variante indicada.
+
+## Matriz técnica y estructura editorial cerradas · 30/09/2026 19:45
+
+La investigación técnica de los seis modelos ya permite construir una comparación con magnitudes equivalentes sin mezclar datos de distinto criterio.
+
+### Tabla principal prevista
+
+Columnas:
+
+- modelo
+- velocidad sin carga
+- velocidad regulable
+- tipo de interruptor
+- freno
+- protección ante bloqueo / kickback
+- cambio de disco
+- suministro
+
+Datos normalizados:
+
+| Modelo | Velocidad sin carga | Regulable | Interruptor | Freno | Protección ante bloqueo / kickback | Cambio de disco | Suministro |
+|---|---:|---|---|---|---|---|---|
+| Bosch GWS 18V-11 S | 3.000–9.000 rpm | Sí, 6 niveles | Deslizante con bloqueo | Intelligent Brake | KickBack Control + Drop Control | Tuerca rápida | Cuerpo y accesorios; sin batería/cargador |
+| Makita DGA511Z | 3.000–8.500 rpm | Sí | Deslizante | No se indica freno eléctrico específico en esta variante | AFT ante bloqueo + ADT para adaptar funcionamiento a la carga | Tuerca convencional con llave | Cuerpo y accesorios; sin batería/cargador/Makpac |
+| DeWalt DCG405N-XJ | 9.000 rpm | No | Deslizante | Freno electrónico | Embrague electrónico / protección frente al retroceso | Quick Change Flange | Cuerpo y accesorios; sin batería/cargador |
+| Einhell TP-AG 18/125-13 Q P BL | 10.000 rpm | No | Paleta / hombre muerto | No se indica freno rápido específico | Arranque suave, protección contra rearranque y sobrecarga; sin anti-kickback específico declarado | Tuerca rápida sin herramientas | Cuerpo y accesorios; sin batería/cargador |
+| Milwaukee M18 BLSAG125X-0 | 11.000 rpm | No | Deslizante con bloqueo | Sin RAPIDSTOP en esta variante | Embrague de seguridad frente al retroceso | FIXTEC | Sin batería/cargador/maletín |
+| Metabo WVB 18 LT BL 11-125 Quick | 2.800–10.000 rpm | Sí | Deslizante lateral | Freno rápido, aprox. 1 s | Embrague mecánico S-automatic | M-Quick | Con metaBOX; sin batería/cargador |
+
+Reglas de comparación:
+
+- no incluir peso en la tabla principal mientras los fabricantes no publiquen el mismo criterio en los seis modelos
+- no usar potencia equivalente en vatios como columna comparativa entre marcas; son declaraciones de fabricante con metodologías que no deben asumirse equivalentes
+- no incluir 18 V ni 125 mm como columnas porque son características comunes a los seis
+- no incluir profundidad de corte en la tabla principal mientras no exista dato oficial equivalente para todos
+- diferenciar siempre freno de disco, protección anti-kickback y simple desconexión al soltar un interruptor de hombre muerto
+- antes de publicar, volver a comprobar que cada ASIN sigue activo y corresponde a la variante exacta
+
+### Posicionamiento editorial de cada modelo
+
+- **Bosch GWS 18V-11 S:** perfil equilibrado para quien quiera velocidad regulable y un paquete de seguridad completo.
+- **Makita DGA511Z:** especialmente interesante para quien valore regulación de velocidad y gestión automática de carga mediante ADT/AFT.
+- **DeWalt DCG405N-XJ:** opción de velocidad fija con freno y embrague electrónicos, orientada a un uso profesional sencillo y directo.
+- **Einhell TP-AG 18/125-13 Q P BL:** candidata para bricolaje exigente por equipamiento, interruptor de hombre muerto y cambio de disco sin herramientas, sin basar la recomendación en un precio fijo.
+- **Milwaukee M18 BLSAG125X-0:** orientada a corte rápido y formato compacto; 11.000 rpm, FIXTEC y embrague de seguridad, con la contrapartida de no tener regulación de velocidad ni RAPIDSTOP en esta variante.
+- **Metabo WVB 18 LT BL 11-125 Quick:** perfil de control y seguridad, con amplio rango de rpm, freno rápido, M-Quick y embrague S-automatic.
+
+### SEO y estructura de contenido preparados
+
+Title provisional:
+
+`Mejores amoladoras a batería 125 mm: 6 modelos 18 V`
+
+H1 provisional:
+
+`Mejores amoladoras a batería de 125 mm: 6 modelos de 18 V comparados`
+
+Meta description provisional:
+
+`Comparamos 6 amoladoras a batería de 125 mm y 18 V de Bosch, Makita, DeWalt, Einhell, Milwaukee y Metabo: velocidad, seguridad y cambio de disco.`
+
+Estructura prevista:
+
+1. introducción breve y criterio de selección
+2. resumen según necesidad, sin ranking global
+3. tabla técnica normalizada
+4. seis fichas de producto con diferencia real y bloque “La elegiría si…”
+5. cómo elegir una amoladora a batería de 125 mm
+6. velocidad fija frente a regulable
+7. freno, anti-kickback y sistemas de seguridad
+8. interruptor deslizante frente a paleta / hombre muerto
+9. cambio de disco y ergonomía práctica
+10. cuerpo solo, batería y cargador
+11. qué modelo encaja según tipo de uso
+12. FAQ visibles y `FAQPage` solo si coinciden exactamente
+
+FAQ previstas:
+
+1. ¿Qué ventajas tiene una amoladora a batería de 125 mm?
+2. ¿Compensa una amoladora con velocidad regulable?
+3. ¿Qué diferencia hay entre freno electrónico y protección anti-kickback?
+4. ¿Es mejor un interruptor deslizante o de paleta / hombre muerto?
+5. ¿Compensa comprar una amoladora sin batería ni cargador?
+
+### Enlazado interno previsto
+
+Al publicar:
+
+- `/herramientas/` → nueva comparativa de amoladoras
+- nueva comparativa → `/herramientas/`
+- nueva comparativa ↔ contenidos de taladros a batería cuando el enlace sea contextual
+- nueva comparativa ↔ `/herramientas/llaves-de-impacto/` cuando el enlace sea contextual
+- futura `/herramientas/plataformas-bateria-18v/` ↔ amoladoras cuando esa página exista
+- no forzar enlaces hacia gatos hidráulicos solo por compartir categoría
+
+Si la nueva página se incorpora al menú, revisar navegación de escritorio y móvil en todas las páginas actuales antes de publicar.
+
+Estado al cierre de esta fase:
+
+**Investigación de producto, matriz técnica, arquitectura SEO y estructura editorial preparadas. Siguiente paso: redacción y revisión de la comparativa. No se ha creado ni publicado la URL.**
 
 ---
 
@@ -1195,7 +1295,8 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [ ] Continuar keyword research del cluster Herramientas.
 - [x] Priorizar amoladoras a batería 125 mm como siguiente página.
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/amoladoras-a-bateria/`.
-- [ ] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
+- [x] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
+- [ ] Redactar y revisar la comparativa de `/herramientas/amoladoras-a-bateria/` antes de cualquier publicación.
 - [ ] Investigar sierras circulares a batería.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
@@ -1410,7 +1511,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 19:36.
+- Última actualización de esta versión: 30/09/2026 19:45.
 
 ---
 
