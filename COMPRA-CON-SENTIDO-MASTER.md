@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 19:45  
+**Última actualización:** 30 de septiembre de 2026 · 20:00
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -644,6 +644,33 @@ CTA habitual:
 Los enlaces de afiliado deben llevar:
 
 `rel="nofollow sponsored"`
+
+## Creators API
+
+Estado a 30/09/2026 20:00:
+
+- creada en Amazon Afiliados la aplicación `compra-con-sentido-api`
+- Application ID: asociado a la Store ID principal `librosde0a1-21`
+- creada una credencial activa de versión `3.2`
+- Credential Secret guardado por Sergio fuera del repositorio
+- no almacenar Credential ID ni Credential Secret en HTML, JavaScript cliente o GitHub
+- la integración prevista debe realizarse del lado servidor, preferentemente mediante Cloudflare Worker o equivalente
+- para credenciales versión 3.2, la autenticación OAuth 2.0 de Creators API utiliza el endpoint europeo correspondiente
+- Amazon puede tardar hasta 48 horas en confirmar la elegibilidad efectiva de acceso tras crear la credencial
+
+Objetivo de uso:
+
+- consultar productos por ASIN
+- obtener datos oficiales de producto e imágenes cuando corresponda
+- comprobar variantes y disponibilidad
+- valorar uso de precios/ofertas dinámicos únicamente conforme a las condiciones de Amazon
+- mantener la web estática y las credenciales fuera del frontend
+
+Pendiente inmediato:
+
+- configurar las credenciales como secretos en el entorno servidor
+- realizar una primera llamada de prueba a Creators API para Amazon.es
+- utilizar un Partner Tag específico de Compra con Sentido para separar medición de tráfico y conversiones
 
 ## Precios
 
@@ -1511,7 +1538,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 19:45.
+- Última actualización de esta versión: 30/09/2026 20:00.
 
 ---
 
