@@ -29,3 +29,15 @@
 .ccs-method p{margin:0;color:var(--ccs-muted);line-height:1.65}
 .ccs-method a{color:#0b6742;font-weight:800}
 @media(max-width:760px){.ccs-method{padding:22px}}
+
+.ccs-comparison-v2 .product-experience{
+  margin:14px 0;color:var(--ccs-muted);line-height:1.65
+}
+.ccs-comparison-v2 .table-scroll-hint{display:none}
+@media(max-width:760px){
+  .ccs-comparison-v2 .table-scroll-hint{
+    display:block;margin:10px 0 12px;padding:11px 14px;
+    background:#eaf6ef;border:1px solid #b9ddc8;border-radius:10px;
+    color:#064d30;font-size:14px;font-weight:800;text-align:center;line-height:1.3
+  }
+}
