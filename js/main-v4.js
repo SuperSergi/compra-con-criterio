@@ -13,10 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Gatos hidráulicos",
       items: [
         {
-          label: "Cómo elegir un gato hidráulico",
-          href: base + "herramientas/gatos-hidraulicos/"
-        },
-        {
           label: "Gatos hidráulicos para coche comparados",
           href:
             base +
@@ -27,10 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       label: "Taladros a batería",
       items: [
-        {
-          label: "Cómo elegir un taladro a batería",
-          href: base + "herramientas/taladros-a-bateria/"
-        },
         {
           label: "Taladros a batería comparados",
           href:
@@ -43,10 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Impresoras 3D",
       items: [
         {
-          label: "Cómo elegir una impresora 3D",
-          href: base + "impresion-3d/impresoras-3d/"
-        },
-        {
           label: "Impresoras 3D comparadas",
           href:
             base +
@@ -58,10 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "Aspiradoras",
       items: [
         {
-          label: "Cómo elegir una aspiradora",
-          href: base + "hogar/aspiradoras/"
-        },
-        {
           label: "Robots aspiradores comparados",
           href:
             base +
@@ -72,10 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       label: "Deshumidificadores",
       items: [
-        {
-          label: "Cómo elegir un deshumidificador",
-          href: base + "hogar/deshumidificadores/"
-        },
         {
           label: "Litros/día según m²",
           href:
