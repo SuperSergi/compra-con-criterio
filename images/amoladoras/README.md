@@ -19,3 +19,11 @@ Esta carpeta se reserva para los recursos finales de `/herramientas/amoladoras-a
 No publicar imágenes de producto exactas copiadas o hotlinkadas desde Amazon o fabricantes sin una fuente de uso autorizada. Mientras no exista esa fuente, el borrador utiliza bloques visuales neutros y el hero de la categoría Herramientas.
 
 Las imágenes de IA, si se usan, serán contextuales/ilustrativas y no se presentarán como reproducción exacta de ninguno de los seis modelos.
+
+
+## Estado a 30/09/2026
+
+- Hero contextual: el borrador reutiliza temporalmente `/images/categoria-herramientas.webp`; no es la imagen final.
+- Imágenes exactas de los seis productos: pendientes de una fuente de uso autorizada.
+- No se han copiado ni hotlinkado imágenes de Amazon o fabricantes.
+- Creators API de Amazon sigue temporalmente bloqueada por `AssociateNotEligible`, por lo que no se utilizará como fuente de imagen hasta que Amazon habilite el acceso.
