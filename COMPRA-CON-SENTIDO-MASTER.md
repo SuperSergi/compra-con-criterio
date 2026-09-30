@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 22:37
+**Última actualización:** 30 de septiembre de 2026 · 22:53
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -1155,6 +1155,10 @@ Publicación final:
 - metodología editorial reforzada con documentación oficial, experiencias reales y pruebas/análisis especializados
 - bloque “La elegiría si…” orientado a decisión de compra, sin repetir “Lo que destaca” ni “A tener en cuenta”
 - sitemap actualizado
+- imágenes definitivas incorporadas en WebP: hero + 6 modelos
+- PNG duplicados eliminados del repositorio
+- hero actualizado también en `/herramientas/`
+- las imágenes generadas por IA de producto se muestran como ilustrativas
 
 ---
 
