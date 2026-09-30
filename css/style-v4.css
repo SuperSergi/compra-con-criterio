@@ -2188,11 +2188,17 @@ button{
    SITE BREADCRUMBS 2026
    ========================================================= */
 .site-breadcrumbs{
-  padding:92px 0 12px;
-  background:#fff;
-  color:var(--muted);
+  position:absolute;
+  top:76px;
+  left:0;
+  z-index:20;
+  width:100%;
+  padding:14px 0 0;
+  background:transparent;
+  color:rgba(255,255,255,.78);
   font-size:14px;
   line-height:1.4;
+  pointer-events:none;
 }
 .site-breadcrumbs .shell{
   display:flex;
@@ -2201,14 +2207,19 @@ button{
   flex-wrap:wrap;
 }
 .site-breadcrumbs a{
-  color:var(--green-800);
+  color:#fff;
   font-weight:700;
   text-decoration:none;
+  pointer-events:auto;
+  text-shadow:0 1px 3px rgba(0,0,0,.28);
 }
 .site-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
-.site-breadcrumbs [aria-current="page"]{color:var(--muted)}
+.site-breadcrumbs [aria-current="page"]{
+  color:rgba(255,255,255,.78);
+  text-shadow:0 1px 3px rgba(0,0,0,.28);
+}
 @media(max-width:760px){
-  .site-breadcrumbs{padding:78px 0 10px;font-size:13px}
+  .site-breadcrumbs{top:70px;padding:10px 0 0;font-size:13px}
 }
 
 
