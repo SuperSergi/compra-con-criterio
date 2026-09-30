@@ -1073,7 +1073,7 @@ Enlazado interno al publicar:
 
 Corrección técnica importante detectada durante la verificación final:
 
-La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8.500 rpm, motor brushless, ADT, velocidad constante, protección contra sobrecarga y anti-restart. No lista AFT en esta variante. Por prudencia editorial, la comparativa no debe atribuirle AFT aunque aparezca en documentación de otros mercados o catálogos antiguos.
+La ficha oficial actual de Makita España para DGA511 confirma velocidad 3.000-8.500 rpm, motor brushless, ADT, velocidad constante, protección contra sobrecarga y anti-restart. No lista AFT en esta variante. Además, esa ficha española incluye una mención aislada a AWS que entra en conflicto con otras fuentes oficiales de Makita, donde DGA511 y DGA512/AWS se distinguen como variantes diferentes. Por prudencia editorial, la comparativa no debe atribuir a DGA511 ni AFT ni AWS como argumentos confirmados para el mercado español.
 
 Estado:
 
