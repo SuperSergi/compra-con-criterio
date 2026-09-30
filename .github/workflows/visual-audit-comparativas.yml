@@ -1,0 +1,92 @@
+name: Visual audit comparativas
+
+on:
+  push:
+    branches:
+      - comparativas-v2-unificacion
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Wait for Cloudflare preview
+        run: |
+          URL="https://comparativas-v2-unificacion.compra-con-sentido.pages.dev/herramientas/amoladoras-a-bateria/"
+          for i in {1..18}; do
+            if curl -fsS "$URL" >/dev/null; then
+              echo "Preview available"
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Capture desktop and mobile
+        run: |
+          cat > audit.cjs <<'EOF'
+          const { chromium } = require("playwright");
+          const fs = require("fs");
+          const pages = [
+            ["gatos","/herramientas/gatos-hidraulicos/mejores-gatos-hidraulicos-para-coche/"],
+            ["taladros","/herramientas/taladros-a-bateria/mejores-taladros-a-bateria/"],
+            ["llaves","/herramientas/llaves-de-impacto/"],
+            ["amoladoras","/herramientas/amoladoras-a-bateria/"],
+            ["robots","/hogar/aspiradoras/mejores-robots-aspiradores/"],
+            ["deshumidificadores","/hogar/deshumidificadores/mejores-deshumidificadores/"],
+            ["impresoras3d","/impresion-3d/impresoras-3d/mejores-impresoras-3d/"]
+          ];
+          const base = "https://comparativas-v2-unificacion.compra-con-sentido.pages.dev";
+          (async () => {
+            fs.mkdirSync("visual-audit", { recursive: true });
+            const browser = await chromium.launch({ headless: true });
+            for (const [name,path] of pages) {
+              for (const [mode,width,height] of [["desktop",1440,1000],["mobile",390,844]]) {
+                const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1 });
+                const page = await ctx.newPage();
+                await page.goto(base + path, { waitUntil: "networkidle", timeout: 60000 });
+                await page.screenshot({ path: `visual-audit/${name}-${mode}.png`, fullPage: true });
+                const data = await page.evaluate(() => {
+                  const h = document.querySelector(".ccs-compare-hero");
+                  const h1 = document.querySelector(".ccs-compare-hero h1");
+                  const bc = document.querySelector(".site-breadcrumbs");
+                  const table = document.querySelector("table");
+                  return {
+                    title: document.title,
+                    viewport: [innerWidth,innerHeight],
+                    bodyWidth: document.body.scrollWidth,
+                    clientWidth: document.documentElement.clientWidth,
+                    hero: h ? Math.round(h.getBoundingClientRect().height) : null,
+                    h1Font: h1 ? getComputedStyle(h1).fontSize : null,
+                    h1Line: h1 ? getComputedStyle(h1).lineHeight : null,
+                    breadcrumbsTop: bc ? Math.round(bc.getBoundingClientRect().top + scrollY) : null,
+                    tableWidth: table ? Math.round(table.scrollWidth) : null
+                  };
+                });
+                fs.appendFileSync("visual-audit/metrics.jsonl", JSON.stringify({name,mode,...data})+"\n");
+                await ctx.close();
+              }
+            }
+            await browser.close();
+          })();
+          EOF
+          node audit.cjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: comparativas-visual-audit
+          path: visual-audit/
+          retention-days: 2
