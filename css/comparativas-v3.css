@@ -34,3 +34,6 @@
 .ccs-comparison-v3 .ccs-method p{margin:10px 0 0;color:var(--ccs-muted);line-height:1.68}
 .ccs-comparison-v3 .ccs-method a{color:var(--ccs-green);font-weight:800}
 @media(max-width:760px){.ccs-comparison-v3 .ccs-method{padding:22px}}
+
+/* Neutraliza espaciado heredado de páginas antiguas al usar el hero v3 */
+.ccs-comparison-v3.printers-comparison{padding-top:0}
