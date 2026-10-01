@@ -901,6 +901,27 @@ Implementación actual:
 
 ---
 
+## Decisión de diseño híbrido · 01/10/2026
+
+Se cierra el patrón visual para páginas híbridas, entendido como páginas que combinan contenido informacional y comparativa comercial.
+
+Orden canónico:
+
+`Hero → tarjeta introductoria común → elección rápida → tabla → fichas de producto → resto de guía`
+
+Implementación actual:
+
+- `/css/intro-v1.css` para la tarjeta introductoria
+- `/css/hybrid-v1.css` para el bloque de elección rápida
+- `/css/comparativas-v3.css` para tablas
+- `/css/product-cards-v1.css` para fichas individuales
+- Llaves de impacto y Amoladoras a batería ya adaptadas a este patrón
+- ambas conservan breadcrumbs visibles y seis fichas de producto
+
+Este patrón será la referencia para futuras páginas híbridas.
+
+---
+
 # 21. Cabecera editorial, afiliación y schema
 
 Las comparativas deben mostrar:
