@@ -174,3 +174,139 @@
     font-size:16px!important;
   }
 }
+
+
+/* =========================================================
+   PRODUCT CARDS V1.1 · ORDEN INTERNO CANÓNICO
+   Pros/contras → decisión a ancho completo → CTA centrado.
+   ========================================================= */
+
+.ccs-product-card .ccs-product-proscons{
+  order:60;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:stretch!important;
+  width:100%!important;
+  margin-top:20px!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  min-height:150px!important;
+  padding:18px 20px!important;
+  border:1px solid #dfe8e2!important;
+  border-radius:16px!important;
+  background:#f8fbf9!important;
+  text-align:left!important;
+  box-sizing:border-box!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) > strong{
+  display:block!important;
+  margin:0 0 8px!important;
+  color:var(--green-950,#063d26)!important;
+  font-size:15px!important;
+  line-height:1.35!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) p,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) ul{
+  margin:0!important;
+  color:var(--muted,#5f6d65)!important;
+  text-align:left!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) ul{
+  padding-left:18px!important;
+}
+
+.ccs-product-card > .ccs-product-content > .ccs-product-decision{
+  order:70;
+}
+
+.ccs-product-card .ccs-product-decision{
+  width:100%!important;
+  margin:16px 0 0!important;
+  padding:16px 18px!important;
+  box-sizing:border-box!important;
+  border:1px solid #cfe2d6!important;
+  border-radius:14px!important;
+  background:#eef7f1!important;
+  color:#294537!important;
+  text-align:left!important;
+  line-height:1.55!important;
+}
+
+.ccs-product-card .ccs-product-decision strong{
+  color:var(--green-950,#063d26)!important;
+}
+
+/* Si una ficha antigua tenía la decisión dentro del wrapper pros/contras */
+.ccs-product-card .ccs-product-proscons > .ccs-product-decision{
+  grid-column:1 / -1!important;
+  order:70;
+}
+
+.ccs-product-card > .ccs-product-content > .ccs-product-cta,
+.ccs-product-card > .ccs-product-content > .ccs-product-cta-button{
+  order:80;
+}
+
+.ccs-product-card .ccs-product-proscons > .ccs-product-cta{
+  grid-column:1 / -1!important;
+  order:80;
+}
+
+.ccs-product-card .ccs-product-cta{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  width:100%!important;
+  margin:20px 0 0!important;
+}
+
+.ccs-product-card .ccs-product-cta-button,
+.ccs-product-card .ccs-product-cta a,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  align-self:center!important;
+  min-width:230px!important;
+  min-height:48px!important;
+  margin:20px auto 0!important;
+  padding:0 20px!important;
+  border-radius:12px!important;
+  box-sizing:border-box!important;
+  font-size:15px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  text-align:center!important;
+}
+
+/* Neutraliza tamaños/posiciones heredados de cada comparativa */
+.ccs-product-card .buy-row,
+.ccs-product-card .robot-buy,
+.ccs-product-card .product-actions{
+  justify-content:center!important;
+}
+
+@media(max-width:760px){
+  .ccs-product-card .ccs-product-proscons{
+    grid-template-columns:1fr!important;
+  }
+
+  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+    min-height:0!important;
+  }
+
+  .ccs-product-card .ccs-product-cta-button,
+  .ccs-product-card .ccs-product-cta a,
+  .ccs-product-card > .ccs-product-content > .amazon-btn{
+    width:100%!important;
+    min-width:0!important;
+  }
+}
