@@ -7,6 +7,9 @@ on:
     paths:
       - ".github/workflows/responsive-audit.yml"
       - ".github/scripts/responsive-audit.mjs"
+      - "css/**/*.css"
+      - "js/**/*.js"
+      - "**/*.html"
 
 permissions:
   contents: read
