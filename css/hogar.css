@@ -429,7 +429,9 @@ body.home-page{
   }
 
   .home-category-image{
-    min-height:220px;
+    width:100%;
+    min-width:0;
+    min-height:0;
     aspect-ratio:16 / 9;
   }
 
