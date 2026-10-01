@@ -2268,3 +2268,84 @@ main{
   z-index:2147482000!important;
 }
 
+
+
+/* =========================================================
+   NAVEGACIÓN V4.3 · SUBMENÚ DE ESCRITORIO MÁS TOLERANTE
+   Evita perder el segundo nivel al cruzar del primer menú.
+   ========================================================= */
+@media (min-width:761px){
+
+  /* Zona invisible que cubre el hueco entre ambos niveles */
+  .dropdown-subgroup::after{
+    content:"";
+    position:absolute;
+    top:-4px;
+    bottom:-4px;
+    left:100%;
+    width:16px;
+  }
+
+  /* Impresión 3D abre hacia la izquierda: el puente va al otro lado */
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup::after{
+    left:auto;
+    right:100%;
+  }
+
+  /* El submenú existe siempre en escritorio y se oculta con visibilidad.
+     Esto permite retrasar ligeramente el cierre sin JavaScript. */
+  .dropdown-submenu{
+    display:block!important;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:auto;
+    transform:translateX(4px);
+    transition:
+      opacity .12s ease .22s,
+      transform .12s ease .22s,
+      visibility 0s linear .38s;
+  }
+
+  .dropdown-subgroup:hover > .dropdown-submenu,
+  .dropdown-subgroup:focus-within > .dropdown-submenu,
+  .dropdown-subgroup.open > .dropdown-submenu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+    transition-delay:0s;
+  }
+
+  /* Al abrir hacia la izquierda, la entrada visual se invierte */
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-submenu{
+    transform:translateX(-4px);
+  }
+
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup:hover > .dropdown-submenu,
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup:focus-within > .dropdown-submenu,
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup.open > .dropdown-submenu{
+    transform:translateX(0);
+  }
+
+  /* Algo más de superficie clicable */
+  .dropdown-subgroup > .dropdown-parent{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+  }
+
+  .dropdown-submenu{
+    min-width:235px;
+    padding:12px;
+  }
+
+  .dropdown-submenu a{
+    padding:11px 13px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .dropdown-submenu{
+    transition:none!important;
+    transform:none!important;
+  }
+}
