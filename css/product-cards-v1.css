@@ -456,3 +456,154 @@
     grid-row:auto!important;
   }
 }
+
+
+/* =========================================================
+   PRODUCT CARDS V1.4 · GEOMETRÍA Y ORDEN TOTALMENTE COMUNES
+   ========================================================= */
+
+@media(min-width:901px){
+  .ccs-product-card{
+    grid-template-columns:320px minmax(0,1fr)!important;
+    align-items:stretch!important;
+  }
+}
+
+.ccs-product-media{
+  align-self:stretch!important;
+  height:100%!important;
+  min-height:100%!important;
+  padding:24px!important;
+  flex-direction:column!important;
+  box-sizing:border-box!important;
+}
+
+.ccs-product-media img{
+  width:100%!important;
+  height:300px!important;
+  max-width:320px!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:0!important;
+}
+
+.ccs-product-content{
+  display:flex!important;
+  flex-direction:column!important;
+  padding:30px 32px 32px!important;
+  box-sizing:border-box!important;
+}
+
+.ccs-product-content > .product-head,
+.ccs-product-content > h3{
+  order:10;
+}
+
+.ccs-product-content > .ccs-product-subtitle,
+.ccs-product-content > .product-head .ccs-product-subtitle{
+  order:15;
+}
+
+.ccs-product-content > .ccs-product-specs{
+  order:20;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+  margin:22px 0 0!important;
+}
+
+.ccs-product-content > .ccs-product-specs > div{
+  min-height:64px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  padding:12px 13px!important;
+  box-sizing:border-box!important;
+  border:1px solid #e2e9e5!important;
+  border-radius:13px!important;
+  background:#f7faf8!important;
+  text-align:left!important;
+}
+
+.ccs-product-content > .ccs-product-copy{
+  order:30;
+  margin-top:20px!important;
+}
+
+.ccs-product-content > .ccs-product-experience{
+  order:40;
+  margin:18px 0 0!important;
+}
+
+.ccs-product-content > .ccs-product-proscons{
+  order:60;
+}
+
+.ccs-product-content > .ccs-product-decision{
+  order:70;
+}
+
+.ccs-product-content > .ccs-product-cta,
+.ccs-product-content > .ccs-product-cta-button,
+.ccs-product-content > .amazon-btn{
+  order:80;
+}
+
+/* Cabeceras heredadas no deben añadir geometría propia */
+.ccs-product-card .product-head{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+.ccs-product-card .product-head > div{
+  display:block!important;
+}
+
+/* Consistencia tipográfica en datos */
+.ccs-product-card .ccs-product-specs small,
+.ccs-product-card .ccs-product-specs span{
+  color:#6b7770!important;
+  font-size:12px!important;
+  line-height:1.25!important;
+}
+
+.ccs-product-card .ccs-product-specs strong{
+  margin-top:4px!important;
+  color:#10261a!important;
+  font-size:15px!important;
+  line-height:1.3!important;
+}
+
+/* Evita márgenes heredados que rompen el ritmo vertical */
+.ccs-product-card .ccs-product-copy p:first-child,
+.ccs-product-card .ccs-product-experience:first-child{
+  margin-top:0!important;
+}
+
+@media(max-width:900px){
+  .ccs-product-card{
+    grid-template-columns:1fr!important;
+  }
+
+  .ccs-product-media{
+    min-height:300px!important;
+    height:auto!important;
+  }
+
+  .ccs-product-media img{
+    height:260px!important;
+    max-width:420px!important;
+  }
+
+  .ccs-product-content > .ccs-product-specs{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+@media(max-width:520px){
+  .ccs-product-content > .ccs-product-specs{
+    grid-template-columns:1fr!important;
+  }
+}
