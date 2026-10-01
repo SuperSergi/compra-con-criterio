@@ -1,140 +1,16 @@
 /* =========================================================
    COMPRA CON SENTIDO · COMPARISON OPENING V1
-   Arranque visual canónico para TODAS las comparativas.
-   La intención editorial puede variar; la presentación no.
+   Solo estructura específica de comparativas.
+   La tarjeta blanca usa el componente global de intro-v1.css.
    ========================================================= */
 
 .ccs-comparison-opening{
-  position:relative;
-  z-index:4;
-  width:min(1160px,calc(100% - 36px));
-  margin:-46px auto 0!important;
-  padding:0 0 46px!important;
+  width:min(1160px,calc(100% - 36px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
 }
 
-.ccs-comparison-opening-card{
-  display:grid!important;
-  grid-template-columns:.9fr 1.1fr!important;
-  gap:56px!important;
-  align-items:center!important;
-  margin:0!important;
-  padding:44px 48px!important;
-  border:1px solid rgba(13,86,50,.08)!important;
-  border-radius:var(--radius-xl,26px)!important;
-  background:#fff!important;
-  box-shadow:var(--shadow,0 18px 45px rgba(22,60,39,.10))!important;
-}
-
-.ccs-comparison-opening-card .section-kicker,
-.ccs-comparison-opening-card [class*="eyebrow"]{
-  display:inline-block!important;
-  margin:0!important;
-  color:var(--green-700,#138250)!important;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
-  font-size:13px!important;
-  line-height:1!important;
-  font-weight:800!important;
-  letter-spacing:.10em!important;
-  text-transform:uppercase!important;
-}
-
-.ccs-comparison-opening-card h2{
-  margin:10px 0 0!important;
-  color:var(--green-950,#063d26)!important;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
-  font-size:clamp(30px,3vw,42px)!important;
-  line-height:1.16!important;
-  font-weight:700!important;
-  letter-spacing:-.025em!important;
-}
-
-.ccs-comparison-opening-copy{
-  align-self:center!important;
-  color:var(--muted,#5f6d65)!important;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
-  font-size:17px!important;
-  line-height:1.6!important;
-  text-align:left!important;
-}
-
-.ccs-comparison-opening-copy p{
-  margin:0 0 16px!important;
-}
-
-.ccs-comparison-opening-copy p:last-child{
-  margin-bottom:0!important;
-}
-
-/* Segundo bloque: elección/perfiles, siempre con la misma caja */
-.ccs-comparison-choice{
-  display:grid!important;
-  grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr)!important;
-  gap:32px!important;
-  align-items:stretch!important;
-  width:min(1160px,calc(100% - 36px));
-  margin:0 auto 46px!important;
-  padding:30px!important;
-  border:1px solid #d9e7df!important;
-  border-radius:22px!important;
-  background:#f5faf7!important;
-  box-shadow:0 10px 28px rgba(22,60,39,.05)!important;
-}
-
-.ccs-comparison-choice h2{
-  margin:0!important;
-  color:var(--green-950,#063d26)!important;
-  font-size:clamp(28px,3vw,40px)!important;
-  line-height:1.16!important;
-  font-weight:700!important;
-  letter-spacing:-.025em!important;
-}
-
-.ccs-comparison-choice p{
-  color:var(--muted,#5f6d65)!important;
-}
-
-@media(max-width:900px){
-  .ccs-comparison-opening-card,
-  .ccs-comparison-choice{
-    grid-template-columns:1fr!important;
-    gap:24px!important;
-  }
-}
-
-@media(max-width:760px){
-  .ccs-comparison-opening{
-    width:min(100% - 24px,1160px);
-    margin-top:-32px!important;
-    padding-bottom:36px!important;
-  }
-
-  .ccs-comparison-opening-card{
-    padding:30px 25px!important;
-    border-radius:20px!important;
-  }
-
-  .ccs-comparison-opening-card h2{
-    font-size:clamp(28px,8vw,36px)!important;
-  }
-
-  .ccs-comparison-opening-copy{
-    font-size:16px!important;
-  }
-
-  .ccs-comparison-choice{
-    width:min(100% - 24px,1160px);
-    margin-bottom:34px!important;
-    padding:24px 20px!important;
-    border-radius:18px!important;
-  }
-}
-
-
-/* =========================================================
-   COMPARISON OPENING V1.1 · PERFILES CANÓNICOS
-   Tres escenarios justo debajo de la tarjeta solapada.
-   ========================================================= */
-
+/* Tres perfiles/escenarios exclusivos de comparativas e híbridas */
 .ccs-comparison-profiles{
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
@@ -188,6 +64,11 @@
   color:var(--green-950,#063d26)!important;
 }
 
+/* El main de páginas antiguas no puede añadir aire antes del solape */
+.ccs-comparison-main{
+  padding-top:0!important;
+}
+
 @media(max-width:900px){
   .ccs-comparison-profiles{
     grid-template-columns:1fr!important;
@@ -199,6 +80,10 @@
 }
 
 @media(max-width:760px){
+  .ccs-comparison-opening{
+    width:min(100% - 24px,1160px)!important;
+  }
+
   .ccs-comparison-profiles{
     width:min(100% - 24px,1160px);
     margin-bottom:34px!important;
@@ -208,26 +93,5 @@
   .ccs-comparison-profile{
     padding:21px!important;
     border-radius:16px!important;
-  }
-}
-
-
-/* =========================================================
-   COMPARISON OPENING V1.2 · SOLAPE REAL
-   El main de páginas antiguas no puede añadir aire sobre
-   la tarjeta solapada.
-   ========================================================= */
-
-.ccs-comparison-main{
-  padding-top:0!important;
-}
-
-.ccs-comparison-main > .ccs-comparison-opening:first-child{
-  margin-top:-46px!important;
-}
-
-@media(max-width:760px){
-  .ccs-comparison-main > .ccs-comparison-opening:first-child{
-    margin-top:-32px!important;
   }
 }
