@@ -11,10 +11,6 @@ on:
       - "js/**/*.js"
       - "**/*.html"
 
-concurrency:
-  group: responsive-audit-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   contents: read
   issues: write
