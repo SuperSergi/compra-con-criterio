@@ -310,3 +310,72 @@
     min-width:0!important;
   }
 }
+
+
+/* =========================================================
+   PRODUCT CARDS V1.2 · PROS / CONTRAS CANÓNICOS
+   Verde a la izquierda, rojo a la derecha, misma altura.
+   ========================================================= */
+
+.ccs-product-card .ccs-product-proscons{
+  grid-auto-rows:1fr!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+  height:100%!important;
+  min-height:170px!important;
+}
+
+/* Primera tarjeta = Lo que destaca */
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child{
+  background:#eef7f1!important;
+  border-color:#cfe2d6!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child > strong{
+  color:#0a653c!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child p,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child ul,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child li{
+  color:#355243!important;
+}
+
+/* Segunda tarjeta = A tener en cuenta */
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
+  background:#fff3f2!important;
+  border-color:#f0cfcc!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) > strong{
+  color:#9b2f2a!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) p,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) ul,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) li{
+  color:#7a3a36!important;
+}
+
+/* Menos aire entre decisión y CTA */
+.ccs-product-card .ccs-product-cta{
+  margin-top:12px!important;
+}
+
+.ccs-product-card .ccs-product-cta-button,
+.ccs-product-card .ccs-product-cta a,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  margin-top:12px!important;
+}
+
+@media(max-width:760px){
+  .ccs-product-card .ccs-product-proscons{
+    grid-auto-rows:auto!important;
+  }
+
+  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+    height:auto!important;
+    min-height:0!important;
+  }
+}
