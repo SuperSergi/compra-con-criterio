@@ -55,12 +55,14 @@
 
 html{
   scroll-behavior:smooth;
+  overflow-x:clip;
 }
 
 
 body{
 
   margin:0;
+  overflow-x:clip;
 
   font-family:
     Inter,
@@ -2244,9 +2246,12 @@ button{
 }
 
 .topbar .brand,
-.topbar .menu-toggle,
-.topbar .main-nav{
+.topbar .menu-toggle{
   position:relative;
+  z-index:2;
+}
+
+.topbar .main-nav{
   z-index:2;
 }
 
