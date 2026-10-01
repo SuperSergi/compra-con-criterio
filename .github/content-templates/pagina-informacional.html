@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- PLANTILLA INTERNA · NO PUBLICAR TAL CUAL -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <link rel="canonical" href="https://compraconsentido.es/{{URL}}/">
+  <link rel="stylesheet" href="/css/style-v4.css">
+  <link rel="stylesheet" href="/css/hero-v5.css">
+  <link rel="stylesheet" href="/css/intro-v1.css">
+</head>
+<body>
+  <!-- Reutilizar navegación global vigente -->
+
+  <header class="ccs-hero">
+    <div class="ccs-hero-shell ccs-hero-copy">
+      <span class="ccs-hero-kicker">{{KICKER}}</span>
+      <h1>{{H1}}</h1>
+      <p class="ccs-hero-lead">{{LEAD}}</p>
+    </div>
+  </header>
+
+  <nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <div class="shell">{{BREADCRUMBS}}</div>
+  </nav>
+
+  <main>
+    <section class="ccs-intro-overlap">
+      <div class="shell">
+        <div class="ccs-intro-card">
+          <div class="ccs-intro-heading">
+            <span class="section-kicker">{{INTRO_KICKER}}</span>
+            <h2>{{INTRO_H2}}</h2>
+          </div>
+          <div class="ccs-intro-copy">
+            <p>{{INTRO_COPY}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido editorial específico -->
+    {{CONTENT}}
+  </main>
+
+  <!-- Reutilizar footer global vigente -->
+</body>
+</html>
