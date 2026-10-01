@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- PLANTILLA INTERNA · NO PUBLICAR TAL CUAL -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <link rel="canonical" href="https://compraconsentido.es/{{URL}}/">
+  <link rel="stylesheet" href="/css/style-v4.css">
+  <link rel="stylesheet" href="/css/hero-v5.css">
+  <link rel="stylesheet" href="/css/intro-v1.css">
+  <link rel="stylesheet" href="/css/comparison-opening-v1.css">
+  <link rel="stylesheet" href="/css/comparativas-v3.css">
+  <link rel="stylesheet" href="/css/product-cards-v1.css">
+</head>
+<body class="ccs-comparison-v3">
+  <!-- Reutilizar navegación global vigente -->
+
+  <header class="ccs-hero">
+    <div class="ccs-hero-shell ccs-hero-copy">
+      <span class="ccs-hero-kicker">{{KICKER}}</span>
+      <h1>{{H1}}</h1>
+      <p class="ccs-hero-lead">{{LEAD}}</p>
+    </div>
+  </header>
+
+  <nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <div class="shell">{{BREADCRUMBS}}</div>
+  </nav>
+
+  <main class="ccs-comparison-main">
+    <section class="ccs-comparison-opening ccs-intro-overlap">
+      <div class="ccs-comparison-opening-card ccs-intro-card">
+        <div class="ccs-intro-heading">
+          <span class="section-kicker">{{INTRO_KICKER}}</span>
+          <h2>{{INTRO_H2}}</h2>
+        </div>
+        <div class="ccs-comparison-opening-copy ccs-intro-copy">
+          <p>{{INTRO_COPY}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ccs-comparison-profiles" aria-label="Perfiles de uso">
+      <article class="ccs-comparison-profile"><span>{{PROFILE_1_KICKER}}</span><h3>{{PROFILE_1_H3}}</h3><p>{{PROFILE_1_COPY}}</p></article>
+      <article class="ccs-comparison-profile"><span>{{PROFILE_2_KICKER}}</span><h3>{{PROFILE_2_H3}}</h3><p>{{PROFILE_2_COPY}}</p></article>
+      <article class="ccs-comparison-profile"><span>{{PROFILE_3_KICKER}}</span><h3>{{PROFILE_3_H3}}</h3><p>{{PROFILE_3_COPY}}</p></article>
+    </section>
+
+    <!-- Contenido específico / tabla / fichas -->
+    {{CONTENT}}
+  </main>
+
+  <!-- Reutilizar footer global vigente -->
+</body>
+</html>
