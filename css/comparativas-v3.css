@@ -37,3 +37,42 @@
 
 /* Neutraliza espaciado heredado de páginas antiguas al usar el hero v3 */
 .ccs-comparison-v3.printers-comparison{padding-top:0}
+
+
+/* CTA Amazon de tabla · mismo brillo que el CTA principal */
+.ccs-comparison-v3 .ccs-table-amazon{
+  position:relative;
+  overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.ccs-comparison-v3 .ccs-table-amazon::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-45%;
+  width:28%;
+  height:180%;
+  background:rgba(255,255,255,.48);
+  transform:rotate(18deg);
+  transition:left .48s ease;
+  pointer-events:none;
+}
+.ccs-comparison-v3 .ccs-table-amazon:hover{
+  transform:translateY(-2px);
+  box-shadow:0 9px 20px rgba(0,0,0,.15);
+}
+.ccs-comparison-v3 .ccs-table-amazon:hover::after{
+  left:125%;
+}
+.ccs-comparison-v3 .ccs-table-amazon:active{
+  transform:translateY(0) scale(.99);
+}
+@media(prefers-reduced-motion:reduce){
+  .ccs-comparison-v3 .ccs-table-amazon,
+  .ccs-comparison-v3 .ccs-table-amazon::after{
+    transition:none;
+  }
+  .ccs-comparison-v3 .ccs-table-amazon::after{
+    display:none;
+  }
+}
