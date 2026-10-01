@@ -1968,3 +1968,84 @@ No se compactaron `hero-v5.css` ni `intro-v1.css` aunque contienen capas histór
 
 Queda únicamente la **comprobación visual final de la preview de la rama en escritorio y móvil**. La URL de preview de Cloudflare no fue accesible desde esta sesión, por lo que esta validación no se marca como realizada.
 
+---
+
+## Cierre de Diseño V1 · 01/10/2026 22:27
+
+Estado: **LISTO PARA MERGE, TODAVÍA NO PUBLICADO EN MAIN**.
+
+Rama de trabajo: `comparativas-v3-unificacion`  
+PR: `#3`
+
+### Resultado de la auditoría final responsive
+
+Se ha completado una auditoría automática sobre las **22 URLs del sitemap** en cuatro anchos de viewport:
+
+- 360 px
+- 390 px
+- 768 px
+- 1440 px
+
+Resultado final:
+
+- 22 URLs comprobadas
+- 88 combinaciones URL/viewport
+- 88 comprobaciones superadas
+- 0 incidencias
+- HTTP 200 en todas las URLs comprobadas
+- sin overflow de página detectado
+- navegación móvil y escritorio correcta
+- tablas comparativas contenidas en scroll horizontal cuando corresponde
+- perfiles y tarjetas dentro del viewport
+- imágenes visibles sin roturas detectadas
+- un único H1 por página
+- breadcrumbs correctos: ninguno en portada y uno en cada página interna
+
+Ejecución final de GitHub Actions: `36921312843`.
+
+### Interferencias responsive corregidas
+
+Durante la auditoría se localizaron y corrigieron:
+
+- una regla global que imponía `position: relative` a `.main-nav` y anulaba el `position: fixed` del menú móvil
+- overflow móvil en la portada de Impresión 3D provocado por altura fija combinada con `aspect-ratio`
+- overflow equivalente en tarjetas de Hogar
+- ancho mínimo efectivo en tarjetas de Accesorios 3D
+- desbordamiento del bloque final de Hogar a 360 px
+- contención horizontal global para elementos decorativos sin interferir con el scroll interno de tablas
+
+### CSS y recursos antiguos/remotos
+
+Auditoría realizada sobre las 22 páginas:
+
+- todas las hojas de estilo se cargan desde rutas locales `/css/...`
+- no quedan hojas CSS remotas
+- las imágenes de fondo que todavía apuntaban a `https://compraconsentido.es/images/...` dentro de CSS inline se pasaron a rutas locales `/images/...`
+- se actualizaron versiones de caché de los CSS modificados para evitar que Cloudflare o el navegador sirvan reglas antiguas
+
+### Sitemap
+
+El sitemap contiene **22 URLs** y se actualiza `lastmod` a `2026-10-01` tras el cierre del rediseño global.
+
+### Estado de Diseño V1
+
+Diseño V1 queda técnicamente preparado para publicación:
+
+- sistema global de hero cerrado
+- tarjeta de apertura global cerrada
+- sistema de comparativas v3 unificado
+- fichas de producto compartidas
+- tablas responsive
+- navegación y breadcrumbs homogeneizados
+- responsive validado de 360 a 1440 px
+- interferencias CSS detectadas durante la auditoría eliminadas
+- recursos del preview desacoplados del dominio de producción
+
+Pendiente únicamente:
+
+1. integrar el último estado de `main` en la rama sin perder esta actualización del MASTER
+2. comprobar que el PR no queda detrás de `main`
+3. fusionar el PR #3 a `main`
+4. comprobar el despliegue de producción
+5. actualizar este MASTER en `main` de **LISTO PARA MERGE** a **CERRADO Y PUBLICADO**
+
