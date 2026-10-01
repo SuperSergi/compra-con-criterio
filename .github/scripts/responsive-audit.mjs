@@ -113,6 +113,38 @@ for (const vp of viewports) {
           right: Math.round(el.getBoundingClientRect().right)
         }));
 
+      const overflowCandidates = [...document.querySelectorAll("body *")]
+        .filter(el => visible(el))
+        .map(el => {
+          const r = el.getBoundingClientRect();
+          const s = getComputedStyle(el);
+          const parent = el.parentElement ? getComputedStyle(el.parentElement) : null;
+          return {
+            el,
+            r,
+            s,
+            parentOverflowX: parent?.overflowX || ""
+          };
+        })
+        .filter(x => x.s.position !== "fixed")
+        .filter(x => x.r.left < -3 || x.r.right > window.innerWidth + 3 || x.el.scrollWidth > x.el.clientWidth + 3)
+        .sort((a,b) => Math.max(b.r.right - window.innerWidth, b.el.scrollWidth - b.el.clientWidth) - Math.max(a.r.right - window.innerWidth, a.el.scrollWidth - a.el.clientWidth))
+        .slice(0, 30)
+        .map(x => ({
+          tag: x.el.tagName,
+          id: x.el.id || "",
+          cls: typeof x.el.className === "string" ? x.el.className.slice(0,120) : "",
+          left: Math.round(x.r.left),
+          right: Math.round(x.r.right),
+          width: Math.round(x.r.width),
+          clientWidth: x.el.clientWidth,
+          scrollWidth: x.el.scrollWidth,
+          overflowX: x.s.overflowX,
+          parentOverflowX: x.parentOverflowX,
+          minWidth: x.s.minWidth,
+          whiteSpace: x.s.whiteSpace
+        }));
+
       let heroIntroGap = null;
       if (hero && intro && heroActions && visible(heroActions)) {
         heroIntroGap = Math.round(intro.getBoundingClientRect().top - heroActions.getBoundingClientRect().bottom);
@@ -153,6 +185,7 @@ for (const vp of viewports) {
         heroIntroGap,
         brokenImages,
         outside,
+        overflowCandidates,
         tableResults,
         profileRects,
         productRects,
@@ -197,20 +230,26 @@ for (const vp of viewports) {
     }
 
     if (vp.width <= 390) {
+      const button = page.locator(".menu-toggle");
+      if (await button.count()) {
+        await button.click();
+        await page.waitForTimeout(180);
+      }
       const navTest = await page.evaluate(() => {
         const btn = document.querySelector(".menu-toggle");
         const nav = document.querySelector("#main-nav");
         if (!btn || !nav) return { ok: false, reason: "missing" };
-        btn.click();
         const r = nav.getBoundingClientRect();
         const s = getComputedStyle(nav);
         const open = nav.classList.contains("open");
         return {
-          ok: open && s.display !== "none" && r.left >= -3 && r.right <= innerWidth + 3,
+          ok: open && s.display !== "none" && s.position === "fixed" && r.left >= 7 && r.right <= innerWidth - 7,
           open,
           display: s.display,
+          position: s.position,
           left: Math.round(r.left),
-          right: Math.round(r.right)
+          right: Math.round(r.right),
+          width: Math.round(r.width)
         };
       });
       if (!navTest.ok) issues.push("mobile-nav=" + JSON.stringify(navTest));
