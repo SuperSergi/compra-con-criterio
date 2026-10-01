@@ -858,6 +858,49 @@ Implementación actual en la rama `comparativas-v3-unificacion`:
 
 ---
 
+# 20.2. Clasificación editorial de páginas y componentes comunes · decisión cerrada 01/10/2026
+
+A partir de ahora, antes de diseñar una página nueva, clasificarla en una de estas tres familias:
+
+1. **Informacional**
+   - Hero común
+   - Tarjeta introductoria solapada `ccs-intro-overlap`
+   - Desarrollo explicativo
+   - Criterios y enlaces internos relevantes
+
+2. **Comparativa / transaccional**
+   - Hero común
+   - Bloque de elección rápida
+   - Tabla comparativa
+   - Fichas de producto
+   - Criterios / metodología
+   - FAQ cuando aporte valor
+
+3. **Híbrida**
+   - Hero común
+   - Tarjeta introductoria solapada `ccs-intro-overlap`
+   - Breve bloque educativo
+   - Elección rápida
+   - Tabla / fichas
+   - Resto de guía
+
+Regla visual común:
+
+- Hero, breadcrumbs, shell, radios, sombras, tipografía y ritmo vertical deben pertenecer a la misma familia visual.
+- La tarjeta introductoria tras el hero usa un único componente global.
+- Referencia visual canónica para esa tarjeta: Inicio / Herramientas.
+- Kicker: mayúsculas, verde medio, 13 px en escritorio.
+- H2: verde oscuro, `clamp(30px,3vw,42px)`, peso 800.
+- Texto: gris editorial, 17 px, misma familia tipográfica global.
+- La tipografía canónica del componente es Inter / system-ui; estilos antiguos de página no deben modificarla.
+
+Implementación actual:
+
+- `/css/intro-v1.css`
+- clases `ccs-intro-overlap`, `ccs-intro-card`, `ccs-intro-heading`, `ccs-intro-copy`
+
+---
+
 # 21. Cabecera editorial, afiliación y schema
 
 Las comparativas deben mostrar:
