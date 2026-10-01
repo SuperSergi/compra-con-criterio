@@ -1,15 +1,17 @@
 name: Responsive audit
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - comparativas-v3-unificacion
     paths:
       - ".github/workflows/responsive-audit.yml"
       - ".github/scripts/responsive-audit.mjs"
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   responsive-audit:
@@ -52,5 +54,15 @@ jobs:
           path: |
             responsive-audit/
             responsive-audit-report.json
+            responsive-audit-summary.md
           if-no-files-found: error
           retention-days: 3
+
+      - name: Comment audit result on PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "" >> responsive-audit-summary.md
+          echo "[Ver ejecución](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> responsive-audit-summary.md
+          gh pr comment 3 --body-file responsive-audit-summary.md
