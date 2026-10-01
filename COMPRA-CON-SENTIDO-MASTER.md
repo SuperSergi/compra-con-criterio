@@ -1881,3 +1881,31 @@ No realizar cambios agresivos ni crear nuevas URLs solo para intentar forzar ind
 - comprobar cuándo pasan a rastreadas/indexadas
 - revisar el informe agregado del sitemap cuando se actualice
 - esperar las primeras impresiones y consultas reales en Search Console antes de decidir nuevas páginas por datos
+
+
+## Sistema global de aperturas · decisión cerrada 01/10/2026
+
+Se unifica la apertura visual del site completo.
+
+Regla global:
+
+- Todas las páginas internas/editoriales usan la misma tarjeta blanca solapada sobre el hero mediante `ccs-intro-card` y `intro-v1.css`.
+- Las comparativas e híbridas reutilizan esa misma tarjeta blanca; no tienen una tarjeta visual separada.
+- Las comparativas e híbridas añaden debajo exactamente tres perfiles/escenarios mediante `ccs-comparison-profiles` y `ccs-comparison-profile`.
+- `comparison-opening-v1.css` queda reservado a la estructura específica de comparativas y a los tres perfiles; la apariencia de la tarjeta blanca se controla únicamente desde `intro-v1.css`.
+- Si cambia color, radio, sombra, tipografía, padding o geometría de `ccs-intro-card`, el cambio se propaga a todo el site sin editar cada HTML.
+- Los bloques `La elegiría si...` quedan definitivamente con fondo azul suave, borde azul y texto/título azul mediante `product-cards-v1.css`.
+
+Auditoría realizada sobre todas las URLs actuales del sitemap:
+- todas usan `ccs-intro-card`
+- las 7 comparativas actuales usan además 3 perfiles
+
+Plantillas maestras añadidas para nuevas páginas:
+- `.github/content-templates/pagina-informacional.html`
+- `.github/content-templates/pagina-comparativa.html`
+
+Las nuevas páginas deben partir de estas plantillas y no copiar estructuras antiguas de páginas existentes.
+
+Última actualización: 01/10/2026 20:44.
+
+---
