@@ -921,6 +921,29 @@ Implementación actual:
 
 ---
 
+## Apertura común de comparativas · decisión cerrada 01/10/2026
+
+Se unifica la apertura visual de todas las páginas con intención comparativa, incluidas las híbridas.
+
+Patrón obligatorio:
+
+`Hero → tarjeta blanca solapada → tres perfiles/escenarios → contenido específico → tabla → fichas`
+
+Reglas:
+
+- La tarjeta blanca solapada usa siempre `ccs-comparison-opening` + `ccs-comparison-opening-card`.
+- El `main` de comparativas usa `ccs-comparison-main` para eliminar paddings heredados que puedan romper el solape.
+- Debajo aparecen exactamente tres tarjetas `ccs-comparison-profile` dentro de `ccs-comparison-profiles`.
+- La tarjeta blanca comparte lenguaje visual con las aperturas del resto de la web: mismo radio, sombra, tipografía, kicker, H2 y texto.
+- La diferencia entre página puramente comparativa e híbrida es editorial, no visual.
+- Llaves de impacto y Amoladoras ya usan también esta misma apertura.
+- Las siete comparativas actuales tienen 1 tarjeta de apertura + 3 perfiles.
+
+Implementación:
+- `/css/comparison-opening-v1.css`
+
+---
+
 # 21. Cabecera editorial, afiliación y schema
 
 Las comparativas deben mostrar:
