@@ -210,3 +210,24 @@
     border-radius:16px!important;
   }
 }
+
+
+/* =========================================================
+   COMPARISON OPENING V1.2 · SOLAPE REAL
+   El main de páginas antiguas no puede añadir aire sobre
+   la tarjeta solapada.
+   ========================================================= */
+
+.ccs-comparison-main{
+  padding-top:0!important;
+}
+
+.ccs-comparison-main > .ccs-comparison-opening:first-child{
+  margin-top:-46px!important;
+}
+
+@media(max-width:760px){
+  .ccs-comparison-main > .ccs-comparison-opening:first-child{
+    margin-top:-32px!important;
+  }
+}
