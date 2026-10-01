@@ -431,3 +431,177 @@
   .site-breadcrumbs{top:70px!important;padding-top:10px!important;font-size:12px!important}
   .site-breadcrumbs .shell{width:min(100% - 24px,var(--ccs-hero-shell))!important}
 }
+
+
+/* =========================================================
+   HERO V5.1 · GEOMETRÍA ÚNICA
+   Un único ritmo vertical para todas las páginas.
+   El hero crece por contenido; no por alturas mínimas.
+   ========================================================= */
+
+/* Neutraliza espacios heredados de los CSS específicos */
+body.home,
+body.tools-page,
+body.jacks-page,
+body.drill-page,
+body.grinder-page,
+body.impact-page,
+body.print3d-page,
+body.printers-page,
+body.printers-comparison,
+body.filaments-page,
+body.accessories-page,
+body.home-page,
+body.vacuum-page,
+body.robot-comparison,
+body.dehum-page,
+body.cap-page,
+body.compare-dehum-page,
+body.legal-page,
+body.ccs-comparison-v3{
+  padding-top:0!important;
+}
+
+.hero,
+.tools-hero,
+.jacks-hero,
+.drill-hero,
+.ccs-hero,
+.print3d-hero,
+.printers-hero,
+.filaments-hero,
+.accessories-hero,
+.home-hero,
+.vacuum-hero,
+.dehum-hero,
+.cap-hero,
+.legal-hero{
+  min-height:0!important;
+  height:auto!important;
+  padding:0!important;
+}
+
+/* La cabecera se construye siempre desde las mismas coordenadas:
+   76px menú + breadcrumbs + ~36px de aire visual. */
+.hero-content,
+.tools-hero-content,
+.jacks-hero-inner,
+.drill-hero-content,
+.ccs-hero-copy,
+.print3d-hero-content,
+.printers-hero-content,
+.filaments-hero-content,
+.accessories-hero-content,
+.home-hero-content,
+.vacuum-hero-content,
+.dehum-hero-content,
+.cap-hero-copy,
+.legal-hero-content{
+  min-height:0!important;
+  height:auto!important;
+  padding:142px 0 58px!important;
+  justify-content:flex-start!important;
+}
+
+/* Las comparativas dejan de tener una geometría propia */
+.ccs-hero .ccs-hero-copy{
+  padding-top:142px!important;
+}
+
+/* Ritmo interno idéntico */
+.hero-content > [class*="kicker"],
+.tools-hero-content > [class*="kicker"],
+.jacks-hero-inner > [class*="kicker"],
+.drill-hero-content > [class*="kicker"],
+.ccs-hero-copy > .ccs-hero-kicker,
+.print3d-hero-content > [class*="kicker"],
+.printers-hero-content > [class*="kicker"],
+.filaments-hero-content > [class*="kicker"],
+.accessories-hero-content > [class*="kicker"],
+.home-hero-content > [class*="kicker"],
+.vacuum-hero-content > [class*="kicker"],
+.dehum-hero-content > [class*="kicker"],
+.cap-hero-copy > .section-kicker,
+.legal-hero-content > [class*="kicker"]{
+  margin-bottom:16px!important;
+}
+
+.hero-content > h1,
+.tools-hero-content > h1,
+.jacks-hero-inner > h1,
+.drill-hero-content > h1,
+.ccs-hero-copy > h1,
+.print3d-hero-content > h1,
+.printers-hero-content > h1,
+.filaments-hero-content > h1,
+.accessories-hero-content > h1,
+.home-hero-content > h1,
+.vacuum-hero-content > h1,
+.dehum-hero-content > h1,
+.cap-hero-copy > h1,
+.legal-hero-content > h1{
+  margin:0!important;
+}
+
+.hero-content > p,
+.tools-hero-content > p,
+.jacks-hero-inner > p,
+.drill-hero-content > p,
+.ccs-hero-copy > .ccs-hero-lead,
+.print3d-hero-content > p,
+.printers-hero-content > p,
+.filaments-hero-content > p,
+.accessories-hero-content > p,
+.home-hero-content > p,
+.vacuum-hero-content > p,
+.dehum-hero-content > p,
+.cap-hero-copy > p,
+.legal-hero-content > p{
+  margin-top:18px!important;
+}
+
+@media(max-width:760px){
+  body.home,
+  body.tools-page,
+  body.jacks-page,
+  body.drill-page,
+  body.grinder-page,
+  body.impact-page,
+  body.print3d-page,
+  body.printers-page,
+  body.printers-comparison,
+  body.filaments-page,
+  body.accessories-page,
+  body.home-page,
+  body.vacuum-page,
+  body.robot-comparison,
+  body.dehum-page,
+  body.cap-page,
+  body.compare-dehum-page,
+  body.legal-page,
+  body.ccs-comparison-v3{
+    padding-top:0!important;
+  }
+
+  .hero-content,
+  .tools-hero-content,
+  .jacks-hero-inner,
+  .drill-hero-content,
+  .ccs-hero-copy,
+  .print3d-hero-content,
+  .printers-hero-content,
+  .filaments-hero-content,
+  .accessories-hero-content,
+  .home-hero-content,
+  .vacuum-hero-content,
+  .dehum-hero-content,
+  .cap-hero-copy,
+  .legal-hero-content{
+    min-height:0!important;
+    padding:120px 0 44px!important;
+  }
+
+  .ccs-hero .ccs-hero-copy{
+    padding-top:120px!important;
+  }
+}
