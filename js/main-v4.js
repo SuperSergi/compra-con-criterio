@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!nav) return;
 
   const base =
-    "https://compraconsentido.es/";
+    "/";
 
   const submenuData = [
     {
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "ccc_analytics_consent";
 
   const BASE =
-    "https://compraconsentido.es/";
+    "/";
 
   const getConsent = () => {
     try {
