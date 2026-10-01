@@ -1,0 +1,55 @@
+name: Responsive audit
+
+on:
+  push:
+    branches:
+      - comparativas-v3-unificacion
+    paths:
+      - ".github/workflows/responsive-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  responsive-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Start local site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/ccs-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/ccs-http.log
+          exit 1
+
+      - name: Run responsive audit
+        run: node .github/scripts/responsive-audit.mjs
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-audit
+          path: |
+            responsive-audit/
+            responsive-audit-report.json
+          if-no-files-found: error
+          retention-days: 3
