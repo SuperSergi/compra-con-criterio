@@ -2354,3 +2354,20 @@ main{
     transform:none!important;
   }
 }
+
+
+/* =========================================================
+   RESPONSIVE FINAL V1 · MENÚ MÓVIL
+   La capa global de z-index declara .topbar .main-nav como
+   relative en escritorio. En móvil debe seguir siendo fixed.
+   ========================================================= */
+@media(max-width:760px){
+  .topbar .main-nav{
+    position:fixed!important;
+    left:10px!important;
+    right:10px!important;
+    top:64px!important;
+    width:auto!important;
+    transform:none!important;
+  }
+}
