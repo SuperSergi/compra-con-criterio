@@ -318,7 +318,7 @@
    ========================================================= */
 
 .ccs-product-card .ccs-product-proscons{
-  grid-auto-rows:1fr!important;
+  grid-auto-rows:auto!important;
 }
 
 .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
@@ -377,5 +377,82 @@
   .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
     height:auto!important;
     min-height:0!important;
+  }
+}
+
+
+/* =========================================================
+   PRODUCT CARDS V1.3 · ALTURAS CORRECTAS
+   Solo pros/contras comparten altura. Decisión y CTA son auto.
+   ========================================================= */
+
+.ccs-product-card .ccs-product-proscons{
+  grid-template-rows:auto auto auto!important;
+  grid-auto-rows:auto!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child,
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
+  align-self:stretch!important;
+}
+
+/* Pros y contras se igualan porque comparten la primera fila */
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child{
+  grid-column:1!important;
+  grid-row:1!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
+  grid-column:2!important;
+  grid-row:1!important;
+}
+
+/* La decisión ocupa todo el ancho pero solo lo que necesita */
+.ccs-product-card .ccs-product-proscons > .ccs-product-decision{
+  grid-column:1 / -1!important;
+  grid-row:2!important;
+  min-height:0!important;
+  height:auto!important;
+  align-self:start!important;
+}
+
+/* CTA inmediatamente debajo */
+.ccs-product-card .ccs-product-proscons > .ccs-product-cta{
+  grid-column:1 / -1!important;
+  grid-row:3!important;
+  min-height:0!important;
+  height:auto!important;
+  margin-top:10px!important;
+  align-self:start!important;
+}
+
+.ccs-product-card .ccs-product-decision{
+  min-height:0!important;
+  height:auto!important;
+}
+
+.ccs-product-card .ccs-product-cta{
+  min-height:0!important;
+  height:auto!important;
+  margin-top:10px!important;
+}
+
+.ccs-product-card .ccs-product-cta-button,
+.ccs-product-card .ccs-product-cta a,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  margin-top:0!important;
+}
+
+@media(max-width:760px){
+  .ccs-product-card .ccs-product-proscons{
+    grid-template-rows:auto!important;
+  }
+
+  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child,
+  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2),
+  .ccs-product-card .ccs-product-proscons > .ccs-product-decision,
+  .ccs-product-card .ccs-product-proscons > .ccs-product-cta{
+    grid-column:1!important;
+    grid-row:auto!important;
   }
 }
