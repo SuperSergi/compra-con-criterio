@@ -1,0 +1,97 @@
+/* =========================================================
+   COMPRA CON SENTIDO · COMPARISON OPENING V1
+   Solo estructura específica de comparativas.
+   La tarjeta blanca usa el componente global de intro-v1.css.
+   ========================================================= */
+
+.ccs-comparison-opening{
+  width:min(1160px,calc(100% - 36px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Tres perfiles/escenarios exclusivos de comparativas e híbridas */
+.ccs-comparison-profiles{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+  width:min(1160px,calc(100% - 36px));
+  margin:0 auto 46px!important;
+}
+
+.ccs-comparison-profile{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:190px!important;
+  padding:24px!important;
+  box-sizing:border-box!important;
+  border:1px solid #dce8e1!important;
+  border-radius:18px!important;
+  background:#f8fbf9!important;
+  box-shadow:0 8px 20px rgba(22,60,39,.04)!important;
+}
+
+.ccs-comparison-profile > span,
+.ccs-comparison-profile > small{
+  display:inline-block!important;
+  align-self:flex-start!important;
+  margin:0 0 12px!important;
+  color:var(--green-700,#138250)!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+
+.ccs-comparison-profile h3{
+  margin:0 0 10px!important;
+  color:var(--green-950,#063d26)!important;
+  font-size:21px!important;
+  line-height:1.25!important;
+  font-weight:750!important;
+  letter-spacing:-.015em!important;
+}
+
+.ccs-comparison-profile p{
+  margin:0!important;
+  color:var(--muted,#5f6d65)!important;
+  font-size:15px!important;
+  line-height:1.6!important;
+}
+
+.ccs-comparison-profile strong{
+  color:var(--green-950,#063d26)!important;
+}
+
+/* El main de páginas antiguas no puede añadir aire antes del solape */
+.ccs-comparison-main{
+  padding-top:0!important;
+}
+
+@media(max-width:900px){
+  .ccs-comparison-profiles{
+    grid-template-columns:1fr!important;
+  }
+
+  .ccs-comparison-profile{
+    min-height:0!important;
+  }
+}
+
+@media(max-width:760px){
+  .ccs-comparison-opening{
+    width:min(100% - 24px,1160px)!important;
+  }
+
+  .ccs-comparison-profiles{
+    width:min(100% - 24px,1160px);
+    margin-bottom:34px!important;
+    gap:12px!important;
+  }
+
+  .ccs-comparison-profile{
+    padding:21px!important;
+    border-radius:16px!important;
+  }
+}

@@ -55,12 +55,14 @@
 
 html{
   scroll-behavior:smooth;
+  overflow-x:clip;
 }
 
 
 body{
 
   margin:0;
+  overflow-x:clip;
 
   font-family:
     Inter,
@@ -2226,3 +2228,146 @@ button{
 /* Aviso de desplazamiento horizontal para tablas comparativas en móvil */
 .table-scroll-hint{display:none;margin:8px 0 10px;font-size:13px;font-weight:750;color:#0a653c}
 @media(max-width:760px){.table-scroll-hint{display:block}}
+
+
+/* =========================================================
+   NAVEGACIÓN GLOBAL · CAPA SUPERIOR GARANTIZADA
+   La barra fija y sus desplegables deben quedar siempre
+   por encima de heroes, tarjetas, imágenes, hovers y tablas.
+   ========================================================= */
+
+.topbar{
+  z-index:2147483000!important;
+  isolation:isolate;
+}
+
+.topbar::before{
+  z-index:-1!important;
+}
+
+.topbar .brand,
+.topbar .menu-toggle{
+  position:relative;
+  z-index:2;
+}
+
+.topbar .main-nav{
+  z-index:2;
+}
+
+.topbar .nav-group{
+  z-index:3;
+}
+
+.topbar .dropdown,
+.topbar .dropdown-submenu{
+  z-index:2147483001!important;
+}
+
+/* Ningún contenido editorial debe competir con la navegación */
+main{
+  z-index:auto;
+}
+
+.site-breadcrumbs{
+  z-index:2147482000!important;
+}
+
+
+
+/* =========================================================
+   NAVEGACIÓN V4.3 · SUBMENÚ DE ESCRITORIO MÁS TOLERANTE
+   Evita perder el segundo nivel al cruzar del primer menú.
+   ========================================================= */
+@media (min-width:761px){
+
+  /* Zona invisible que cubre el hueco entre ambos niveles */
+  .dropdown-subgroup::after{
+    content:"";
+    position:absolute;
+    top:-4px;
+    bottom:-4px;
+    left:100%;
+    width:16px;
+  }
+
+  /* Impresión 3D abre hacia la izquierda: el puente va al otro lado */
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup::after{
+    left:auto;
+    right:100%;
+  }
+
+  /* El submenú existe siempre en escritorio y se oculta con visibilidad.
+     Esto permite retrasar ligeramente el cierre sin JavaScript. */
+  .dropdown-submenu{
+    display:block!important;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:auto;
+    transform:translateX(4px);
+    transition:
+      opacity .12s ease .22s,
+      transform .12s ease .22s,
+      visibility 0s linear .38s;
+  }
+
+  .dropdown-subgroup:hover > .dropdown-submenu,
+  .dropdown-subgroup:focus-within > .dropdown-submenu,
+  .dropdown-subgroup.open > .dropdown-submenu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+    transition-delay:0s;
+  }
+
+  /* Al abrir hacia la izquierda, la entrada visual se invierte */
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-submenu{
+    transform:translateX(-4px);
+  }
+
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup:hover > .dropdown-submenu,
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup:focus-within > .dropdown-submenu,
+  .main-nav > .nav-group:nth-of-type(2) .dropdown-subgroup.open > .dropdown-submenu{
+    transform:translateX(0);
+  }
+
+  /* Algo más de superficie clicable */
+  .dropdown-subgroup > .dropdown-parent{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+  }
+
+  .dropdown-submenu{
+    min-width:235px;
+    padding:12px;
+  }
+
+  .dropdown-submenu a{
+    padding:11px 13px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .dropdown-submenu{
+    transition:none!important;
+    transform:none!important;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE FINAL V1 · MENÚ MÓVIL
+   La capa global de z-index declara .topbar .main-nav como
+   relative en escritorio. En móvil debe seguir siendo fixed.
+   ========================================================= */
+@media(max-width:760px){
+  .topbar .main-nav{
+    position:fixed!important;
+    left:10px!important;
+    right:10px!important;
+    top:64px!important;
+    width:auto!important;
+    transform:none!important;
+  }
+}

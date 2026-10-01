@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 1 de octubre de 2026 · 08:20
+**Última actualización:** 1 de octubre de 2026 · 22:27
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -832,6 +832,118 @@ El ecosistema de batería puede ser un criterio secundario, pero no debe convert
 
 ---
 
+# 20.1. Sistema visual de heroes internos · decisión cerrada 01/10/2026
+
+Se cierra el posicionamiento y ritmo vertical de los textos en los heroes internos.
+
+Reglas vigentes:
+
+- una única geometría base para categorías, guías y comparativas
+- mismo ancho de contenido alineado con la shell principal
+- misma secuencia visual: menú fijo → breadcrumbs → espacio constante → kicker/tag → H1 → texto → firma editorial/chips/acciones
+- un solo bloque visible de breadcrumbs por página
+- mismo espaciado interno entre los elementos del hero
+- sin alturas mínimas artificiales que provoquen huecos distintos entre páginas
+- la altura del hero debe crecer automáticamente según la longitud real del título y del contenido
+- neutralizar paddings o alturas heredadas de CSS antiguos que rompan esta geometría
+- la home principal puede conservar particularidades de contenido, pero debe respetar el mismo ritmo y alineación visual cuando use el sistema común
+- no volver a reajustar este posicionamiento salvo que aparezca un problema real de responsive o accesibilidad
+
+Implementación actual en la rama `comparativas-v3-unificacion`:
+
+- CSS compartido: `/css/hero-v5.css`
+- geometría consolidada como Hero V5.1
+- navegación interna preparada para funcionar tanto en producción como en previews `.pages.dev`
+- JS global cargado desde ruta local `/js/main-v4.js` para no salir de la preview durante la revisión
+
+---
+
+# 20.2. Clasificación editorial de páginas y componentes comunes · decisión cerrada 01/10/2026
+
+A partir de ahora, antes de diseñar una página nueva, clasificarla en una de estas tres familias:
+
+1. **Informacional**
+   - Hero común
+   - Tarjeta introductoria solapada `ccs-intro-overlap`
+   - Desarrollo explicativo
+   - Criterios y enlaces internos relevantes
+
+2. **Comparativa / transaccional**
+   - Hero común
+   - Bloque de elección rápida
+   - Tabla comparativa
+   - Fichas de producto
+   - Criterios / metodología
+   - FAQ cuando aporte valor
+
+3. **Híbrida**
+   - Hero común
+   - Tarjeta introductoria solapada `ccs-intro-overlap`
+   - Breve bloque educativo
+   - Elección rápida
+   - Tabla / fichas
+   - Resto de guía
+
+Regla visual común:
+
+- Hero, breadcrumbs, shell, radios, sombras, tipografía y ritmo vertical deben pertenecer a la misma familia visual.
+- La tarjeta introductoria tras el hero usa un único componente global.
+- Referencia visual canónica para esa tarjeta: Inicio / Herramientas.
+- Kicker: mayúsculas, verde medio, 13 px en escritorio.
+- H2: verde oscuro, `clamp(30px,3vw,42px)`, peso 800.
+- Texto: gris editorial, 17 px, misma familia tipográfica global.
+- La tipografía canónica del componente es Inter / system-ui; estilos antiguos de página no deben modificarla.
+
+Implementación actual:
+
+- `/css/intro-v1.css`
+- clases `ccs-intro-overlap`, `ccs-intro-card`, `ccs-intro-heading`, `ccs-intro-copy`
+
+---
+
+## Decisión de diseño de comparativas · 01/10/2026
+
+La clasificación informacional / comparativa / híbrida se mantiene como criterio editorial, pero **no crea plantillas visuales distintas dentro de las comparativas**.
+
+Todas las comparativas deben compartir el mismo lenguaje visual y el mismo arranque base:
+
+`Hero → bloque de decisión/perfiles → tabla → fichas de producto → resto de contenido`
+
+Las páginas híbridas pueden incluir más explicación editorial, pero sin introducir una cabecera o tarjeta exclusiva que las haga parecer una familia visual diferente.
+
+Implementación actual:
+
+- `/css/comparison-opening-v1.css` para el primer bloque de decisión/perfiles
+- `/css/comparativas-v3.css` para tablas
+- `/css/product-cards-v1.css` para fichas individuales
+- las siete comparativas actuales usan el mismo patrón visual de apertura
+- Llaves de impacto y Amoladoras a batería dejan de usar una variante visual híbrida propia
+
+---
+
+## Apertura común de comparativas · decisión cerrada 01/10/2026
+
+Se unifica la apertura visual de todas las páginas con intención comparativa, incluidas las híbridas.
+
+Patrón obligatorio:
+
+`Hero → tarjeta blanca solapada → tres perfiles/escenarios → contenido específico → tabla → fichas`
+
+Reglas:
+
+- La tarjeta blanca solapada usa siempre `ccs-comparison-opening` + `ccs-comparison-opening-card`.
+- El `main` de comparativas usa `ccs-comparison-main` para eliminar paddings heredados que puedan romper el solape.
+- Debajo aparecen exactamente tres tarjetas `ccs-comparison-profile` dentro de `ccs-comparison-profiles`.
+- La tarjeta blanca comparte lenguaje visual con las aperturas del resto de la web: mismo radio, sombra, tipografía, kicker, H2 y texto.
+- La diferencia entre página puramente comparativa e híbrida es editorial, no visual.
+- Llaves de impacto y Amoladoras ya usan también esta misma apertura.
+- Las siete comparativas actuales tienen 1 tarjeta de apertura + 3 perfiles.
+
+Implementación:
+- `/css/comparison-opening-v1.css`
+
+---
+
 # 21. Cabecera editorial, afiliación y schema
 
 Las comparativas deben mostrar:
@@ -1479,34 +1591,6 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [ ] Revisar Core Web Vitals con datos reales.
 - [ ] Configurar Bing Webmaster Tools.
 
-## Revisión global de comparativas v3 · 01/10/2026
-
-Estado: **EN REVISIÓN, NO PUBLICADO**.
-
-Rama: `comparativas-v3-unificacion`  
-PR de borrador: `#3`
-
-Objetivo: llevar todas las comparativas actuales al estándar cerrado con Amoladoras.
-
-Cambios preparados:
-- hero unificado en las 7 comparativas: misma distribución, tipografía, lead, firma y chips
-- CSS compartido `/css/comparativas-v3.css`
-- tabla responsive en todas las comparativas
-- CTA de tabla `🛒 Ver en Amazon`
-- aviso móvil de desplazamiento horizontal y sin primera columna fija
-- radar y puntuaciones artificiales eliminados de Taladros
-- bloques `La elegiría si...`, `Lo que destaca` y `A tener en cuenta` revisados
-- investigación de experiencias reales, pruebas y casos de uso incorporada a las fichas antiguas
-- metodología editorial visible y coherente
-- datos no confirmados representados con `–` cuando corresponde
-- sin cambios todavía en producción
-
-Pendiente antes de fusionar:
-- revisión visual final de las previews en escritorio y móvil
-- corregir cualquier problema de espaciado, hero, tabla o tarjetas
-- actualizar `lastmod` donde corresponda
-- cerrar MASTER y fusionar a `main`
-
 ## Contenido
 
 - [ ] Continuar keyword research del cluster Herramientas.
@@ -1797,3 +1881,171 @@ No realizar cambios agresivos ni crear nuevas URLs solo para intentar forzar ind
 - comprobar cuándo pasan a rastreadas/indexadas
 - revisar el informe agregado del sitemap cuando se actualice
 - esperar las primeras impresiones y consultas reales en Search Console antes de decidir nuevas páginas por datos
+
+
+## Sistema global de aperturas · decisión cerrada 01/10/2026
+
+Se unifica la apertura visual del site completo.
+
+Regla global:
+
+- Todas las páginas internas/editoriales usan la misma tarjeta blanca solapada sobre el hero mediante `ccs-intro-card` y `intro-v1.css`.
+- Las comparativas e híbridas reutilizan esa misma tarjeta blanca; no tienen una tarjeta visual separada.
+- Las comparativas e híbridas añaden debajo exactamente tres perfiles/escenarios mediante `ccs-comparison-profiles` y `ccs-comparison-profile`.
+- `comparison-opening-v1.css` queda reservado a la estructura específica de comparativas y a los tres perfiles; la apariencia de la tarjeta blanca se controla únicamente desde `intro-v1.css`.
+- Si cambia color, radio, sombra, tipografía, padding o geometría de `ccs-intro-card`, el cambio se propaga a todo el site sin editar cada HTML.
+- Los bloques `La elegiría si...` quedan definitivamente con fondo azul suave, borde azul y texto/título azul mediante `product-cards-v1.css`.
+
+Auditoría realizada sobre todas las URLs actuales del sitemap:
+- todas usan `ccs-intro-card`
+- las 7 comparativas actuales usan además 3 perfiles
+
+Plantillas maestras añadidas para nuevas páginas:
+- `.github/content-templates/pagina-informacional.html`
+- `.github/content-templates/pagina-comparativa.html`
+
+Las nuevas páginas deben partir de estas plantillas y no copiar estructuras antiguas de páginas existentes.
+
+Última actualización: 01/10/2026 20:44.
+
+---
+
+---
+
+## Actualización 01/10/2026 21:51 — auditoría estática final y limpieza CSS
+
+Trabajo realizado en la rama `comparativas-v3-unificacion` del PR #3, todavía sin fusionar a `main`.
+
+### Alcance
+
+Se auditaron las 7 comparativas incluidas en la unificación v3:
+
+- Amoladoras a batería
+- Llaves de impacto
+- Gatos hidráulicos
+- Taladros a batería
+- Robots aspiradores
+- Deshumidificadores
+- Impresoras 3D
+
+### Limpieza CSS aplicada
+
+Se eliminaron únicamente reglas específicas cuyo selector ya no puede coincidir con el HTML actual ni con clases utilizadas por el JavaScript global o inline.
+
+Reducción total aproximada: **22.610 caracteres de CSS obsoleto**.
+
+Recorte por capa específica:
+
+- Gatos: 3.045 caracteres; 25 reglas retiradas
+- Taladros: 7.904 caracteres; 61 reglas retiradas
+- Impresoras 3D: 3.015 caracteres; 22 reglas retiradas
+- Amoladoras: 2.370 caracteres; 26 reglas retiradas
+- Llaves de impacto: 1.916 caracteres; 22 reglas retiradas
+- Robots aspiradores: 2.246 caracteres; 21 reglas retiradas
+- Deshumidificadores: 2.114 caracteres; 17 reglas retiradas
+
+También se actualizaron las versiones de caché de los CSS específicos modificados y Deshumidificadores quedó alineado con `/css/style-v4.css?v=20261001-6`.
+
+### Validación estática superada
+
+En las 7 comparativas se confirmó:
+
+- un único H1
+- clase global `ccs-comparison-v3`
+- hero común `ccs-hero`
+- intro común `ccs-intro-card`
+- perfiles de decisión `ccs-comparison-profiles`
+- 6 fichas de producto por comparativa
+- aviso móvil de desplazamiento de tabla
+- CSS enlazado con estructura de llaves válida
+- CSS inline restante con estructura válida
+
+### Decisión de limpieza
+
+No se compactaron `hero-v5.css` ni `intro-v1.css` aunque contienen capas históricas y algunas reglas sobrescritas, porque son estilos globales usados fuera de las comparativas. Modificarlos sin una regresión visual completa de toda la web introduciría un riesgo innecesario.
+
+### Pendiente antes de fusionar
+
+Queda únicamente la **comprobación visual final de la preview de la rama en escritorio y móvil**. La URL de preview de Cloudflare no fue accesible desde esta sesión, por lo que esta validación no se marca como realizada.
+
+---
+
+## Cierre de Diseño V1 · 01/10/2026 22:27
+
+Estado: **LISTO PARA MERGE, TODAVÍA NO PUBLICADO EN MAIN**.
+
+Rama de trabajo: `comparativas-v3-unificacion`  
+PR: `#3`
+
+### Resultado de la auditoría final responsive
+
+Se ha completado una auditoría automática sobre las **22 URLs del sitemap** en cuatro anchos de viewport:
+
+- 360 px
+- 390 px
+- 768 px
+- 1440 px
+
+Resultado final:
+
+- 22 URLs comprobadas
+- 88 combinaciones URL/viewport
+- 88 comprobaciones superadas
+- 0 incidencias
+- HTTP 200 en todas las URLs comprobadas
+- sin overflow de página detectado
+- navegación móvil y escritorio correcta
+- tablas comparativas contenidas en scroll horizontal cuando corresponde
+- perfiles y tarjetas dentro del viewport
+- imágenes visibles sin roturas detectadas
+- un único H1 por página
+- breadcrumbs correctos: ninguno en portada y uno en cada página interna
+
+Ejecución final de GitHub Actions: `36921312843`.
+
+### Interferencias responsive corregidas
+
+Durante la auditoría se localizaron y corrigieron:
+
+- una regla global que imponía `position: relative` a `.main-nav` y anulaba el `position: fixed` del menú móvil
+- overflow móvil en la portada de Impresión 3D provocado por altura fija combinada con `aspect-ratio`
+- overflow equivalente en tarjetas de Hogar
+- ancho mínimo efectivo en tarjetas de Accesorios 3D
+- desbordamiento del bloque final de Hogar a 360 px
+- contención horizontal global para elementos decorativos sin interferir con el scroll interno de tablas
+
+### CSS y recursos antiguos/remotos
+
+Auditoría realizada sobre las 22 páginas:
+
+- todas las hojas de estilo se cargan desde rutas locales `/css/...`
+- no quedan hojas CSS remotas
+- las imágenes de fondo que todavía apuntaban a `https://compraconsentido.es/images/...` dentro de CSS inline se pasaron a rutas locales `/images/...`
+- se actualizaron versiones de caché de los CSS modificados para evitar que Cloudflare o el navegador sirvan reglas antiguas
+
+### Sitemap
+
+El sitemap contiene **22 URLs** y se actualiza `lastmod` a `2026-10-01` tras el cierre del rediseño global.
+
+### Estado de Diseño V1
+
+Diseño V1 queda técnicamente preparado para publicación:
+
+- sistema global de hero cerrado
+- tarjeta de apertura global cerrada
+- sistema de comparativas v3 unificado
+- fichas de producto compartidas
+- tablas responsive
+- navegación y breadcrumbs homogeneizados
+- responsive validado de 360 a 1440 px
+- interferencias CSS detectadas durante la auditoría eliminadas
+- recursos del preview desacoplados del dominio de producción
+
+Pendiente únicamente:
+
+1. integrar el último estado de `main` en la rama sin perder esta actualización del MASTER
+2. comprobar que el PR no queda detrás de `main`
+3. fusionar el PR #3 a `main`
+4. comprobar el despliegue de producción
+5. actualizar este MASTER en `main` de **LISTO PARA MERGE** a **CERRADO Y PUBLICADO**
+

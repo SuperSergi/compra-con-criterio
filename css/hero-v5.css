@@ -1,0 +1,633 @@
+/* =========================================================
+   COMPRA CON SENTIDO · HERO GLOBAL V5
+   Unifica cabeceras internas. La home principal y Metodología
+   conservan su composición específica.
+   ========================================================= */
+
+:root{
+  --ccs-hero-shell:1240px;
+  --ccs-hero-green:#063d26;
+  --ccs-hero-overlay:linear-gradient(90deg,rgba(5,49,30,.94) 0%,rgba(6,61,38,.86) 36%,rgba(6,61,38,.58) 66%,rgba(6,61,38,.30) 100%);
+}
+
+/* Hero base */
+.hero,
+.tools-hero,
+.jacks-hero,
+.drill-hero,
+.ccs-hero,
+.print3d-hero,
+.printers-hero,
+.filaments-hero,
+.accessories-hero,
+.home-hero,
+.vacuum-hero,
+.dehum-hero,
+.cap-hero,
+.legal-hero{
+  position:relative!important;
+  isolation:isolate;
+  min-height:580px!important;
+  overflow:hidden!important;
+  color:#fff!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+
+/* Fondo limpio por página: una imagen + un solo degradado común */
+.hero{background-image:url('/images/hero-inicio.webp')!important}
+.tools-hero{background-image:url('/images/categoria-herramientas.webp')!important}
+.jacks-hero{background-image:url('/images/gatos-hidraulicos-guia-hero.webp')!important}
+.drill-hero{background-image:url('/images/guia-taladros-bateria-hero.webp')!important}
+.ccs-hero{background-image:var(--ccs-hero-image)!important}
+.print3d-hero{background-image:url('/images/categoria-impresion-3d.webp')!important}
+.printers-hero{background-image:url('/images/guia-impresoras-3d.webp')!important}
+.filaments-hero{background-image:url('/images/guia-filamentos-3d.webp')!important}
+.accessories-hero{background-image:url('/images/herramientas-accesorios-impresion-3d.webp')!important}
+.home-hero{background-image:url('/images/categoria-hogar.webp')!important}
+.vacuum-hero{background-image:url('/images/aspiradoras-guia-hero.webp')!important}
+.dehum-hero{background-image:url('/images/deshumidificadores/deshumidificadores-hero.webp')!important}
+.cap-hero{background-image:url('/images/deshumidificadores/deshumidificador-capacidad-estancias.webp')!important}
+.legal-hero{background:#0b4f34!important}
+
+.hero::before,
+.tools-hero::before,
+.jacks-hero::before,
+.drill-hero::before,
+.ccs-hero::before,
+.print3d-hero::before,
+.printers-hero::before,
+.filaments-hero::before,
+.accessories-hero::before,
+.home-hero::before,
+.vacuum-hero::before,
+.dehum-hero::before,
+.cap-hero::before,
+.legal-hero::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  display:block!important;
+  background:var(--ccs-hero-overlay)!important;
+  pointer-events:none!important;
+}
+
+.hero::after,
+.tools-hero::after,
+.jacks-hero::after,
+.drill-hero::after,
+.ccs-hero::after,
+.print3d-hero::after,
+.printers-hero::after,
+.filaments-hero::after,
+.accessories-hero::after,
+.home-hero::after,
+.vacuum-hero::after,
+.dehum-hero::after,
+.cap-hero::after,
+.legal-hero::after{display:none!important}
+
+.hero-shade,
+.tools-hero-shade,
+.drill-hero-shade,
+.home-hero-shade,
+.vacuum-hero-shade,
+.dehum-hero-shade{display:none!important}
+
+/* Contenedor común */
+.hero-content,
+.tools-hero-content,
+.jacks-hero-inner,
+.drill-hero-content,
+.ccs-hero-copy,
+.print3d-hero-content,
+.printers-hero-content,
+.filaments-hero-content,
+.accessories-hero-content,
+.home-hero-content,
+.vacuum-hero-content,
+.dehum-hero-content,
+.cap-hero-copy,
+.legal-hero-content{
+  position:relative!important;
+  z-index:2!important;
+  display:flex!important;
+  flex-direction:column!important;
+  width:min(var(--ccs-hero-shell),calc(100% - 40px))!important;
+  max-width:none!important;
+  min-height:580px!important;
+  margin:0 auto!important;
+  padding:72px 0 62px!important;
+  justify-content:flex-start!important;
+  align-items:flex-start!important;
+  text-align:left!important;
+}
+
+/* La guía de capacidad deja de ser un hero partido */
+.cap-hero-grid{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+}
+.cap-hero-media{display:none!important}
+.cap-hero-copy{max-width:none!important}
+
+/* Kicker */
+.hero-content > [class*="kicker"],
+.tools-hero-content > [class*="kicker"],
+.jacks-hero-inner > [class*="kicker"],
+.drill-hero-content > [class*="kicker"],
+.ccs-hero-copy > .ccs-hero-kicker,
+.print3d-hero-content > [class*="kicker"],
+.printers-hero-content > [class*="kicker"],
+.filaments-hero-content > [class*="kicker"],
+.accessories-hero-content > [class*="kicker"],
+.home-hero-content > [class*="kicker"],
+.vacuum-hero-content > [class*="kicker"],
+.dehum-hero-content > [class*="kicker"],
+.cap-hero-copy > .section-kicker,
+.legal-hero-content > [class*="kicker"]{
+  order:1!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  margin:0 0 18px!important;
+  padding:8px 12px!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.10)!important;
+  color:#fff!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+}
+
+/* H1 */
+.hero-content > h1,
+.tools-hero-content > h1,
+.jacks-hero-inner > h1,
+.drill-hero-content > h1,
+.ccs-hero-copy > h1,
+.print3d-hero-content > h1,
+.printers-hero-content > h1,
+.filaments-hero-content > h1,
+.accessories-hero-content > h1,
+.home-hero-content > h1,
+.vacuum-hero-content > h1,
+.dehum-hero-content > h1,
+.cap-hero-copy > h1,
+.legal-hero-content > h1{
+  order:2!important;
+  max-width:930px!important;
+  margin:0!important;
+  color:#fff!important;
+  font-size:clamp(44px,4vw,64px)!important;
+  font-weight:800!important;
+  line-height:1.04!important;
+  letter-spacing:-.035em!important;
+}
+
+/* Texto introductorio */
+.hero-content > p,
+.tools-hero-content > p,
+.jacks-hero-inner > p,
+.drill-hero-content > p,
+.ccs-hero-copy > .ccs-hero-lead,
+.print3d-hero-content > p,
+.printers-hero-content > p,
+.filaments-hero-content > p,
+.accessories-hero-content > p,
+.home-hero-content > p,
+.vacuum-hero-content > p,
+.dehum-hero-content > p,
+.cap-hero-copy > p,
+.legal-hero-content > p{
+  order:3!important;
+  max-width:850px!important;
+  margin:20px 0 0!important;
+  color:rgba(255,255,255,.92)!important;
+  font-size:20px!important;
+  line-height:1.55!important;
+}
+
+/* Firma editorial */
+.tools-hero-content > .article-byline,
+.jacks-hero-inner > .article-byline,
+.drill-hero-content > .article-byline,
+.ccs-hero-copy > .article-byline,
+.print3d-hero-content > .article-byline,
+.printers-hero-content > .article-byline,
+.filaments-hero-content > .article-byline,
+.accessories-hero-content > .article-byline,
+.home-hero-content > .article-byline,
+.vacuum-hero-content > .article-byline,
+.dehum-hero-content > .article-byline,
+.cap-hero-copy > .article-byline{
+  order:4!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:5px!important;
+  align-items:center!important;
+  margin:18px 0 0!important;
+  color:rgba(255,255,255,.78)!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+}
+.tools-hero-content > .article-byline a,
+.jacks-hero-inner > .article-byline a,
+.drill-hero-content > .article-byline a,
+.ccs-hero-copy > .article-byline a,
+.print3d-hero-content > .article-byline a,
+.printers-hero-content > .article-byline a,
+.filaments-hero-content > .article-byline a,
+.accessories-hero-content > .article-byline a,
+.home-hero-content > .article-byline a,
+.vacuum-hero-content > .article-byline a,
+.dehum-hero-content > .article-byline a,
+.cap-hero-copy > .article-byline a{
+  color:#fff!important;
+  font-weight:800!important;
+}
+
+/* Chips y acciones */
+.ccs-hero-meta,
+.hero-chips,
+.hero-actions,
+.hero-actions,
+.tools-hero-actions,
+.drill-hero-actions,
+.home-hero-actions,
+.vacuum-hero-actions,
+.dehum-hero-actions,
+.cap-hero-note,
+.legal-contact-box,
+.legal-updated{
+  order:5!important;
+}
+.ccs-hero-meta,.hero-chips{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:10px!important;
+  margin:24px 0 0!important;
+}
+.ccs-hero-meta span,.hero-chips span{
+  padding:9px 12px!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.10)!important;
+  color:#fff!important;
+  font-size:13px!important;
+}
+.tools-hero-actions,
+.drill-hero-actions,
+.home-hero-actions,
+.vacuum-hero-actions,
+.dehum-hero-actions{margin-top:26px!important}
+
+/* Capacidad: nota integrada sin romper el patrón */
+.cap-hero-note{
+  max-width:850px!important;
+  margin:24px 0 0!important;
+  padding:14px 16px!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  border-left:4px solid rgba(255,255,255,.75)!important;
+  border-radius:12px!important;
+  background:rgba(6,61,38,.34)!important;
+  color:rgba(255,255,255,.92)!important;
+}
+
+/* Legal */
+.legal-contact-box{
+  width:min(760px,100%)!important;
+  margin:24px 0 0!important;
+  border-color:rgba(255,255,255,.22)!important;
+  background:rgba(255,255,255,.09)!important;
+  color:#fff!important;
+}
+.legal-contact-box a{color:#fff!important}
+.legal-updated{
+  margin-top:18px!important;
+  color:rgba(255,255,255,.72)!important;
+}
+
+/* Las comparativas incluyen el menú dentro del propio hero:
+   necesitan compensar la altura de navegación + breadcrumbs. */
+.ccs-hero .ccs-hero-copy{
+  padding-top:132px!important;
+}
+
+@media(max-width:760px){
+  .ccs-hero .ccs-hero-copy{
+    padding-top:118px!important;
+  }
+}
+
+/* Breadcrumb único, alineado con menú y hero */
+.site-breadcrumbs{
+  top:76px!important;
+  padding:14px 0 0!important;
+  font-size:13px!important;
+}
+.site-breadcrumbs .shell{
+  width:min(var(--ccs-hero-shell),calc(100% - 40px))!important;
+  max-width:none!important;
+  margin:0 auto!important;
+  padding:0!important;
+}
+
+/* Evita que reglas antiguas empujen los heroes */
+.ccs-comparison-v3.printers-comparison{padding-top:0!important}
+
+@media(max-width:900px){
+  .hero-content > h1,
+  .tools-hero-content > h1,
+  .jacks-hero-inner > h1,
+  .drill-hero-content > h1,
+  .ccs-hero-copy > h1,
+  .print3d-hero-content > h1,
+  .printers-hero-content > h1,
+  .filaments-hero-content > h1,
+  .accessories-hero-content > h1,
+  .home-hero-content > h1,
+  .vacuum-hero-content > h1,
+  .dehum-hero-content > h1,
+  .cap-hero-copy > h1,
+  .legal-hero-content > h1{font-size:clamp(40px,6vw,54px)!important}
+}
+
+@media(max-width:760px){
+  .hero,
+  .tools-hero,
+  .jacks-hero,
+  .drill-hero,
+  .ccs-hero,
+  .print3d-hero,
+  .printers-hero,
+  .filaments-hero,
+  .accessories-hero,
+  .home-hero,
+  .vacuum-hero,
+  .dehum-hero,
+  .cap-hero,
+  .legal-hero{min-height:auto!important}
+
+  .hero-content,
+  .tools-hero-content,
+  .jacks-hero-inner,
+  .drill-hero-content,
+  .ccs-hero-copy,
+  .print3d-hero-content,
+  .printers-hero-content,
+  .filaments-hero-content,
+  .accessories-hero-content,
+  .home-hero-content,
+  .vacuum-hero-content,
+  .dehum-hero-content,
+  .cap-hero-copy,
+  .legal-hero-content{
+    width:min(100% - 24px,var(--ccs-hero-shell))!important;
+    min-height:520px!important;
+    padding:82px 0 46px!important;
+    justify-content:flex-start!important;
+  }
+
+  .tools-hero-content > h1,
+  .jacks-hero-inner > h1,
+  .drill-hero-content > h1,
+  .ccs-hero-copy > h1,
+  .print3d-hero-content > h1,
+  .printers-hero-content > h1,
+  .filaments-hero-content > h1,
+  .accessories-hero-content > h1,
+  .home-hero-content > h1,
+  .vacuum-hero-content > h1,
+  .dehum-hero-content > h1,
+  .cap-hero-copy > h1,
+  .legal-hero-content > h1{
+    max-width:100%!important;
+    font-size:clamp(34px,10vw,44px)!important;
+    line-height:1.06!important;
+  }
+
+  .hero-content > p,
+  .tools-hero-content > p,
+  .jacks-hero-inner > p,
+  .drill-hero-content > p,
+  .ccs-hero-copy > .ccs-hero-lead,
+  .print3d-hero-content > p,
+  .printers-hero-content > p,
+  .filaments-hero-content > p,
+  .accessories-hero-content > p,
+  .home-hero-content > p,
+  .vacuum-hero-content > p,
+  .dehum-hero-content > p,
+  .cap-hero-copy > p,
+  .legal-hero-content > p{font-size:18px!important}
+
+  .site-breadcrumbs{top:70px!important;padding-top:10px!important;font-size:12px!important}
+  .site-breadcrumbs .shell{width:min(100% - 24px,var(--ccs-hero-shell))!important}
+}
+
+
+/* =========================================================
+   HERO V5.1 · GEOMETRÍA ÚNICA
+   Un único ritmo vertical para todas las páginas.
+   El hero crece por contenido; no por alturas mínimas.
+   ========================================================= */
+
+/* Neutraliza espacios heredados de los CSS específicos */
+body.home,
+body.tools-page,
+body.jacks-page,
+body.drill-page,
+body.grinder-page,
+body.impact-page,
+body.print3d-page,
+body.printers-page,
+body.printers-comparison,
+body.filaments-page,
+body.accessories-page,
+body.home-page,
+body.vacuum-page,
+body.robot-comparison,
+body.dehum-page,
+body.cap-page,
+body.compare-dehum-page,
+body.legal-page,
+body.ccs-comparison-v3{
+  padding-top:0!important;
+}
+
+.hero,
+.tools-hero,
+.jacks-hero,
+.drill-hero,
+.ccs-hero,
+.print3d-hero,
+.printers-hero,
+.filaments-hero,
+.accessories-hero,
+.home-hero,
+.vacuum-hero,
+.dehum-hero,
+.cap-hero,
+.legal-hero{
+  min-height:0!important;
+  height:auto!important;
+  padding:0!important;
+}
+
+/* La cabecera se construye siempre desde las mismas coordenadas:
+   76px menú + breadcrumbs + ~36px de aire visual. */
+.hero-content,
+.tools-hero-content,
+.jacks-hero-inner,
+.drill-hero-content,
+.ccs-hero-copy,
+.print3d-hero-content,
+.printers-hero-content,
+.filaments-hero-content,
+.accessories-hero-content,
+.home-hero-content,
+.vacuum-hero-content,
+.dehum-hero-content,
+.cap-hero-copy,
+.legal-hero-content{
+  min-height:0!important;
+  height:auto!important;
+  padding:142px 0 58px!important;
+  justify-content:flex-start!important;
+}
+
+/* Las comparativas dejan de tener una geometría propia */
+.ccs-hero .ccs-hero-copy{
+  padding-top:142px!important;
+}
+
+/* Ritmo interno idéntico */
+.hero-content > [class*="kicker"],
+.tools-hero-content > [class*="kicker"],
+.jacks-hero-inner > [class*="kicker"],
+.drill-hero-content > [class*="kicker"],
+.ccs-hero-copy > .ccs-hero-kicker,
+.print3d-hero-content > [class*="kicker"],
+.printers-hero-content > [class*="kicker"],
+.filaments-hero-content > [class*="kicker"],
+.accessories-hero-content > [class*="kicker"],
+.home-hero-content > [class*="kicker"],
+.vacuum-hero-content > [class*="kicker"],
+.dehum-hero-content > [class*="kicker"],
+.cap-hero-copy > .section-kicker,
+.legal-hero-content > [class*="kicker"]{
+  margin-bottom:16px!important;
+}
+
+.hero-content > h1,
+.tools-hero-content > h1,
+.jacks-hero-inner > h1,
+.drill-hero-content > h1,
+.ccs-hero-copy > h1,
+.print3d-hero-content > h1,
+.printers-hero-content > h1,
+.filaments-hero-content > h1,
+.accessories-hero-content > h1,
+.home-hero-content > h1,
+.vacuum-hero-content > h1,
+.dehum-hero-content > h1,
+.cap-hero-copy > h1,
+.legal-hero-content > h1{
+  margin:0!important;
+}
+
+.hero-content > p,
+.tools-hero-content > p,
+.jacks-hero-inner > p,
+.drill-hero-content > p,
+.ccs-hero-copy > .ccs-hero-lead,
+.print3d-hero-content > p,
+.printers-hero-content > p,
+.filaments-hero-content > p,
+.accessories-hero-content > p,
+.home-hero-content > p,
+.vacuum-hero-content > p,
+.dehum-hero-content > p,
+.cap-hero-copy > p,
+.legal-hero-content > p{
+  margin-top:18px!important;
+}
+
+@media(max-width:760px){
+  body.home,
+  body.tools-page,
+  body.jacks-page,
+  body.drill-page,
+  body.grinder-page,
+  body.impact-page,
+  body.print3d-page,
+  body.printers-page,
+  body.printers-comparison,
+  body.filaments-page,
+  body.accessories-page,
+  body.home-page,
+  body.vacuum-page,
+  body.robot-comparison,
+  body.dehum-page,
+  body.cap-page,
+  body.compare-dehum-page,
+  body.legal-page,
+  body.ccs-comparison-v3{
+    padding-top:0!important;
+  }
+
+  .hero-content,
+  .tools-hero-content,
+  .jacks-hero-inner,
+  .drill-hero-content,
+  .ccs-hero-copy,
+  .print3d-hero-content,
+  .printers-hero-content,
+  .filaments-hero-content,
+  .accessories-hero-content,
+  .home-hero-content,
+  .vacuum-hero-content,
+  .dehum-hero-content,
+  .cap-hero-copy,
+  .legal-hero-content{
+    min-height:0!important;
+    padding:120px 0 44px!important;
+  }
+
+  .ccs-hero .ccs-hero-copy{
+    padding-top:120px!important;
+  }
+}
+
+
+/* =========================================================
+   HERO V5.2 · NO ATRAPAR LA NAVEGACIÓN FIJA
+   Algunos documentos contienen .topbar dentro del hero.
+   Evitamos contextos de apilado/recorte que puedan taparla.
+   ========================================================= */
+
+.hero,
+.tools-hero,
+.jacks-hero,
+.drill-hero,
+.ccs-hero,
+.print3d-hero,
+.printers-hero,
+.filaments-hero,
+.accessories-hero,
+.home-hero,
+.vacuum-hero,
+.dehum-hero,
+.cap-hero,
+.legal-hero{
+  isolation:auto!important;
+  overflow:visible!important;
+}
+
