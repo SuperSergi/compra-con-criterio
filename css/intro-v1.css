@@ -44,11 +44,14 @@
 
 .ccs-intro-copy{
   min-width:0;
-  align-self:center;
+  align-self:center!important;
+  justify-self:stretch;
+  text-align:left!important;
 }
 
 .ccs-intro-card > p.ccs-intro-copy{
   margin:0!important;
+  align-self:center!important;
   color:var(--muted,#5f6d65)!important;
   align-self:center;
 }
@@ -167,7 +170,7 @@
     sans-serif!important;
   font-size:13px!important;
   line-height:1!important;
-  font-weight:800!important;
+  font-weight:700!important;
   letter-spacing:.10em!important;
   text-transform:uppercase!important;
 }
@@ -188,6 +191,14 @@
   line-height:1.16!important;
   font-weight:800!important;
   letter-spacing:-.025em!important;
+}
+
+.ccs-intro-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-self:stretch!important;
+  text-align:left!important;
 }
 
 .ccs-intro-copy,
