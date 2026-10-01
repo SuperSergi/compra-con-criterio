@@ -2260,8 +2260,11 @@ button{
 }
 
 /* Ningún contenido editorial debe competir con la navegación */
-main,
-.site-breadcrumbs{
+main{
   z-index:auto;
+}
+
+.site-breadcrumbs{
+  z-index:2147482000!important;
 }
 
