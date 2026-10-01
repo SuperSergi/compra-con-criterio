@@ -11,6 +11,7 @@
 }
 
 /* Hero base */
+.hero,
 .tools-hero,
 .jacks-hero,
 .drill-hero,
@@ -35,6 +36,7 @@
 }
 
 /* Fondo limpio por página: una imagen + un solo degradado común */
+.hero{background-image:url('/images/hero-inicio.webp')!important}
 .tools-hero{background-image:url('/images/categoria-herramientas.webp')!important}
 .jacks-hero{background-image:url('/images/gatos-hidraulicos-guia-hero.webp')!important}
 .drill-hero{background-image:url('/images/guia-taladros-bateria-hero.webp')!important}
@@ -49,6 +51,7 @@
 .cap-hero{background-image:url('/images/deshumidificadores/deshumidificador-capacidad-estancias.webp')!important}
 .legal-hero{background:#0b4f34!important}
 
+.hero::before,
 .tools-hero::before,
 .jacks-hero::before,
 .drill-hero::before,
@@ -71,6 +74,7 @@
   pointer-events:none!important;
 }
 
+.hero::after,
 .tools-hero::after,
 .jacks-hero::after,
 .drill-hero::after,
@@ -85,6 +89,7 @@
 .cap-hero::after,
 .legal-hero::after{display:none!important}
 
+.hero-shade,
 .tools-hero-shade,
 .drill-hero-shade,
 .home-hero-shade,
@@ -92,6 +97,7 @@
 .dehum-hero-shade{display:none!important}
 
 /* Contenedor común */
+.hero-content,
 .tools-hero-content,
 .jacks-hero-inner,
 .drill-hero-content,
@@ -130,6 +136,7 @@
 .cap-hero-copy{max-width:none!important}
 
 /* Kicker */
+.hero-content > [class*="kicker"],
 .tools-hero-content > [class*="kicker"],
 .jacks-hero-inner > [class*="kicker"],
 .drill-hero-content > [class*="kicker"],
@@ -160,6 +167,7 @@
 }
 
 /* H1 */
+.hero-content > h1,
 .tools-hero-content > h1,
 .jacks-hero-inner > h1,
 .drill-hero-content > h1,
@@ -184,6 +192,7 @@
 }
 
 /* Texto introductorio */
+.hero-content > p,
 .tools-hero-content > p,
 .jacks-hero-inner > p,
 .drill-hero-content > p,
@@ -247,6 +256,8 @@
 /* Chips y acciones */
 .ccs-hero-meta,
 .hero-chips,
+.hero-actions,
+.hero-actions,
 .tools-hero-actions,
 .drill-hero-actions,
 .home-hero-actions,
@@ -320,6 +331,7 @@
 .ccs-comparison-v3.printers-comparison{padding-top:0!important}
 
 @media(max-width:900px){
+  .hero-content > h1,
   .tools-hero-content > h1,
   .jacks-hero-inner > h1,
   .drill-hero-content > h1,
@@ -336,6 +348,7 @@
 }
 
 @media(max-width:760px){
+  .hero,
   .tools-hero,
   .jacks-hero,
   .drill-hero,
@@ -350,6 +363,7 @@
   .cap-hero,
   .legal-hero{min-height:auto!important}
 
+  .hero-content,
   .tools-hero-content,
   .jacks-hero-inner,
   .drill-hero-content,
@@ -387,6 +401,7 @@
     line-height:1.06!important;
   }
 
+  .hero-content > p,
   .tools-hero-content > p,
   .jacks-hero-inner > p,
   .drill-hero-content > p,
