@@ -52,7 +52,7 @@
       overflow:hidden;
       background:
         linear-gradient(90deg,rgba(6,61,38,.88),rgba(6,61,38,.53)),
-        url("https://compraconsentido.es/images/categoria-impresion-3d.webp") center 48%/cover no-repeat;
+        url("/images/categoria-impresion-3d.webp") center 48%/cover no-repeat;
       color:#fff;
     }
 
@@ -419,7 +419,10 @@
       }
 
       .category-image{
-        height:230px;
+        width:100%;
+        min-width:0;
+        height:auto;
+        aspect-ratio:16 / 9;
       }
 
       .featured{
