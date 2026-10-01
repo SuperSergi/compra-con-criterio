@@ -1,12 +1,24 @@
 /* =========================================================
    COMPRA CON SENTIDO · PRODUCT CARDS V1
-   Ficha canónica para comparativas.
+   Plantilla canónica única para TODAS las comparativas.
    ========================================================= */
+
+.ccs-products-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:28px!important;
+  width:100%!important;
+}
 
 .ccs-product-card{
   display:grid!important;
-  grid-template-columns:minmax(280px,36%) minmax(0,1fr)!important;
+  grid-template-columns:320px minmax(0,1fr)!important;
+  align-items:stretch!important;
   gap:0!important;
+  width:100%!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0!important;
   overflow:hidden!important;
   border:1px solid var(--line,#dfe8e2)!important;
   border-radius:24px!important;
@@ -19,20 +31,29 @@
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  min-height:360px!important;
+  align-self:stretch!important;
+  flex-direction:column!important;
+  min-height:100%!important;
+  height:100%!important;
+  margin:0!important;
   padding:24px!important;
-  background:linear-gradient(145deg,#fbfcfb,#edf3ef)!important;
   overflow:hidden!important;
+  border:0!important;
+  border-radius:0!important;
+  background:linear-gradient(145deg,#fbfcfb,#edf3ef)!important;
+  box-sizing:border-box!important;
+  text-decoration:none!important;
 }
 
 .ccs-product-media img{
   display:block!important;
   width:100%!important;
-  max-width:360px!important;
+  max-width:320px!important;
   height:300px!important;
+  margin:auto!important;
+  border-radius:0!important;
   object-fit:contain!important;
   object-position:center!important;
-  margin:auto!important;
 }
 
 .ccs-product-badge{
@@ -43,64 +64,21 @@
   display:inline-flex!important;
   align-items:center!important;
   max-width:calc(100% - 36px)!important;
+  margin:0!important;
   padding:8px 11px!important;
   border:0!important;
   border-radius:999px!important;
   background:rgba(6,61,38,.94)!important;
   color:#fff!important;
+  box-shadow:0 6px 16px rgba(0,0,0,.12)!important;
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
   font-size:12px!important;
   line-height:1.2!important;
   font-weight:800!important;
   letter-spacing:.02em!important;
   text-transform:none!important;
-  box-shadow:0 6px 16px rgba(0,0,0,.12)!important;
 }
 
-.ccs-product-content{
-  display:flex!important;
-  flex-direction:column!important;
-  min-width:0!important;
-  padding:30px 32px 32px!important;
-}
-
-.ccs-product-content h3{
-  margin:0 0 9px!important;
-  color:var(--green-950,#063d26)!important;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
-  font-size:clamp(27px,2.6vw,36px)!important;
-  line-height:1.14!important;
-  font-weight:750!important;
-  letter-spacing:-.025em!important;
-}
-
-.ccs-product-subtitle{
-  margin:0 0 22px!important;
-  color:var(--muted,#5f6d65)!important;
-  font-size:17px!important;
-  line-height:1.55!important;
-}
-
-.ccs-product-card .ccs-experience{
-  margin-top:18px!important;
-}
-
-.ccs-product-card .ccs-decision{
-  margin-top:18px!important;
-}
-
-.ccs-product-card .amazon-btn,
-.ccs-product-card .robot-amazon,
-.ccs-product-card .btn-amazon{
-  align-self:flex-start!important;
-  margin-top:22px!important;
-}
-
-.ccs-product-card + .ccs-product-card{
-  margin-top:28px!important;
-}
-
-/* La nota "imagen ilustrativa" permanece visible pero discreta */
 .ccs-product-media .grinder-image-note,
 .ccs-product-media .image-note{
   position:absolute!important;
@@ -115,395 +93,47 @@
   line-height:1.2!important;
 }
 
-/* Evita que estilos antiguos vuelvan a convertir cabeceras en grids internos */
-.ccs-product-card .product-head,
-.ccs-product-card .grinder-product-head{
-  display:block!important;
-  margin:0!important;
-}
-
-/* Normalización de rejillas técnicas */
-.ccs-product-card .spec-grid,
-.ccs-product-card .specs,
-.ccs-product-card .grinder-specs,
-.ccs-product-card .robot-specs,
-.ccs-product-card .product-specs{
-  margin-top:22px!important;
-}
-
-/* Bloques ventajas / límites */
-.ccs-product-card .pros-cons,
-.ccs-product-card .pros,
-.ccs-product-card .grinder-pros,
-.ccs-product-card .robot-proscons,
-.ccs-product-card .product-procon{
-  margin-top:20px!important;
-}
-
-@media(max-width:900px){
-  .ccs-product-card{
-    grid-template-columns:1fr!important;
-  }
-  .ccs-product-media{
-    min-height:300px!important;
-  }
-  .ccs-product-media img{
-    height:260px!important;
-    max-width:420px!important;
-  }
-}
-
-@media(max-width:760px){
-  .ccs-product-card{
-    border-radius:20px!important;
-  }
-  .ccs-product-media{
-    min-height:250px!important;
-    padding:18px!important;
-  }
-  .ccs-product-media img{
-    height:220px!important;
-  }
-  .ccs-product-content{
-    padding:24px 22px 26px!important;
-  }
-  .ccs-product-content h3{
-    font-size:clamp(25px,8vw,32px)!important;
-  }
-  .ccs-product-subtitle{
-    font-size:16px!important;
-  }
-}
-
-
-/* =========================================================
-   PRODUCT CARDS V1.1 · ORDEN INTERNO CANÓNICO
-   Pros/contras → decisión a ancho completo → CTA centrado.
-   ========================================================= */
-
-.ccs-product-card .ccs-product-proscons{
-  order:60;
-  display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  gap:14px!important;
-  align-items:stretch!important;
-  width:100%!important;
-  margin-top:20px!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-  display:flex!important;
-  flex-direction:column!important;
-  justify-content:center!important;
-  min-height:150px!important;
-  padding:18px 20px!important;
-  border:1px solid #dfe8e2!important;
-  border-radius:16px!important;
-  background:#f8fbf9!important;
-  text-align:left!important;
-  box-sizing:border-box!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) > strong{
-  display:block!important;
-  margin:0 0 8px!important;
-  color:var(--green-950,#063d26)!important;
-  font-size:15px!important;
-  line-height:1.35!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) p,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) ul{
-  margin:0!important;
-  color:var(--muted,#5f6d65)!important;
-  text-align:left!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta) ul{
-  padding-left:18px!important;
-}
-
-.ccs-product-card > .ccs-product-content > .ccs-product-decision{
-  order:70;
-}
-
-.ccs-product-card .ccs-product-decision{
-  width:100%!important;
-  margin:16px 0 0!important;
-  padding:16px 18px!important;
-  box-sizing:border-box!important;
-  border:1px solid #cfe2d6!important;
-  border-radius:14px!important;
-  background:#eef7f1!important;
-  color:#294537!important;
-  text-align:left!important;
-  line-height:1.55!important;
-}
-
-.ccs-product-card .ccs-product-decision strong{
-  color:var(--green-950,#063d26)!important;
-}
-
-/* Si una ficha antigua tenía la decisión dentro del wrapper pros/contras */
-.ccs-product-card .ccs-product-proscons > .ccs-product-decision{
-  grid-column:1 / -1!important;
-  order:70;
-}
-
-.ccs-product-card > .ccs-product-content > .ccs-product-cta,
-.ccs-product-card > .ccs-product-content > .ccs-product-cta-button{
-  order:80;
-}
-
-.ccs-product-card .ccs-product-proscons > .ccs-product-cta{
-  grid-column:1 / -1!important;
-  order:80;
-}
-
-.ccs-product-card .ccs-product-cta{
-  display:flex!important;
-  justify-content:center!important;
-  align-items:center!important;
-  width:100%!important;
-  margin:20px 0 0!important;
-}
-
-.ccs-product-card .ccs-product-cta-button,
-.ccs-product-card .ccs-product-cta a,
-.ccs-product-card > .ccs-product-content > .amazon-btn{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  align-self:center!important;
-  min-width:230px!important;
-  min-height:48px!important;
-  margin:20px auto 0!important;
-  padding:0 20px!important;
-  border-radius:12px!important;
-  box-sizing:border-box!important;
-  font-size:15px!important;
-  font-weight:800!important;
-  line-height:1.2!important;
-  text-align:center!important;
-}
-
-/* Neutraliza tamaños/posiciones heredados de cada comparativa */
-.ccs-product-card .buy-row,
-.ccs-product-card .robot-buy,
-.ccs-product-card .product-actions{
-  justify-content:center!important;
-}
-
-@media(max-width:760px){
-  .ccs-product-card .ccs-product-proscons{
-    grid-template-columns:1fr!important;
-  }
-
-  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-    min-height:0!important;
-  }
-
-  .ccs-product-card .ccs-product-cta-button,
-  .ccs-product-card .ccs-product-cta a,
-  .ccs-product-card > .ccs-product-content > .amazon-btn{
-    width:100%!important;
-    min-width:0!important;
-  }
-}
-
-
-/* =========================================================
-   PRODUCT CARDS V1.2 · PROS / CONTRAS CANÓNICOS
-   Verde a la izquierda, rojo a la derecha, misma altura.
-   ========================================================= */
-
-.ccs-product-card .ccs-product-proscons{
-  grid-auto-rows:auto!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-  height:100%!important;
-  min-height:170px!important;
-}
-
-/* Primera tarjeta = Lo que destaca */
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child{
-  background:#eef7f1!important;
-  border-color:#cfe2d6!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child > strong{
-  color:#0a653c!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child p,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child ul,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child li{
-  color:#355243!important;
-}
-
-/* Segunda tarjeta = A tener en cuenta */
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
-  background:#fff3f2!important;
-  border-color:#f0cfcc!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) > strong{
-  color:#9b2f2a!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) p,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) ul,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2) li{
-  color:#7a3a36!important;
-}
-
-/* Menos aire entre decisión y CTA */
-.ccs-product-card .ccs-product-cta{
-  margin-top:12px!important;
-}
-
-.ccs-product-card .ccs-product-cta-button,
-.ccs-product-card .ccs-product-cta a,
-.ccs-product-card > .ccs-product-content > .amazon-btn{
-  margin-top:12px!important;
-}
-
-@media(max-width:760px){
-  .ccs-product-card .ccs-product-proscons{
-    grid-auto-rows:auto!important;
-  }
-
-  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-    height:auto!important;
-    min-height:0!important;
-  }
-}
-
-
-/* =========================================================
-   PRODUCT CARDS V1.3 · ALTURAS CORRECTAS
-   Solo pros/contras comparten altura. Decisión y CTA son auto.
-   ========================================================= */
-
-.ccs-product-card .ccs-product-proscons{
-  grid-template-rows:auto auto auto!important;
-  grid-auto-rows:auto!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child,
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
-  align-self:stretch!important;
-}
-
-/* Pros y contras se igualan porque comparten la primera fila */
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child{
-  grid-column:1!important;
-  grid-row:1!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2){
-  grid-column:2!important;
-  grid-row:1!important;
-}
-
-/* La decisión ocupa todo el ancho pero solo lo que necesita */
-.ccs-product-card .ccs-product-proscons > .ccs-product-decision{
-  grid-column:1 / -1!important;
-  grid-row:2!important;
-  min-height:0!important;
-  height:auto!important;
-  align-self:start!important;
-}
-
-/* CTA inmediatamente debajo */
-.ccs-product-card .ccs-product-proscons > .ccs-product-cta{
-  grid-column:1 / -1!important;
-  grid-row:3!important;
-  min-height:0!important;
-  height:auto!important;
-  margin-top:10px!important;
-  align-self:start!important;
-}
-
-.ccs-product-card .ccs-product-decision{
-  min-height:0!important;
-  height:auto!important;
-}
-
-.ccs-product-card .ccs-product-cta{
-  min-height:0!important;
-  height:auto!important;
-  margin-top:10px!important;
-}
-
-.ccs-product-card .ccs-product-cta-button,
-.ccs-product-card .ccs-product-cta a,
-.ccs-product-card > .ccs-product-content > .amazon-btn{
-  margin-top:0!important;
-}
-
-@media(max-width:760px){
-  .ccs-product-card .ccs-product-proscons{
-    grid-template-rows:auto!important;
-  }
-
-  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):first-child,
-  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta):nth-child(2),
-  .ccs-product-card .ccs-product-proscons > .ccs-product-decision,
-  .ccs-product-card .ccs-product-proscons > .ccs-product-cta{
-    grid-column:1!important;
-    grid-row:auto!important;
-  }
-}
-
-
-/* =========================================================
-   PRODUCT CARDS V1.4 · GEOMETRÍA Y ORDEN TOTALMENTE COMUNES
-   ========================================================= */
-
-@media(min-width:901px){
-  .ccs-product-card{
-    grid-template-columns:320px minmax(0,1fr)!important;
-    align-items:stretch!important;
-  }
-}
-
-.ccs-product-media{
-  align-self:stretch!important;
-  height:100%!important;
-  min-height:100%!important;
-  padding:24px!important;
-  flex-direction:column!important;
-  box-sizing:border-box!important;
-}
-
-.ccs-product-media img{
-  width:100%!important;
-  height:300px!important;
-  max-width:320px!important;
-  aspect-ratio:auto!important;
-  object-fit:contain!important;
-  object-position:center!important;
-  border-radius:0!important;
-}
-
 .ccs-product-content{
   display:flex!important;
   flex-direction:column!important;
+  min-width:0!important;
+  min-height:0!important;
   padding:30px 32px 32px!important;
   box-sizing:border-box!important;
 }
 
-.ccs-product-content > .product-head,
-.ccs-product-content > h3{
-  order:10;
+.ccs-product-card .product-head,
+.ccs-product-card .grinder-product-head{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
 }
 
-.ccs-product-content > .ccs-product-subtitle,
-.ccs-product-content > .product-head .ccs-product-subtitle{
-  order:15;
+.ccs-product-card .product-head > div{
+  display:block!important;
 }
+
+.ccs-product-content h3{
+  margin:0 0 9px!important;
+  color:var(--green-950,#063d26)!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
+  font-size:clamp(27px,2.6vw,36px)!important;
+  line-height:1.14!important;
+  font-weight:750!important;
+  letter-spacing:-.025em!important;
+}
+
+.ccs-product-subtitle{
+  margin:0!important;
+  color:var(--muted,#5f6d65)!important;
+  font-size:17px!important;
+  line-height:1.55!important;
+}
+
+.ccs-product-content > .product-head,
+.ccs-product-content > h3{order:10}
+
+.ccs-product-content > .ccs-product-subtitle{order:15}
 
 .ccs-product-content > .ccs-product-specs{
   order:20;
@@ -514,10 +144,11 @@
 }
 
 .ccs-product-content > .ccs-product-specs > div{
-  min-height:64px!important;
   display:flex!important;
   flex-direction:column!important;
   justify-content:center!important;
+  min-height:64px!important;
+  margin:0!important;
   padding:12px 13px!important;
   box-sizing:border-box!important;
   border:1px solid #e2e9e5!important;
@@ -526,42 +157,6 @@
   text-align:left!important;
 }
 
-.ccs-product-content > .ccs-product-copy{
-  order:30;
-  margin-top:20px!important;
-}
-
-.ccs-product-content > .ccs-product-experience{
-  order:40;
-  margin:18px 0 0!important;
-}
-
-.ccs-product-content > .ccs-product-proscons{
-  order:60;
-}
-
-.ccs-product-content > .ccs-product-decision{
-  order:70;
-}
-
-.ccs-product-content > .ccs-product-cta,
-.ccs-product-content > .ccs-product-cta-button,
-.ccs-product-content > .amazon-btn{
-  order:80;
-}
-
-/* Cabeceras heredadas no deben añadir geometría propia */
-.ccs-product-card .product-head{
-  display:block!important;
-  margin:0!important;
-  padding:0!important;
-}
-
-.ccs-product-card .product-head > div{
-  display:block!important;
-}
-
-/* Consistencia tipográfica en datos */
 .ccs-product-card .ccs-product-specs small,
 .ccs-product-card .ccs-product-specs span{
   color:#6b7770!important;
@@ -576,10 +171,179 @@
   line-height:1.3!important;
 }
 
-/* Evita márgenes heredados que rompen el ritmo vertical */
-.ccs-product-card .ccs-product-copy p:first-child,
-.ccs-product-card .ccs-product-experience:first-child{
-  margin-top:0!important;
+.ccs-product-content > .ccs-product-copy{
+  order:30;
+  margin:20px 0 0!important;
+}
+
+.ccs-product-content > .ccs-product-copy p{
+  margin:0 0 12px!important;
+}
+
+.ccs-product-content > .ccs-product-copy p:last-child{
+  margin-bottom:0!important;
+}
+
+.ccs-product-content > .ccs-product-experience{
+  order:40;
+  margin:18px 0 0!important;
+}
+
+.ccs-product-content > .ccs-product-proscons{
+  order:60;
+}
+
+.ccs-product-card .ccs-product-proscons{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:stretch!important;
+  width:100%!important;
+  margin:20px 0 0!important;
+  padding:0!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div{
+  align-self:stretch!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:18px 20px!important;
+  box-sizing:border-box!important;
+  border-radius:16px!important;
+  text-align:left!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:first-child{
+  background:#eef7f1!important;
+  border:1px solid #cfe2d6!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:nth-child(2){
+  background:#fff3f2!important;
+  border:1px solid #f0cfcc!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div > strong{
+  display:block!important;
+  margin:0 0 8px!important;
+  font-size:15px!important;
+  line-height:1.35!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:first-child > strong{
+  color:#0a653c!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:nth-child(2) > strong{
+  color:#9b2f2a!important;
+}
+
+.ccs-product-card .ccs-product-proscons p,
+.ccs-product-card .ccs-product-proscons ul{
+  margin:0!important;
+  text-align:left!important;
+}
+
+.ccs-product-card .ccs-product-proscons ul{
+  padding-left:18px!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:first-child p,
+.ccs-product-card .ccs-product-proscons > div:first-child ul,
+.ccs-product-card .ccs-product-proscons > div:first-child li{
+  color:#355243!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:nth-child(2) p,
+.ccs-product-card .ccs-product-proscons > div:nth-child(2) ul,
+.ccs-product-card .ccs-product-proscons > div:nth-child(2) li{
+  color:#7a3a36!important;
+}
+
+.ccs-product-content > .ccs-product-decision{
+  order:70;
+}
+
+.ccs-product-card .ccs-product-decision{
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:16px 0 0!important;
+  padding:16px 18px!important;
+  box-sizing:border-box!important;
+  border:1px solid #cfe2d6!important;
+  border-radius:14px!important;
+  background:#eef7f1!important;
+  color:#294537!important;
+  line-height:1.55!important;
+  text-align:left!important;
+}
+
+.ccs-product-card .ccs-product-decision strong{
+  color:var(--green-950,#063d26)!important;
+}
+
+.ccs-product-content > .ccs-product-cta,
+.ccs-product-content > .ccs-product-cta-button,
+.ccs-product-content > .amazon-btn{
+  order:80;
+}
+
+.ccs-product-card .ccs-product-cta{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:16px 0 0!important;
+  padding:0!important;
+}
+
+.ccs-product-card .ccs-product-cta-button,
+.ccs-product-card .ccs-product-cta a,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  min-width:230px!important;
+  max-width:100%!important;
+  min-height:48px!important;
+  margin:0 auto!important;
+  padding:0 20px!important;
+  box-sizing:border-box!important;
+  border-radius:12px!important;
+  font-size:15px!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  text-align:center!important;
+}
+
+.ccs-product-card > .ccs-product-content > .ccs-product-cta-button,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  margin-top:16px!important;
+  align-self:center!important;
+}
+
+.ccs-product-card .product-actions .btn{
+  flex:0 0 auto!important;
+  width:auto!important;
+}
+
+/* Neutraliza restos heredados */
+.ccs-product-card .pros,
+.ccs-product-card .cons,
+.ccs-product-card .robot-pros,
+.ccs-product-card .robot-cons,
+.ccs-product-card .fit-box,
+.ccs-product-card .buy-row,
+.ccs-product-card .robot-buy,
+.ccs-product-card .product-actions,
+.ccs-product-card .product-why{
+  margin-left:0!important;
+  margin-right:0!important;
 }
 
 @media(max-width:900px){
@@ -602,103 +366,48 @@
   }
 }
 
+@media(max-width:760px){
+  .ccs-products-list{gap:22px!important}
+
+  .ccs-product-card{
+    border-radius:20px!important;
+  }
+
+  .ccs-product-media{
+    min-height:250px!important;
+    padding:18px!important;
+  }
+
+  .ccs-product-media img{
+    height:220px!important;
+  }
+
+  .ccs-product-content{
+    padding:24px 22px 26px!important;
+  }
+
+  .ccs-product-content h3{
+    font-size:clamp(25px,8vw,32px)!important;
+  }
+
+  .ccs-product-subtitle{
+    font-size:16px!important;
+  }
+
+  .ccs-product-card .ccs-product-proscons{
+    grid-template-columns:1fr!important;
+  }
+
+  .ccs-product-card .ccs-product-cta-button,
+  .ccs-product-card .ccs-product-cta a,
+  .ccs-product-card > .ccs-product-content > .amazon-btn{
+    width:100%!important;
+    min-width:0!important;
+  }
+}
+
 @media(max-width:520px){
   .ccs-product-content > .ccs-product-specs{
     grid-template-columns:1fr!important;
-  }
-}
-
-
-/* =========================================================
-   PRODUCT CARDS V1.5 · RESET FINAL Y RITMO ÚNICO
-   Un solo layout real para todas las comparativas.
-   ========================================================= */
-
-.ccs-products-list{
-  display:grid!important;
-  grid-template-columns:1fr!important;
-  gap:28px!important;
-  width:100%!important;
-}
-
-.ccs-product-card{
-  padding:0!important;
-  margin:0!important;
-  min-height:0!important;
-  height:auto!important;
-  align-self:stretch!important;
-}
-
-.ccs-product-media{
-  margin:0!important;
-  border:0!important;
-  border-radius:0!important;
-  text-decoration:none!important;
-}
-
-.ccs-product-content{
-  min-height:0!important;
-}
-
-/* Las dos tarjetas empiezan al mismo nivel */
-.ccs-product-card .ccs-product-proscons{
-  margin:20px 0 0!important;
-  gap:14px!important;
-  align-items:stretch!important;
-}
-
-.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-  justify-content:flex-start!important;
-  padding:18px 20px!important;
-  min-height:170px!important;
-}
-
-/* Ritmo vertical idéntico:
-   pros/contras -> decisión = 16px
-   decisión -> CTA = 16px */
-.ccs-product-card .ccs-product-decision{
-  margin:16px 0 0!important;
-}
-
-.ccs-product-card .ccs-product-cta{
-  margin:16px 0 0!important;
-}
-
-.ccs-product-card .ccs-product-cta-button,
-.ccs-product-card .ccs-product-cta a,
-.ccs-product-card > .ccs-product-content > .amazon-btn{
-  margin:0 auto!important;
-}
-
-/* Si el botón está directo dentro del contenido, conserva el mismo ritmo */
-.ccs-product-card > .ccs-product-content > .ccs-product-cta-button,
-.ccs-product-card > .ccs-product-content > .amazon-btn{
-  margin-top:16px!important;
-}
-
-/* Neutraliza restos de CSS específicos de deshumidificadores */
-.ccs-products-list.compare-grid{
-  grid-template-columns:1fr!important;
-}
-
-.ccs-products-list .ccs-product-card{
-  flex-direction:initial!important;
-}
-
-.ccs-product-card .product-actions{
-  margin-top:16px!important;
-}
-
-.ccs-product-card .product-why{
-  margin-bottom:0!important;
-}
-
-@media(max-width:760px){
-  .ccs-products-list{
-    gap:22px!important;
-  }
-
-  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
-    min-height:0!important;
   }
 }
