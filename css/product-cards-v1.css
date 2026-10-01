@@ -1,0 +1,176 @@
+/* =========================================================
+   COMPRA CON SENTIDO · PRODUCT CARDS V1
+   Ficha canónica para comparativas.
+   ========================================================= */
+
+.ccs-product-card{
+  display:grid!important;
+  grid-template-columns:minmax(280px,36%) minmax(0,1fr)!important;
+  gap:0!important;
+  overflow:hidden!important;
+  border:1px solid var(--line,#dfe8e2)!important;
+  border-radius:24px!important;
+  background:#fff!important;
+  box-shadow:var(--shadow-soft,0 10px 28px rgba(22,60,39,.06))!important;
+}
+
+.ccs-product-media{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:360px!important;
+  padding:24px!important;
+  background:linear-gradient(145deg,#fbfcfb,#edf3ef)!important;
+  overflow:hidden!important;
+}
+
+.ccs-product-media img{
+  display:block!important;
+  width:100%!important;
+  max-width:360px!important;
+  height:300px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+}
+
+.ccs-product-badge{
+  position:absolute!important;
+  top:18px!important;
+  left:18px!important;
+  z-index:2!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  max-width:calc(100% - 36px)!important;
+  padding:8px 11px!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:rgba(6,61,38,.94)!important;
+  color:#fff!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
+  font-size:12px!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+  letter-spacing:.02em!important;
+  text-transform:none!important;
+  box-shadow:0 6px 16px rgba(0,0,0,.12)!important;
+}
+
+.ccs-product-content{
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  padding:30px 32px 32px!important;
+}
+
+.ccs-product-content h3{
+  margin:0 0 9px!important;
+  color:var(--green-950,#063d26)!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important;
+  font-size:clamp(27px,2.6vw,36px)!important;
+  line-height:1.14!important;
+  font-weight:750!important;
+  letter-spacing:-.025em!important;
+}
+
+.ccs-product-subtitle{
+  margin:0 0 22px!important;
+  color:var(--muted,#5f6d65)!important;
+  font-size:17px!important;
+  line-height:1.55!important;
+}
+
+.ccs-product-card .ccs-experience{
+  margin-top:18px!important;
+}
+
+.ccs-product-card .ccs-decision{
+  margin-top:18px!important;
+}
+
+.ccs-product-card .amazon-btn,
+.ccs-product-card .robot-amazon,
+.ccs-product-card .btn-amazon{
+  align-self:flex-start!important;
+  margin-top:22px!important;
+}
+
+.ccs-product-card + .ccs-product-card{
+  margin-top:28px!important;
+}
+
+/* La nota "imagen ilustrativa" permanece visible pero discreta */
+.ccs-product-media .grinder-image-note,
+.ccs-product-media .image-note{
+  position:absolute!important;
+  right:14px!important;
+  bottom:12px!important;
+  margin:0!important;
+  padding:4px 7px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.88)!important;
+  color:#627068!important;
+  font-size:11px!important;
+  line-height:1.2!important;
+}
+
+/* Evita que estilos antiguos vuelvan a convertir cabeceras en grids internos */
+.ccs-product-card .product-head,
+.ccs-product-card .grinder-product-head{
+  display:block!important;
+  margin:0!important;
+}
+
+/* Normalización de rejillas técnicas */
+.ccs-product-card .spec-grid,
+.ccs-product-card .specs,
+.ccs-product-card .grinder-specs,
+.ccs-product-card .robot-specs,
+.ccs-product-card .product-specs{
+  margin-top:22px!important;
+}
+
+/* Bloques ventajas / límites */
+.ccs-product-card .pros-cons,
+.ccs-product-card .pros,
+.ccs-product-card .grinder-pros,
+.ccs-product-card .robot-proscons,
+.ccs-product-card .product-procon{
+  margin-top:20px!important;
+}
+
+@media(max-width:900px){
+  .ccs-product-card{
+    grid-template-columns:1fr!important;
+  }
+  .ccs-product-media{
+    min-height:300px!important;
+  }
+  .ccs-product-media img{
+    height:260px!important;
+    max-width:420px!important;
+  }
+}
+
+@media(max-width:760px){
+  .ccs-product-card{
+    border-radius:20px!important;
+  }
+  .ccs-product-media{
+    min-height:250px!important;
+    padding:18px!important;
+  }
+  .ccs-product-media img{
+    height:220px!important;
+  }
+  .ccs-product-content{
+    padding:24px 22px 26px!important;
+  }
+  .ccs-product-content h3{
+    font-size:clamp(25px,8vw,32px)!important;
+  }
+  .ccs-product-subtitle{
+    font-size:16px!important;
+  }
+}
