@@ -2226,3 +2226,42 @@ button{
 /* Aviso de desplazamiento horizontal para tablas comparativas en móvil */
 .table-scroll-hint{display:none;margin:8px 0 10px;font-size:13px;font-weight:750;color:#0a653c}
 @media(max-width:760px){.table-scroll-hint{display:block}}
+
+
+/* =========================================================
+   NAVEGACIÓN GLOBAL · CAPA SUPERIOR GARANTIZADA
+   La barra fija y sus desplegables deben quedar siempre
+   por encima de heroes, tarjetas, imágenes, hovers y tablas.
+   ========================================================= */
+
+.topbar{
+  z-index:2147483000!important;
+  isolation:isolate;
+}
+
+.topbar::before{
+  z-index:-1!important;
+}
+
+.topbar .brand,
+.topbar .menu-toggle,
+.topbar .main-nav{
+  position:relative;
+  z-index:2;
+}
+
+.topbar .nav-group{
+  z-index:3;
+}
+
+.topbar .dropdown,
+.topbar .dropdown-submenu{
+  z-index:2147483001!important;
+}
+
+/* Ningún contenido editorial debe competir con la navegación */
+main,
+.site-breadcrumbs{
+  z-index:auto;
+}
+
