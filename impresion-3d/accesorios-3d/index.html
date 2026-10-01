@@ -52,7 +52,7 @@
       overflow:hidden;
       background:
         linear-gradient(90deg,rgba(6,61,38,.89),rgba(6,61,38,.49)),
-        url("https://compraconsentido.es/images/herramientas-accesorios-impresion-3d.webp") center 50%/cover no-repeat;
+        url("/images/herramientas-accesorios-impresion-3d.webp") center 50%/cover no-repeat;
       color:#fff;
     }
 
@@ -183,6 +183,7 @@
     }
 
     .accessory-card{
+      min-width:0;
       padding:25px;
       border:1px solid var(--cc-line);
       border-radius:20px;
@@ -192,6 +193,7 @@
 
     .accessory-top{
       display:flex;
+      flex-wrap:wrap;
       justify-content:space-between;
       align-items:start;
       gap:14px;
