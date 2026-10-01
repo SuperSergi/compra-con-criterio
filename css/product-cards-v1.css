@@ -607,3 +607,98 @@
     grid-template-columns:1fr!important;
   }
 }
+
+
+/* =========================================================
+   PRODUCT CARDS V1.5 · RESET FINAL Y RITMO ÚNICO
+   Un solo layout real para todas las comparativas.
+   ========================================================= */
+
+.ccs-products-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:28px!important;
+  width:100%!important;
+}
+
+.ccs-product-card{
+  padding:0!important;
+  margin:0!important;
+  min-height:0!important;
+  height:auto!important;
+  align-self:stretch!important;
+}
+
+.ccs-product-media{
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  text-decoration:none!important;
+}
+
+.ccs-product-content{
+  min-height:0!important;
+}
+
+/* Las dos tarjetas empiezan al mismo nivel */
+.ccs-product-card .ccs-product-proscons{
+  margin:20px 0 0!important;
+  gap:14px!important;
+  align-items:stretch!important;
+}
+
+.ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+  justify-content:flex-start!important;
+  padding:18px 20px!important;
+  min-height:170px!important;
+}
+
+/* Ritmo vertical idéntico:
+   pros/contras -> decisión = 16px
+   decisión -> CTA = 16px */
+.ccs-product-card .ccs-product-decision{
+  margin:16px 0 0!important;
+}
+
+.ccs-product-card .ccs-product-cta{
+  margin:16px 0 0!important;
+}
+
+.ccs-product-card .ccs-product-cta-button,
+.ccs-product-card .ccs-product-cta a,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  margin:0 auto!important;
+}
+
+/* Si el botón está directo dentro del contenido, conserva el mismo ritmo */
+.ccs-product-card > .ccs-product-content > .ccs-product-cta-button,
+.ccs-product-card > .ccs-product-content > .amazon-btn{
+  margin-top:16px!important;
+}
+
+/* Neutraliza restos de CSS específicos de deshumidificadores */
+.ccs-products-list.compare-grid{
+  grid-template-columns:1fr!important;
+}
+
+.ccs-products-list .ccs-product-card{
+  flex-direction:initial!important;
+}
+
+.ccs-product-card .product-actions{
+  margin-top:16px!important;
+}
+
+.ccs-product-card .product-why{
+  margin-bottom:0!important;
+}
+
+@media(max-width:760px){
+  .ccs-products-list{
+    gap:22px!important;
+  }
+
+  .ccs-product-card .ccs-product-proscons > div:not(.ccs-product-decision):not(.ccs-product-cta){
+    min-height:0!important;
+  }
+}
