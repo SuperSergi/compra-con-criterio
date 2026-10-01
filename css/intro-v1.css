@@ -47,6 +47,12 @@
   align-self:center;
 }
 
+.ccs-intro-card > p.ccs-intro-copy{
+  margin:0!important;
+  color:var(--muted,#5f6d65)!important;
+  align-self:center;
+}
+
 .ccs-intro-copy p{
   margin:0 0 16px!important;
   color:var(--muted,#5f6d65)!important;
