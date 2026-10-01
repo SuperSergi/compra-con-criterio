@@ -113,8 +113,8 @@
   max-width:none!important;
   min-height:580px!important;
   margin:0 auto!important;
-  padding:132px 0 62px!important;
-  justify-content:center!important;
+  padding:118px 0 62px!important;
+  justify-content:flex-start!important;
   align-items:flex-start!important;
   text-align:left!important;
 }
@@ -365,8 +365,8 @@
   .legal-hero-content{
     width:min(100% - 24px,var(--ccs-hero-shell))!important;
     min-height:520px!important;
-    padding:112px 0 46px!important;
-    justify-content:center!important;
+    padding:102px 0 46px!important;
+    justify-content:flex-start!important;
   }
 
   .tools-hero-content > h1,
