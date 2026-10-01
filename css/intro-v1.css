@@ -107,3 +107,16 @@
     font-size:clamp(28px,8vw,36px)!important;
   }
 }
+
+
+/* Integración con páginas antiguas que añadían padding antes del primer bloque */
+.ccs-has-intro-overlap{
+  padding-top:0!important;
+}
+
+.opening.ccs-intro-overlap{
+  max-width:none!important;
+  color:inherit!important;
+  font-size:inherit!important;
+  line-height:inherit!important;
+}
