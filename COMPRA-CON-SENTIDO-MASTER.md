@@ -901,24 +901,23 @@ Implementación actual:
 
 ---
 
-## Decisión de diseño híbrido · 01/10/2026
+## Decisión de diseño de comparativas · 01/10/2026
 
-Se cierra el patrón visual para páginas híbridas, entendido como páginas que combinan contenido informacional y comparativa comercial.
+La clasificación informacional / comparativa / híbrida se mantiene como criterio editorial, pero **no crea plantillas visuales distintas dentro de las comparativas**.
 
-Orden canónico:
+Todas las comparativas deben compartir el mismo lenguaje visual y el mismo arranque base:
 
-`Hero → tarjeta introductoria común → elección rápida → tabla → fichas de producto → resto de guía`
+`Hero → bloque de decisión/perfiles → tabla → fichas de producto → resto de contenido`
+
+Las páginas híbridas pueden incluir más explicación editorial, pero sin introducir una cabecera o tarjeta exclusiva que las haga parecer una familia visual diferente.
 
 Implementación actual:
 
-- `/css/intro-v1.css` para la tarjeta introductoria
-- `/css/hybrid-v1.css` para el bloque de elección rápida
+- `/css/comparison-opening-v1.css` para el primer bloque de decisión/perfiles
 - `/css/comparativas-v3.css` para tablas
 - `/css/product-cards-v1.css` para fichas individuales
-- Llaves de impacto y Amoladoras a batería ya adaptadas a este patrón
-- ambas conservan breadcrumbs visibles y seis fichas de producto
-
-Este patrón será la referencia para futuras páginas híbridas.
+- las siete comparativas actuales usan el mismo patrón visual de apertura
+- Llaves de impacto y Amoladoras a batería dejan de usar una variante visual híbrida propia
 
 ---
 
