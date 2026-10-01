@@ -605,3 +605,29 @@ body.ccs-comparison-v3{
     padding-top:120px!important;
   }
 }
+
+
+/* =========================================================
+   HERO V5.2 · NO ATRAPAR LA NAVEGACIÓN FIJA
+   Algunos documentos contienen .topbar dentro del hero.
+   Evitamos contextos de apilado/recorte que puedan taparla.
+   ========================================================= */
+
+.hero,
+.tools-hero,
+.jacks-hero,
+.drill-hero,
+.ccs-hero,
+.print3d-hero,
+.printers-hero,
+.filaments-hero,
+.accessories-hero,
+.home-hero,
+.vacuum-hero,
+.dehum-hero,
+.cap-hero,
+.legal-hero{
+  isolation:auto!important;
+  overflow:visible!important;
+}
+
