@@ -24,3 +24,8 @@
 .ccs-comparison-v3 .ccs-experience{margin:12px 0;color:#536059;line-height:1.65}
 .ccs-comparison-v3 .ccs-experience strong{color:#244734}
 @media(max-width:760px){.ccs-comparison-v3 .ccs-hero{background:linear-gradient(90deg,rgba(6,61,38,.95),rgba(6,61,38,.73)),var(--ccs-hero-image) var(--ccs-hero-position-mobile,58% 50%)/cover no-repeat}.ccs-hero-copy{padding:112px 0 54px;margin:auto}.ccs-comparison-v3 .ccs-hero-copy h1{font-size:clamp(34px,11vw,46px)}.ccs-hero-meta span{font-size:12px}.ccs-comparison-v3 .ccs-table-wrap{box-shadow:inset -18px 0 18px -18px rgba(6,61,38,.45)}}
+.ccs-comparison-v3 main h2{font-size:clamp(28px,4vw,38px);line-height:1.12;letter-spacing:-.025em}
+.ccs-comparison-v3 .product-card h3,.ccs-comparison-v3 .product h3,.ccs-comparison-v3 .robot-card h3{font-size:clamp(24px,3vw,30px);line-height:1.15;letter-spacing:-.02em}
+.ccs-comparison-v3 .table-scroll-hint{margin:10px 0 12px}
+.ccs-comparison-v3 .ccs-table td:last-child,.ccs-comparison-v3 .ccs-table th:last-child{min-width:150px}
+@media(max-width:760px){.ccs-comparison-v3 .table-scroll-hint{display:block;padding:11px 14px;background:#eaf6ef;border:1px solid #b9ddc8;border-radius:10px;color:#064d30;font-size:14px;font-weight:800;text-align:center;line-height:1.3}}
