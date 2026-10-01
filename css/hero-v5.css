@@ -314,6 +314,18 @@
   color:rgba(255,255,255,.72)!important;
 }
 
+/* Las comparativas incluyen el menú dentro del propio hero:
+   necesitan compensar la altura de navegación + breadcrumbs. */
+.ccs-hero .ccs-hero-copy{
+  padding-top:132px!important;
+}
+
+@media(max-width:760px){
+  .ccs-hero .ccs-hero-copy{
+    padding-top:118px!important;
+  }
+}
+
 /* Breadcrumb único, alineado con menú y hero */
 .site-breadcrumbs{
   top:76px!important;
