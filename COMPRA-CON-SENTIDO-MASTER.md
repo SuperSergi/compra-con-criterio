@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 1 de octubre de 2026 · 22:27
+**Última actualización:** 1 de octubre de 2026 · 22:33
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -1972,7 +1972,7 @@ Queda únicamente la **comprobación visual final de la preview de la rama en es
 
 ## Cierre de Diseño V1 · 01/10/2026 22:27
 
-Estado: **LISTO PARA MERGE, TODAVÍA NO PUBLICADO EN MAIN**.
+Estado: **CERRADO Y PUBLICADO**.
 
 Rama de trabajo: `comparativas-v3-unificacion`  
 PR: `#3`
@@ -2029,7 +2029,7 @@ El sitemap contiene **22 URLs** y se actualiza `lastmod` a `2026-10-01` tras el 
 
 ### Estado de Diseño V1
 
-Diseño V1 queda técnicamente preparado para publicación:
+Diseño V1 queda cerrado y publicado en producción:
 
 - sistema global de hero cerrado
 - tarjeta de apertura global cerrada
@@ -2041,11 +2041,13 @@ Diseño V1 queda técnicamente preparado para publicación:
 - interferencias CSS detectadas durante la auditoría eliminadas
 - recursos del preview desacoplados del dominio de producción
 
-Pendiente únicamente:
+Publicación completada:
 
-1. integrar el último estado de `main` en la rama sin perder esta actualización del MASTER
-2. comprobar que el PR no queda detrás de `main`
-3. fusionar el PR #3 a `main`
-4. comprobar el despliegue de producción
-5. actualizar este MASTER en `main` de **LISTO PARA MERGE** a **CERRADO Y PUBLICADO**
+- PR #3 fusionado a `main` mediante squash
+- commit de producción: `8392cca43291c533b4763e8ca10e3413dedadf33`
+- Cloudflare Pages: despliegue completado correctamente para `8392cca`
+- GitHub Pages / workflow de despliegue: completado correctamente
+- estado final de Diseño V1: **CERRADO Y PUBLICADO**
+
+La auditoría responsive final previa al merge queda como referencia de cierre: 88/88 comprobaciones superadas y 0 incidencias.
 
