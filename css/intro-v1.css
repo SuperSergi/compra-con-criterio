@@ -243,3 +243,16 @@
     font-size:16px!important;
   }
 }
+
+
+/* Móvil · más aire cuando el hero incluye botones/acciones */
+@media(max-width:760px){
+  .hero-actions,
+  .tools-hero-actions,
+  .drill-hero-actions,
+  .home-hero-actions,
+  .vacuum-hero-actions,
+  .dehum-hero-actions{
+    margin-bottom:18px!important;
+  }
+}
