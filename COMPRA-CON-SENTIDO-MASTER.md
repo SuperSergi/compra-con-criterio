@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 22:53
+**Última actualización:** 1 de octubre de 2026 · 08:20
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -1478,6 +1478,34 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [ ] Detectar oportunidades en posiciones 8-20.
 - [ ] Revisar Core Web Vitals con datos reales.
 - [ ] Configurar Bing Webmaster Tools.
+
+## Revisión global de comparativas v3 · 01/10/2026
+
+Estado: **EN REVISIÓN, NO PUBLICADO**.
+
+Rama: `comparativas-v3-unificacion`  
+PR de borrador: `#3`
+
+Objetivo: llevar todas las comparativas actuales al estándar cerrado con Amoladoras.
+
+Cambios preparados:
+- hero unificado en las 7 comparativas: misma distribución, tipografía, lead, firma y chips
+- CSS compartido `/css/comparativas-v3.css`
+- tabla responsive en todas las comparativas
+- CTA de tabla `🛒 Ver en Amazon`
+- aviso móvil de desplazamiento horizontal y sin primera columna fija
+- radar y puntuaciones artificiales eliminados de Taladros
+- bloques `La elegiría si...`, `Lo que destaca` y `A tener en cuenta` revisados
+- investigación de experiencias reales, pruebas y casos de uso incorporada a las fichas antiguas
+- metodología editorial visible y coherente
+- datos no confirmados representados con `–` cuando corresponde
+- sin cambios todavía en producción
+
+Pendiente antes de fusionar:
+- revisión visual final de las previews en escritorio y móvil
+- corregir cualquier problema de espaciado, hero, tabla o tarjetas
+- actualizar `lastmod` donde corresponda
+- cerrar MASTER y fusionar a `main`
 
 ## Contenido
 
