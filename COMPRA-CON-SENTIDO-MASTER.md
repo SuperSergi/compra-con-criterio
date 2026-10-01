@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 30 de septiembre de 2026 · 22:53
+**Última actualización:** 1 de octubre de 2026 · 21:51
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -1909,3 +1909,62 @@ Las nuevas páginas deben partir de estas plantillas y no copiar estructuras ant
 Última actualización: 01/10/2026 20:44.
 
 ---
+
+---
+
+## Actualización 01/10/2026 21:51 — auditoría estática final y limpieza CSS
+
+Trabajo realizado en la rama `comparativas-v3-unificacion` del PR #3, todavía sin fusionar a `main`.
+
+### Alcance
+
+Se auditaron las 7 comparativas incluidas en la unificación v3:
+
+- Amoladoras a batería
+- Llaves de impacto
+- Gatos hidráulicos
+- Taladros a batería
+- Robots aspiradores
+- Deshumidificadores
+- Impresoras 3D
+
+### Limpieza CSS aplicada
+
+Se eliminaron únicamente reglas específicas cuyo selector ya no puede coincidir con el HTML actual ni con clases utilizadas por el JavaScript global o inline.
+
+Reducción total aproximada: **22.610 caracteres de CSS obsoleto**.
+
+Recorte por capa específica:
+
+- Gatos: 3.045 caracteres; 25 reglas retiradas
+- Taladros: 7.904 caracteres; 61 reglas retiradas
+- Impresoras 3D: 3.015 caracteres; 22 reglas retiradas
+- Amoladoras: 2.370 caracteres; 26 reglas retiradas
+- Llaves de impacto: 1.916 caracteres; 22 reglas retiradas
+- Robots aspiradores: 2.246 caracteres; 21 reglas retiradas
+- Deshumidificadores: 2.114 caracteres; 17 reglas retiradas
+
+También se actualizaron las versiones de caché de los CSS específicos modificados y Deshumidificadores quedó alineado con `/css/style-v4.css?v=20261001-6`.
+
+### Validación estática superada
+
+En las 7 comparativas se confirmó:
+
+- un único H1
+- clase global `ccs-comparison-v3`
+- hero común `ccs-hero`
+- intro común `ccs-intro-card`
+- perfiles de decisión `ccs-comparison-profiles`
+- 6 fichas de producto por comparativa
+- aviso móvil de desplazamiento de tabla
+- CSS enlazado con estructura de llaves válida
+- CSS inline restante con estructura válida
+
+### Decisión de limpieza
+
+No se compactaron `hero-v5.css` ni `intro-v1.css` aunque contienen capas históricas y algunas reglas sobrescritas, porque son estilos globales usados fuera de las comparativas. Modificarlos sin una regresión visual completa de toda la web introduciría un riesgo innecesario.
+
+### Pendiente antes de fusionar
+
+Queda únicamente la **comprobación visual final de la preview de la rama en escritorio y móvil**. La URL de preview de Cloudflare no fue accesible desde esta sesión, por lo que esta validación no se marca como realizada.
+
