@@ -464,6 +464,11 @@ body.home-page{
     padding:34px 28px;
   }
 
+  .home-closing-card > div{
+    width:100%;
+    min-width:0;
+  }
+
   .home-closing-card .btn{
     width:100%;
   }
