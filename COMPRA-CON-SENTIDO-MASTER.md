@@ -832,6 +832,32 @@ El ecosistema de batería puede ser un criterio secundario, pero no debe convert
 
 ---
 
+# 20.1. Sistema visual de heroes internos · decisión cerrada 01/10/2026
+
+Se cierra el posicionamiento y ritmo vertical de los textos en los heroes internos.
+
+Reglas vigentes:
+
+- una única geometría base para categorías, guías y comparativas
+- mismo ancho de contenido alineado con la shell principal
+- misma secuencia visual: menú fijo → breadcrumbs → espacio constante → kicker/tag → H1 → texto → firma editorial/chips/acciones
+- un solo bloque visible de breadcrumbs por página
+- mismo espaciado interno entre los elementos del hero
+- sin alturas mínimas artificiales que provoquen huecos distintos entre páginas
+- la altura del hero debe crecer automáticamente según la longitud real del título y del contenido
+- neutralizar paddings o alturas heredadas de CSS antiguos que rompan esta geometría
+- la home principal puede conservar particularidades de contenido, pero debe respetar el mismo ritmo y alineación visual cuando use el sistema común
+- no volver a reajustar este posicionamiento salvo que aparezca un problema real de responsive o accesibilidad
+
+Implementación actual en la rama `comparativas-v3-unificacion`:
+
+- CSS compartido: `/css/hero-v5.css`
+- geometría consolidada como Hero V5.1
+- navegación interna preparada para funcionar tanto en producción como en previews `.pages.dev`
+- JS global cargado desde ruta local `/js/main-v4.js` para no salir de la preview durante la revisión
+
+---
+
 # 21. Cabecera editorial, afiliación y schema
 
 Las comparativas deben mostrar:
