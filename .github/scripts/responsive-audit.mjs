@@ -80,6 +80,20 @@ for (const vp of viewports) {
         return s.display !== "none" && s.visibility !== "hidden" && r.width > 0 && r.height > 0;
       };
 
+      const clippedByAncestor = el => {
+        const er = el.getBoundingClientRect();
+        let parent = el.parentElement;
+        while (parent && parent !== document.body) {
+          const ps = getComputedStyle(parent);
+          if (["hidden","clip"].includes(ps.overflowX) || ["hidden","clip"].includes(ps.overflow)) {
+            const pr = parent.getBoundingClientRect();
+            if (er.left < pr.left - 1 || er.right > pr.right + 1) return true;
+          }
+          parent = parent.parentElement;
+        }
+        return false;
+      };
+
       const doc = document.documentElement;
       const bodyOverflowPx = Math.max(0, doc.scrollWidth - window.innerWidth);
       const h1Count = document.querySelectorAll("h1").length;
@@ -103,6 +117,7 @@ for (const vp of viewports) {
           const r = el.getBoundingClientRect();
           const s = getComputedStyle(el);
           if (s.position === "fixed") return false;
+          if (clippedByAncestor(el)) return false;
           return r.left < -3 || r.right > window.innerWidth + 3;
         })
         .slice(0, 12)
@@ -242,9 +257,11 @@ for (const vp of viewports) {
         const r = nav.getBoundingClientRect();
         const s = getComputedStyle(nav);
         const open = nav.classList.contains("open");
+        const documentOverflowPx = Math.max(0, document.documentElement.scrollWidth - innerWidth);
         return {
-          ok: open && s.display !== "none" && s.position === "fixed" && r.left >= 7 && r.right <= innerWidth - 7,
+          ok: open && s.display !== "none" && s.position === "fixed" && r.left >= 7 && r.right <= innerWidth - 7 && documentOverflowPx <= 3,
           open,
+          documentOverflowPx,
           display: s.display,
           position: s.position,
           left: Math.round(r.left),
