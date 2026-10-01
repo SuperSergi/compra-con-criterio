@@ -247,4 +247,25 @@ const summary = {
   passedChecks: paths.length * viewports.length - failures
 };
 console.log("AUDIT_SUMMARY " + JSON.stringify(summary));
+
+const failed = report.filter(item => item.issues.length);
+const md = [
+  "## Auditoría responsive automática",
+  "",
+  "- URLs: **" + summary.pages + "**",
+  "- Viewports: **" + summary.viewports + "** (360, 390, 768 y 1440 px)",
+  "- Comprobaciones: **" + summary.checks + "**",
+  "- Pasadas: **" + summary.passedChecks + "**",
+  "- Con incidencias: **" + summary.failedChecks + "**",
+  "",
+  failed.length ? "### Incidencias" : "### Resultado",
+  "",
+  failed.length
+    ? failed.map(item => "- `" + item.viewport.name + "` · `" + item.path + "`: " + item.issues.join("; ")).join("\n")
+    : "Sin incidencias automáticas de overflow, navegación, tablas, perfiles, tarjetas, imágenes, H1 o breadcrumbs.",
+  "",
+  "Capturas completas y JSON guardados como artifact `responsive-audit`."
+].join("\n");
+
+fs.writeFileSync("responsive-audit-summary.md", md);
 if (failures) process.exitCode = 1;
