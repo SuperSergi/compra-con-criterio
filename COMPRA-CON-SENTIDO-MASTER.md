@@ -2645,3 +2645,8 @@ La estructura está preparada, pero no se han copiado imágenes de Amazon ni de 
 No existe todavía en el MASTER un Tracking ID específico para sierras circulares. La rama de revisión usa temporalmente el Store/Tracking ID principal `librosde0a1-21`. Antes de publicar se decidirá si se mantiene o se crea un Tracking ID específico para esta comparativa.
 
 Estado: **DISEÑO MONTADO EN RAMA. NO PUBLICADO. PENDIENTE REVISIÓN VISUAL, IMÁGENES DEFINITIVAS Y VALIDACIÓN AMAZON FINAL.**
+
+
+### Auditoría responsive de la rama
+
+Auditoría Playwright ejecutada sobre las 23 URLs del sitemap en 4 viewports: 360, 390, 768 y 1440 px. Total: 92 comprobaciones. Resultado: **92/92 sin incidencias automáticas**. Se validaron HTTP, H1, breadcrumbs, overflow, elementos fuera de viewport, imágenes rotas, menú móvil/escritorio y, en comparativas, tarjeta inicial, exactamente 3 perfiles, aviso/scroll de tabla y tarjetas de producto.
