@@ -2082,3 +2082,38 @@ Cloudflare Pages y el workflow de despliegue completaron correctamente la public
 ### Decisión
 
 A partir de ahora el footer se considera un componente visual único del sitio. Cualquier cambio de contenido, enlaces o estructura del footer debe aplicarse a todas las páginas actuales y futuras.
+
+---
+
+## Regla global de espaciado · 02/10/2026
+
+Se establece una escala común de separación visual para evitar diferencias entre páginas y componentes.
+
+Variables globales en `/css/style-v4.css`:
+
+- `--gap-content`: separación entre elementos relacionados dentro de una tarjeta o bloque
+- `--gap-card`: separación entre tarjetas de un mismo grupo
+- `--gap-section`: separación entre secciones independientes
+- `--gap-page-end`: separación final entre el último bloque de contenido y el footer
+
+Valores base escritorio:
+
+- contenido: 16 px
+- tarjetas: 24 px
+- secciones: 64 px
+- cierre antes del footer: 80 px
+
+Valores responsive principales:
+
+- tarjetas: 18 px
+- secciones: 40 px
+- cierre antes del footer: 52 px
+
+Regla de mantenimiento:
+
+- no introducir nuevos valores arbitrarios de `margin` o `gap` cuando una de estas variables pueda resolver el caso
+- cualquier excepción debe responder a una necesidad concreta de diseño
+- los componentes compartidos deben usar esta escala común
+- la normalización del CSS heredado se hará progresivamente cuando se edite cada bloque, evitando cambios globales ciegos que puedan alterar composiciones existentes
+
+Las tarjetas `Cómo analizamos` de las comparativas de Gatos hidráulicos, Robots aspiradores, Impresoras 3D y Deshumidificadores quedan sometidas a esta regla y reciben una separación final común antes del footer.

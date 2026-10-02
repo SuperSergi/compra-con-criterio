@@ -40,6 +40,21 @@
 
   --shell:1240px;
 
+  /* Escala global de espaciado */
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:24px;
+  --space-5:32px;
+  --space-6:48px;
+  --space-7:64px;
+  --space-8:80px;
+
+  --gap-content:var(--space-3);
+  --gap-card:var(--space-4);
+  --gap-section:var(--space-7);
+  --gap-page-end:var(--space-8);
+
 }
 
 
@@ -2406,5 +2421,54 @@ main{
   .main-nav .dropdown-submenu a.active{
     color:#fff!important;
     background:rgba(255,255,255,.10);
+  }
+}
+
+
+/* =========================================================
+   RITMO VERTICAL GLOBAL
+   ========================================================= */
+
+/*
+  Regla de diseño:
+  - contenido relacionado dentro de una tarjeta: --gap-content
+  - separación entre tarjetas de un mismo grupo: --gap-card
+  - separación entre secciones independientes: --gap-section
+  - cierre de contenido antes del footer: --gap-page-end
+  Las excepciones deben declararse de forma explícita.
+*/
+
+.ccs-stack{
+  display:grid;
+  gap:var(--gap-content);
+}
+
+.ccs-card-grid{
+  gap:var(--gap-card)!important;
+}
+
+.ccs-section-gap{
+  margin-top:var(--gap-section)!important;
+}
+
+.ccs-page-end,
+main .ccs-method{
+  margin-top:var(--gap-section)!important;
+  margin-bottom:var(--gap-page-end)!important;
+}
+
+main .ccs-method > *:first-child{
+  margin-top:0;
+}
+
+main .ccs-method > *:last-child{
+  margin-bottom:0;
+}
+
+@media (max-width:760px){
+  :root{
+    --gap-card:18px;
+    --gap-section:40px;
+    --gap-page-end:52px;
   }
 }
