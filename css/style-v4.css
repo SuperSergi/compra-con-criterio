@@ -2424,23 +2424,153 @@ main{
   }
 }
 
-
 /* =========================================================
-   RITMO VERTICAL GLOBAL
+   SISTEMA GLOBAL DE ESPACIADO
    ========================================================= */
 
 /*
-  Regla de diseño:
-  - contenido relacionado dentro de una tarjeta: --gap-content
-  - separación entre tarjetas de un mismo grupo: --gap-card
-  - separación entre secciones independientes: --gap-section
-  - cierre de contenido antes del footer: --gap-page-end
-  Las excepciones deben declararse de forma explícita.
+  Contrato de maquetación:
+  - --gap-content: elementos relacionados dentro del mismo bloque
+  - --gap-card: tarjetas o elementos hermanos de un grupo
+  - --gap-section: secciones principales consecutivas
+  - --gap-page-end: aire final de la página antes del footer
+  - --pad-card: padding estándar de tarjetas
 */
 
+:root{
+  --gap-content:var(--space-3);
+  --gap-card:clamp(16px,2vw,24px);
+  --gap-section:clamp(40px,5vw,64px);
+  --gap-page-end:clamp(52px,6vw,80px);
+  --pad-card:clamp(20px,2.2vw,32px);
+}
+
+/* Cierre de todas las páginas */
+main{
+  padding-bottom:var(--gap-page-end)!important;
+}
+
+/* Secciones principales consecutivas */
+main > section + section,
+main > .shell > section + section,
+main > [class$="-shell"] > section + section,
+main > [class*="-shell "] > section + section{
+  margin-top:var(--gap-section)!important;
+}
+
+/* Grupos principales de tarjetas */
+.tools-main-grid,
+.tools-comparison-grid,
+.home-category-grid,
+.home-method-list,
+.drill-feature-grid,
+.drill-use-grid,
+.dehum-symptom-grid,
+.dehum-feature-grid,
+.dehum-use-grid,
+.dehum-error-grid,
+.cap-answer-grid,
+.cap-factor-grid,
+.cap-decision-grid,
+.legal-status-grid,
+.legal-criteria-grid,
+.method-grid,
+.ccs-products-list,
+.grinder-products,
+.robot-products,
+.products,
+.related-grid,
+.four-grid,
+.orientation-grid,
+.grinder-guide-grid,
+.product-review-grid{
+  gap:var(--gap-card)!important;
+}
+
+/* Layouts amplios de dos columnas o método */
+.tools-intro-card,
+.tools-method-grid,
+.home-intro-card,
+.home-section-heading,
+.home-method-grid,
+.drill-intro-card,
+.drill-split,
+.drill-kit-grid,
+.drill-summary-grid,
+.dehum-intro-card,
+.dehum-section-heading,
+.dehum-types-grid,
+.dehum-capacity-grid,
+.dehum-use-layout,
+.dehum-summary-grid,
+.dehum-visual-split,
+.dehum-visual-reverse,
+.cap-hero-grid,
+.cap-heading,
+.cap-reality-grid,
+.cap-nav-card,
+.legal-layout,
+.method-intro,
+.method-heading,
+.method-closing,
+.robot-section-head,
+.ccs-intro-card,
+.ccs-quick-picks{
+  gap:var(--gap-section)!important;
+}
+
+/* Elementos relacionados dentro de un mismo componente */
+.tools-hero-actions,
+.tools-buttons,
+.tools-closing-buttons,
+.home-hero-actions,
+.home-category-actions,
+.drill-hero-actions,
+.dehum-hero-actions,
+.ccs-hero-meta,
+.hero-chips,
+.article-byline,
+.cap-data-row,
+.cap-faq-list,
+.cap-sources,
+.dehum-type-list,
+.dehum-type-meta,
+.dehum-capacity-list,
+.dehum-check-list,
+.dehum-summary-list,
+.dehum-faq-list,
+.dehum-source-list,
+.drill-kit-list,
+.drill-summary-list,
+.source-steps,
+.grinder-specs,
+.grinder-pros,
+.grinder-use-list,
+.grinder-related > div,
+.robot-specs,
+.robot-proscons,
+.robot-buy,
+.robot-method,
+.robot-faq,
+.specs,
+.pros{
+  gap:var(--gap-content)!important;
+}
+
+/* Tarjetas de metodología y cierres editoriales */
+main .ccs-method{
+  margin-top:var(--gap-section)!important;
+  margin-bottom:0!important;
+}
+
+.ccs-page-end{
+  margin-bottom:0!important;
+}
+
+/* Utilidades para páginas nuevas y mantenimiento */
 .ccs-stack{
   display:grid;
-  gap:var(--gap-content);
+  gap:var(--gap-content)!important;
 }
 
 .ccs-card-grid{
@@ -2451,24 +2581,6 @@ main{
   margin-top:var(--gap-section)!important;
 }
 
-.ccs-page-end,
-main .ccs-method{
-  margin-top:var(--gap-section)!important;
-  margin-bottom:var(--gap-page-end)!important;
-}
-
-main .ccs-method > *:first-child{
-  margin-top:0;
-}
-
-main .ccs-method > *:last-child{
-  margin-bottom:0;
-}
-
-@media (max-width:760px){
-  :root{
-    --gap-card:18px;
-    --gap-section:40px;
-    --gap-page-end:52px;
-  }
+.ccs-card-pad{
+  padding:var(--pad-card)!important;
 }

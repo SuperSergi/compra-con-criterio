@@ -2117,3 +2117,33 @@ Regla de mantenimiento:
 - la normalización del CSS heredado se hará progresivamente cuando se edite cada bloque, evitando cambios globales ciegos que puedan alterar composiciones existentes
 
 Las tarjetas `Cómo analizamos` de las comparativas de Gatos hidráulicos, Robots aspiradores, Impresoras 3D y Deshumidificadores quedan sometidas a esta regla y reciben una separación final común antes del footer.
+
+---
+
+## Aplicación global del sistema de espaciado · 02/10/2026
+
+La regla de espaciado deja de ser únicamente una referencia para componentes nuevos y pasa a aplicarse al conjunto del sitio.
+
+### Contrato global
+
+- `--gap-content`: separación entre elementos relacionados de un mismo bloque
+- `--gap-card`: separación entre tarjetas de un mismo grupo
+- `--gap-section`: separación entre secciones principales
+- `--gap-page-end`: separación final entre el contenido principal y el footer
+- `--pad-card`: padding reutilizable para tarjetas
+
+Los valores se definen de forma responsive mediante la escala global de `style-v4.css`.
+
+### Aplicación
+
+- todas las páginas comparten el mismo espacio final antes del footer
+- las secciones principales consecutivas usan una separación común
+- los grids principales de tarjetas de Herramientas, Hogar, Impresión 3D y comparativas usan `--gap-card`
+- los layouts editoriales amplios usan `--gap-section`
+- listas, metadatos, acciones y grupos internos usan `--gap-content`
+- las tarjetas `Cómo analizamos` mantienen la misma separación que el resto de secciones
+- las utilidades `.ccs-stack`, `.ccs-card-grid`, `.ccs-section-gap` y `.ccs-card-pad` quedan disponibles para contenido nuevo
+
+### Regla de mantenimiento
+
+Las páginas nuevas deben usar este contrato. Los CSS específicos pueden modificar composición, columnas o comportamiento responsive, pero no deben introducir separaciones estructurales arbitrarias cuando exista una variable global equivalente.
