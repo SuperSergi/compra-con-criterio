@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 08:04
+**Última actualización:** 2 de octubre de 2026 · 08:12
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -985,7 +985,7 @@ Oportunidades investigadas:
 
 - llaves de impacto a batería: creada y publicada
 - amoladoras a batería 125 mm: **creada, revisada y publicada el 30/09/2026**
-- sierras circulares a batería: segunda prioridad
+- sierras circulares a batería: **investigación SEO cerrada el 02/10/2026; URL propia aprobada; selección de producto pendiente**
 - plataformas de herramientas/baterías 18 V: tercera prioridad; plantearla como hub comercial/estratégico cuando el cluster tenga más familias de herramientas
 - hidrolimpiadoras para coche: cuarta prioridad; pendiente resolver antes su encaje arquitectónico
 
@@ -1271,6 +1271,233 @@ Publicación final:
 - PNG duplicados eliminados del repositorio
 - hero actualizado también en `/herramientas/`
 - las imágenes generadas por IA de producto se muestran como ilustrativas
+
+
+## Investigación SEO cerrada · Sierras circulares a batería · 02/10/2026
+
+Decisión:
+
+**Sí merece una URL propia**, pero no se crea todavía. La siguiente fase será cerrar selección de producto, variantes y ASIN antes de redactar.
+
+URL propuesta:
+
+`/herramientas/sierras-circulares-a-bateria/`
+
+Intención principal:
+
+**Comercial / investigación previa a compra.**
+
+La SERP española actual separa con bastante claridad tres tipos de intención:
+
+- búsquedas tipo `mejores sierras circulares a batería` y `mejor sierra circular a batería calidad precio`: comparativas editoriales y guías de compra
+- búsqueda genérica `sierra circular a batería`: mezcla de comparadores, retailers, categorías comerciales y comparativas
+- búsquedas técnicas como `18V`, `165 mm`, `carril guía` o `profundidad de corte`: intención comercial más específica, pero no suficiente para justificar URLs independientes por ahora
+
+Keyword principal:
+
+`mejores sierras circulares a batería`
+
+Keywords secundarias a trabajar dentro de la misma URL:
+
+- `mejor sierra circular a batería`
+- `mejor sierra circular a batería calidad precio`
+- `sierra circular a batería 18v`
+- `sierra circular batería 165 mm`
+- `sierra circular sin cable`
+- `sierra circular a batería para madera`
+- `qué sierra circular a batería comprar`
+
+No crear una URL independiente para `165 mm`, `18 V`, `brushless` o `calidad precio` mientras la intención se pueda resolver correctamente en la comparativa principal.
+
+### Lectura de SERP
+
+Competidores editoriales relevantes observados:
+
+- Guía Herramientas: comparativa muy alineada con la intención, centrada en 18 V / 165 mm y tres modelos
+- Zona Herramienta: comparativa de cuatro modelos con enfoque directo a afiliación
+- Mister Herramientas: página específica dentro de un cluster amplio de sierras eléctricas
+- TaladrosExpert: contenido más amplio sobre sierras circulares, mezclando cable y batería
+- Bricostop y otros agregadores: contenido comercial con calidad y precisión variables
+
+También aparecen dominios comerciales fuertes:
+
+- Idealo
+- Leroy Merlin
+- Bauhaus
+- TodoTaladros
+- Amazon indirectamente mediante fichas enlazadas desde comparadores
+
+Conclusión SERP:
+
+La consulta genérica tiene bastante componente transaccional y competencia de retailers fuertes, pero las búsquedas editoriales de tipo `mejores...` admiten webs especializadas pequeñas y medianas. Existe hueco para una comparativa mejor estructurada y técnicamente más consistente.
+
+### Dificultad real
+
+Valoración editorial:
+
+**Media.**
+
+Matiz:
+
+- keyword genérica `sierra circular a batería`: dificultad media-alta por presencia de grandes retailers y comparadores
+- keyword principal editorial `mejores sierras circulares a batería`: dificultad media
+- long-tail 18 V / 165 mm / calidad-precio: dificultad media o media-baja según consulta
+
+No se dispone todavía de volumen fiable propio de Search Console para esta temática. No inventar cifras de búsquedas.
+
+### Potencial comercial y afiliación
+
+Valoración:
+
+**Alto.**
+
+Motivos:
+
+- abundante oferta de modelos en Amazon.es y retail español
+- ticket claramente superior al de accesorios pequeños
+- muchos modelos se venden como cuerpo solo, lo que obliga al usuario a valorar batería y cargador
+- posibilidad de compra complementaria de discos, carriles guía y baterías
+- intención de búsqueda cercana a la decisión de compra
+
+Antes de seleccionar productos finales se debe confirmar:
+
+- ficha activa Amazon.es
+- ASIN
+- variante exacta
+- cuerpo solo o kit
+- diámetro de disco
+- batería/cargador incluidos o no
+- posibilidad de afiliación
+
+### Segmento técnico dominante
+
+La SERP y el catálogo comercial muestran una presencia muy fuerte de:
+
+- 18 V
+- disco de 165 mm
+- profundidades de corte aproximadas de 55–60 mm a 90° en muchos modelos
+
+Esto convierte 18 V / 165 mm en un eje editorial especialmente útil, pero **no obliga a que todos los modelos de la comparativa sean de 165 mm** si una referencia de 184/190 mm aporta una diferencia de uso real.
+
+No convertir automáticamente el diámetro de disco en criterio de superioridad. Un disco mayor puede aportar más profundidad de corte, pero también cambia tamaño, peso y enfoque de uso.
+
+### Subtemas y preguntas prioritarias
+
+La futura página debe explicar como mínimo:
+
+- 165 mm frente a 184/190 mm
+- profundidad máxima de corte a 90° y 45°
+- motor brushless frente a motor con escobillas cuando exista diferencia real
+- compatibilidad con carril guía
+- precisión y estabilidad de la base
+- ajuste de profundidad y bisel
+- freno del motor y elementos de seguridad
+- aspiración / soplado de polvo y visibilidad de la línea de corte
+- diámetro y número de dientes del disco incluido
+- cuerpo solo frente a kit con batería y cargador
+- batería recomendada según el modelo, sin inventar autonomía comparable
+- sierra circular frente a mini circular, caladora y sierra de inmersión cuando ayude a evitar una compra equivocada
+
+FAQ candidatas:
+
+1. ¿Qué diámetro de disco es mejor en una sierra circular a batería: 165, 184 o 190 mm?
+2. ¿Qué profundidad de corte necesito para tableros y madera?
+3. ¿Compensa una sierra circular brushless?
+4. ¿Merece la pena que sea compatible con carril guía?
+5. ¿Cuántos dientes debe tener el disco para un corte limpio?
+6. ¿Compensa comprar una sierra circular sin batería ni cargador?
+
+### Entidades relevantes
+
+Marcas y plataformas que aparecen de forma recurrente en SERP y catálogo:
+
+- Bosch Professional 18V
+- Makita LXT 18V
+- DeWalt XR 18V
+- Einhell Power X-Change 18V
+- Metabo / CAS 18V
+- Ryobi ONE+ 18V
+- Milwaukee M18
+
+Modelos que aparecen repetidamente en SERP o retail y merecen investigación de producto posterior:
+
+- Bosch GKS 18V-57-2 / GKS 18V-57-2 GX
+- Makita DHS680Z
+- DeWalt DCS565N-XJ / familia DCS57x
+- Einhell Professional TP-CS 18/165 Li BL y TE-CS 18/165
+- Metabo KS 18 LTX 57 / variante BL
+- Ryobi R18CS-0
+- Milwaukee M18 FCS552-0
+
+Esta lista es **pool de candidatos**, no selección cerrada.
+
+### Disponibilidad comercial preliminar
+
+La investigación confirma presencia comercial actual en Amazon.es o Amazon Marketplace ES para referencias/familias de Bosch, Makita, DeWalt, Einhell y Metabo. Ryobi tiene catálogo 18 V activo y disponibilidad directa en España. Milwaukee M18 FCS552-0 tiene disponibilidad clara en distribuidores españoles, pero su ficha exacta en Amazon.es no queda suficientemente confirmada en esta fase.
+
+Por tanto:
+
+**no cerrar todavía seis modelos ni ASIN hasta hacer una revisión individual Amazon.es → fabricante → documentación oficial.**
+
+### Canibalización
+
+Estado actual:
+
+**Riesgo muy bajo.**
+
+Comprobaciones:
+
+- no existe ninguna URL actual dedicada a sierras circulares
+- el repositorio no contiene una página que ataque esta intención
+- `/herramientas/` funciona como hub de categoría, no como comparativa de sierras
+- taladros, amoladoras y llaves de impacto responden a familias de producto diferentes
+
+Riesgo futuro a controlar:
+
+- una futura guía sobre plataformas 18 V debe responder a `qué ecosistema de batería elegir`, no a `qué sierra circular comprar`
+- no crear por ahora una segunda URL `/herramientas/sierras-circulares/`, una guía `165-mm` ni una URL `calidad-precio`
+
+### Encaje en arquitectura
+
+Encaje recomendado:
+
+`/herramientas/sierras-circulares-a-bateria/`
+
+Debe tratarse como una comparativa principal del cluster Herramientas, al mismo nivel que:
+
+- `/herramientas/amoladoras-a-bateria/`
+- `/herramientas/llaves-de-impacto/`
+
+No crear una subcategoría `/herramientas/sierras/` hasta que exista suficiente contenido real para justificar un hub propio.
+
+### Enlazado interno diseñado antes de publicar
+
+Cuando la página exista:
+
+- `/herramientas/` → sierras circulares a batería
+- sierras circulares → `/herramientas/`
+- enlace contextual con taladros a batería cuando se hable de montar un equipo básico de bricolaje / carpintería
+- enlace contextual con amoladoras a batería cuando se hable de herramientas 18 V y corte, evitando confundir aplicaciones
+- enlace contextual con la futura página de plataformas 18 V cuando exista
+- no forzar enlaces hacia gatos hidráulicos o llaves de impacto si el contexto no lo justifica
+- si entra en navegación principal/submenú, aplicar el cambio globalmente en escritorio y móvil
+
+### Decisión final de esta fase
+
+**Crear la URL tiene sentido SEO y comercial.**
+
+Justificación:
+
+- intención comercial clara
+- SERP editorial suficientemente abierta
+- buen encaje con el cluster prioritario Herramientas
+- canibalización actual mínima
+- oferta de producto amplia y monetizable
+- subtemas técnicos que permiten aportar más valor que una ficha o ranking superficial
+
+La próxima fase será **selección y verificación de modelos**. No se ha creado la URL, no se ha redactado contenido final y no se ha publicado nada.
+
+Search Console sigue acumulando datos. Esta decisión se basa en intención, SERP actual, arquitectura y potencial comercial, no en volumen propio todavía.
 
 ---
 
@@ -1598,7 +1825,8 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/amoladoras-a-bateria/`.
 - [x] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
 - [x] Redactar, revisar y publicar `/herramientas/amoladoras-a-bateria/`.
-- [ ] Investigar sierras circulares a batería.
+- [x] Investigar sierras circulares a batería y decidir si merece URL propia.
+- [ ] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
 - [ ] Definir progresivamente las primeras 20-30 URLs de alta calidad.
