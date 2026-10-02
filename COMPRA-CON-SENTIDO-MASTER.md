@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 14:25
+**Última actualización:** 2 de octubre de 2026 · 21:20
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -732,6 +732,11 @@ Pendiente inmediato:
 - interpretación confirmada por la documentación oficial: la cuenta aún no cumple o Amazon aún no ha reconocido el requisito de 10 ventas cualificadas en los últimos 30 días
 - la propia interfaz de Amazon indica que la revisión de elegibilidad tras crear la credencial puede tardar hasta 48 horas
 - no hacer cambios en credenciales ni Worker por este 403; volver a probar cuando Amazon haya actualizado la elegibilidad
+- revisión repetida aproximadamente 48 horas después: sigue devolviendo HTTP 403 `AssociateNotEligible`
+- informe de Amazon Afiliados revisado para los últimos 30 días: 14 productos pedidos, 11 productos enviados, 0 devueltos, 118 clics, conversión 11,86 %, 267,46 € en productos enviados y 12,27 € de ingresos
+- con 11 productos enviados y 0 devueltos, la cuenta parece superar el umbral cuantitativo de 10 ventas, aunque Amazon puede excluir operaciones que no considere cualificadas
+- como Creators API sigue devolviendo `403 AssociateNotEligible` tras unas 48 horas, siguiente paso: contactar con soporte de Amazon Afiliados para que confirmen cuántas ventas están contando como cualificadas y revisen la elegibilidad de la cuenta
+- 02/10/2026: consulta enviada a soporte de Amazon Afiliados mediante el formulario de contacto, identificando la tienda como `librosde0a1-21` y aportando las métricas de los últimos 30 días
 
 ## Precios
 
@@ -2253,7 +2258,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 21:55.
+- Última actualización de esta versión: 02/10/2026 21:20.
 
 ---
 
