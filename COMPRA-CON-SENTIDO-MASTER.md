@@ -2169,3 +2169,7 @@ Configuración aplicada:
 Decisión operativa:
 
 A partir de esta fecha los cambios de código y documentación deben realizarse en una rama de trabajo y entrar en `main` mediante pull request. `main` sigue siendo la fuente de verdad de producción.
+
+### Validación del flujo protegido
+
+Se realiza una comprobación práctica del nuevo flujo de pull request para confirmar que el check `build` se ejecuta correctamente antes de volver a establecerlo como requisito obligatorio del ruleset.
