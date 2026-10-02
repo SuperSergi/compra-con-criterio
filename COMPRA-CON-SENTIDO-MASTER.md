@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 14:25
+**Última actualización:** 2 de octubre de 2026 · 21:10
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -732,6 +732,8 @@ Pendiente inmediato:
 - interpretación confirmada por la documentación oficial: la cuenta aún no cumple o Amazon aún no ha reconocido el requisito de 10 ventas cualificadas en los últimos 30 días
 - la propia interfaz de Amazon indica que la revisión de elegibilidad tras crear la credencial puede tardar hasta 48 horas
 - no hacer cambios en credenciales ni Worker por este 403; volver a probar cuando Amazon haya actualizado la elegibilidad
+- revisión repetida aproximadamente 48 horas después: sigue devolviendo HTTP 403 `AssociateNotEligible`
+- siguiente paso: revisar en informes de Amazon Afiliados cuántos artículos de los últimos 30 días figuran como enviados y aptos para comisión; si hay al menos 10 ventas cualificadas y el bloqueo continúa, contactar con soporte de Amazon Afiliados
 
 ## Precios
 
@@ -2253,7 +2255,7 @@ Mientras Search Console todavía no tenga datos de consultas, evitar crear nueva
 ## Norma de versionado del MASTER
 
 - Cada actualización del MASTER debe incluir también la hora local de actualización en formato `DD/MM/YYYY HH:MM` para que sea fácil identificar cuál es la versión más reciente subida al proyecto.
-- Última actualización de esta versión: 30/09/2026 21:55.
+- Última actualización de esta versión: 02/10/2026 21:10.
 
 ---
 
