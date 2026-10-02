@@ -29,7 +29,7 @@
 
 
 
-.grinder-page h2{color:var(--g);letter-spacing:-.025em}
+.grinder-page main h2{color:var(--g);letter-spacing:-.025em}
 .grinder-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow)}
 .grinder-table{width:100%;min-width:900px;border-collapse:collapse}
 .grinder-table th,.grinder-table td{padding:12px 12px;border-bottom:1px solid #edf1ee;text-align:left;vertical-align:top;white-space:normal}

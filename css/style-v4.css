@@ -2371,3 +2371,40 @@ main{
     transform:none!important;
   }
 }
+
+
+/* =========================================================
+   FOOTER ÚNICO · AISLAMIENTO DE ESTILOS
+   ========================================================= */
+.site-footer .footer-grid > section{
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+.site-footer .footer-grid h2{
+  margin:0 0 18px!important;
+  color:#fff!important;
+  font-size:21px!important;
+  line-height:1.25!important;
+  letter-spacing:0!important;
+}
+
+@media (min-width:761px){
+  .main-nav .dropdown a.active,
+  .main-nav .dropdown-submenu a.active{
+    color:var(--green-900)!important;
+    background:var(--green-100);
+  }
+}
+
+@media (max-width:760px){
+  .main-nav .dropdown a.active,
+  .main-nav .dropdown-submenu a.active{
+    color:#fff!important;
+    background:rgba(255,255,255,.10);
+  }
+}
