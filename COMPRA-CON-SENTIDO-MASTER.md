@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 08:12
+**Última actualización:** 2 de octubre de 2026 · 13:07
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -985,7 +985,7 @@ Oportunidades investigadas:
 
 - llaves de impacto a batería: creada y publicada
 - amoladoras a batería 125 mm: **creada, revisada y publicada el 30/09/2026**
-- sierras circulares a batería: **investigación SEO cerrada el 02/10/2026; URL propia aprobada; selección de producto pendiente**
+- sierras circulares a batería: **investigación SEO y selección de 6 modelos cerradas el 02/10/2026; matriz técnica y contenido pendientes**
 - plataformas de herramientas/baterías 18 V: tercera prioridad; plantearla como hub comercial/estratégico cuando el cluster tenga más familias de herramientas
 - hidrolimpiadoras para coche: cuarta prioridad; pendiente resolver antes su encaje arquitectónico
 
@@ -1495,9 +1495,81 @@ Justificación:
 - oferta de producto amplia y monetizable
 - subtemas técnicos que permiten aportar más valor que una ficha o ranking superficial
 
-La próxima fase será **selección y verificación de modelos**. No se ha creado la URL, no se ha redactado contenido final y no se ha publicado nada.
+La selección y verificación inicial de modelos ya se ha cerrado en la fase siguiente. No se ha creado la URL, no se ha redactado contenido final y no se ha publicado nada.
 
 Search Console sigue acumulando datos. Esta decisión se basa en intención, SERP actual, arquitectura y potencial comercial, no en volumen propio todavía.
+
+## Selección de producto cerrada · Sierras circulares a batería · 02/10/2026 13:07
+
+Se cierra una selección inicial de seis modelos principales para la futura comparativa. La selección prioriza variantes identificables, disponibilidad comercial comprobable, documentación oficial suficiente y diferencias de uso que permitan una comparativa útil.
+
+Modelos y variantes:
+
+- **Bosch Professional GKS 18V-57-2 GX** — referencia `06016C1001` — 18 V, 165 mm, motor brushless, variante con L-BOXX y sin batería/cargador — ASIN `B0DFWZTHNK`
+- **Makita DHS680Z** — 18 V LXT, 165 mm, motor brushless, cuerpo solo sin batería/cargador — ASIN `B00WW83F4Q`
+- **DeWalt DCS565N-XJ** — 18 V XR, 165 mm, motor brushless, cuerpo solo sin batería/cargador — ASIN `B099X7HBQF`
+- **Einhell Professional TP-CS 18/165 Li BL - Solo** — artículo `4331225`, EAN `4006825677881` — 18 V, 165 mm, brushless, sin batería/cargador — ASIN `B0DX71B1JN`
+- **Metabo KS 18 LTX 57 BL** — referencia `611857840` — 18 V, 165 mm, brushless, con metaBOX y sin batería/cargador — ASIN `B0CW192FVD`
+- **WORX WX530** — PowerShare 20 V Max (18 V nominal de la plataforma), 165 mm, motor con escobillas, kit con batería de 2 Ah y cargador, sistema ExacTrack — ASIN `B07GY6LYTT`
+
+### Motivo editorial de la selección
+
+La selección evita seis máquinas prácticamente iguales:
+
+- **Bosch GKS 18V-57-2 GX:** candidata para quien valore especialmente precisión, compatibilidad con carril FSN/FSN X y funciones de control como KickBack Control, Stop Control y ajuste de revoluciones.
+- **Makita DHS680Z:** modelo consolidado y ligero, con freno eléctrico, ADT y compatibilidad con guía mediante adaptador; encaja bien para usuarios de LXT que buscan una sierra compacta.
+- **DeWalt DCS565N-XJ:** propuesta profesional directa, con freno electrónico, LED, soplado de línea de corte y conexión AirLock; prioriza sencillez y control.
+- **Einhell TP-CS 18/165 Li BL:** opción muy equipada dentro de Power X-Change, con 59 mm declarados a 90°, freno eléctrico, ajustes sin herramientas y compatibilidad con carril Einhell.
+- **Metabo KS 18 LTX 57 BL:** destaca por su compatibilidad directa con carriles de múltiples fabricantes, motor brushless y freno de deceleración; es especialmente interesante para quien ya usa guías de otras marcas.
+- **WORX WX530:** aporta un perfil distinto con ExacTrack y kit completo de batería/cargador; permite cubrir al usuario que empieza desde cero y valora cortes longitudinales guiados sin comprar la batería aparte.
+
+### Datos técnicos ya confirmados que orientarán la futura matriz
+
+Sin cerrar todavía la tabla final:
+
+- Bosch: 5.000 rpm, 165 mm, hasta 57 mm a 90°, bisel hasta 50°, brushless
+- Makita: 5.000 rpm, 165 mm, 57 mm a 90°, 41 mm a 45°, freno eléctrico, ADT
+- DeWalt: 4.950 rpm, 165 mm, 55 mm a 90°, 42 mm a 45°, bisel hasta 50°, freno electrónico
+- Einhell: 5.000 rpm, 165 mm, 59 mm a 90°, brushless, freno eléctrico
+- Metabo: 5.000 rpm, 165 mm, 57 mm a 90°, brushless, freno de deceleración
+- WORX: 4.900 rpm, 165 mm, 55 mm a 90°, 39 mm a 45°, freno eléctrico, ExacTrack
+
+No utilizar todavía como tabla definitiva hasta revisar todas las magnitudes con el mismo criterio.
+
+### Discrepancias y cautelas detectadas
+
+- **Einhell:** la ficha oficial española muestra 44 mm a 45° en la tabla técnica, pero 41 mm en un bloque descriptivo de la misma página. Antes de publicar la matriz se debe resolver mediante manual/documentación adicional y no escoger una cifra arbitrariamente.
+- **Makita:** la compatibilidad con carril guía de la DHS680 requiere tratarse con precisión; existe adaptador específico `196953-0` para esta familia. No presentar como compatibilidad directa si la documentación final confirma uso mediante adaptador.
+- **WORX:** la marca comercializa PowerShare como `20 V Max`; para la comparativa no escribir simplemente `18 V` sin explicar la nomenclatura. La plataforma se describe también como 18 V (20 V Max) en documentación de la marca.
+- **Amazon:** los seis ASIN quedan vinculados a las variantes seleccionadas para esta fase, pero deben volver a comprobarse inmediatamente antes de crear los enlaces afiliados, porque ficha, vendedor y disponibilidad pueden cambiar.
+
+### Candidatos descartados o en reserva
+
+- **Ryobi R18CS-0:** técnicamente encaja bien, pero la ficha Amazon asociada al ASIN localizado presenta una inconsistencia de denominación (`R18CSP-0`) frente al modelo oficial `R18CS-0`. Se deja fuera hasta poder validar una ficha exacta sin ambigüedad.
+- **Milwaukee M18 FCS552-0:** técnicamente es una candidata fuerte y tiene distribución española clara, pero no se ha podido confirmar con suficiente fiabilidad una ficha/ASIN exactos en Amazon.es. Se mantiene como reserva.
+- **HiKOKI C1806DA:** tiene especificaciones adecuadas, pero la disponibilidad exacta en Amazon.es no queda suficientemente clara para utilizarla como producto principal.
+
+### Regla para la siguiente fase
+
+La próxima fase será construir la **matriz técnica normalizada** y el **posicionamiento editorial**. Comparar solo magnitudes equivalentes, priorizando:
+
+- profundidad de corte a 90° y 45°
+- diámetro de disco
+- velocidad sin carga
+- bisel máximo
+- motor brushless o con escobillas
+- freno de hoja
+- compatibilidad real con carril guía
+- extracción/soplado y visibilidad de línea de corte
+- contenido del paquete
+- peso solo si puede normalizarse con el mismo criterio en los seis modelos
+
+No usar autonomía genérica entre marcas ni convertir automáticamente mayor profundidad de corte o mayor rpm en una recomendación superior.
+
+Estado:
+
+**SELECCIÓN DE 6 MODELOS CERRADA. MATRIZ TÉCNICA Y CONTENIDO PENDIENTES. NO SE HA CREADO NI PUBLICADO LA URL.**
+
 
 ---
 
@@ -1826,7 +1898,8 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [x] Preparar tabla técnica normalizada, estructura editorial, FAQ y enlazado interno de `/herramientas/amoladoras-a-bateria/`.
 - [x] Redactar, revisar y publicar `/herramientas/amoladoras-a-bateria/`.
 - [x] Investigar sierras circulares a batería y decidir si merece URL propia.
-- [ ] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
+- [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
+- [ ] Preparar matriz técnica normalizada, posicionamiento editorial, SEO on-page, FAQ y estructura de contenido de `/herramientas/sierras-circulares-a-bateria/`.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
 - [ ] Definir progresivamente las primeras 20-30 URLs de alta calidad.
