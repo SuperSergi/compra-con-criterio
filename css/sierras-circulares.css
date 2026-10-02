@@ -1,0 +1,27 @@
+.saw-page{background:#fff}
+.saw-shell{width:min(1160px,calc(100% - 36px));margin:0 auto}
+.saw-eyebrow{display:inline-block;margin:0 0 10px;color:var(--green-700);font-size:12px;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.saw-shell section>h2{margin:0 0 18px;color:var(--green-950)}
+.saw-shell section>p{color:var(--muted);line-height:1.72}
+.saw-choose ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px;margin:22px 0 0;padding:0;list-style:none}
+.saw-choose li{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#f7faf8;color:#405149;line-height:1.55}
+.saw-table-note{margin:12px 0 0;font-size:13px}
+.saw-products .ccs-products-list{margin-top:22px}
+.saw-provisional-media img{filter:saturate(.65) contrast(.94);opacity:.82}
+.saw-supply{order:75;margin:14px 0 0;padding:12px 14px;border:1px solid #e0e7e3;border-radius:12px;background:#fafcfb;color:#536059;font-size:14px}
+.saw-supply strong{color:#263e31}
+.saw-guide h3{margin:30px 0 10px;color:var(--green-950);font-size:22px}
+.saw-guide ul{padding-left:20px}
+.saw-guide li{margin:8px 0;color:#46574e;line-height:1.6}
+.saw-context-links{margin-top:26px!important;padding:18px 20px;border-left:4px solid var(--green-700);border-radius:0 14px 14px 0;background:#f4f9f6}
+.saw-context-links a,.saw-related a{color:var(--green-800);font-weight:800}
+.saw-use p{margin:0 0 12px}
+.saw-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap-card)}
+.saw-related-grid a{display:flex;align-items:center;min-height:74px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow-soft);text-decoration:none}
+.saw-faq details{margin:0 0 12px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.saw-faq summary{cursor:pointer;padding:18px 20px;color:var(--green-950);font-weight:800}
+.saw-faq details p{margin:0;padding:0 20px 20px;color:var(--muted);line-height:1.65}
+.amazon-btn{position:relative;overflow:hidden;border:1px solid #d5a900;background:linear-gradient(180deg,#ffd814,#f7ca00);color:#18120a!important;text-decoration:none;box-shadow:0 7px 16px rgba(0,0,0,.10)}
+.amazon-btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.14)}
+@media(max-width:900px){.saw-choose ul{grid-template-columns:1fr}.saw-related-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.saw-shell{width:min(100% - 24px,1160px)}.saw-choose li{padding:15px}.saw-guide h3{font-size:20px}.saw-related-grid{gap:12px}}
