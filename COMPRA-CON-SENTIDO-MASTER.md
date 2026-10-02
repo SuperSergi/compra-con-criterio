@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 13:30
+**Última actualización:** 2 de octubre de 2026 · 14:25
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -1964,6 +1964,26 @@ Funciones:
 Norma:
 
 Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
+
+### Regla de traspaso entre chats
+
+Cuando una tarea deba continuar en otro chat del proyecto, ChatGPT debe entregar en la misma respuesta un texto **listo para copiar y pegar** en el chat de destino.
+
+Ese texto debe presentarse dentro de una caja de código para que Sergio pueda copiarlo directamente sin reconstruir contexto.
+
+El traspaso debe incluir, cuando corresponda:
+
+- nombre exacto del chat de destino
+- instrucción de consultar primero el `COMPRA-CON-SENTIDO-MASTER.md` actual en `main`
+- estado real del trabajo ya cerrado
+- decisiones que no deben rehacerse
+- archivos, rutas o borradores internos relevantes
+- siguiente bloque de tareas concreto
+- restricciones importantes, especialmente `no publicar` cuando proceda
+- flujo obligatorio de GitHub: `rama → PR → check build → squash → main`
+- cualquier validación pendiente antes de producción
+
+No limitarse a decir “continúa en el chat 03” o equivalente. Siempre que el cambio de chat sea el siguiente paso recomendado, generar automáticamente ese texto de traspaso listo para copiar.
 
 ---
 
