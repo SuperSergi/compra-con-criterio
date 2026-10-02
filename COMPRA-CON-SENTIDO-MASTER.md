@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 07:27
+**Última actualización:** 2 de octubre de 2026 · 08:04
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -2147,3 +2147,25 @@ Los valores se definen de forma responsive mediante la escala global de `style-v
 ### Regla de mantenimiento
 
 Las páginas nuevas deben usar este contrato. Los CSS específicos pueden modificar composición, columnas o comportamiento responsive, pero no deben introducir separaciones estructurales arbitrarias cuando exista una variable global equivalente.
+
+---
+
+## Protección de la rama de producción · 02/10/2026
+
+Se activa el ruleset `Protección de main` sobre la rama por defecto `main`.
+
+Configuración aplicada:
+
+- protección contra borrado de `main`
+- bloqueo de force push
+- cambios a producción mediante pull request
+- 0 aprobaciones obligatorias, adecuado mientras el repositorio lo mantiene una sola persona
+- método de merge permitido: `squash`
+- check obligatorio antes del merge: `build`
+- no se exige que la rama esté actualizada con `main` antes de fusionar
+- no se exige despliegue de Cloudflare como condición de merge
+- ruleset activo y sin bypass
+
+Decisión operativa:
+
+A partir de esta fecha los cambios de código y documentación deben realizarse en una rama de trabajo y entrar en `main` mediante pull request. `main` sigue siendo la fuente de verdad de producción.
