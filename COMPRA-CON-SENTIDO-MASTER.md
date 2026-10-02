@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 13:07
+**Última actualización:** 2 de octubre de 2026 · 13:30
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -985,7 +985,7 @@ Oportunidades investigadas:
 
 - llaves de impacto a batería: creada y publicada
 - amoladoras a batería 125 mm: **creada, revisada y publicada el 30/09/2026**
-- sierras circulares a batería: **investigación SEO y selección de 6 modelos cerradas el 02/10/2026; matriz técnica y contenido pendientes**
+- sierras circulares a batería: **investigación SEO, selección de 6 modelos, matriz técnica, estructura SEO y borrador editorial cerrados el 02/10/2026; diseño/publicación pendientes**
 - plataformas de herramientas/baterías 18 V: tercera prioridad; plantearla como hub comercial/estratégico cuando el cluster tenga más familias de herramientas
 - hidrolimpiadoras para coche: cuarta prioridad; pendiente resolver antes su encaje arquitectónico
 
@@ -1570,6 +1570,124 @@ Estado:
 
 **SELECCIÓN DE 6 MODELOS CERRADA. MATRIZ TÉCNICA Y CONTENIDO PENDIENTES. NO SE HA CREADO NI PUBLICADO LA URL.**
 
+## Matriz técnica, SEO y borrador editorial cerrados · 02/10/2026 13:30
+
+Se completa la siguiente fase sin crear la URL pública.
+
+### Matriz técnica normalizada
+
+Los seis modelos seleccionados utilizan disco de 165 mm. Tabla de trabajo definitiva:
+
+| Modelo | Corte 90° | Corte 45° | rpm | Bisel máx. | Peso herramienta | Motor | Carril guía | Seguridad / control |
+|---|---:|---:|---:|---:|---:|---|---|---|
+| Bosch GKS 18V-57-2 GX | 57 mm | 42 mm | 5.000 | 50° | 3,4 kg sin batería | Brushless | Directo: Bosch FSN / FSN X | KickBack Control + Stop Control |
+| Makita DHS680Z | 57 mm | 41 mm | 5.000 | 50° | 2,7 kg sin batería | Brushless | Mediante adaptador 196953-0 | Freno eléctrico + ADT |
+| DeWalt DCS565N-XJ | 55 mm | 42 mm | 4.950 | 50° | 2,8 kg sin batería | Brushless | Sin compatibilidad dedicada declarada | Freno electrónico |
+| Einhell TP-CS 18/165 Li BL | 59 mm | 44 mm | 5.000 | 45° | 2,95 kg, peso de producto declarado en variante Solo | Brushless | Carril Einhell | Freno de motor + arranque suave |
+| Metabo KS 18 LTX 57 BL | 57 mm | 43 mm | 5.000 | 50° | 2,7 kg sin batería | Brushless | Directo con Metabo y múltiples carriles compatibles | Freno de deceleración |
+| WORX WX530 | 55 mm | 39 mm | 4.900 | 50° | 2,3 kg sin batería | Con escobillas | Sistema propio ExacTrack | Freno eléctrico |
+
+Decisiones técnicas:
+
+- Einhell: usar **44 mm a 45°**. La tabla técnica y el manual oficial coinciden; el texto comercial que menciona 41 mm se trata como una inconsistencia de copy.
+- Makita: describir la compatibilidad con carril **mediante adaptador 196953-0**, no como acoplamiento directo.
+- WORX: usar **50°** como bisel máximo. La tabla técnica y el manual indican 0–50° aunque existe un bullet comercial aislado que menciona 55°.
+- Bosch: no llamar a Stop Control “freno eléctrico”; mantener separadas sus funciones de control respecto a un freno convencional.
+- DeWalt: no atribuir compatibilidad con carril guía dedicada a DCS565N-XJ.
+- no comparar autonomía entre marcas
+- no asumir que más profundidad o más rpm significan automáticamente mejor compra
+
+### Posicionamiento editorial cerrado
+
+- **Bosch:** para quien vaya a utilizar de verdad FSN/FSN X y valore control electrónico; la variante elegida no incluye carril.
+- **Makita:** opción compacta y equilibrada de uso general, especialmente lógica dentro de LXT; carril mediante adaptador.
+- **DeWalt:** enfoque directo, freno, LED, soplado de línea y AirLock; no orientarla a usuario que busque integración con carril.
+- **Einhell:** gran capacidad dentro del formato de 165 mm y equipamiento completo dentro de Power X-Change.
+- **Metabo:** diferencia principal en compatibilidad directa con carriles de múltiples fabricantes y bajo peso declarado.
+- **WORX:** perfil de entrada desde cero gracias al kit con batería/cargador y ExacTrack; motor con escobillas y enfoque más de bricolaje.
+
+La capa de uso real se ha investigado también con pruebas especializadas y experiencias del modelo exacto. Se utilizará solo para matizar manejo, guiado, polvo, esfuerzo o limitaciones prácticas; nunca como supuesto ensayo propio de Compra con Sentido.
+
+### SEO on-page definitivo
+
+- URL futura: `/herramientas/sierras-circulares-a-bateria/`
+- keyword principal: `mejores sierras circulares a batería`
+- title: `Mejores sierras circulares a batería: 6 modelos de 165 mm`
+- H1: `Mejores sierras circulares a batería: 6 modelos de 165 mm comparados`
+- meta description: `Comparamos 6 sierras circulares a batería de 165 mm de Bosch, Makita, DeWalt, Einhell, Metabo y WORX: corte, carril guía, freno y equipamiento.`
+- canonical: `https://compraconsentido.es/herramientas/sierras-circulares-a-bateria/`
+- breadcrumb: `Inicio › Herramientas › Sierras circulares a batería`
+- schema previsto: Article + BreadcrumbList + FAQPage únicamente si coincide exactamente con las FAQ visibles
+- no añadir Product, Review ni ratings artificiales
+
+### Apertura de comparativa
+
+Usar el patrón global de Diseño V1:
+
+`Hero → tarjeta blanca solapada → exactamente 3 perfiles → contenido específico → tabla → fichas → guía`
+
+Tres perfiles definidos:
+
+1. cortes guiados y trabajo preciso → Bosch GKS 18V-57-2 GX
+2. uso general compacto y directo → Makita DHS680Z
+3. empezar desde cero con batería y cargador → WORX WX530
+
+No implica ranking global; son recomendaciones por necesidad.
+
+### Estructura editorial
+
+- H2 `Qué sierra circular a batería elegir según lo que necesitas`
+- H2 `Comparativa de sierras circulares a batería de 165 mm`
+- seis H2 individuales de producto
+- H2 `Cómo elegir una sierra circular a batería`
+  - H3 `Profundidad de corte y diámetro de disco`
+  - H3 `Carril guía: cuándo merece la pena`
+  - H3 `Motor brushless o con escobillas`
+  - H3 `Freno, visibilidad y control del polvo`
+  - H3 `Disco y número de dientes`
+  - H3 `Cuerpo solo o kit con batería y cargador`
+- H2 `Qué modelo encaja mejor según el uso`
+- H2 `Preguntas frecuentes sobre sierras circulares a batería`
+
+FAQ previstas:
+
+1. ¿Qué diámetro de disco es mejor: 165, 184 o 190 mm?
+2. ¿Qué profundidad de corte necesito?
+3. ¿Compensa una sierra circular brushless?
+4. ¿Merece la pena que sea compatible con carril guía?
+5. ¿Compensa comprar una sierra circular sin batería ni cargador?
+
+### Borrador estable para Diseño
+
+Borrador completo guardado en:
+
+`.github/content-drafts/sierras-circulares-a-bateria.md`
+
+El archivo contiene introducción, tres perfiles, tabla, seis fichas completas, bloques “Lo que destaca”, “A tener en cuenta” y “La elegiría si…”, guía de compra, FAQ, enlazado interno y notas de verificación.
+
+### Enlazado interno previsto
+
+Al publicar:
+
+- `/herramientas/` ↔ nueva comparativa
+- enlaces contextuales con taladros a batería y amoladoras a batería cuando aporten contexto real
+- futura `/herramientas/plataformas-bateria-18v/` ↔ sierras circulares
+- no forzar enlaces a gatos hidráulicos o llaves de impacto
+- si entra en submenú, actualizar navegación escritorio/móvil globalmente
+
+### Pendiente antes de producción
+
+- revalidar los seis ASIN y variantes exactas en Amazon.es
+- preparar y revisar imágenes
+- montar la página desde `.github/content-templates/pagina-comparativa.html`
+- aplicar componentes compartidos de Diseño V1
+- revisión visual/responsive
+- actualizar navegación, hub Herramientas, sitemap y lastmod solo cuando se publique
+
+Estado:
+
+**INVESTIGACIÓN, MATRIZ, SEO Y CONTENIDO CERRADOS. LISTO PARA PASAR A DISEÑO. NO SE HA CREADO NI PUBLICADO LA URL.**
+
 
 ---
 
@@ -1899,7 +2017,9 @@ Avisar al usuario cuando sea conveniente continuar una fase en otro chat.
 - [x] Redactar, revisar y publicar `/herramientas/amoladoras-a-bateria/`.
 - [x] Investigar sierras circulares a batería y decidir si merece URL propia.
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
-- [ ] Preparar matriz técnica normalizada, posicionamiento editorial, SEO on-page, FAQ y estructura de contenido de `/herramientas/sierras-circulares-a-bateria/`.
+- [x] Preparar matriz técnica normalizada, posicionamiento editorial, SEO on-page, FAQ y estructura de contenido de `/herramientas/sierras-circulares-a-bateria/`.
+- [x] Preparar borrador editorial completo de `/herramientas/sierras-circulares-a-bateria/` sin crear la URL pública.
+- [ ] Pasar el borrador de sierras circulares a Diseño V1 usando la plantilla maestra de comparativas, revalidar ASIN/imágenes y publicar solo tras revisión.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
 - [ ] Definir progresivamente las primeras 20-30 URLs de alta calidad.
