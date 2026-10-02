@@ -1,0 +1,49 @@
+name: PR build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Static sanity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f sitemap.xml
+          test -f css/style-v4.css
+          test -f COMPRA-CON-SENTIDO-MASTER.md
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          errors = []
+          html_files = [p for p in Path('.').rglob('*.html') if '.git' not in p.parts]
+
+          for path in html_files:
+              text = path.read_text(encoding='utf-8')
+              lower = text.lower()
+              if '</html>' not in lower:
+                  errors.append(f"{path}: falta </html>")
+                  continue
+
+              end = lower.rfind('</html>') + len('</html>')
+              if text[end:].strip():
+                  errors.append(f"{path}: hay contenido después de </html>")
+
+          if errors:
+              raise SystemExit("\n".join(errors))
+
+          print(f"OK: {len(html_files)} archivos HTML validados")
+          PY
