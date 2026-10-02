@@ -2039,7 +2039,7 @@ No limitarse a decir “continúa en el chat 03” o equivalente. Siempre que el
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
 - [x] Preparar matriz técnica normalizada, posicionamiento editorial, SEO on-page, FAQ y estructura de contenido de `/herramientas/sierras-circulares-a-bateria/`.
 - [x] Preparar borrador editorial completo de `/herramientas/sierras-circulares-a-bateria/` sin crear la URL pública.
-- [ ] Pasar el borrador de sierras circulares a Diseño V1 usando la plantilla maestra de comparativas, revalidar ASIN/imágenes y publicar solo tras revisión.
+- [ ] Revisar en preview la página de sierras circulares montada en Diseño V1, sustituir imágenes provisionales por imágenes autorizadas de producto, confirmar disponibilidad final Amazon.es/tracking y publicar solo tras aprobación.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
 - [ ] Definir progresivamente las primeras 20-30 URLs de alta calidad.
@@ -2614,3 +2614,34 @@ A partir de esta fecha los cambios de código y documentación deben realizarse 
 ### Validación del flujo protegido
 
 Se realiza una comprobación práctica del nuevo flujo de pull request para confirmar que el check `build` se ejecuta correctamente antes de volver a establecerlo como requisito obligatorio del ruleset.
+
+
+## Diseño V1 en revisión · Sierras circulares a batería · 02/10/2026 14:27
+
+Se ha montado en rama de trabajo la URL `/herramientas/sierras-circulares-a-bateria/` partiendo de la plantilla maestra de comparativas y del borrador editorial cerrado, sin fusionar a `main`.
+
+Estado de la rama:
+
+- hero global, breadcrumbs y tarjeta blanca solapada montados
+- exactamente tres perfiles de apertura
+- tabla comparativa responsive
+- seis fichas de producto con datos normalizados, bloques «Lo que destaca», «A tener en cuenta» y «La elegiría si…»
+- guía de compra, elección por uso, metodología, enlazado relacionado y FAQ visibles
+- canonical, Open Graph, Article, BreadcrumbList y FAQPage preparados
+- enlaces Amazon preparados por ASIN con `rel="nofollow sponsored"` y CTA `Ver precio en Amazon`
+- enlazado desde/hacia `/herramientas/` y enlaces contextuales a taladros y amoladoras
+- sitemap preparado en la rama
+
+### Verificación Amazon previa al montaje
+
+Se mantiene la selección cerrada de seis ASIN: `B0DFWZTHNK`, `B00WW83F4Q`, `B099X7HBQF`, `B0DX71B1JN`, `B0CW192FVD` y `B07GY6LYTT`. La correspondencia ASIN-modelo/variante sigue encontrándose en fuentes comerciales recientes que reflejan catálogo Amazon. La herramienta de consulta disponible no permite abrir directamente las fichas de Amazon.es, por lo que la disponibilidad final en Amazon España debe comprobarse una última vez antes del merge.
+
+### Imágenes
+
+La estructura está preparada, pero no se han copiado imágenes de Amazon ni de fabricantes sin una base clara de reutilización. El hero y las seis fichas utilizan temporalmente una imagen genérica ya existente del proyecto y muestran una nota visible de imagen provisional. Deben sustituirse por imágenes autorizadas del modelo exacto antes de publicar.
+
+### Tracking
+
+No existe todavía en el MASTER un Tracking ID específico para sierras circulares. La rama de revisión usa temporalmente el Store/Tracking ID principal `librosde0a1-21`. Antes de publicar se decidirá si se mantiene o se crea un Tracking ID específico para esta comparativa.
+
+Estado: **DISEÑO MONTADO EN RAMA. NO PUBLICADO. PENDIENTE REVISIÓN VISUAL, IMÁGENES DEFINITIVAS Y VALIDACIÓN AMAZON FINAL.**
