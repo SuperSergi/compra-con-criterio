@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 1 de octubre de 2026 · 22:33
+**Última actualización:** 2 de octubre de 2026 · 07:27
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -2051,3 +2051,34 @@ Publicación completada:
 
 La auditoría responsive final previa al merge queda como referencia de cierre: 88/88 comprobaciones superadas y 0 incidencias.
 
+---
+
+## Corrección post Diseño V1 · footer global y estructura HTML · 02/10/2026 07:27
+
+Tras revisión visual en producción se detectaron inconsistencias que la auditoría responsive automática no cubría.
+
+### Problemas detectados
+
+- existían varias versiones históricas del footer con columnas y enlaces distintos
+- Amoladoras aplicaba una regla general de `h2` que también alcanzaba los títulos del footer
+- Gatos hidráulicos marcaba como `active` un enlace dentro de un dropdown blanco y heredaba el color blanco del estado activo global
+- las comparativas de Gatos hidráulicos, Robots aspiradores, Impresoras 3D y Deshumidificadores tenían el bloque `Cómo analizamos` escrito después de `</html>`, por lo que aparecía visualmente debajo del footer
+
+### Corrección aplicada
+
+- footer unificado en las 22 URLs actuales con la misma estructura, títulos y enlaces
+- rutas del footer normalizadas a URLs absolutas desde raíz
+- estilos del footer aislados para impedir que CSS específico de una página cambie títulos, márgenes, fondos o disposición
+- selector de Amoladoras limitado a `main h2`
+- estado activo de enlaces dentro de dropdown corregido para escritorio y móvil
+- los cuatro bloques `Cómo analizamos` se han movido dentro de `<main>`
+- confirmado que no queda contenido después de `</html>` en ninguna de las 22 páginas
+- versión global de `style-v4.css` actualizada a `20261002-1`
+
+Commit principal: `b2f9c535b6f5340acda5c7901d6cf74a2a56dc5b`.
+
+Cloudflare Pages y el workflow de despliegue completaron correctamente la publicación del cambio.
+
+### Decisión
+
+A partir de ahora el footer se considera un componente visual único del sitio. Cualquier cambio de contenido, enlaces o estructura del footer debe aplicarse a todas las páginas actuales y futuras.
