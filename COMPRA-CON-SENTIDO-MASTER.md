@@ -2830,3 +2830,164 @@ Corrección aplicada en las 24 páginas HTML publicadas del sitio:
 El submenú de Herramientas queda normalizado con URLs absolutas desde raíz, por lo que la misma estructura funciona en escritorio y móvil desde cualquier nivel de profundidad.
 
 Regla de mantenimiento reforzada: cuando una página nueva deba formar parte de la navegación global, el cambio debe aplicarse a todas las páginas publicadas en el mismo PR, no solo a la nueva URL o al hub de categoría.
+
+
+### Imágenes y enlazado desde Inicio · Sierras circulares · 03/10/2026
+
+Se sustituyen las imágenes genéricas de la comparativa de sierras circulares por dos imágenes propias generadas para el proyecto:
+
+- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.png`
+- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.png`
+
+La imagen de categoría se aplica en `/herramientas/` y también se añade una tarjeta de acceso directo a la comparativa en la sección de contenidos destacados de Inicio.
+
+Decisión de arquitectura: Inicio debe enlazar de forma directa a contenidos estratégicos y recientes que queramos reforzar, pero no convertirse en un listado exhaustivo de todas las URLs. Las páginas secundarias deben recibir autoridad principalmente desde su hub de categoría, breadcrumbs y enlaces contextuales. Las comparativas comerciales importantes, como sierras circulares, sí pueden aparecer en Inicio.
+
+
+## Flujo estándar de imágenes y validación Amazon para páginas nuevas · 03/10/2026
+
+A partir de la experiencia de publicación de la comparativa de sierras circulares, se fija este flujo para evitar que una página nueva llegue a producción con imágenes genéricas, menús incompletos o validaciones pendientes.
+
+### Hero de páginas nuevas
+
+Antes de publicar una comparativa o guía nueva debe existir un hero específico para esa URL.
+
+Flujo:
+
+1. ChatGPT genera una imagen propia con IA adaptada al tema de la página.
+2. La imagen debe ser ilustrativa y genérica, sin copiar un modelo exacto ni mostrar marcas o logotipos.
+3. ChatGPT entrega la imagen ya preparada con el nombre de archivo definitivo recomendado.
+4. ChatGPT indica la ruta exacta del repositorio donde debe subirse.
+5. Sergio sube el archivo a la rama de trabajo.
+6. ChatGPT conecta la imagen al hero, Open Graph si corresponde y comprueba que no queda la imagen genérica anterior.
+
+Formato preferido:
+
+- WebP cuando sea posible
+- tamaño y compresión adecuados para Core Web Vitals
+- nombre descriptivo y permanente
+- alt coherente con el contenido
+- sin texto incrustado salvo necesidad real
+
+Ejemplo de nomenclatura:
+
+`/images/<tema>/hero-<keyword-principal>.webp`
+
+### Imagen de tarjeta para hubs e Inicio
+
+Cuando una página vaya a aparecer en un hub de categoría o en Inicio debe tener también una imagen adecuada para tarjeta.
+
+Flujo:
+
+1. ChatGPT genera o prepara una imagen específica para tarjeta.
+2. La entrega con nombre final y ruta exacta.
+3. Sergio la sube a la rama.
+4. ChatGPT sustituye cualquier imagen genérica en el hub.
+5. Si la página es estratégica o comercialmente importante, se valora también su inclusión en Inicio.
+
+No se debe publicar una tarjeta nueva usando por defecto la imagen genérica de la categoría si la página ya dispone de una imagen propia.
+
+### Imágenes de producto
+
+Las imágenes de los modelos exactos no se generarán con IA.
+
+Flujo acordado:
+
+1. Sergio realiza siempre la revisión manual de cada ASIN en Amazon.es antes de publicar.
+2. Durante esa misma revisión comprueba:
+   - ficha activa
+   - modelo exacto
+   - variante exacta
+   - cuerpo solo o kit
+   - batería/cargador incluidos o no
+   - ASIN correcto
+3. En esa visita Sergio obtiene las imágenes de los productos que quiere utilizar y las facilita a ChatGPT.
+4. ChatGPT:
+   - comprueba que cada imagen corresponde al modelo correcto
+   - recorta y normaliza proporciones
+   - elimina fondo cuando convenga
+   - convierte a WebP
+   - optimiza peso
+   - asigna nombre de archivo definitivo
+   - indica la ruta exacta de subida
+5. Sergio sube las imágenes a la rama.
+6. ChatGPT conecta cada imagen a su producto y revisa los alt.
+
+Nunca presentar una imagen generada por IA como representación exacta de un producto concreto.
+
+### Checklist Amazon obligatorio antes de publicar
+
+La revisión manual de Amazon.es forma parte del cierre de cada comparativa.
+
+Para cada producto principal:
+
+- ficha activa
+- ASIN correcto
+- modelo y variante exactos
+- cuerpo solo o kit
+- batería y cargador incluidos o no
+- coherencia con el texto editorial
+- tracking ID correcto
+- CTA correcto
+- imagen exacta aportada por Sergio
+
+No se fusiona a `main` hasta que Sergio confirme esta revisión manual.
+
+### Navegación e interlinking al publicar una URL nueva
+
+Cuando una URL nueva se publique:
+
+1. actualizar el hub de categoría
+2. actualizar el menú global si la página debe formar parte de la navegación
+3. aplicar el cambio de menú a todas las páginas publicadas, escritorio y móvil
+4. añadir breadcrumbs
+5. añadir enlaces contextuales desde páginas relacionadas
+6. actualizar sitemap
+7. valorar enlace desde Inicio
+
+Regla para Inicio:
+
+- no debe convertirse en un listado de todas las URLs
+- sí debe enlazar comparativas comerciales importantes, contenidos estratégicos y páginas nuevas que queramos reforzar
+- el hub de categoría sigue siendo el principal distribuidor de autoridad hacia sus páginas
+- breadcrumbs y enlaces contextuales completan el reparto de autoridad interna
+
+### Regla de cierre
+
+Antes de publicar una página nueva deben estar cerrados, como mínimo:
+
+- contenido
+- SEO
+- hero específico
+- imagen de tarjeta si aparece en hub/Inicio
+- imágenes exactas de producto
+- ASIN verificados manualmente
+- tracking
+- CTA
+- menú
+- breadcrumbs
+- enlazado interno
+- sitemap
+- schema
+- revisión responsive
+- build
+- preview visual aprobada
+
+Este flujo pasa a ser estándar para futuras páginas de Compra con Sentido.
+
+
+### Regla editorial de arranque en fichas de producto · 03/10/2026
+
+Durante la revisión visual de sierras circulares se detectó un error de maquetación/editorial: el primer párrafo de las fichas empezaba con dos puntos (`:`) por haber quedado un separador huérfano al trasladar el contenido.
+
+Corrección aplicada:
+
+- se eliminan los dos puntos iniciales en las seis fichas de sierras
+- se convierten esas entradas en frases breves y naturales, con inicio en mayúscula y cierre correcto
+- se revisan las comparativas principales existentes y no se detecta el mismo problema en amoladoras, llaves de impacto, taladros, gatos hidráulicos, robots aspiradores, deshumidificadores ni impresoras 3D
+
+Regla para futuras comparativas:
+
+- ningún párrafo visible debe comenzar con signos huérfanos como `:`, `-`, `·` o separadores equivalentes
+- los primeros párrafos de las fichas deben empezar como una frase completa y natural
+- antes de publicar, revisar específicamente el primer bloque de texto de cada ficha además del HTML y el responsive
