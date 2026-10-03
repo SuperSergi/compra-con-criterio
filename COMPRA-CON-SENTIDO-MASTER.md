@@ -2830,3 +2830,15 @@ Corrección aplicada en las 24 páginas HTML publicadas del sitio:
 El submenú de Herramientas queda normalizado con URLs absolutas desde raíz, por lo que la misma estructura funciona en escritorio y móvil desde cualquier nivel de profundidad.
 
 Regla de mantenimiento reforzada: cuando una página nueva deba formar parte de la navegación global, el cambio debe aplicarse a todas las páginas publicadas en el mismo PR, no solo a la nueva URL o al hub de categoría.
+
+
+### Imágenes y enlazado desde Inicio · Sierras circulares · 03/10/2026
+
+Se sustituyen las imágenes genéricas de la comparativa de sierras circulares por dos imágenes propias generadas para el proyecto:
+
+- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.png`
+- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.png`
+
+La imagen de categoría se aplica en `/herramientas/` y también se añade una tarjeta de acceso directo a la comparativa en la sección de contenidos destacados de Inicio.
+
+Decisión de arquitectura: Inicio debe enlazar de forma directa a contenidos estratégicos y recientes que queramos reforzar, pero no convertirse en un listado exhaustivo de todas las URLs. Las páginas secundarias deben recibir autoridad principalmente desde su hub de categoría, breadcrumbs y enlaces contextuales. Las comparativas comerciales importantes, como sierras circulares, sí pueden aparecer en Inicio.
