@@ -4,7 +4,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 import xml.etree.ElementTree as ET
 
 DOMAIN = "https://compraconsentido.es"
@@ -169,7 +169,10 @@ for url_path, path in sorted(public_urls.items()):
             href = attr(a_tag, "href") or ""
             clean_label = re.sub(r"<[^>]+>", " ", label)
             clean_label = re.sub(r"\s+", " ", clean_label).strip()
-            menu.append((href, clean_label))
+            absolute = urljoin(DOMAIN + url_path, href)
+            parsed_href = urlparse(absolute)
+            normalized_href = parsed_href.path + (("#" + parsed_href.fragment) if parsed_href.fragment else "")
+            menu.append((normalized_href, clean_label))
         if reference_menu is None:
             reference_menu = menu
             reference_menu_path = str(path)
