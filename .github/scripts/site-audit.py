@@ -1,0 +1,195 @@
+from __future__ import annotations
+
+import json
+import re
+from datetime import date
+from pathlib import Path
+from urllib.parse import urlparse
+import xml.etree.ElementTree as ET
+
+DOMAIN = "https://compraconsentido.es"
+ROOT = Path(".")
+SITEMAP = ROOT / "sitemap.xml"
+TRACKING = ROOT / ".github" / "amazon-tracking-ids.json"
+MAX_IMAGE_BYTES = 350_000
+RASTER_EXTS = {".webp", ".png", ".jpg", ".jpeg", ".avif"}
+
+errors: list[str] = []
+warnings: list[str] = []
+
+def fail(message: str) -> None:
+    errors.append(message)
+
+def attr(tag: str, name: str) -> str | None:
+    match = re.search(rf"""\b{re.escape(name)}\s*=\s*(["'])(.*?)\1""", tag, re.I | re.S)
+    return match.group(2).strip() if match else None
+
+def tags(html: str, name: str) -> list[str]:
+    return re.findall(rf"<{name}\b[^>]*>", html, re.I | re.S)
+
+def meta_value(html: str, key: str, value: str) -> str | None:
+    for tag in tags(html, "meta"):
+        if (attr(tag, key) or "").lower() == value.lower():
+            return attr(tag, "content")
+    return None
+
+def link_value(html: str, rel_value: str) -> str | None:
+    for tag in tags(html, "link"):
+        rel = (attr(tag, "rel") or "").lower().split()
+        if rel_value.lower() in rel:
+            return attr(tag, "href")
+    return None
+
+def url_to_file(url_path: str) -> Path:
+    if url_path == "/":
+        return ROOT / "index.html"
+    return ROOT / url_path.strip("/") / "index.html"
+
+def file_to_url(path: Path) -> str:
+    rel = path.as_posix()
+    if rel == "index.html":
+        return "/"
+    return "/" + rel.removesuffix("index.html")
+
+tree = ET.parse(SITEMAP)
+ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+sitemap_entries: dict[str, str] = {}
+
+for node in tree.findall("sm:url", ns):
+    loc = (node.findtext("sm:loc", default="", namespaces=ns) or "").strip()
+    lastmod = (node.findtext("sm:lastmod", default="", namespaces=ns) or "").strip()
+    if not loc.startswith(DOMAIN):
+        fail(f"sitemap: dominio inesperado en {loc}")
+        continue
+    parsed = urlparse(loc)
+    path = parsed.path or "/"
+    if path in sitemap_entries:
+        fail(f"sitemap: URL duplicada {path}")
+    sitemap_entries[path] = lastmod
+    try:
+        parsed_date = date.fromisoformat(lastmod)
+        if parsed_date > date.today():
+            fail(f"sitemap: lastmod futuro en {path}: {lastmod}")
+    except ValueError:
+        fail(f"sitemap: lastmod inválido en {path}: {lastmod!r}")
+
+public_files = [
+    p for p in ROOT.rglob("index.html")
+    if ".git" not in p.parts and ".github" not in p.parts
+]
+public_urls = {file_to_url(p): p for p in public_files}
+
+missing_in_sitemap = sorted(set(public_urls) - set(sitemap_entries))
+missing_files = sorted(set(sitemap_entries) - set(public_urls))
+for path in missing_in_sitemap:
+    fail(f"sitemap: falta URL publicada {path}")
+for path in missing_files:
+    fail(f"sitemap: URL sin index.html correspondiente {path}")
+
+tracking_values: set[str] = set()
+if TRACKING.exists():
+    data = json.loads(TRACKING.read_text(encoding="utf-8"))
+    tracking_values = set(data.values())
+else:
+    fail("falta .github/amazon-tracking-ids.json")
+
+reference_menu: list[tuple[str, str]] | None = None
+reference_menu_path = ""
+
+for url_path, path in sorted(public_urls.items()):
+    html = path.read_text(encoding="utf-8")
+    lower = html.lower()
+
+    if lower.count("</html>") != 1:
+        fail(f"{path}: debe existir exactamente un </html>")
+    else:
+        end = lower.rfind("</html>") + len("</html>")
+        if html[end:].strip():
+            fail(f"{path}: hay contenido después de </html>")
+
+    h1_count = len(re.findall(r"<h1\b", html, re.I))
+    if h1_count != 1:
+        fail(f"{path}: H1={h1_count}, debe ser 1")
+
+    title_match = re.search(r"<title\b[^>]*>(.*?)</title>", html, re.I | re.S)
+    if not title_match or not re.sub(r"<[^>]+>", "", title_match.group(1)).strip():
+        fail(f"{path}: falta <title> útil")
+
+    if not meta_value(html, "name", "description"):
+        fail(f"{path}: falta meta description")
+
+    canonical = link_value(html, "canonical")
+    expected_canonical = DOMAIN + url_path
+    if canonical != expected_canonical:
+        fail(f"{path}: canonical {canonical!r}, esperado {expected_canonical!r}")
+
+    for prop in ("og:title", "og:description", "og:image"):
+        if not meta_value(html, "property", prop):
+            fail(f"{path}: falta {prop}")
+
+    for prop in ("twitter:card", "twitter:title", "twitter:description", "twitter:image"):
+        if not meta_value(html, "name", prop):
+            fail(f"{path}: falta {prop}")
+
+    breadcrumb_count = len(re.findall(r"""aria-label\s*=\s*["']Migas de pan["']""", html, re.I))
+    expected_breadcrumbs = 0 if url_path == "/" else 1
+    if breadcrumb_count != expected_breadcrumbs:
+        fail(f"{path}: breadcrumbs={breadcrumb_count}, esperado {expected_breadcrumbs}")
+
+    bad_p = re.search(r"<p\b[^>]*>\s*[:·-]", html, re.I | re.S)
+    if bad_p:
+        fail(f"{path}: párrafo visible empieza por separador huérfano")
+
+    for a_tag in tags(html, "a"):
+        href = attr(a_tag, "href") or ""
+        if "amazon.es/" not in href.lower():
+            continue
+        rel = set((attr(a_tag, "rel") or "").lower().split())
+        if not {"nofollow", "sponsored"}.issubset(rel):
+            fail(f"{path}: enlace Amazon sin rel='nofollow sponsored': {href}")
+        tag_match = re.search(r"[?&]tag=([^&]+)", href)
+        if tag_match and tracking_values and tag_match.group(1) not in tracking_values:
+            fail(f"{path}: tracking ID no registrado: {tag_match.group(1)}")
+
+    for table_index, table in enumerate(re.findall(r"<table\b.*?</table>", html, re.I | re.S), 1):
+        if not re.search(r"<caption\b", table, re.I):
+            fail(f"{path}: tabla {table_index} sin <caption>")
+        for th in tags(table, "th"):
+            scope = (attr(th, "scope") or "").lower()
+            if scope not in {"col", "row", "colgroup", "rowgroup"}:
+                fail(f"{path}: tabla {table_index} contiene <th> sin scope válido")
+                break
+
+    nav_match = re.search(r"<nav\b[^>]*id=[\"']main-nav[\"'][^>]*>(.*?)</nav>", html, re.I | re.S)
+    if not nav_match:
+        fail(f"{path}: falta #main-nav")
+    else:
+        menu: list[tuple[str, str]] = []
+        for a_tag, label in re.findall(r"(<a\b[^>]*>)(.*?)</a>", nav_match.group(1), re.I | re.S):
+            href = attr(a_tag, "href") or ""
+            clean_label = re.sub(r"<[^>]+>", " ", label)
+            clean_label = re.sub(r"\s+", " ", clean_label).strip()
+            menu.append((href, clean_label))
+        if reference_menu is None:
+            reference_menu = menu
+            reference_menu_path = str(path)
+        elif menu != reference_menu:
+            fail(f"{path}: menú distinto del patrón de {reference_menu_path}")
+
+for image in ROOT.joinpath("images").rglob("*"):
+    if not image.is_file() or image.suffix.lower() not in RASTER_EXTS:
+        continue
+    size = image.stat().st_size
+    if size > MAX_IMAGE_BYTES:
+        fail(f"{image}: {size / 1024:.0f} KB supera el máximo QA de {MAX_IMAGE_BYTES / 1024:.0f} KB")
+
+if errors:
+    print("SITE_AUDIT_FAILED")
+    for item in errors:
+        print(f"- {item}")
+    raise SystemExit(1)
+
+print(
+    f"OK: {len(public_files)} páginas, {len(sitemap_entries)} URLs de sitemap, "
+    f"metadatos/menú/afiliación/tablas e imágenes validados"
+)
