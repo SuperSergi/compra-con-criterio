@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 2 de octubre de 2026 · 14:25
+**Última actualización:** 3 de octubre de 2026 · 13:10
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -2836,8 +2836,8 @@ Regla de mantenimiento reforzada: cuando una página nueva deba formar parte de 
 
 Se sustituyen las imágenes genéricas de la comparativa de sierras circulares por dos imágenes propias generadas para el proyecto:
 
-- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.png`
-- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.png`
+- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.webp`
+- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.webp`
 
 La imagen de categoría se aplica en `/herramientas/` y también se añade una tarjeta de acceso directo a la comparativa en la sección de contenidos destacados de Inicio.
 
@@ -2991,3 +2991,122 @@ Regla para futuras comparativas:
 - ningún párrafo visible debe comenzar con signos huérfanos como `:`, `-`, `·` o separadores equivalentes
 - los primeros párrafos de las fichas deben empezar como una frase completa y natural
 - antes de publicar, revisar específicamente el primer bloque de texto de cada ficha además del HTML y el responsive
+
+
+---
+
+## Refuerzo de QA automático y cierre de auditoría técnica 03.3 · 03/10/2026
+
+Se completa la auditoría técnica posterior a la publicación de sierras circulares y se corrigen los fallos detectados. El objetivo de este bloque no es solo dejar el estado actual limpio, sino impedir que los mismos errores vuelvan a llegar a `main`.
+
+### Correcciones aplicadas
+
+- Las dos imágenes nuevas de sierras circulares dejan de estar en PNG pesado:
+  - `categoria-sierras-circulares-a-bateria.png` (~2,15 MB) → `categoria-sierras-circulares-a-bateria.webp` (**150.884 bytes**)
+  - `hero-sierras-circulares-a-bateria.png` (~2,34 MB) → `hero-sierras-circulares-a-bateria.webp` (**164.338 bytes**)
+- El optimizador también detecta y corrige una imagen antigua de robots:
+  - `preview-pack-01.jpg` (~501 KB) → `preview-pack-01.webp` (**245.834 bytes**)
+- Todas las referencias HTML/OG afectadas se reescriben automáticamente al nuevo archivo WebP.
+- `sitemap.xml` actualiza `lastmod` a `2026-10-03` en Inicio, `/herramientas/` y sierras circulares.
+- Se actualiza `.github/amazon-tracking-ids.json`:
+  - `llaves-impacto` → `ccc-llaveimpac-21`
+  - `amoladoras-a-bateria` → `ccc-amoladoras-21`
+  - `sierras-circulares-a-bateria` → `ccc-sierras-21`
+  - se registra también el tracking principal `librosde0a1-21`
+- Se completa Twitter Card en sierras circulares y se corrigen metadatos Twitter incompletos detectados en amoladoras y llaves de impacto.
+- Se mejora la semántica accesible de todas las tablas detectadas:
+  - `<caption>` accesible
+  - `scope="col"` en encabezados de columna
+  - `scope="row"` cuando corresponde
+- La auditoría adicional detecta una tabla fuera de las ocho comparativas principales en `/impresion-3d/filamentos-3d/`; queda corregida igualmente.
+- Se normaliza el menú de llaves de impacto, que todavía difería del patrón global en la sección de Impresión 3D.
+- En `/herramientas/` la tarjeta destacada de sierras utiliza su imagen específica y no la imagen genérica de categoría.
+
+### Responsive audit: nueva regla
+
+`.github/scripts/responsive-audit.mjs` deja de mantener una lista manual de URLs.
+
+A partir de ahora:
+
+`sitemap.xml → URLs públicas → responsive audit`
+
+Cualquier URL añadida al sitemap entra automáticamente en la auditoría responsive. Las páginas de comparativa se identifican por la clase real del HTML, sin mantener una segunda lista manual.
+
+Esto elimina el fallo que permitió que sierras circulares estuviera publicada pero ausente del auditor permanente.
+
+### Nuevo control obligatorio de calidad en cada PR
+
+Se crea:
+
+`.github/scripts/site-audit.py`
+
+y el check obligatorio `build` ejecuta esta auditoría antes de permitir el merge.
+
+Comprueba automáticamente, para todas las páginas públicas:
+
+1. correspondencia completa entre `sitemap.xml` y los `index.html` publicados;
+2. `lastmod` válido y nunca futuro;
+3. exactamente un H1;
+4. `title`;
+5. meta description;
+6. canonical exacta para la URL;
+7. Open Graph;
+8. Twitter Card;
+9. breadcrumbs en todas las páginas salvo Inicio;
+10. cierre HTML correcto y ausencia de contenido después de `</html>`;
+11. enlaces Amazon con `rel="nofollow sponsored"`;
+12. Tracking IDs Amazon registrados en el fichero central;
+13. párrafos que empiecen por separadores huérfanos como `:`, `-` o `·`;
+14. tablas con `caption` y `scope`;
+15. consistencia del menú global, normalizando previamente rutas relativas y absolutas;
+16. imágenes raster superiores al límite de QA.
+
+Límite actual de QA para imágenes raster:
+
+**350.000 bytes**
+
+Si cualquiera de estas comprobaciones falla, el check `build` falla y el PR no debe fusionarse.
+
+### Optimización automática de imágenes
+
+El workflow `.github/workflows/optimize-webp.yml` deja de vigilar únicamente archivos WebP.
+
+Nuevo comportamiento:
+
+- se ejecuta también en pull requests internos;
+- detecta PNG/JPG/JPEG pesados;
+- convierte automáticamente a WebP;
+- limita el lado máximo a 1600 px;
+- utiliza calidad WebP 82;
+- reescribe las referencias textuales al nuevo archivo;
+- elimina el raster pesado original;
+- sigue recomprimiendo WebP pesados cuando reduce realmente su tamaño;
+- guarda el resultado en la propia rama del PR antes del merge.
+
+Umbral actual para optimización automática:
+
+**300.000 bytes**
+
+El QA permite hasta 350.000 bytes para dejar un pequeño margen entre optimización y bloqueo.
+
+### Regla de publicación reforzada
+
+Antes de fusionar cualquier página nueva o cambio estructural:
+
+- `build` debe estar en success;
+- cualquier URL nueva debe estar en `sitemap.xml`;
+- no se debe mantener una segunda lista manual de URLs para responsive;
+- una imagen raster pesada debe quedar convertida/optimizada antes del merge;
+- un nuevo Tracking ID debe registrarse en `.github/amazon-tracking-ids.json`;
+- las tablas nuevas deben incluir `caption` y `scope`;
+- los metadatos OG/Twitter deben quedar completos;
+- el menú global debe mantener la misma estructura normalizada en todas las páginas.
+
+`lastmod` sigue requiriendo criterio editorial: se actualizará cuando cambie contenido sustancial de una URL. No se fuerza automáticamente por cualquier cambio técnico o de navegación global para evitar fechas artificiales.
+
+Estado de validación en la rama del PR #16:
+
+- nueva auditoría `build`: **SUCCESS**
+- imágenes pesadas detectadas y convertidas automáticamente
+- errores adicionales encontrados por el propio QA: corregidos
+- pendiente únicamente el cierre final del PR y despliegue a producción.

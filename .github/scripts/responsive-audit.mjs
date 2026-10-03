@@ -2,40 +2,14 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 
 const base = "http://127.0.0.1:4173";
-const paths = [
-  "/",
-  "/herramientas/",
-  "/herramientas/amoladoras-a-bateria/",
-  "/herramientas/llaves-de-impacto/",
-  "/herramientas/gatos-hidraulicos/",
-  "/herramientas/gatos-hidraulicos/mejores-gatos-hidraulicos-para-coche/",
-  "/herramientas/taladros-a-bateria/",
-  "/herramientas/taladros-a-bateria/mejores-taladros-a-bateria/",
-  "/impresion-3d/",
-  "/impresion-3d/impresoras-3d/",
-  "/impresion-3d/impresoras-3d/mejores-impresoras-3d/",
-  "/impresion-3d/filamentos-3d/",
-  "/impresion-3d/accesorios-3d/",
-  "/hogar/",
-  "/hogar/deshumidificadores/",
-  "/hogar/deshumidificadores/cuantos-litros-deshumidificador-metros-cuadrados/",
-  "/hogar/deshumidificadores/mejores-deshumidificadores/",
-  "/hogar/aspiradoras/",
-  "/hogar/aspiradoras/mejores-robots-aspiradores/",
-  "/sobre-nosotros/",
-  "/aviso-legal/",
-  "/metodologia/"
-];
+const sitemap = fs.readFileSync("sitemap.xml", "utf8");
+const paths = [...sitemap.matchAll(/<loc>https:\/\/compraconsentido\.es([^<]*)<\/loc>/g)]
+  .map(match => match[1] || "/");
 
-const comparisons = new Set([
-  "/herramientas/amoladoras-a-bateria/",
-  "/herramientas/llaves-de-impacto/",
-  "/herramientas/gatos-hidraulicos/mejores-gatos-hidraulicos-para-coche/",
-  "/herramientas/taladros-a-bateria/mejores-taladros-a-bateria/",
-  "/impresion-3d/impresoras-3d/mejores-impresoras-3d/",
-  "/hogar/deshumidificadores/mejores-deshumidificadores/",
-  "/hogar/aspiradoras/mejores-robots-aspiradores/"
-]);
+if (!paths.length) {
+  throw new Error("No se han encontrado URLs en sitemap.xml");
+}
+
 
 const viewports = [
   { name: "mobile-360", width: 360, height: 800 },
@@ -213,7 +187,7 @@ for (const vp of viewports) {
         isDesktop
       };
     }, {
-      isComparison: comparisons.has(path),
+      isComparison: false,
       isMobile: vp.width <= 390,
       isDesktop: vp.width >= 1200
     });
@@ -233,7 +207,7 @@ for (const vp of viewports) {
       issues.push("hero-actions-too-close-to-overlap-card=" + data.heroIntroGap + "px");
     }
 
-    if (comparisons.has(path)) {
+    if (data.comparisonClass) {
       if (!data.comparisonClass) issues.push("missing-comparison-class");
       if (data.openingCardCount !== 1) issues.push("opening-cards=" + data.openingCardCount);
       if (data.profileCount !== 3) issues.push("profiles=" + data.profileCount);
