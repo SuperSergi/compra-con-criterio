@@ -2772,3 +2772,21 @@ Las variantes visualizadas coinciden con la selección editorial: Bosch con L-BO
 Con esta comprobación se cierra el requisito de ficha activa Amazon.es previo a publicación. El tracking específico `ccc-sierras-21` ya está aplicado en los 12 CTA.
 
 Estado: página completa, revisión visual aprobada, imágenes integradas, Amazon verificado y tracking cerrado. PR #11 preparado para pasar de Draft a Ready. Pendiente únicamente autorización explícita de merge/publicación.
+
+
+### Publicación autorizada · 03/10/2026
+
+Sergio autoriza la publicación de la comparativa de sierras circulares a batería.
+
+Estado previo al merge:
+
+- revisión visual aprobada
+- seis imágenes definitivas integradas
+- seis fichas Amazon.es verificadas manualmente
+- tracking `ccc-sierras-21` aplicado
+- auditoría responsive superada
+- `build` en success
+- Cloudflare Pages en success
+- PR #11 Ready for review y mergeable
+
+Se autoriza merge por `squash` a `main`.
