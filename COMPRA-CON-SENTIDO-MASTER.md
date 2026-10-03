@@ -2836,8 +2836,8 @@ Regla de mantenimiento reforzada: cuando una página nueva deba formar parte de 
 
 Se sustituyen las imágenes genéricas de la comparativa de sierras circulares por dos imágenes propias generadas para el proyecto:
 
-- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.png`
-- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.png`
+- hero: `/images/sierras-circulares/hero-sierras-circulares-a-bateria.webp`
+- tarjeta de categoría: `/images/sierras-circulares/categoria-sierras-circulares-a-bateria.webp`
 
 La imagen de categoría se aplica en `/herramientas/` y también se añade una tarjeta de acceso directo a la comparativa en la sección de contenidos destacados de Inicio.
 
