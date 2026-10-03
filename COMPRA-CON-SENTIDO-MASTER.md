@@ -2650,3 +2650,14 @@ Estado: **DISEÑO MONTADO EN RAMA. NO PUBLICADO. PENDIENTE REVISIÓN VISUAL, IM�
 ### Auditoría responsive de la rama
 
 Auditoría Playwright ejecutada sobre las 23 URLs del sitemap en 4 viewports: 360, 390, 768 y 1440 px. Total: 92 comprobaciones. Resultado: **92/92 sin incidencias automáticas**. Se validaron HTTP, H1, breadcrumbs, overflow, elementos fuera de viewport, imágenes rotas, menú móvil/escritorio y, en comparativas, tarjeta inicial, exactamente 3 perfiles, aviso/scroll de tabla y tarjetas de producto.
+
+
+### Ajuste de consistencia visual · 03/10/2026
+
+Durante la revisión del preview de sierras circulares se corrigen dos puntos:
+
+- la tarjeta blanca de apertura se reduce a dos párrafos breves; su función es introducir el criterio de comparación, no repetir el contenido editorial que ya aparece después
+- los CTA compactos de las tablas comparativas deben usar el mismo texto y componente visual en todo el sitio: `🛒 Ver en Amazon` con las clases compartidas `amazon-mini ccs-table-amazon`
+- el CTA principal de las fichas de producto mantiene `Ver precio en Amazon`
+
+La apariencia de los botones de tabla se controla desde el componente CSS compartido; el texto sigue estando presente en el HTML estático y debe respetar exactamente este estándar en páginas nuevas.
