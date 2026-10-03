@@ -2661,3 +2661,29 @@ Durante la revisión del preview de sierras circulares se corrigen dos puntos:
 - el CTA principal de las fichas de producto mantiene `Ver precio en Amazon`
 
 La apariencia de los botones de tabla se controla desde el componente CSS compartido; el texto sigue estando presente en el HTML estático y debe respetar exactamente este estándar en páginas nuevas.
+
+
+### Revalidación Amazon previa al cierre · 03/10/2026
+
+Nueva comprobación de los seis ASIN antes del cierre de la rama:
+
+- Bosch GKS 18V-57-2 GX — `B0DFWZTHNK`: correspondencia exacta confirmada; fuente comercial reciente indica oferta vendida por Amazon Spain, variante con L-BOXX y sin batería/cargador.
+- Makita DHS680Z — `B00WW83F4Q`: correspondencia exacta ASIN/modelo confirmada y cuerpo solo sin batería/cargador; el acceso disponible no permite confirmar directamente el estado actual de stock en Amazon.es.
+- DeWalt DCS565N-XJ — `B099X7HBQF`: correspondencia exacta ASIN/modelo confirmada, bare unit; el acceso disponible no permite confirmar directamente el estado actual de stock en Amazon.es.
+- Einhell TP-CS 18/165 Li BL - Solo — `B0DX71B1JN`: correspondencia exacta ASIN/modelo confirmada, variante Solo sin batería/cargador; presencia comercial reciente confirmada, pero sin acceso directo fiable al stock de Amazon.es.
+- Metabo KS 18 LTX 57 BL — referencia `611857840`: oferta actual localizada en Amazon.es para la referencia exacta; la correspondencia con el ASIN de trabajo `B0CW192FVD` se mantiene en la matriz interna, pero debe comprobarse en la ficha de Amazon inmediatamente antes de publicar.
+- WORX WX530 — `B07GY6LYTT`: correspondencia exacta confirmada y oferta reciente vendida por Amazon Spain; kit con batería de 2 Ah y cargador.
+
+Conclusión: los seis modelos/variantes siguen siendo válidos como selección. No se declara todavía validación final de disponibilidad Amazon.es para los seis porque Amazon bloquea el acceso directo automatizado a varias fichas. Antes del merge se requiere una comprobación final de las seis URLs en Amazon.es desde navegador o una fuente autorizada de Amazon.
+
+### Bloqueo de imágenes exactas
+
+No se han descargado imágenes de producto desde Amazon ni desde fabricantes porque no hay confirmación de una licencia de reutilización que permita almacenarlas en el repositorio. La Creators API tampoco está disponible todavía por el estado `AssociateNotEligible`.
+
+Para publicar con imágenes exactas hace falta una de estas vías:
+
+1. imágenes proporcionadas/autorizadas por el fabricante o distribuidor con derecho de reutilización;
+2. imágenes obtenidas mediante una vía autorizada de Amazon cuando la cuenta sea elegible;
+3. mantener ilustraciones propias/IA claramente etiquetadas como ilustrativas y no como representación exacta del modelo.
+
+Hasta resolver esta decisión, las imágenes de las seis fichas siguen siendo provisionales y el PR permanece en Draft.
