@@ -2701,3 +2701,19 @@ Sergio aporta y sube a la rama las seis imágenes de producto correspondientes a
 - `worx-wx530.webp`
 
 Las fichas dejan de mostrar la imagen genérica provisional. El hero permanece por ahora con la imagen genérica de categoría hasta decidir una imagen específica de cabecera.
+
+
+### Revisión visual aprobada · 03/10/2026
+
+Sergio revisa la preview con las seis imágenes de producto integradas y da por correcta la maquetación actual.
+
+Queda cerrado visualmente:
+
+- hero actual
+- tarjeta blanca de apertura reducida
+- tres perfiles
+- tabla responsive y CTA común `🛒 Ver en Amazon`
+- seis fichas con imágenes WebP definitivas aportadas por Sergio
+- guía de compra, FAQ, espaciado y footer
+
+El PR #11 permanece sin fusionar únicamente hasta completar la comprobación final de las seis fichas Amazon.es y cerrar el uso del tracking ID.
