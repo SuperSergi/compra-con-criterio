@@ -2813,3 +2813,20 @@ Cloudflare Pages completa correctamente el despliegue de producción. La página
 - auditoría responsive superada
 
 Estado: **PUBLICADO EN PRODUCCIÓN**.
+
+
+### Corrección global de navegación · Sierras circulares · 03/10/2026
+
+Tras publicar la comparativa de sierras circulares se detecta que el menú global de Herramientas no se había actualizado en todas las páginas.
+
+Corrección aplicada en las 24 páginas HTML publicadas del sitio:
+
+- Gatos hidráulicos
+- Taladros a batería
+- Llaves de impacto
+- Amoladoras a batería
+- Sierras circulares a batería
+
+El submenú de Herramientas queda normalizado con URLs absolutas desde raíz, por lo que la misma estructura funciona en escritorio y móvil desde cualquier nivel de profundidad.
+
+Regla de mantenimiento reforzada: cuando una página nueva deba formar parte de la navegación global, el cambio debe aplicarse a todas las páginas publicadas en el mismo PR, no solo a la nueva URL o al hub de categoría.
