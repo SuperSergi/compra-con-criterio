@@ -2717,3 +2717,14 @@ Queda cerrado visualmente:
 - guía de compra, FAQ, espaciado y footer
 
 El PR #11 permanece sin fusionar únicamente hasta completar la comprobación final de las seis fichas Amazon.es y cerrar el uso del tracking ID.
+
+
+### Tracking ID de sierras circulares · 03/10/2026
+
+Sergio crea el Tracking ID específico:
+
+`ccc-sierras-21`
+
+Se sustituye el tag principal temporal por `ccc-sierras-21` en todos los enlaces Amazon de la comparativa de sierras circulares, tanto en la tabla como en las fichas de producto.
+
+Estado: tracking específico cerrado.
