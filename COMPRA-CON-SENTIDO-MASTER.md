@@ -2754,3 +2754,21 @@ Checklist manual antes de merge:
 5. confirmar que el enlace incluye `tag=ccc-sierras-21`
 
 Una vez superado este checklist, el PR #11 puede pasar de Draft a Ready y fusionarse por squash si `build` está en success.
+
+
+### Verificación manual Amazon completada · 03/10/2026
+
+Sergio comprueba manualmente en Amazon.es las seis fichas de producto y aporta capturas de cada una. Las fichas cargan correctamente y corresponden a los modelos previstos:
+
+- Bosch GKS 18V-57-2 GX
+- Makita DHS680Z
+- DeWalt DCS565N-XJ
+- Einhell Professional TP-CS 18/165 Li BL
+- Metabo KS 18 LTX 57 BL
+- WORX WX530
+
+Las variantes visualizadas coinciden con la selección editorial: Bosch con L-BOXX y sin batería, Makita cuerpo solo, DeWalt sin batería, Einhell Solo/sin batería, Metabo cuerpo solo y WORX kit con batería 2 Ah y cargador.
+
+Con esta comprobación se cierra el requisito de ficha activa Amazon.es previo a publicación. El tracking específico `ccc-sierras-21` ya está aplicado en los 12 CTA.
+
+Estado: página completa, revisión visual aprobada, imágenes integradas, Amazon verificado y tracking cerrado. PR #11 preparado para pasar de Draft a Ready. Pendiente únicamente autorización explícita de merge/publicación.
