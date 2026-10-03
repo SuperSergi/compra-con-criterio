@@ -1,7 +1,7 @@
 # COMPRA CON SENTIDO
 ## Documento MASTER
 
-**Última actualización:** 3 de octubre de 2026 · 13:10
+**Última actualización:** 3 de octubre de 2026 · 16:30
 **Mercado inicial:** España  
 **Idioma principal:** Español  
 **Dominio canónico:** `https://compraconsentido.es/`  
@@ -3110,3 +3110,70 @@ Estado de validación en la rama del PR #16:
 - imágenes pesadas detectadas y convertidas automáticamente
 - errores adicionales encontrados por el propio QA: corregidos
 - pendiente únicamente el cierre final del PR y despliegue a producción.
+
+
+---
+
+## Favicon y validación estructural de HTML · 03/10/2026 16:30
+
+Durante la revisión manual posterior al cierre 03.3 se detecta que la comparativa de sierras circulares a batería no incluía la declaración de favicon en el `<head>`.
+
+### Corrección aplicada
+
+Se añade en:
+
+`/herramientas/sierras-circulares-a-bateria/`
+
+la declaración estándar:
+
+`<link rel="icon" type="image/svg+xml" href="/favicon.svg">`
+
+junto al `theme-color` común del sitio.
+
+La revisión de todas las páginas públicas confirma que sierras circulares era la única URL publicada sin favicon declarado.
+
+### Regla obligatoria para páginas nuevas
+
+Toda página pública debe incluir en el `<head>`, como mínimo:
+
+- `<meta name="theme-color" content="#063d26">`
+- `<link rel="icon" type="image/svg+xml" href="/favicon.svg">`
+
+Las plantillas internas de página comparativa e informacional quedan actualizadas con este estándar.
+
+### QA automático reforzado
+
+`.github/scripts/site-audit.py` pasa a comprobar en cada PR:
+
+- que todas las páginas públicas declaren favicon;
+- que el recurso local del favicon exista realmente en el repositorio;
+- que las estructuras `<table>`, `<thead>` y `<tbody>` tengan el mismo número de aperturas y cierres.
+
+Si alguna de estas comprobaciones falla, el check `build` debe fallar y el PR no debe fusionarse.
+
+### Regresión detectada durante esta revisión
+
+Al revisar el HTML de sierras se detecta una regresión introducida en la corrección de accesibilidad de tablas del bloque 03.3: un reemplazo demasiado amplio convirtió `<thead>` en una etiqueta mal formada en varias páginas.
+
+Patrón incorrecto detectado:
+
+`<th scope="col"ead>`
+
+Se revisan todas las páginas públicas y se corrige la estructura en las 9 URLs afectadas:
+
+- amoladoras a batería;
+- comparativa de gatos hidráulicos;
+- llaves de impacto;
+- sierras circulares;
+- comparativa de taladros;
+- robots aspiradores;
+- comparativa de deshumidificadores;
+- filamentos 3D;
+- comparativa de impresoras 3D.
+
+Regla adicional:
+
+- no realizar reemplazos automáticos sobre `<th` que puedan coincidir también con `<thead>`;
+- después de cualquier transformación masiva de tablas, el QA estructural debe validar aperturas y cierres antes del merge.
+
+Esta revisión se considera parte del cierre técnico de 03.3 y refuerza el principio de que una corrección transversal debe quedar protegida por una comprobación automática equivalente.
