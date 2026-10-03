@@ -2728,3 +2728,29 @@ Sergio crea el Tracking ID específico:
 Se sustituye el tag principal temporal por `ccc-sierras-21` en todos los enlaces Amazon de la comparativa de sierras circulares, tanto en la tabla como en las fichas de producto.
 
 Estado: tracking específico cerrado.
+
+
+### Validación final Amazon antes de merge · 03/10/2026
+
+Se intenta abrir directamente en Amazon.es las seis URLs por ASIN, pero el acceso automatizado disponible no permite cargar las fichas de producto de Amazon.es.
+
+Se amplía la comprobación con fuentes recientes que reflejan los ASIN y, cuando está disponible, la oferta de Amazon:
+
+- Bosch `B0DFWZTHNK`: correspondencia exacta GKS 18V-57-2 GX confirmada y fuente reciente indica vendedor Amazon Spain.
+- Makita `B00WW83F4Q`: correspondencia exacta DHS680Z confirmada y cuerpo solo; no se ha podido verificar directamente stock actual en Amazon.es.
+- DeWalt `B099X7HBQF`: correspondencia exacta DCS565N-XJ confirmada, bare unit; no se ha podido verificar directamente stock actual en Amazon.es.
+- Einhell `B0DX71B1JN`: correspondencia exacta TP-CS 18/165 Li BL - Solo confirmada; no se ha podido verificar directamente stock actual en Amazon.es.
+- Metabo `B0CW192FVD`: correspondencia del ASIN con KS 18 LTX 57 BL confirmada en fuentes de catálogo Amazon; no se ha podido verificar directamente stock actual en Amazon.es.
+- WORX `B07GY6LYTT`: correspondencia exacta WX530 kit con batería de 2 Ah confirmada y fuente reciente indica vendedor Amazon Spain.
+
+Decisión: **NO MERGE todavía**. Para cumplir la norma del proyecto de verificar ficha activa en Amazon.es inmediatamente antes de publicar, falta una comprobación manual en navegador de Makita, DeWalt, Einhell y Metabo. Bosch y WORX cuentan con evidencia reciente de Amazon Spain, pero se recomienda comprobar también sus enlaces en el mismo repaso final.
+
+Checklist manual antes de merge:
+
+1. abrir las seis URLs Amazon.es del PR
+2. comprobar que cargan ficha activa
+3. confirmar modelo/variante exactos
+4. confirmar cuerpo solo/kit según lo documentado
+5. confirmar que el enlace incluye `tag=ccc-sierras-21`
+
+Una vez superado este checklist, el PR #11 puede pasar de Draft a Ready y fusionarse por squash si `build` está en success.
