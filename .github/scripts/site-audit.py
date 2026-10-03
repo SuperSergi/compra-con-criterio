@@ -123,6 +123,14 @@ for url_path, path in sorted(public_urls.items()):
     if canonical != expected_canonical:
         fail(f"{path}: canonical {canonical!r}, esperado {expected_canonical!r}")
 
+    favicon = link_value(html, "icon")
+    if not favicon:
+        fail(f"{path}: falta favicon")
+    elif favicon.startswith("/"):
+        favicon_file = ROOT / favicon.lstrip("/").split("?", 1)[0]
+        if not favicon_file.exists():
+            fail(f"{path}: favicon no existe: {favicon}")
+
     for prop in ("og:title", "og:description", "og:image"):
         if not meta_value(html, "property", prop):
             fail(f"{path}: falta {prop}")
@@ -139,6 +147,12 @@ for url_path, path in sorted(public_urls.items()):
     bad_p = re.search(r"<p\b[^>]*>\s*[:·-]", html, re.I | re.S)
     if bad_p:
         fail(f"{path}: párrafo visible empieza por separador huérfano")
+
+    for structural_tag in ("table", "thead", "tbody"):
+        opening = len(re.findall(rf"<{structural_tag}\b", html, re.I))
+        closing = len(re.findall(rf"</{structural_tag}>", html, re.I))
+        if opening != closing:
+            fail(f"{path}: estructura HTML incoherente en <{structural_tag}> ({opening} aperturas / {closing} cierres)")
 
     for a_tag in tags(html, "a"):
         href = attr(a_tag, "href") or ""
