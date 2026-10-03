@@ -2687,3 +2687,17 @@ Para publicar con imágenes exactas hace falta una de estas vías:
 3. mantener ilustraciones propias/IA claramente etiquetadas como ilustrativas y no como representación exacta del modelo.
 
 Hasta resolver esta decisión, las imágenes de las seis fichas siguen siendo provisionales y el PR permanece en Draft.
+
+
+### Imágenes de producto integradas · 03/10/2026
+
+Sergio aporta y sube a la rama las seis imágenes de producto correspondientes a los modelos seleccionados. Se integran en las seis fichas con nombres normalizados, formato WebP optimizado y alt descriptivo:
+
+- `bosch-gks-18v-57-2-gx.webp`
+- `makita-dhs680z.webp`
+- `dewalt-dcs565n-xj.webp`
+- `einhell-tp-cs-18-165-li-bl.webp`
+- `metabo-ks-18-ltx-57-bl.webp`
+- `worx-wx530.webp`
+
+Las fichas dejan de mostrar la imagen genérica provisional. El hero permanece por ahora con la imagen genérica de categoría hasta decidir una imagen específica de cabecera.
