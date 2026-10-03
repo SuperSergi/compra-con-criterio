@@ -149,7 +149,7 @@ for url_path, path in sorted(public_urls.items()):
         fail(f"{path}: párrafo visible empieza por separador huérfano")
 
     for structural_tag in ("table", "thead", "tbody"):
-        opening = len(re.findall(rf"<{structural_tag}\\b", html, re.I))
+        opening = len(re.findall(rf"<{structural_tag}\b", html, re.I))
         closing = len(re.findall(rf"</{structural_tag}>", html, re.I))
         if opening != closing:
             fail(f"{path}: estructura HTML incoherente en <{structural_tag}> ({opening} aperturas / {closing} cierres)")
