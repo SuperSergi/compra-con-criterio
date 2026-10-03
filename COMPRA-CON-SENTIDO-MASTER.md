@@ -2039,7 +2039,7 @@ No limitarse a decir “continúa en el chat 03” o equivalente. Siempre que el
 - [x] Cerrar selección de modelos, variantes y ASIN para `/herramientas/sierras-circulares-a-bateria/`.
 - [x] Preparar matriz técnica normalizada, posicionamiento editorial, SEO on-page, FAQ y estructura de contenido de `/herramientas/sierras-circulares-a-bateria/`.
 - [x] Preparar borrador editorial completo de `/herramientas/sierras-circulares-a-bateria/` sin crear la URL pública.
-- [ ] Pasar el borrador de sierras circulares a Diseño V1 usando la plantilla maestra de comparativas, revalidar ASIN/imágenes y publicar solo tras revisión.
+- [ ] Revisar en preview la página de sierras circulares montada en Diseño V1, sustituir imágenes provisionales por imágenes autorizadas de producto, confirmar disponibilidad final Amazon.es/tracking y publicar solo tras aprobación.
 - [ ] Investigar plataformas de herramientas/baterías 18 V.
 - [ ] Analizar arquitectura para hidrolimpiadoras de coche.
 - [ ] Definir progresivamente las primeras 20-30 URLs de alta calidad.
@@ -2614,3 +2614,179 @@ A partir de esta fecha los cambios de código y documentación deben realizarse 
 ### Validación del flujo protegido
 
 Se realiza una comprobación práctica del nuevo flujo de pull request para confirmar que el check `build` se ejecuta correctamente antes de volver a establecerlo como requisito obligatorio del ruleset.
+
+
+## Diseño V1 en revisión · Sierras circulares a batería · 02/10/2026 14:27
+
+Se ha montado en rama de trabajo la URL `/herramientas/sierras-circulares-a-bateria/` partiendo de la plantilla maestra de comparativas y del borrador editorial cerrado, sin fusionar a `main`.
+
+Estado de la rama:
+
+- hero global, breadcrumbs y tarjeta blanca solapada montados
+- exactamente tres perfiles de apertura
+- tabla comparativa responsive
+- seis fichas de producto con datos normalizados, bloques «Lo que destaca», «A tener en cuenta» y «La elegiría si…»
+- guía de compra, elección por uso, metodología, enlazado relacionado y FAQ visibles
+- canonical, Open Graph, Article, BreadcrumbList y FAQPage preparados
+- enlaces Amazon preparados por ASIN con `rel="nofollow sponsored"` y CTA `Ver precio en Amazon`
+- enlazado desde/hacia `/herramientas/` y enlaces contextuales a taladros y amoladoras
+- sitemap preparado en la rama
+
+### Verificación Amazon previa al montaje
+
+Se mantiene la selección cerrada de seis ASIN: `B0DFWZTHNK`, `B00WW83F4Q`, `B099X7HBQF`, `B0DX71B1JN`, `B0CW192FVD` y `B07GY6LYTT`. La correspondencia ASIN-modelo/variante sigue encontrándose en fuentes comerciales recientes que reflejan catálogo Amazon. La herramienta de consulta disponible no permite abrir directamente las fichas de Amazon.es, por lo que la disponibilidad final en Amazon España debe comprobarse una última vez antes del merge.
+
+### Imágenes
+
+La estructura está preparada, pero no se han copiado imágenes de Amazon ni de fabricantes sin una base clara de reutilización. El hero y las seis fichas utilizan temporalmente una imagen genérica ya existente del proyecto y muestran una nota visible de imagen provisional. Deben sustituirse por imágenes autorizadas del modelo exacto antes de publicar.
+
+### Tracking
+
+No existe todavía en el MASTER un Tracking ID específico para sierras circulares. La rama de revisión usa temporalmente el Store/Tracking ID principal `librosde0a1-21`. Antes de publicar se decidirá si se mantiene o se crea un Tracking ID específico para esta comparativa.
+
+Estado: **DISEÑO MONTADO EN RAMA. NO PUBLICADO. PENDIENTE REVISIÓN VISUAL, IMÁGENES DEFINITIVAS Y VALIDACIÓN AMAZON FINAL.**
+
+
+### Auditoría responsive de la rama
+
+Auditoría Playwright ejecutada sobre las 23 URLs del sitemap en 4 viewports: 360, 390, 768 y 1440 px. Total: 92 comprobaciones. Resultado: **92/92 sin incidencias automáticas**. Se validaron HTTP, H1, breadcrumbs, overflow, elementos fuera de viewport, imágenes rotas, menú móvil/escritorio y, en comparativas, tarjeta inicial, exactamente 3 perfiles, aviso/scroll de tabla y tarjetas de producto.
+
+
+### Ajuste de consistencia visual · 03/10/2026
+
+Durante la revisión del preview de sierras circulares se corrigen dos puntos:
+
+- la tarjeta blanca de apertura se reduce a dos párrafos breves; su función es introducir el criterio de comparación, no repetir el contenido editorial que ya aparece después
+- los CTA compactos de las tablas comparativas deben usar el mismo texto y componente visual en todo el sitio: `🛒 Ver en Amazon` con las clases compartidas `amazon-mini ccs-table-amazon`
+- el CTA principal de las fichas de producto mantiene `Ver precio en Amazon`
+
+La apariencia de los botones de tabla se controla desde el componente CSS compartido; el texto sigue estando presente en el HTML estático y debe respetar exactamente este estándar en páginas nuevas.
+
+
+### Revalidación Amazon previa al cierre · 03/10/2026
+
+Nueva comprobación de los seis ASIN antes del cierre de la rama:
+
+- Bosch GKS 18V-57-2 GX — `B0DFWZTHNK`: correspondencia exacta confirmada; fuente comercial reciente indica oferta vendida por Amazon Spain, variante con L-BOXX y sin batería/cargador.
+- Makita DHS680Z — `B00WW83F4Q`: correspondencia exacta ASIN/modelo confirmada y cuerpo solo sin batería/cargador; el acceso disponible no permite confirmar directamente el estado actual de stock en Amazon.es.
+- DeWalt DCS565N-XJ — `B099X7HBQF`: correspondencia exacta ASIN/modelo confirmada, bare unit; el acceso disponible no permite confirmar directamente el estado actual de stock en Amazon.es.
+- Einhell TP-CS 18/165 Li BL - Solo — `B0DX71B1JN`: correspondencia exacta ASIN/modelo confirmada, variante Solo sin batería/cargador; presencia comercial reciente confirmada, pero sin acceso directo fiable al stock de Amazon.es.
+- Metabo KS 18 LTX 57 BL — referencia `611857840`: oferta actual localizada en Amazon.es para la referencia exacta; la correspondencia con el ASIN de trabajo `B0CW192FVD` se mantiene en la matriz interna, pero debe comprobarse en la ficha de Amazon inmediatamente antes de publicar.
+- WORX WX530 — `B07GY6LYTT`: correspondencia exacta confirmada y oferta reciente vendida por Amazon Spain; kit con batería de 2 Ah y cargador.
+
+Conclusión: los seis modelos/variantes siguen siendo válidos como selección. No se declara todavía validación final de disponibilidad Amazon.es para los seis porque Amazon bloquea el acceso directo automatizado a varias fichas. Antes del merge se requiere una comprobación final de las seis URLs en Amazon.es desde navegador o una fuente autorizada de Amazon.
+
+### Bloqueo de imágenes exactas
+
+No se han descargado imágenes de producto desde Amazon ni desde fabricantes porque no hay confirmación de una licencia de reutilización que permita almacenarlas en el repositorio. La Creators API tampoco está disponible todavía por el estado `AssociateNotEligible`.
+
+Para publicar con imágenes exactas hace falta una de estas vías:
+
+1. imágenes proporcionadas/autorizadas por el fabricante o distribuidor con derecho de reutilización;
+2. imágenes obtenidas mediante una vía autorizada de Amazon cuando la cuenta sea elegible;
+3. mantener ilustraciones propias/IA claramente etiquetadas como ilustrativas y no como representación exacta del modelo.
+
+Hasta resolver esta decisión, las imágenes de las seis fichas siguen siendo provisionales y el PR permanece en Draft.
+
+
+### Imágenes de producto integradas · 03/10/2026
+
+Sergio aporta y sube a la rama las seis imágenes de producto correspondientes a los modelos seleccionados. Se integran en las seis fichas con nombres normalizados, formato WebP optimizado y alt descriptivo:
+
+- `bosch-gks-18v-57-2-gx.webp`
+- `makita-dhs680z.webp`
+- `dewalt-dcs565n-xj.webp`
+- `einhell-tp-cs-18-165-li-bl.webp`
+- `metabo-ks-18-ltx-57-bl.webp`
+- `worx-wx530.webp`
+
+Las fichas dejan de mostrar la imagen genérica provisional. El hero permanece por ahora con la imagen genérica de categoría hasta decidir una imagen específica de cabecera.
+
+
+### Revisión visual aprobada · 03/10/2026
+
+Sergio revisa la preview con las seis imágenes de producto integradas y da por correcta la maquetación actual.
+
+Queda cerrado visualmente:
+
+- hero actual
+- tarjeta blanca de apertura reducida
+- tres perfiles
+- tabla responsive y CTA común `🛒 Ver en Amazon`
+- seis fichas con imágenes WebP definitivas aportadas por Sergio
+- guía de compra, FAQ, espaciado y footer
+
+El PR #11 permanece sin fusionar únicamente hasta completar la comprobación final de las seis fichas Amazon.es y cerrar el uso del tracking ID.
+
+
+### Tracking ID de sierras circulares · 03/10/2026
+
+Sergio crea el Tracking ID específico:
+
+`ccc-sierras-21`
+
+Se sustituye el tag principal temporal por `ccc-sierras-21` en todos los enlaces Amazon de la comparativa de sierras circulares, tanto en la tabla como en las fichas de producto.
+
+Estado: tracking específico cerrado.
+
+
+### Validación final Amazon antes de merge · 03/10/2026
+
+Se intenta abrir directamente en Amazon.es las seis URLs por ASIN, pero el acceso automatizado disponible no permite cargar las fichas de producto de Amazon.es.
+
+Se amplía la comprobación con fuentes recientes que reflejan los ASIN y, cuando está disponible, la oferta de Amazon:
+
+- Bosch `B0DFWZTHNK`: correspondencia exacta GKS 18V-57-2 GX confirmada y fuente reciente indica vendedor Amazon Spain.
+- Makita `B00WW83F4Q`: correspondencia exacta DHS680Z confirmada y cuerpo solo; no se ha podido verificar directamente stock actual en Amazon.es.
+- DeWalt `B099X7HBQF`: correspondencia exacta DCS565N-XJ confirmada, bare unit; no se ha podido verificar directamente stock actual en Amazon.es.
+- Einhell `B0DX71B1JN`: correspondencia exacta TP-CS 18/165 Li BL - Solo confirmada; no se ha podido verificar directamente stock actual en Amazon.es.
+- Metabo `B0CW192FVD`: correspondencia del ASIN con KS 18 LTX 57 BL confirmada en fuentes de catálogo Amazon; no se ha podido verificar directamente stock actual en Amazon.es.
+- WORX `B07GY6LYTT`: correspondencia exacta WX530 kit con batería de 2 Ah confirmada y fuente reciente indica vendedor Amazon Spain.
+
+Decisión: **NO MERGE todavía**. Para cumplir la norma del proyecto de verificar ficha activa en Amazon.es inmediatamente antes de publicar, falta una comprobación manual en navegador de Makita, DeWalt, Einhell y Metabo. Bosch y WORX cuentan con evidencia reciente de Amazon Spain, pero se recomienda comprobar también sus enlaces en el mismo repaso final.
+
+Checklist manual antes de merge:
+
+1. abrir las seis URLs Amazon.es del PR
+2. comprobar que cargan ficha activa
+3. confirmar modelo/variante exactos
+4. confirmar cuerpo solo/kit según lo documentado
+5. confirmar que el enlace incluye `tag=ccc-sierras-21`
+
+Una vez superado este checklist, el PR #11 puede pasar de Draft a Ready y fusionarse por squash si `build` está en success.
+
+
+### Verificación manual Amazon completada · 03/10/2026
+
+Sergio comprueba manualmente en Amazon.es las seis fichas de producto y aporta capturas de cada una. Las fichas cargan correctamente y corresponden a los modelos previstos:
+
+- Bosch GKS 18V-57-2 GX
+- Makita DHS680Z
+- DeWalt DCS565N-XJ
+- Einhell Professional TP-CS 18/165 Li BL
+- Metabo KS 18 LTX 57 BL
+- WORX WX530
+
+Las variantes visualizadas coinciden con la selección editorial: Bosch con L-BOXX y sin batería, Makita cuerpo solo, DeWalt sin batería, Einhell Solo/sin batería, Metabo cuerpo solo y WORX kit con batería 2 Ah y cargador.
+
+Con esta comprobación se cierra el requisito de ficha activa Amazon.es previo a publicación. El tracking específico `ccc-sierras-21` ya está aplicado en los 12 CTA.
+
+Estado: página completa, revisión visual aprobada, imágenes integradas, Amazon verificado y tracking cerrado. PR #11 preparado para pasar de Draft a Ready. Pendiente únicamente autorización explícita de merge/publicación.
+
+
+### Publicación autorizada · 03/10/2026
+
+Sergio autoriza la publicación de la comparativa de sierras circulares a batería.
+
+Estado previo al merge:
+
+- revisión visual aprobada
+- seis imágenes definitivas integradas
+- seis fichas Amazon.es verificadas manualmente
+- tracking `ccc-sierras-21` aplicado
+- auditoría responsive superada
+- `build` en success
+- Cloudflare Pages en success
+- PR #11 Ready for review y mergeable
+
+Se autoriza merge por `squash` a `main`.
