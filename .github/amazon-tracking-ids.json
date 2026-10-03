@@ -14,8 +14,11 @@
   "compresores-portatiles-coche": "ccc-compcoche-21",
   "obd2": "ccc-obd2-21",
   "hidrolimpiadoras": "ccc-hidrolimp-21",
-  "llaves-impacto": "ccc-impacto-21",
+  "llaves-impacto": "ccc-llaveimpac-21",
   "niveles-laser": "ccc-nivellaser-21",
   "air-fryers": "ccc-airfryer-21",
-  "robots-cortacesped": "ccc-robotcesp-21"
+  "robots-cortacesped": "ccc-robotcesp-21",
+  "principal": "librosde0a1-21",
+  "amoladoras-a-bateria": "ccc-amoladoras-21",
+  "sierras-circulares-a-bateria": "ccc-sierras-21"
 }
