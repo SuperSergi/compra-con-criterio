@@ -2790,3 +2790,26 @@ Estado previo al merge:
 - PR #11 Ready for review y mergeable
 
 Se autoriza merge por `squash` a `main`.
+
+
+### Publicación completada · 03/10/2026
+
+La comparativa `/herramientas/sierras-circulares-a-bateria/` se publica en producción mediante el PR #11, fusionado por `squash` a `main`.
+
+Commit de publicación: `696b5222e7a1efdae8cf6291a2df36be6ca5d038`.
+
+Cloudflare Pages completa correctamente el despliegue de producción. La página queda publicada con:
+
+- seis modelos y variantes validados
+- seis imágenes WebP definitivas
+- tracking `ccc-sierras-21`
+- 12 CTA Amazon
+- tabla comparativa responsive
+- tres perfiles de uso
+- FAQ visible y schema coherente
+- enlazado interno desde/hacia Herramientas
+- sitemap actualizado
+- revisión visual aprobada
+- auditoría responsive superada
+
+Estado: **PUBLICADO EN PRODUCCIÓN**.
