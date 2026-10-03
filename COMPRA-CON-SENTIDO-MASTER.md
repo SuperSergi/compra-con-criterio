@@ -2974,3 +2974,20 @@ Antes de publicar una página nueva deben estar cerrados, como mínimo:
 - preview visual aprobada
 
 Este flujo pasa a ser estándar para futuras páginas de Compra con Sentido.
+
+
+### Regla editorial de arranque en fichas de producto · 03/10/2026
+
+Durante la revisión visual de sierras circulares se detectó un error de maquetación/editorial: el primer párrafo de las fichas empezaba con dos puntos (`:`) por haber quedado un separador huérfano al trasladar el contenido.
+
+Corrección aplicada:
+
+- se eliminan los dos puntos iniciales en las seis fichas de sierras
+- se convierten esas entradas en frases breves y naturales, con inicio en mayúscula y cierre correcto
+- se revisan las comparativas principales existentes y no se detecta el mismo problema en amoladoras, llaves de impacto, taladros, gatos hidráulicos, robots aspiradores, deshumidificadores ni impresoras 3D
+
+Regla para futuras comparativas:
+
+- ningún párrafo visible debe comenzar con signos huérfanos como `:`, `-`, `·` o separadores equivalentes
+- los primeros párrafos de las fichas deben empezar como una frase completa y natural
+- antes de publicar, revisar específicamente el primer bloque de texto de cada ficha además del HTML y el responsive
