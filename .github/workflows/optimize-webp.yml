@@ -1,4 +1,4 @@
-name: Optimizar WebP existentes
+name: Optimizar imágenes
 
 on:
   push:
@@ -6,18 +6,28 @@ on:
       - main
     paths:
       - ".github/workflows/optimize-webp.yml"
-      - "images/**/*.webp"
+      - "images/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/optimize-webp.yml"
+      - "images/**"
+      - "**/*.html"
+      - "**/*.css"
 
 permissions:
   contents: write
 
 jobs:
   optimize:
-    if: ${{ !contains(github.event.head_commit.message, 'Optimizar imágenes WebP pesadas') }}
+    if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout de la rama
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Preparar Python
         uses: actions/setup-python@v5
@@ -27,7 +37,7 @@ jobs:
       - name: Instalar Pillow
         run: python -m pip install --quiet pillow
 
-      - name: Optimizar WebP pesados
+      - name: Convertir y optimizar imágenes pesadas
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -35,6 +45,37 @@ jobs:
 
           limit = 300_000
           max_side = 1600
+          text_exts = {".html", ".css", ".md", ".xml", ".json", ".js", ".mjs", ".yml", ".yaml"}
+          converted = []
+
+          for path in list(Path("images").rglob("*")):
+              if not path.is_file() or path.suffix.lower() not in {".png", ".jpg", ".jpeg"}:
+                  continue
+              if path.stat().st_size < limit:
+                  continue
+
+              target = path.with_suffix(".webp")
+              with Image.open(path) as im:
+                  im.load()
+                  if im.mode not in ("RGB", "RGBA"):
+                      im = im.convert("RGBA" if "A" in im.getbands() else "RGB")
+                  im.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
+                  im.save(target, format="WEBP", quality=82, method=6)
+
+              old_ref = path.as_posix()
+              new_ref = target.as_posix()
+              for text_path in Path(".").rglob("*"):
+                  if not text_path.is_file() or ".git" in text_path.parts or text_path.suffix.lower() not in text_exts:
+                      continue
+                  try:
+                      text = text_path.read_text(encoding="utf-8")
+                  except UnicodeDecodeError:
+                      continue
+                  if old_ref in text:
+                      text_path.write_text(text.replace(old_ref, new_ref), encoding="utf-8")
+
+              path.unlink()
+              converted.append((old_ref, new_ref))
 
           for path in Path("images").rglob("*.webp"):
               old = path.read_bytes()
@@ -44,26 +85,32 @@ jobs:
               with Image.open(path) as im:
                   im.load()
                   im.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
-                  kwargs = {"format": "WEBP", "quality": 82, "method": 6}
-                  if "A" in im.getbands():
-                      kwargs["lossless"] = False
-                  im.save(path, **kwargs)
+                  im.save(path, format="WEBP", quality=82, method=6)
 
               new = path.read_bytes()
               if len(new) >= len(old):
                   path.write_bytes(old)
               else:
                   print(f"{path}: {len(old)} -> {len(new)} bytes")
+
+          for old_ref, new_ref in converted:
+              print(f"Convertida: {old_ref} -> {new_ref}")
           PY
 
-      - name: Guardar cambios
+      - name: Guardar cambios en la rama
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add images
+          git add -A
           if git diff --cached --quiet; then
             echo "No hay imágenes que optimizar"
+            exit 0
+          fi
+          git commit -m "Optimizar imágenes pesadas"
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git push origin "HEAD:${{ github.head_ref }}"
           else
-            git commit -m "Optimizar imágenes WebP pesadas"
             git push
           fi
